@@ -22,6 +22,8 @@
 
 # But not these files...
 !.gitignore
+!_config.yml
+!index.html
 
 !latex_styles
 latex_styles/compilation_tests
