@@ -1,0 +1,35 @@
+# Ignore everything
+/*
+
+# Ignore
+**/*.pytxcode
+**/*.sol
+**/*.aux
+**/*.md5
+**/*.json
+**/*.fdb_latexmk
+**/*.fls
+**/*.out
+**/*.gz
+**/*.preamble
+**/*.auxlock
+**/*.log
+**/*.latexmkrc
+**/*.synctex.gz
+**/*.key
+
+**/*.docx
+
+# But not these files...
+!.gitignore
+
+!latex_styles
+latex_styles/compilation_tests
+latex_styles/Modèles
+
+# !Terminale
+
+
+# !Seconde
+# Seconde/*
+# !Seconde/C1 Ensembles de nombres

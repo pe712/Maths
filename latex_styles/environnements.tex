@@ -1,0 +1,236 @@
+%% Texte à trou
+%\newcommand{\vide}[1]{\gap*[-]{#1}} % pour texte à trou
+%\newcommand{\trou}[1]{\if@prof {\bf{ #1}} \else \vide{#1} \fi}
+
+%% Théorèmes
+\newtcbtheorem[number within=section]{theo}{Théorème}{breakable,sharp corners=downhill,enhanced,colback=myred!5,colframe=white!35!myred,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myred,borderline={0.5mm}{0mm}{myred!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{th}
+\newtcbtheorem[number within=section]{theoadmis}{Théorème (Admis)}{breakable,sharp corners=downhill,enhanced,colback=myred!5,colframe=white!35!myred,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myred,borderline={0.5mm}{0mm}{myred!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{th}
+\newtcbtheorem{theon}{Théorème}{breakable,sharp corners=downhill,enhanced,colback=myred!5,colframe=white!35!myred,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myred,borderline={0.5mm}{0mm}{myred!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{thn} % sans numero section
+%% Corollaire
+\newtcbtheorem[use counter from=theo]{cor}{Corollaire}{breakable,sharp corners=downhill,enhanced,colback=myred!5,colframe=white!35!myred,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myred,borderline={0.5mm}{0mm}{myred!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{coro}
+%% Lemme
+\newtcbtheorem[use counter from=theo]{lemme}{Lemme}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{lem}
+\newtcbtheorem[use counter from=theo]{lemmeadmis}{Lemme (Admis)}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{lem}
+%% Définition
+\newtcbtheorem[use counter from=theo]{defi}{Définition}{breakable,sharp corners=downhill,enhanced,colback=myblue!5,colframe=white!35!myblue,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myblue,borderline={0.5mm}{0mm}{myblue!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{df}
+\newtcbtheorem[use counter from=theo]{defis}{Définitions}{breakable,sharp corners=downhill,enhanced,colback=myblue!5,colframe=white!35!myblue,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myblue,borderline={0.5mm}{0mm}{myblue!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{dfs}
+%%Proposition
+\newtcbtheorem[use counter from=theo]{prop}{Proposition}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{propo}
+\newtcbtheorem[use counter from=theon]{propn}{Proposition}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{propon} % sans numero de section
+\newtcbtheorem[use counter from=theo]{props}{Propositions}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{propos}
+\newtcbtheorem[use counter from=theon]{propsn}{Propositions}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{proposn}  % sans numero de section
+\newtcbtheorem[use counter from=theo]{propadmise}{Proposition (admise)}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{propo}
+\newtcbtheorem[use counter from=theo]{propsadmise}{Propositions (admises)}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{propo}
+
+%% Modélisation
+\newtcbtheorem[use counter from=theo]{model}{Modélisation}{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=white!35!mypurple,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!mypurple,borderline={0.5mm}{0mm}{mypurple!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{modeli}
+\newtcbtheorem[use counter from=theo]{modelss}{Modélisations}{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=white!35!mypurple,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!mypurple,borderline={0.5mm}{0mm}{mypurple!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{modelis}
+%% Exemple
+\newtcbtheorem[use counter from=theo]{ex}{Exemple}{breakable,sharp corners=downhill,enhanced,titlerule=-3mm,colback=white,colbacktitle=white,coltitle=mygreen,colframe=mygreen,borderline={0.5mm}{0mm}{green!5!white},borderline={0.5mm}{0mm}{mygreen!50!white,dashed},fonttitle=\bfseries,attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{exe}
+\newtcbtheorem[use counter from=theo]{exs}{Exemples}{breakable,sharp corners=downhill,enhanced,titlerule=-3mm,colback=white,colbacktitle=white,coltitle=mygreen,colframe=mygreen,borderline={0.5mm}{0mm}{green!5!white},borderline={0.5mm}{0mm}{mygreen!50!white,dashed},fonttitle=\bfseries,attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{exes}
+%% Conséquence
+\newtcbtheorem{conseq}{Conséquence}{breakable,sharp corners=downhill,enhanced,titlerule=-3mm,colback=white,colbacktitle=white,coltitle=mypurple,colframe=mypurple,borderline={0.5mm}{0mm}{mypurple!5!white},borderline={0.5mm}{0mm}{mypurple!50!white,dashed},fonttitle=\bfseries}{consequence}
+\newtcbtheorem[use counter from=conseq]{conseqs}{Conséquences}{breakable,sharp corners=downhill,enhanced,titlerule=-3mm,colback=white,colbacktitle=white,coltitle=mypurple,colframe=mypurple,borderline={0.5mm}{0mm}{mypurple!5!white},borderline={0.5mm}{0mm}{mypurple!50!white,dashed},fonttitle=\bfseries}{consequences}
+%% Méthode
+\newtcbtheorem[no counter]{methode}{Méthode}{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=mypurple!50!white,coltitle=mypurple!50!black,fonttitle=\bfseries,colbacktitle=mypurple!15!white,borderline={0.5mm}{0mm}{mypurple!15!white},borderline={0.5mm}{0mm}{mypurple!50!white,dashed},attach boxed title to top center={yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{methode}
+%% Algorithme
+\newtcbtheorem[no counter]{algo}{Algorithme}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=myorange!50!white,coltitle=myorange!50!black,fonttitle=\bfseries,colbacktitle=myorange!15!white,borderline={0.5mm}{0mm}{myorange!15!white},borderline={0.5mm}{0mm}{myorange!50!white,dashed},attach boxed title to top center={yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{algorihtme}
+%% Remarque
+\newtcolorbox{rem}[1][]{breakable,sharp corners=downhill,colback=white,
+	colframe=white,fonttitle=\bfseries,
+	colbacktitle=white,coltitle=black,enhanced,borderline west={0.5mm}{0mm}{black!50!white,dashed},borderline south={0.5mm}{0mm}{black!50!white,dashed},
+	attach boxed title to top left={xshift=-5mm,yshift=-3mm},
+	title={\includegraphics[width=11pt]{icons/remarque.png} Remarque :},#1}
+\newtcolorbox{rems}[1][]{breakable,sharp corners=downhill,colback=white,
+	colframe=white,fonttitle=\bfseries,
+	colbacktitle=white,coltitle=black,enhanced,borderline west={0.5mm}{0mm}{black!50!white,dashed},borderline south={0.5mm}{0mm}{black!50!white,dashed},
+	attach boxed title to top left={xshift=-5mm,yshift=-3mm},
+	title={\includegraphics[width=11pt]{icons/remarque.png} Remarques :},#1}
+%% Notation
+\newenvironment{notation}{\begin{flushleft} \textbf{Notation :} }{\end{flushleft}}
+%% Rappel
+\newtcbtheorem[no counter]{rappel}{Rappel}{breakable,enhanced,colback=mypurple!5,colframe=mypurple!50!white,coltitle=mypurple!50!black,fonttitle=\bfseries,colbacktitle=mypurple!15!white,borderline={0.5mm}{0mm}{mypurple!15!white},borderline={0.5mm}{0mm}{mypurple!50!white,dashed},attach boxed title to top center={yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{rappel}
+%%Activité
+%\newenvironment{ac}[1][]{\begin{leftbar}\hspace{-0.7cm}\textbf{\Large Activité : #1}\\[5pt]}{\end{leftbar}}
+\newtcolorbox{ac}[2][]{breakable,sharp corners=downhill,colback=white,
+	colframe=white,fonttitle=\bfseries,
+	colbacktitle=myred!50!white,coltitle=white,enhanced,borderline west={0.5mm}{0mm}{myred!50!white,dashed},borderline south={0.5mm}{0mm}{myred!50!white,dashed},
+	attach boxed title to top left={xshift=-5mm,yshift=-3mm},
+	title={Activité : #2},#1}
+%% Indication
+\newcommand{\indic}{\includegraphics[height=20pt]{icons/ampoule.png} }
+%% Vocabulaire
+\newcommand{\voc}{\hspace{-15pt}\textbf{\textsc{Vocabulaire : }}}
+\theoremstyle{definition}
+%% Exercices
+\newenvironment{exn}{\noindent{\bfseries Exercice : }}{\par} % exercice non numéroté
+\newtcolorbox{exbox}[1][]{breakable,sharp corners=downhill,colback=white,
+	colframe=white,fonttitle=\bfseries,
+	colbacktitle=white,coltitle=black,enhanced,borderline west={0.5mm}{0mm}{black!50!white,dashed},borderline south={0.5mm}{0mm}{black!50!white,dashed},
+	attach boxed title to top left={xshift=-5mm,yshift=-3mm},
+	title={\Large Exercices :},#1}
+
+%% Exercices et corrigés
+\newenvironment{exercices}{
+	\addfootnotes
+	\addcontentsline{toc}{section}{Exercices}
+	\newwrite\tempfilesol
+	\immediate\openout\tempfilesol=\jobname.sol
+	\begin{multicols}{2}
+	\raggedcolumns
+		}
+		{
+	\end{multicols}
+	\immediate\closeout\tempfilesol
+}
+
+\newenvironment{exercicesnofoot}{ % without footnotes
+	\addcontentsline{toc}{section}{Exercices}
+	\newwrite\tempfilesol
+	\immediate\openout\tempfilesol=\jobname.sol
+	\begin{multicols}{2}
+	\raggedcolumns
+		}
+		{
+	\end{multicols}
+	\immediate\closeout\tempfilesol
+}
+
+\newenvironment{corrections}{
+	\addcontentsline{toc}{section}{Corrections}
+	\begin{multicols}{2}
+	\raggedcolumns
+	\input{\jobname.sol}
+		}
+		{
+	\end{multicols}
+}
+
+%% Exercices et corrigés
+\newenvironment{bookexo}[2][]{
+	\everypar{\setbox0\lastbox} % supress indentation
+	\nopagebreak
+	\gdef\cbookexo{#2} % Store the argument outside env scope
+	{\bfseries Exercice #2\ #1}
+	\par
+}{\par\medskip}
+\newenvironment{bookact}[2][]{
+	\everypar{\setbox0\lastbox} % supress indentation
+	\nopagebreak
+	\gdef\cbookexo{#2} % Store the argument outside env scope
+	{\bfseries Activité #2\ #1}
+	\par
+}{\par\medskip}
+\newenvironment{bookexos}[2][]{
+	\everypar{\setbox0\lastbox} % supress indentation
+	\nopagebreak
+	\gdef\cbookexo{#2} % Store the argument outside env scope
+	{\bfseries Exercices #2\ #1}
+	\par
+}{\par\medskip}
+\newenvironment{exo}[1][]{
+\everypar{\setbox0\lastbox} % supress indentation
+\nopagebreak
+\refstepcounter{cexo}
+{\bfseries Exercice \thesectionexo\thecexo\ {#1}}
+\par
+}{\par\medskip} % exercice
+\newenvironment{exon}[1][]{
+	\everypar{\setbox0\lastbox} % supress indentation
+	\nopagebreak
+	\refstepcounter{cexo}
+	{\bfseries Exercice \thecexo #1}
+	\par
+}{\par\medskip} % exercice sans section
+
+\newenvironment{TheCorr}[1]
+{
+	\everypar{\setbox0\lastbox} % supress indentation
+	\par
+	\small
+	{\bfseries Exercice~#1}\relax%
+	\nopagebreak\relax%
+	\par
+}{
+	% Fin de l environnement
+	%	\par\qed% carre de fin de preuve
+	\medskip
+}
+
+\newenvironment{bookCorr}{
+	\stepcounter{pressol}
+	% Ecriture du debut de l environnement dans le fichier .sol
+	\immediate\write\tempfilesol{
+		\unexpanded{\begin{TheCorr}}
+				\string{\cbookexo\string}\relax
+				}\relax
+				%  Ecriture du corps de la solution dans le fichier .sol
+				\copytofile{sol}\relax
+				% Ecriture de la fin de l environnement dans le fichier .sol
+				}{
+				\immediate\write\tempfilesol{\unexpanded{\end{TheCorr}}}
+}
+\newenvironment{Corr}{
+	\stepcounter{pressol}
+	% Ecriture du debut de l environnement dans le fichier .sol
+	\immediate\write\tempfilesol{
+		\unexpanded{\begin{TheCorr}}
+				\string{\arabic{sectionexo}\unexpanded{$\,$-$\,$}\arabic{cexo}\string}\relax
+				}\relax
+				%  Ecriture du corps de la solution dans le fichier .sol
+				\copytofile{sol}\relax
+				% Ecriture de la fin de l environnement dans le fichier .sol
+				}{
+				\immediate\write\tempfilesol{\unexpanded{\end{TheCorr}}}
+}
+\newenvironment{Corrs}{
+	\stepcounter{pressol}
+	% Ecriture du debut de l environnement dans le fichier .sol
+	\immediate\write\tempfilesol{\unexpanded{\begin{TheCorr}}\string{\arabic{cexo}\string}\relax}\relax
+				%  Ecriture du corps de la solution dans le fichier .sol
+				\copytofile{sol}\relax
+				% Ecriture de la fin de l environnement dans le fichier .sol
+				}{
+				\immediate\write\tempfilesol{\unexpanded{\end{TheCorr}}}
+}
+%% Problèmes
+\newtcolorbox{problemes}[1][]{breakable,sharp corners=downhill,colback=white,
+	colframe=white,fonttitle=\bfseries,
+	colbacktitle=white,coltitle=black,enhanced,borderline west={0.5mm}{0mm}{black!50!white,dashed},borderline south={0.5mm}{0mm}{black!50!white,dashed},
+	attach boxed title to top left={xshift=-5mm,yshift=-3mm},
+	title={\Large Problèmes :},#1}
+%% Histoire
+\newtcolorbox{histoire}[1][]{breakable,sharp corners=downhill,colback=white,
+	colframe=white,fonttitle=\bfseries,
+	colbacktitle=white,coltitle=black,enhanced,borderline={0.5mm}{0.5mm}{black!50!white,dashed},
+	attach boxed title to top left={xshift=-5mm,yshift=-3mm},
+	title={\includegraphics[width=20pt]{icons/livre.png} Un peu d'histoire...},#1}
+%% Citation
+\NewEnviron{citer}[1]{\noindent\begin{tikzpicture}
+		\node[draw,very thick, text width=.93\textwidth, align=flush left, inner xsep=0.5cm, inner ysep=0.2cm,rounded corners=0.2cm] (block) at (0,0){\myfont{\emph{\BODY}}
+			\begin{flushright}
+				#1
+			\end{flushright}};
+		\node (leftcorner) at (block.south west){};
+		\node (rightcorner) at (block.north east){};
+		\node (quoteleft) at (leftcorner.north east){\includegraphics[width=.5cm]{icons/quote-mark-left.jpg}};
+		\node (quoteright) at (rightcorner.south west){\includegraphics[width=.5cm]{icons/quote-mark-right.jpg}};
+	\end{tikzpicture}}
+
+%% Démonstration
+\newenvironment{dem}[1][]{\begin{tcolorbox}[title=\emph{Démonstration : #1},breakable]
+		}{\vspace{-10pt}\begin{flushright}
+			\ding{113}
+		\end{flushright}\end{tcolorbox}}
+\newenvironment{deme}[1][]{\begin{tcolorbox}[title=\emph{Démonstration (exigible): #1},breakable]
+		}{\vspace{-10pt}\begin{flushright}
+			\ding{113}
+		\end{flushright}\end{tcolorbox}} % exigible
+
+%% Résumé de preuve
+\newtcolorbox{resume}[1][]{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=mypurple!50!white,coltitle=mypurple!50!black,fonttitle=\bfseries,colbacktitle=mypurple!15!white,borderline={0.5mm}{0mm}{mypurple!15!white},borderline={0.5mm}{0mm}{mypurple!50!white,dashed},attach boxed title to top center={yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title,
+	title={\includegraphics[width=10pt]{icons/ic_ampoule.png} En résumé},#1}
+%% Femme de science
+\newtcbtheorem[no counter]{fsci}{Femme de science}{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=white!35!mypurple,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!mypurple,borderline={0.5mm}{0mm}{mypurple!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{fscience}
+%% Homme de science
+\newtcbtheorem[no counter]{hsci}{Homme de science}{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=white!35!mypurple,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!mypurple,borderline={0.5mm}{0mm}{mypurple!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{hscience}

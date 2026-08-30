@@ -1,0 +1,101 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{layout_evaluation}
+
+%% Packages
+\input{packages}
+
+\input{commandes}
+
+\setlength\parindent{0pt}
+
+% %=============== Définir une couleur. ===============%
+% \definecolor{vert3}{RGB}{184,240,145}
+% \definecolor{vert2}{RGB}{0,220,132}
+% \definecolor{vert1}{RGB}{0,185,132}
+% \definecolor{vert}{RGB}{172,204,147}
+% \definecolor{vert4}{RGB}{141,199,62}
+% \definecolor{bord}{RGB}{191,9,0}
+% \definecolor{souris}{gray}{0.85}
+% \definecolor{gris}{rgb}{0.35,0.38,0.35}
+% \definecolor{prune}{rgb}{0.65,0.04,0.35}
+\definecolor{bleu}{RGB}{57,184,190}
+% %\definecolor{bleu1}{RGB}{0,176,211}
+% %\definecolor{bleu}{rgb}{0.15,0.18,0.35}
+% \definecolor{jaune}{RGB}{255,212,0}
+% \definecolor{rouille}{RGB}{192,121,86}
+
+%== Champs d entete ==%
+%%numero
+\def\evalnumber#1{\def\@evalnumber{#1}}
+\evalnumber{}
+%%eval type
+\def\evaltype#1{\def\@evaltype{#1}}
+\evaltype{Evaluation}
+%%titre
+\def\titre#1{\def\@titre{#1}}
+\titre{}
+%%classe/groupe
+\def\classe#1{\def\@classe{#1}}
+\classe{}
+%%date
+\def\date#1{\def\@date{#1}}
+\classe{}
+%%Annee scolaire
+\def\annee#1{\def\@annee{#1}}
+\annee{
+	\ifnum\month>8 % If month > August (September to December)
+		\the\year \ - \the\numexpr\year+1\relax % Current year
+	\else % If month <= August (January to August)
+		\the\numexpr\year-1\relax \ - \the\year % Previous year
+	\fi
+}
+%% sujet différenciés
+\newif\if@sujetB
+\@sujetBtrue % Default value: \@sujetB is true
+\DeclareOption{noSujetB}{\@sujetBfalse}
+\ProcessOptions
+
+% font
+% **********************
+\fontfamily{lmss}\selectfont
+\renewcommand{\labelitemi}{$\star$}
+\DeclareTextFontCommand{\myfont}{\fontfamily{lmss}\selectfont}
+
+% Numérotation des pages 
+% **********************
+\pagenumbering{arabic}
+\ifodd\thepage\else\thispagestyle{empty}\hbox{}\newpage\fi%si page paire ou impaire
+
+
+% Header
+% ***************
+\pagestyle{fancy}
+\fancyhf{}                       % on annule le fancy automatique
+\renewcommand\headrulewidth{1pt}
+\renewcommand\footrulewidth{1pt}
+\fancyhf[L]{\@classe}
+\fancyhf[C]{\@evaltype\ \@evalnumber: \@titre}
+\fancyhf[R]{\@date}
+
+% Footer 
+% **********************
+\renewcommand\footrulewidth{1pt}
+
+\if@sujetB
+	\fancyfoot[RO]{sujet A}
+	\fancyfoot[RE]{sujet B}
+\else
+	\fancyfoot[R]{\thepage/\lastpageref{VeryLastPage}}
+\fi
+
+\fancyfoot[L]{\myfont{PE BAVIERE - Lycée J. Vernes}}
+\fancyfoot[C]{}
+
+\newcommand{\name}{
+	\begin{center}
+	\textbf{\large NOM:} \underline{\hspace{6cm}} \hfill \textbf{\large Prénom:} \underline{\hspace{6cm}}
+\end{center}
+}
+
+
+

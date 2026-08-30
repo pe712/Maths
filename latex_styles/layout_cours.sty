@@ -1,0 +1,297 @@
+
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{layout_cours}
+
+%% Packages
+\input{packages}
+
+%% Détermine la version prof ou eleve
+\newif\if@prof\@proftrue
+\DeclareOption{eleve}{\@proffalse}
+\DeclareOption*{prof}{\@proftrue}
+\ProcessOptions
+
+\if@prof
+	\TeacherModeOn % fill the gaps of dashundergaps package with the solutions
+
+	\newenvironment{reponse}
+	{%  
+		\parindent=0pt
+		\ \\[5pt]
+		\begin{minipage}{\linewidth}
+			%\setlength{\baselineskip}{1.75\baselineskip}
+			\large
+			}
+			{%
+		\end{minipage}
+	}
+	\newenvironment{corrtikz}{}{}
+\else
+	\TeacherModeOff
+	\newsavebox{\myreponse}
+	\newenvironment{reponse}
+	{%  
+		\parindent=0pt
+		\ \\[5pt]
+		\begin{lrbox}{\myreponse}\begin{minipage}{\linewidth}
+				%\setlength{\baselineskip}{1.75\baselineskip}
+				\large
+				}
+				{%
+			\end{minipage}\end{lrbox}
+		\phantom{\usebox{\myreponse}}
+	}
+	\newenvironment{corrtikz}{\comment}{\endcomment}
+\fi
+
+
+\newcommand{\pcancel}[1]{\if@prof \cancel{#1}\else #1\fi}
+
+% Listes
+% ******
+%\newcounter{saveenumi}
+%\newcommand{\savecounter}{\setcounter{saveenumi}{\value{enumi}}}
+%\newcommand{\restorecounter}{\setcounter{enumi}{\value{saveenumi}}}
+%\newcounter{local}
+%\renewcommand{\labelenumi}{\theenumi}
+%\renewcommand{\theenumi}%
+%{\protect\raisebox{2pt}{\protect\pscirclebox[framesep=1pt]{\bfseries\scriptsize \arabic{enumi}}}}
+
+% Style de page
+% *************
+%\pagestyle{plain}
+%\setlength{\hoffset}{-18pt}   
+%\setlength{\oddsidemargin}{0pt}   % Marge gauche sur pages impaires  
+%\setlength{\evensidemargin}{9pt}  % Marge gauche sur pages paires  
+%\setlength{\marginparwidth}{54pt} % Largeur de note dans la marge  
+%\setlength{\textwidth}{481pt}     % Largeur de la zone de texte (17cm)  
+%\setlength{\voffset}{-10pt}       % Bon pour DOS  
+%\setlength{\marginparsep}{5pt}    % Séparation de la marge  
+%\setlength{\topmargin}{0pt}       % Pas de marge en haut  
+%\setlength{\headheight}{1pt}     % Haut de page  
+%\setlength{\headsep}{15pt}        % Entre le haut de page et le texte  
+%\setlength{\footskip}{20pt}       % Bas de page + séparation  
+%\setlength{\textheight}{25cm}     % Hauteur de la zone de texte (25cm)  
+
+%\pagestyle{plain}
+%\setlength{\hoffset}{-18pt}   
+%\setlength{\oddsidemargin}{0pt}   % Marge gauche sur pages impaires  
+%\setlength{\evensidemargin}{9pt}  % Marge gauche sur pages paires  
+%\setlength{\marginparwidth}{54pt} % Largeur de note dans la marge  
+%\setlength{\textwidth}{481pt}     % Largeur de la zone de texte (17cm)  
+%\setlength{\voffset}{-10pt}       % Bon pour DOS  
+%\setlength{\marginparsep}{5pt}    % Séparation de la marge  
+%\setlength{\topmargin}{0pt}       % Pas de marge en haut  
+%\setlength{\headheight}{13pt}     % Haut de page  
+%\setlength{\headsep}{10pt}        % Entre le haut de page et le texte  
+%\setlength{\footskip}{27pt}       % Bas de page + séparation  
+%\setlength{\textheight}{25cm}     % Hauteur de la zone de texte (25cm)  
+
+
+%== Champs d entete ==%
+%%numero du chapitre
+\def\chapnumber#1{\def\@chapnumber{#1}}
+\chapnumber{}
+%%titre
+\def\titre#1{\def\@titre{#1}}
+\titre{}
+%%classe/groupe
+\def\classe#1{\def\@classe{#1}}
+\classe{}
+%%Annee scolaire
+\def\annee#1{\def\@annee{#1}}
+\annee{
+	\ifnum\month>8 % If month > August (September to December)
+		\the\year \ - \the\numexpr\year+1\relax % Current year
+	\else % If month <= August (January to August)
+		\the\numexpr\year-1\relax \ - \the\year % Previous year
+	\fi
+}
+
+% font
+% **********************
+\fontfamily{lmss}\selectfont
+\renewcommand{\labelitemi}{$\star$}
+\DeclareTextFontCommand{\myfont}{\fontfamily{lmss}\selectfont}
+
+% Numérotation des pages 
+% **********************
+\pagenumbering{arabic}
+\ifodd\thepage\else\thispagestyle{empty}\hbox{}\newpage\fi%si page paire ou impaire
+
+% Footer 
+% **********************
+\pagestyle{fancy}
+\fancyhf{}                       % on annule le fancy automatique
+\renewcommand\footrulewidth{1pt}
+
+\fancypagestyle{premierepage}{
+	\fancyhead{}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand\footrulewidth{1pt}
+}
+
+\fancyfoot[RE]{\myfont{\@classe\ --- \@annee}}
+\fancyfoot[RO]{\myfont{\thepage/\lastpageref{VeryLastPage}}   }
+
+\fancyfoot[LE]{\myfont{\thepage/\lastpageref{VeryLastPage}}   }
+\fancyfoot[LO]{\myfont{PE BAVIERE - Lycée J. Ferry}}
+
+% Header
+% ***************
+\fancyhead[L]{\myfont{Chapitre \@chapnumber}}
+\fancyhead[R]{\myfont{\@titre}} % \leftmark = chapitre courant
+
+\newcommand\entetegal{%
+	%
+	\begin{center}
+		\begin{tikzpicture}
+			\node[draw,very thick,font=\Huge\bfseries, text width=0.9\textwidth, align=flush center, inner xsep=0.5cm, inner ysep=0.7cm,rounded corners] (chap) at (0,0){
+				\textsc{\myfont{\@titre}}};
+			\node[fill=white,font=\Huge\bfseries, inner xsep=0.5cm, inner ysep=0] at (chap.north) {\myfont{Chapitre \@chapnumber}};
+		\end{tikzpicture}
+	\end{center}
+}
+
+% Commandes perso
+% ***************
+
+\input{commandes}
+
+% Titre, Sections et sous-sections
+% ********************************
+
+\makeatletter
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}. \hspace{-0.4cm}}
+\newcounter{sectionexo}
+\renewcommand\thesectionexo{\@arabic\c@sectionexo$\,$-$\,$}
+\newcommand\sectionexo{\@startsection{sectionexo}{3}{\z@}%
+	{3.75ex plus 1ex minus .2ex}
+	{1.25ex plus .2ex}
+	{\large\bfseries}}
+
+\newcommand*\l@sectionexo{\@dottedtocline{3}{5.2em}{1em}}
+\newcommand*{\sectionexomark}[1]{}
+\setcounter{secnumdepth}{4}
+\makeatother
+\allsectionsfont{\fontfamily{lmss}\selectfont\raggedright}
+\setcounter{section}{0}
+
+
+\AtBeginDocument{
+	\thispagestyle{premierepage}
+}
+
+\newcounter{pressol}
+\setcounter{pressol}{0}
+\newcounter{cexo}[sectionexo]
+\newcounter{cptsol}[cexo]
+\def\cbookexo{} % initially empty
+
+%%%%% copytofile modifie
+\makeatletter
+\def \@copytofile #1#2{%
+	\edef \cpy@endenv {#1}%
+	\begingroup
+	\edef \cpy@@filename{#2}%
+	\relax
+	\cpy@copytoend
+}
+
+% \@currenvir renvoie l environnement courant
+\newcommand{\copytofile}[2][\@currenvir]{\@copytofile{#1}{#2}}
+
+% imprime le contenu de cpy@write dans cpy@outchan
+\def \cpy@write #1{\immediate \write\tempfilesol {#1}}
+
+\def \un@inpenc@loop#1#2{%
+	\@tempcnta`#1\relax
+	\loop
+	\catcode\@tempcnta 12
+	\ifnum\@tempcnta<`#2\relax
+	\advance\@tempcnta\@ne
+	\repeat}
+
+
+%% To undo accents encodings, so as to be truely verbatim
+\def\uninputencoding {\@ifundefined {inputencoding}{\catcode `\^^A 12}{%
+		\un@inpenc@loop\^^A\^^H%
+		\un@inpenc@loop\^^K\^^K%
+		\un@inpenc@loop\^^N\^^_%
+		\un@inpenc@loop\^^?\^^ff%
+	}}
+
+% ferme le fichier et l environnement
+\def \cpy@next@end
+{
+	\endgroup
+	\csname end\cpy@endenv\endcsname
+	\expandafter \endgroup \ignorespaces}
+
+% compte l avancee dans cpy@dotest@begin
+\newcount \cpy@level
+
+\def \cpy@loop{%
+	\ifnum \cpy@level>0\relax
+		% imprime le contenu de cpy@arg
+		\cpy@write {\cpy@arg}%
+	\else
+		\let \cpy@next \cpy@next@end
+	\fi}
+
+\bgroup
+\catcode `\|=0 \catcode `\{=12 \catcode `\}=12
+\catcode `\[=1 \catcode `\]=2  \catcode`\\=12
+
+|gdef |cpy@dotest@begin#1\begin{#2}#3|END[%
+|def |@test [#1]|ifx |@test|empty
+|def |@env [#2]|ifx |@env |cpy@endenv
+|advance |cpy@level by 1|relax
+|fi
+|fi]
+|gdef |cpy@dotest@end#1\end{#2}#3|END[%
+|def |@test [#1]|ifx |@test|empty
+|def |@env [#2]|ifx |@env |cpy@endenv
+|advance |cpy@level by -1|relax
+|fi
+|fi]
+|gdef |cpy@testarg#1|END[%
+|cpy@dotest@begin#1|relax|relax\begin{|relax}|END%
+|cpy@dotest@end#1|relax|relax\end{|relax}|END%
+|cpy@loop
+]
+|egroup
+
+\def\cpy@copytoend
+{\uninputencoding
+	\let \do \@makeother \dospecials \obeylines
+	\cpy@level=1\relax\cpy@copy@first}
+{
+	\obeylines%
+	\gdef \cpy@copy#1
+	{\def\cpy@arg{#1}\cpy@testarg#1\END\cpy@next}%
+	\gdef \cpy@copy@first#1
+	{\def \@test{#1}\let \cpy@next \cpy@copy%
+		\ifx \@test \empty \else \def\cpy@arg{#1}\cpy@testarg#1\END\fi%
+		\cpy@next}%
+}
+\makeatother
+
+% Couleurs
+% **********
+\definecolor{darkWhite}{rgb}{0.94,0.94,0.94}
+\definecolor{myred}{rgb}{0.78,0,0}
+\definecolor{mygreen}{RGB}{25, 153, 72}
+\definecolor{myblue}{RGB}{52,126,174}
+\definecolor{mypurple}{rgb}{0.68,0.39,0.68}
+\definecolor{myorange}{RGB}{ 220, 159, 18 }
+\definecolor{mygray}{RGB}{ 210, 210, 210}
+\definecolor{mypink}{RGB}{ 204, 117, 200}
+
+% Environements
+% *************
+\input{environnements}
+\endinput
