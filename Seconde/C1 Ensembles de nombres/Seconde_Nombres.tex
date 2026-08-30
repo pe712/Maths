@@ -1,0 +1,865 @@
+\documentclass[10pt,a4paper,openany,twoside,prof]{book}
+
+\usepackage{layout_cours}
+\usepackage{hyperref}
+
+\setlist{leftmargin=5mm}
+
+\begin{document}
+	\chapnumber{1} % numéro du chapitre
+	\titre{Ensemble de nombres} % titre du chapitre
+	\classe{Seconde} % classe
+	\entetegal
+
+	% Debut du texte
+	% **************
+
+	\vspace{-7mm}
+	\paragraph*{Objectif du chapitre :}
+	\begin{itemize}  
+		\vspace{-2mm}
+		\setlength\itemsep{-1mm}
+		\item Connaître et comprendre les ensembles de nombres $\N$, $\Z$, $\D$, $\Q$, $\R$.
+		\item Maitriser des automatismes de calcul littéral
+	\end{itemize}
+	\vspace{-7mm}
+
+	\vspace{1cm}
+
+	\begin{minipage}{0.4 \linewidth}
+	\begin{center}
+	\begin{tikzpicture}[scale=0.4]
+		\draw (0.5,0) circle (1);
+		\node at (0.5,0) {$\N$};
+		\draw (1,0) circle (2);
+		\node at (2,0) {$\Z$};
+		\draw (1.5,0) circle (3);
+		\node at (3.5,0) {$\D$};    
+		\draw (2,0) circle (4);
+		\node at (5,0) {$\Q$};
+		\draw (2.5,0) circle (5);    
+		\node at (7,0) {$\R$};
+	\end{tikzpicture}
+	\end{center}
+	\end{minipage}
+	\begin{minipage}{0.4 \linewidth}
+		\begin{tikzpicture}[scale=1]
+		\draw[->] (-2,0) -- (5,0);
+		\draw (-1, -0.1) -- (-1, 0.2);
+		\draw (0, -0.1) -- (0, 0.2);
+		\draw (1, -0.1) -- (1, 0.2);
+		\draw (2, -0.1) -- (2, 0.2);
+		\draw (3, -0.1) -- (3, 0.2);
+		\draw (4, -0.1) -- (4, 0.2);
+		\draw (1.2, -0.1) -- (1.2, 0.2);
+		\draw (3.14, -0.1) -- (3.14, 0.2);
+		\draw (0.666, -0.1) -- (0.666, 0.2);
+		\node [below] at (-1,0) {-1};
+		\node [below] at (4,0) {4};
+		\node [below] at (2,0) {2};
+		\node [below] at (0,0) {0};
+		\node [below, red, thick] at (3.14,0) {$\pi$};
+		\node [below, red, thick] at (1.2,0) {$1.2$};
+		\node [below, red, thick] at (0.666,0) {$\frac{2}{3}$};
+	\end{tikzpicture}
+	\end{minipage}
+
+	\section{Les entiers et la divisibilité}
+
+\begin{defi}{Entier naturel}{}
+ Les \bf{entiers naturels} se construisent à partir de zéro et en ajoutant un pour obtenir le nombre suivant.
+
+ On note $\N$ l'ensemble de ces nombres. Donc $$\mathbb{N}=\{ 0,\ 1,\ 2,\ 3,\ \dots \}$$
+\end{defi}
+
+\begin{rems}{}{}
+\begin{itemize}
+\item La notation $\mathbb{N}$ représente la première lettre de naturel.
+\item Ce sont des nombres positifs. On dit que zéro est l'élément neutre.
+\item Parmi les mathématiciens qui ont marqué l'étude de l'ensemble des entiers naturels : 
+
+Hermann Günther Grassmann (XIX$^e$ siècle), Giuseppe Peano (fin XIX$^e$ siècle).
+\end{itemize}
+\end{rems}
+
+\begin{defi}{Entier relatif}{}
+ Les \bf{entiers relatifs} se construisent à partir de zéro et en ajoutant un ou en retirant un pour obtenir le nombre suivant.
+
+ On note $\Z$ l'ensemble de ces nombres. Donc $$\mathbb{Z}=\{ \dots ,\ -3,\ -2,\ -1,\ 0,\ 1,\ 2,\ 3,\ \dots \}$$
+\end{defi}
+
+\begin{rems}
+	\begin{itemize}
+		\item 
+		On peut aussi construire les entiers relatifs en prenant les entiers naturels et leurs opposés.
+		\item La notation $\Z$ provient de la première lettre de \textit{zhalen} qui signifie nombres en allemand.
+	\end{itemize}
+\end{rems}
+
+\subsection{Divisibilité}
+
+\begin{defi}{Divisibilité}{}
+Un nombre entier $a\in\Z$ est \bf{divisible} par un nombre entier $b\in\Z$ s'il existe un nombre entier $k\in\Z$ tel que : $a=k\times b$.
+
+On dit que :
+\begin{itemize}
+	\item $k$ est le \bf{facteur multiplicatif}
+	\item $a$ est un \bf{multiple} de $b$
+	\item $b$ est un \bf{diviseur} de $a$
+\end{itemize}
+\end{defi}
+
+\begin{ex}{}{}
+$72$ est divisible par $24$ car $72 = 3\times 24$
+
+ On peut donc dire que $72$ est un multiple de $24$ et de $3$ ou que $24$ est un diviseur de $72$.
+\end{ex}
+
+\begin{rem}
+	$72$ est également divisble par $8$, $9$ et même par $-3$.
+\end{rem}
+
+\begin{defi}{Parité}{}
+Un entier multiple de deux est un entier \bf{pair}, les autres sont les entiers \bf{impairs}.
+\end{defi}
+
+\begin{prop}{}{}
+Si $a\in\Z$ est pair, si et seulement s'il existe $k\in\Z$ tel que $a=2k$.
+
+Si $a\in\Z$ est impair, si et seulement s'il existe $k\in\Z$ tel que $a=2k+1$.
+\end{prop}
+
+\begin{ex}{}{}
+$72$ est un multiple de $2$. En effet, $2\times 36 = 72$. Donc 72 est un entier pair.
+\end{ex}
+
+\begin{prop}{}{}
+Soit $a\in\Z$ un entier, la somme de deux multiples de $a$ est multiple de $a$.
+\end{prop}
+
+\begin{deme}{}{}
+Soit $a\in\N$. Soient $b, c\in\N$ des multiples de $a$.
+
+Il existe $k\in\N$ et $k'\in\N$ deux entiers tel que :
+$$ b =k\times a  \quad \text{ et } \quad c = k' \times a$$
+
+Par addition, on a :
+$$ b + c = k\times a  + k' \times a $$
+
+En factorisant par $a$, il vient : 
+$$ b + c = (k  + k') \times a $$
+
+Donc $b+c$ est un multiple de $a$.
+\end{deme}
+
+\begin{prop}{}{}
+Le carré d'un nombre impair est impair.
+\end{prop}
+
+\begin{deme}{}{}
+Soit $a\in\N$ un nombre impair. Il existe $k\in\N$ tel que :
+$$ a =2\times k+1 $$
+
+Par multiplication, on a :
+$$ a^2 = \left(2\times k+1 \right)^2 = (2\times k)^2 + 2 \times 2k \times 1 + 1^2 = 4k^2 + 4k +1 = 2(2k^2+2k)+1$$
+
+Donc $a^2$ est un nombre impair. 
+\end{deme}
+
+\begin{prop}{}{}
+\begin{itemize}
+\item  Un nombre est divisible par $2$ si il se termine par $0$, $2$, $4$, $6$ ou $8$
+\item  Un nombre est divisible par $5$ s'il se termine par $0$ ou $5$.
+
+\item  Un nombre est divisible par $3$ si la somme de ses chiffres est divisible par $3$.
+
+Exemple : $249$ est divisible par $3$ car $2 + 4 + 9 = 15$ qui est divisible par $3$ ($3 \times 5 = 15$).
+
+\item  Un nombre est divisible par $9$ si la somme de ses chiffres est divisible par $9$.
+
+Exemple : $2 538$ est divisible par $9$ car $2 + 5 + 3 + 8 = 18$ qui est divisible par $9$ ($3 \times 9 = 18$).
+\end{itemize}
+\end{prop}
+
+\subsection{Nombres premiers}
+\begin{defi}{Nombre premier}{}
+Un entier naturel $n\in\N$ qui a exactement deux diviseurs distincts (à savoir $1$ et $n$) est appelé un \bf{nombre premier}. 
+\end{defi}
+
+\begin{rems}{}{}
+	\begin{itemize}
+		\item Attention, $1$ n'est pas un nombre premier !
+		\item 
+		Trouver des grands nombres premiers est un problème difficile. Les nombres premiers sont indispensables en cryptographie, par exemple pour assurer la sécurité d'un paiement bancaire.
+	\end{itemize}
+\end{rems}
+
+\begin{theo}{fondamental de l'arithmétique}{}
+	Soit $a\in\N$ un entier naturel. Il existe un entier $n\in\N$ et des diviseurs tous premiers $d_1, d_2, d_3, ... d_n$ tels que :
+	$$a=d1\times d2 \times d_3 \times ...\times d_n$$
+
+	On appelle cette écriture une décomposition en nombres premiers.
+\end{theo}
+
+
+\begin{methode}{Déterminer une décomposition en nombres premiers}{}
+	On cherche à décomposer le nombre entier $a\in\N$. :
+	\begin{enumerate}
+		\item On cherche un diviseur $d$ en testant les petits nombres premiers $2,3,5,7,11,13,15,17,19$.
+		\item On écrit alors $a=k\times d$.
+		\item Si $k$ est premier alors on a fini. Sinon, on retourne à l'étape 1 en décomposant $k$ cette fois.
+	\end{enumerate}
+\end{methode}
+
+\begin{ex}{}{}
+	Prenons par exemple $105$. On remarque que $105$ est divisible par $3$. On a $105 = 35\times3$. Donc on continue avec $35$.
+	
+	On sait que $35$ est divisble par $5$, c'est $5\times7$. Enfin 	$7$ est lui-même premier. Donc on a obtenu la décomposition :
+	$105=35\times3 = (5\times7)\times3 = 3\times5\times7$
+\end{ex}
+
+\begin{methode}{Crible d'Erathosthène}{}
+La méthode du crible d'Ératosthène permet de dresser la liste des nombres premiers inférieurs ou égaux à $n$. 
+
+Nous prendrons l'exemple $n=100$:
+
+\begin{minipage}{.6\textwidth}
+  \begin{tabular}{|*{10}{c|}}
+\hline
+ & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\
+\hline
+11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20\\
+\hline
+21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30\\
+\hline
+31 & 32 & 33 & 34 & 35 & 36 & 37 & 38 & 39 & 40\\
+\hline
+41 & 42 & 43 & 44 & 45 & 46 & 47 & 48 & 49 & 50\\
+\hline
+51 & 52 & 53 & 54 & 55 & 56 & 57 & 58 & 59 & 60\\
+\hline
+61 & 62 & 63 & 64 & 65 & 66 & 67 & 68 & 69 & 70\\
+\hline
+71 & 72 & 73 & 74 & 75 & 76 & 77 & 78 & 79 & 80\\
+\hline
+81 & 82 & 83 & 84 & 85 & 86 & 87 & 88 & 89 & 90\\
+\hline
+91 & 92 & 93 & 94 & 95 & 96 & 97 & 98 & 99 & 100 \\
+\hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}{.4\textwidth}
+\begin{itemize}
+  \item Écrire la liste des entiers de $2$ à $n$.
+  \item Éliminer les multiples de $2$, puis de $3$, etc., jusqu'à $\sqrt{n}$.
+  \item Les entiers non éliminés sont premiers.
+\end{itemize}
+\end{minipage}
+
+\end{methode}
+
+\newpage
+
+ 
+\section{TODO Les nombres rationnels : $\mathbb{Q}$}
+\url{https://www.maths-et-tiques.fr/index.php/histoire-des-maths/nombres/les-irrationnels}
+
+\begin{defi}{}{}
+Une fraction est un nombre qui peut s'écrire comme le quotient d'un entier (relatif) par un autre entier (relatif non nul).
+\end{defi}
+\medskip
+
+ Au lycée et ultérieurement on utilise que la notation fractionnaire $\left(\dfrac{1}{3}\right)$ pour la division et plus le $\div$ $(1 \div 3)$.
+\medskip
+
+\begin{rem}{}{}
+\begin{itemize}
+\item Il existe des nombres qui ne peuvent pas s'écrire sous forme de fractions: $\sqrt{2}$, $\pi$ (admis).
+\item Rappelons une règle de priorité opératoire: dans une fraction la division correspondant à la fraction est la dernière opération effectuée.
+\item La manipulation des fractions nécessite de connaître les règles :
+
+\begin{minipage}{7cm}
+\begin{center}
+ d'addition (réduire au même dénominateur),
+ \end{center} \[  \frac{a}{b}+\frac{x}{y}=\frac{ay+xb}{by} \] \end{minipage}
+\vline
+\begin{minipage}{5cm}
+\begin{center}
+ de multiplication,
+ \end{center} \[  \frac{a}{b}\times \frac{x}{y}=\frac{a \times x}{b \times y} \] 
+\end{minipage}
+\vline
+\begin{minipage}{4cm}
+\begin{center}
+de division 
+\end{center}\[  \frac{ \frac{a}{b} }{ \frac{x}{y}}=\frac{a}{b}\times \frac{y}{x}. \] 
+\end{minipage}
+
+\medskip
+Rappelons encore que pour simplifier une fraction il faut qu'il y ait un facteur \\commun au numérateur et au dénominateur: \[  \frac{a\times {\color{orange}x}}{b\times {\color{orange}x}}=\frac{a}{b} \]
+\item Une astuce d'écriture qui nous sera souvent utile \[ \frac{a}{b}=\frac{1}{b}\times a \]
+\end{itemize}
+\end{rem}
+
+\begin{prop}{}{}
+ Les règles de priorités pour l'instant se limitent à:
+\begin{itemize}
+\item Les calculs entre parenthèses ou crochets. S'il y a des parenthèses emboîtées les plus emboîtées sont prioritaires. La barre de fraction joue le même rôle que des parenthèses autour des numérateurs et dénominateurs.
+\item Les exposants (puissances)
+\item Les multiplications et division ($\div$) en allant de gauche à droite.
+\item Les additions et soustractions en allant de gauche à droite.
+\end{itemize}
+\end{prop}	
+
+\vspace{-2mm}
+\vspace{-2mm}
+\begin{defi}{}{}
+Les nombres rationnels sont les nombres qui peuvent s'écrire sous forme de fraction. 
+
+ L'ensemble de tous les nombres rationnels est noté: $\mathbb{Q}$.
+\end{defi}
+
+\begin{rem}{}{}
+\begin{itemize}
+%\item  Un entier est un nombre rationnel. Par exemple: $-13=\dfrac{-13}{1}$.
+%\item  Les nombres décimaux peuvent s'écrire comme des fractions donc ce sont des nombres rationnels. \\ Ainsi: $0,1=\dfrac{1}{10}$.
+\item  Il existe des nombres qui ne sont pas décimaux et qui sont rationnels. \\ Ainsi $\dfrac{1}{3}$ est un nombre rationnel mais son écriture décimale est infinie donc ce n'est un nombre décimal.
+\begin{deme}{}{}
+Proposition à démontrer :  $\dfrac{1}{3}$ n'est pas décimal.
+
+\medskip
+On va démontrer cette proposition par l'absurde :
+
+ Supposons que $\dfrac{1}{3}$ soit décimal. Alors il est de la forme $\dfrac{a}{10^n}$, $a$ appartenant à $\Z$ et $n$ à $\N$.
+
+ On en déduit que : 
+\begin{align*}
+\dfrac{1}{3} = \dfrac{a}{10^n} \quad \Longleftrightarrow \quad
+\dfrac{1}{3} { \times 3}= \dfrac{a}{10^n}{ \times 3}\quad \Longleftrightarrow \quad
+1 = \dfrac{3a}{10^n}\quad \Longleftrightarrow \quad
+1 { \times 10^n}= \dfrac{3a}{10^n}{ \times 10^n}\quad \Longleftrightarrow \quad
+10^n = 3 \times a
+\end{align*}
+
+ Alors l'une des puissances de 10 serait un multiple de 3. 
+
+ C'est faux d'après les critères de divisibilité (et sans même avoir à poser la division décimale).
+
+ Donc $\dfrac{1}{3}$ n'est pas décimal.
+\end{deme}
+\item  Tous les nombres ne sont pas rationnels.
+\item  Lorsqu'un nombre rationnel a une écriture décimale infinie on préfère son écriture fractionnaire.
+\item  Un nombre rationnel admet une écriture fractionnaire canonique appelée la forme irréductible qui est obtenue lorsque le PGCD des numérateur et dénominateur est 1 (ils n'ont pas de facteur commun).
+	
+Certaines calculatrices donnent la forme irréductible.
+\end{itemize}
+\end{rem}
+
+\begin{prop}{}{}
+Lorsqu'un nombre a une écriture décimale infinie périodique c'est un nombre rationnel.
+\end{prop}
+
+\begin{rem}{}{}
+On dit que l'écriture est périodique lorsqu'une série de chiffre se reproduit indéfiniment.
+\end{rem}
+
+\begin{ex}{}{}
+\begin{itemize}
+	\item  $0,333\dots$ est rationnel, en effet c'est l'écriture décimal de la fraction $\dfrac{1}{3}$
+	\item  $45,78242424\dots$ est aussi rationnel, bien que sa forme fractionnaire sois plus dur à déterminer
+\end{itemize}
+\end{ex}
+
+\section{Les nombres décimaux : $\mathbb{D}$}
+
+\vspace{-2mm}
+\begin{defi}{}{}
+Un nombre est décimal si et seulement si il admet un développement décimal limité, c'est-à-dire si et seulement si il possède une écriture avec un nombre fini de chiffres après la virgule.
+
+ L'ensemble des nombres décimaux est noté $\mathbb{D}$. 
+\end{defi}
+
+\begin{rem}{}{}
+\begin{itemize}
+\item  Lorsqu'un nombre, dans son écriture décimale, n'a que des zéros à partir d'un certain nombre de décimales alors on dit que c'est un nombre décimal. 
+
+Ainsi: $\np{2315,895643}= \np{2315,895643000}\dots$ est un nombre décimal.
+	
+Tous les nombres décimaux peuvent s'écrire sous forme de fraction: $\np{2315,895643}=\dfrac{\np{2315895643}}{\np{1000000}}$.
+\item  Plus généralement, les nombres décimaux peuvent s'écrire comme quotient d'un entier relatif par une puissance d'exposant positif de 10 :
+
+Un nombre est décimal s'il peut s'écrire $\dfrac{a}{10^n}$, $a$ appartenant à $\Z$ et $n$ à $\N$
+\end{itemize}
+\end{rem}
+
+\bigbreak
+Avec les définition ci-dessus, on observe plusieurs manières d'écrire un nombre :
+
+\begin{itemize}
+\item \textbf{l'écriture décimale} : La partie décimale compte un nombre fini de chiffres non nuls.
+
+Par exemple, $237,698$ qui a pour partie entière $237$ et pour partie décimale $698$
+
+\item \textbf{écriture scientifique} : C'est l'écriture sous forme du produit d'un nombre décimal ayant un seul chiffre non nul avant la virgule et d'une puissance de 10 (d'exposant entier relatif) 
+
+Par exemple, $38 = 3,8 \times 10^1$ \hspace{0.8cm} ou \hspace{0.8cm} $0,0562 = 5,62 \times 10^{-2}$ \hspace{0.8cm}ou  encore \hspace{0.8cm} $-97631 = - 9,7631 \times 10^{4}$
+\end{itemize}
+
+
+\section{Racine carrée d'un nombre}
+
+\begin{defi}{}{}
+$\sqrt{a}$ est le nombre positif qui a pour carré $a$.
+\end{defi}
+
+\medskip
+ $a$ est un carré, donc un nombre positif ; 
+
+ ainsi $\sqrt{-5}$ n'existe pas.
+\medskip
+
+ Quelques valeurs exactes à connaître :
+
+\vspace{-15mm}
+\begin{flushright}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}\hline
+$a$&0&1&4&9&16&25&36&49&64&81&100\\\hline
+$\sqrt{a}$&0&1&2&3&4&5&6&7&8&9&10\\\hline
+\end{tabular}
+\end{flushright}
+
+\vspace{-6mm}
+\begin{rem}{}{}
+Tous les nombres $a$ figurant dans ce tableau sont des carrés parfaits. Plus généralement, on appellera carré parfait les nombres dont la racine carrée est un entier.
+
+\medskip
+ Mais une racine carrée ne peut pas toujours s'écrire sous forme d'un entier, d'un décimal ou d'une fraction.
+
+ Par exemple, la seule écriture exacte de la racine carrée de 2 est $\sqrt{2}$. On dit que $\sqrt{2}$ est irrationnel.
+\end{rem}
+
+\begin{deme}{}{}
+Proposition à démontrer :  $\sqrt{2}$ est irrationnel .
+
+\medskip
+On va démontrer cette proposition par l'absurde.
+
+\smallskip
+ Supposons que $\sqrt{2}$ soit rationnel. Alors $\sqrt{2}$ est de la forme $\frac{a}{b}$, $a$ et $b$ deux entiers positifs et premiers entre eux. (la fraction $\frac{a}{b}$ ne peut plus être simplifiée)
+
+ On en déduit que : 
+$$\sqrt{2} = \dfrac{a}{b}\quad \Longleftrightarrow \quad
+\sqrt{2} { \times b}= \dfrac{a}{b}{ \times b}\quad \Longleftrightarrow \quad
+\sqrt{2} \times b = a\quad \Longleftrightarrow \quad
+\left( \sqrt{2}\times b \right) {^2} =  a {^2}\quad \Longleftrightarrow \quad
+\sqrt{2}^2 \times \left( b \right)^2 = a^2\quad \Longleftrightarrow \quad
+2 \times b^{2} = a^2 $$
+Puisque $a^2$ est pair, $a$ est pair donc $a=2p$ avec $p$ un entier positif
+$$2 \times b^{2} = (2p)^2\quad \Longleftrightarrow \quad
+2 \times b^{2} = 4p^2\quad \Longleftrightarrow \quad
+b^{2} = 2p^2$$
+
+ On en déduit que $b^2$ est pair donc que $b$ est pair.
+
+\medskip
+ Par conséquent, il est possible de simplifier la fraction $\frac{a}{b}$ par $2$, ce qui contredit l'hypothèse que $a$, $b$ sont premiers entre eux. 
+
+\medskip
+ Puisque l'hypothèse  $\sqrt{2}$ est rationnel  ~~ conduit à une contradiction, c'est le contraire qui est vrai, à savoir : 
+
+ $\sqrt{2}$ est irrationnel .
+\end{deme}
+
+\begin{prop}{}{}
+Si $a$ et $b$ sont deux entiers naturels, alors $\sqrt{a} \times \sqrt{b} = \sqrt{a\times b}$
+\end{prop}
+
+\medskip
+\begin{deme}{}{}
+Proposition à démontrer : $\sqrt{a} \times \sqrt{b} = \sqrt{a\times b}$
+
+\begin{center}
+$\sqrt{a\times b} ^2 \quad = \quad a\times b \quad = \quad \sqrt{a}^2 \times \sqrt{b}^2 \quad = \quad \left( \sqrt{a} \times \sqrt{b} \right) ^2 $
+\end{center}
+
+$\sqrt{a\times b}$ \quad et \quad $\sqrt{a} \times \sqrt{b}$ \quad étant positif, on peut en conclure que :
+\[\sqrt{a} \times \sqrt{b} = \sqrt{a\times b}\]
+
+\vspace{-8mm}
+
+\end{deme}
+
+\begin{methode}{}{}
+Regroupements et simplifications d'écritures :
+
+\begin{itemize}
+\item  on cherche à décomposer le nombre qui est sous le radical en un produit dont l'un des facteurs est un carré.
+\begin{itemize}
+\item[-]$\sqrt{20} = \sqrt{4\times 5} = \sqrt{4} \times \sqrt{5} = 2\sqrt{5}$
+\item[-]$\sqrt{32} = \sqrt{16\times 2} = \sqrt{16} \times \sqrt{2} = 4\sqrt{2}$
+\item[-]$\sqrt{108} = \sqrt{36\times 3} = \sqrt{36} \times \sqrt{3} = 6\sqrt{3}$
+\end{itemize}
+\item dans un produit on cherche à associer les racines carrées d'un même nombre :
+\begin{itemize}
+\item[-]$\sqrt{2}\times \sqrt{14} = \sqrt{2}\times \sqrt{2\times 7} = \sqrt{2}\times \sqrt{2}\times \sqrt{7} = \left(\sqrt{2}\right)^2 \times \sqrt{7} = 2 \sqrt{7}$
+\item[-]$\sqrt{3}\times \sqrt{30} \times \sqrt{5}= \sqrt{3}\times \sqrt{3\times 5\times 2} \times \sqrt{5}= \sqrt{3}\times \sqrt{3}\times \sqrt{5} \times \sqrt{5}\times \sqrt{2}= \left(\sqrt{3}\right)^2 \times \left(\sqrt{5}\right)^2 \times \sqrt{2} = 3 \times 5 \times \sqrt{2} = 15\sqrt{2}$
+\end{itemize}
+\item on cherche à réduire les sommes en mettant les racines identiques en facteur :
+\begin{itemize}
+\item[-]$3\sqrt{2}+5\sqrt{2} = (3+5)\times \sqrt{2} = 8\sqrt{2}$
+\item[-]$3\sqrt{7}-2\sqrt{7} +\sqrt{7}= (3-2+1)\times \sqrt{7} = 2\sqrt{7}$
+\end{itemize}
+\end{itemize}
+Ces calculs ont pour but d'obtenir un résultat dont l'écriture est la plus simple possible.
+\end{methode}
+
+%\begin{ex}{}{}
+%$\sqrt{3} \times \sqrt{2} = \sqrt{3\times 2} = \sqrt{6} $
+%\end{ex}
+
+
+\begin{rem}{}{}
+\begin{itemize}
+\item Ce résultat se généralise à tous les nombres positifs et pas uniquement aux entiers.
+\item Si de plus $b \ne 0$, alors de même: 
+
+\vspace{-7mm}
+\[ \frac{\sqrt{a}}{\sqrt{b}}=\sqrt{\frac{a}{b}}. \]
+\item Attention : en général $\sqrt{a} + \sqrt{b}$ N'EST PAS ÉGAL à $\sqrt{a + b}$
+\quad($\sqrt{9} + \sqrt{16}= 3 + 4 = 7$ ; mais $\sqrt{9 + 16} = \sqrt{25} = 5$ )
+\end{itemize}
+\end{rem}
+
+
+\begin{prop}{}{}[Inégalité triangulaire]
+Pour tout nombre strictement positif $a$ et $b$,  $\sqrt{a + b} < \sqrt{a} + \sqrt{b}$
+\end{prop}
+
+\begin{deme}{}{}
+Proposition à démontrer : $\sqrt{a + b} < \sqrt{a} + \sqrt{b}$
+\begin{align*}
+\left( \sqrt{a} + \sqrt{b} \right) ^2 \quad = \quad \left( \sqrt{a} + \sqrt{b} \right) \times \left( \sqrt{a} + \sqrt{b} \right) \quad &= \quad \sqrt{a}^2 + \sqrt{a}\sqrt{b} + \sqrt{b}\sqrt{a} + \sqrt{b}^2 \\
+&> \sqrt{a}^2 + \sqrt{b}^2 \quad = \quad \quad a+b \quad = \quad \sqrt{a+b} ^2 
+\end{align*}
+$\sqrt{a+b}$ et $\sqrt{a} + \sqrt{b}$ étant positif, on peut en conclure que :
+$\sqrt{a + b} < \sqrt{a} + \sqrt{b}$
+\end{deme}
+
+\vspace{-3mm}
+\section{Les nombres réels : $\mathbb{R}$}
+
+\vspace{-3mm}
+\begin{defi}{}{}
+L'ensemble des nombres réels est l'ensemble de tous les nombres que nous utiliserons en classe de seconde.
+
+ L'ensemble des nombres réels est noté : $\mathbb{R}$.
+\end{defi}
+
+\medskip
+L'ensemble des nombres réels peut être représenté, schématisé par une droite. 
+
+\begin{center}
+\begin{tikzpicture}[scale=0.4]
+\def\xY{-5};
+\def\yY{-1};
+\def\xZ{20};
+\def\yZ{1};
+\coordinate (Y) at (\xY,\yY);
+\coordinate (Z) at (\xZ,\yZ);
+\draw[step=0.5cm, lightgray, very thin] (Y) grid (Z);
+\draw[step=1cm, gray,thin] (Y) grid (Z);
+\draw[ ->,line width=1.7pt,red] (\xY, 0) -- (\xZ, 0);
+\foreach \x in {0,1}	\draw[very thick](\x,0.2cm)--(\x,-0.2cm) node[below,fill=white]{\footnotesize \x};
+\end{tikzpicture}
+\end{center}
+
+\vspace{-3mm}
+De même qu'en géométrie on s'intéresse à des morceaux de la droite, nous allons nous intéresser à des morceaux de l'ensemble des réels.
+	
+ De façon plus terre à terre, dans la réalité (mathématiques appliquées) ou dans certaines situations ($\sqrt{x}$ et d'autres fonctions) nous seront amenés à utiliser des morceaux de l'ensemble des réels : des intervalles.
+
+\begin{defi}{}{}
+Un intervalle est un sous-ensemble (une partie) "sans trous" de l'ensemble des nombres réels $\mathbb{R}$.
+\end{defi}
+
+\subsection{Intervalles bornés}
+
+Les intervalles bornés sont les ensembles qui contiennent tous les réels qui sont compris entre deux bornes (limites).
+
+\begin{ex}{}{}
+
+L'intervalle $[-2\ ;\ 13]$ (lisez  fermé en $-2$ et fermé en $13$) désigne l'ensemble des nombres réels $x$ compris entre $-2$ et $13$. Ce sont donc tous les nombres $x$ qui vérifient $ -2\leqslant x \leqslant 13 $
+
+ L'ensemble des nombres réels est représenté par une droite et l'intervalle $[-2\ ;\ 13]$ est alors représenté par un segment.
+
+\vspace{-3mm}
+\begin{center}
+\begin{tikzpicture}[scale=0.4]
+\def\xY{-5};
+\def\yY{-1.5};
+\def\xZ{20};
+\def\yZ{1.5};
+\coordinate (Y) at (\xY,\yY);
+	\coordinate (Z) at (\xZ,\yZ);
+	\draw[step=0.5cm, lightgray, very thin] (Y) grid (Z);
+	\draw[step=1cm, gray,thin] (Y) grid (Z);
+	\draw[ ->,thick] (\xY, 0) -- (\xZ, 0) node[below left]{$x$};
+	\foreach \x in {0,1}	\draw[very thick](\x,0.2cm)--(\x,-0.2cm) node[below,fill=white]{\footnotesize \x};
+	\def\xbornea{-2};
+	\def\orientationa{1};
+	\draw[line width=1.7pt,red] ({\xbornea+0.5*\orientationa},1)--(\xbornea,1)--(\xbornea,-1)--({\xbornea+0.5*\orientationa},-1);
+	\draw(\xbornea+0.5,-1.5)node{\xbornea};
+	\def\xborneb{13};
+	\def\orientationb{1};
+	\draw[line width=1.7pt,red] ({\xborneb-0.5*\orientationb},1)--(\xborneb,1)--(\xborneb,-1)--({\xborneb-0.5*\orientationb},-1);
+	\draw(\xborneb-0.5,-1.5)node{\xborneb};
+	\draw[line width=1.7pt,red](\xbornea,0)--(\xborneb,0);
+	\end{tikzpicture}
+	\end{center}
+\end{ex}
+
+Il arrive souvent qu'en cherchant à optimiser la taille des intervalles, il faille exclure les valeurs aux bornes. Ainsi pour désigner l'ensemble de tous les nombres compris entre $-2$ et $13$ mais pas $-2$ nous noterons: $]-2\ ;\ 13]$ (lisez  ouvert en $-2$ et fermé en $13$). 
+
+ Ce qui correspond à tous les nombres $x$ qui vérifient l'encadrement $ -2< x \leqslant 13$
+
+	\begin{center}
+	\begin{tikzpicture}[scale=0.4]
+	\def\xY{-5};
+	\def\yY{-2};
+	\def\xZ{20};
+	\def\yZ{1.5};
+	\coordinate (Y) at (\xY,\yY);
+	\coordinate (Z) at (\xZ,\yZ);
+	\draw[step=0.5cm, lightgray, very thin] (Y) grid (Z);
+	\draw[step=1cm, gray,thin] (Y) grid (Z);
+	\draw[ ->,thick] (\xY, 0) -- (\xZ, 0) node[below left]{$x$};
+	\foreach \x in {0,1}	\draw[very thick](\x,0.2cm)--(\x,-0.2cm) node[below,fill=white]{\footnotesize \x};
+	\def\xbornea{-2};
+	\def\orientationa{-1};
+	\draw[line width=1.7pt,blue] ({\xbornea+0.5*\orientationa},1)--(\xbornea,1)--(\xbornea,-1)--({\xbornea+0.5*\orientationa},-1);
+	\draw(\xbornea+0.5,-1.5)node{\xbornea};
+	\def\xborneb{13};
+	\def\orientationb{1};
+	\draw[line width=1.7pt,blue] ({\xborneb-0.5*\orientationb},1)--(\xborneb,1)--(\xborneb,-1)--({\xborneb-0.5*\orientationb},-1);
+	\draw(\xborneb-0.5,-1.5)node{\xborneb};
+	\draw[line width=1.7pt,blue](\xbornea,0)--(\xborneb,0);
+	\end{tikzpicture}
+	\end{center}
+
+
+\begin{rem}{}{}
+\begin{itemize}
+\item Pour dire qu'un nombre $a$ est compris entre 3 et 4 nous écrirons: $a \in [3,4]$ et nous dirons que $x$ appartient à l'intervalle $[3;4]$.
+\item Les bornes d'un intervalle sont toujours écrites dans l'ordre croissant.
+\item L'ensemble vide, $\emptyset$, qui ne contient aucun élément est considéré comme un intervalle.
+\end{itemize}
+\end{rem}
+
+\subsection{Intervalles non bornés}
+
+Les intervalles non bornés sont les intervalles qui contiennent tous les nombres plus grands ou plus petits qu'un nombre fixé.
+
+\begin{ex}{}{}
+
+L'intervalle $[-2\ ;\ +\infty [$ (lisez  fermé en $-2$ , plus l'infini) désigne l'ensemble des nombres réels $x$ supérieurs (ou égaux) à $-2$. Ce sont donc tous les nombres $x$ qui vérifient $ -2\leqslant x $
+
+ L'intervalle $[-2\ ;\ +\infty [$ est alors représenté par une demi-droite.
+
+	\begin{center}
+	\begin{tikzpicture}[scale=0.4]
+	\def\xY{-5};
+	\def\yY{-2};
+	\def\xZ{20};
+	\def\yZ{1.5};
+	\coordinate (Y) at (\xY,\yY);
+	\coordinate (Z) at (\xZ,\yZ);
+	\draw[step=0.5cm, lightgray, very thin] (Y) grid (Z);
+	\draw[step=1cm, gray,thin] (Y) grid (Z);
+	\draw[ ->,thick] (\xY, 0) -- (\xZ, 0) node[below left]{$x$};
+	\foreach \x in {0,1}	\draw[very thick](\x,0.2cm)--(\x,-0.2cm) node[below,fill=white]{\footnotesize \x};
+	\def\xbornea{-2};
+	\def\orientationa{1};
+	\draw[line width=1.7pt,red] ({\xbornea+0.5*\orientationa},1)--(\xbornea,1)--(\xbornea,-1)--({\xbornea+0.5*\orientationa},-1);
+	\draw(\xbornea+0.5,-1.5)node{\xbornea};
+	\def\xborneb{\xZ};
+	\def\orientationb{1};
+	\draw[line width=1.7pt,red](\xbornea,0)--(\xborneb,0);
+	\end{tikzpicture}
+	\end{center}
+\end{ex}
+
+
+\begin{rem}{}{}
+Le symbole $\infty$ n'est pas un nombre réel. C'est pourquoi le crochet est toujours ouvert du côté de ce symbole.
+\end{rem}
+
+\section{Distance entre deux nombres réels}
+
+\subsection{Notation $|a|$, $a \in \R$}
+
+\begin{defi}{}{}
+Soit $a$ un nombre réel.
+
+ On appelle valeur absolue de $a$, notée $|a|$, la distance entre $a$ et $0$
+\end{defi}
+
+\smallskip
+\begin{ex}{}{}
+Essayons de déterminer $|-12|$.\medskip 
+
+ On sait d'après la définition précédente que $|-12|$ est la \\distance entre $0$ et $-12$. On représente la droite des réels, \\puis (en rouge) la distance entre $0$ et $-12$ :
+
+\vspace{-15mm}
+\begin{flushright}
+\begin{tikzpicture}[scale=0.4]
+\def\xY{-15};
+\def\yY{-1.5};
+\def\xZ{5};
+\def\yZ{1};
+\coordinate (Y) at (\xY,\yY);
+\coordinate (Z) at (\xZ,\yZ);
+\draw[step=0.5cm, lightgray, very thin] (Y) grid (Z);
+\draw[step=1cm, gray,thin] (Y) grid (Z);
+\draw[ ->,thick] (\xY, 0) -- (\xZ, 0) node[below left]{$x$};
+\foreach \x in {0,1}	\draw[very thick](\x,0.2cm)--(\x,-0.2cm) node[below,fill=white]{\footnotesize \x};
+\def\xbornea{-12};
+\def\orientationa{1};
+\draw(\xbornea,-1)node[fill=white]{\xbornea};
+\def\xborneb{0};
+\def\orientationb{1};
+\draw[line width=2pt,red](\xbornea,0)--(\xborneb,0);
+\end{tikzpicture}
+\end{flushright}
+
+ On remarque que, bien que $-12$ soit négatif, $|-12|$ est positif et est égale à $12$. En effet, $|-12|$ est une distance donc toujours positive.
+\end{ex}
+
+\begin{rem}{}{}
+Quelle que soit l'expression $a$, $a^2$ est toujours positive, donc $\sqrt{a^2}$ existe. Par exemple $\sqrt{3^2} = \sqrt{9} = 3$.
+
+ On peut donc en déduire une autre manière de définir la valeur absolue : \quad $|a| = \sqrt{a^2}$
+\end{rem}
+
+\bigskip
+ Plus généralement, avec la notation valeur absolue, il est possible de définir la distance entre deux nombres réels :
+
+\begin{prop}{}{}
+Soient $a$ et $b$ deux nombres réels. $|a-b|$ ou $|b-a|$ est la distance entre $a$ et $b$ 
+\end{prop}
+
+\smallskip
+\begin{ex}{}{}
+Essayons de déterminer $|2-11|$.\medskip 
+
+ On sait d'après la définition précédente que $|2-11|$ est la \\distance entre $2$ et $11$. On représente la droite des réel, \\puis (en rouge) la distance entre $2$ et $11$ :
+\\
+\vspace{-19mm}
+\begin{flushright}
+\begin{tikzpicture}[scale=0.4]
+\def\xY{-3};
+\def\yY{-1.5};
+\def\xZ{15};
+\def\yZ{1};
+\coordinate (Y) at (\xY,\yY);
+\coordinate (Z) at (\xZ,\yZ);
+\draw[step=0.5cm, lightgray, very thin] (Y) grid (Z);
+\draw[step=1cm, gray,thin] (Y) grid (Z);
+\draw[ ->,thick] (\xY, 0) -- (\xZ, 0) node[below left]{$x$};
+\foreach \x in {0,1}	\draw[very thick](\x,0.2cm)--(\x,-0.2cm) node[below,fill=white]{\footnotesize \x};
+\def\xbornea{2};
+\def\orientationa{1};
+\draw(\xbornea,-1)node[fill=white]{\xbornea};
+\def\xborneb{11};
+\def\orientationb{1};
+\draw(\xborneb,-1)node[fill=white]{\xborneb};
+\draw[line width=2pt,red](\xbornea,0)--(\xborneb,0);
+\end{tikzpicture}
+\end{flushright}
+
+ La distance entre $2$ et $11$ vaut $9$. Donc $|2-11| = 9$
+\end{ex}
+
+\subsection{Notion d'intervalle centré}
+
+\begin{defi}{}{}
+Soient $a$ un nombre réel et $r$ un nombre réel positif. 
+
+ L'intervalle \quad $[a-r;a+r]$ \quad est un intervalle centré en \quad $a$ \quad de longueur \quad $2r$.
+\end{defi}
+
+\smallskip
+\begin{ex}{}{}
+Essayons de représenter l'intervalle pour $a=7$ et $r=10$ soit l'intervalle $[7-10;7+10]$.\medskip 
+
+ On représente la droite des réels, \\puis (en violet) la valeur $7$ :
+
+\vspace{-12mm}
+\begin{flushright}
+\begin{tikzpicture}[scale=0.4]
+\def\xY{-5};
+\def\yY{-2};
+\def\xZ{20};
+\def\yZ{1.5};
+\coordinate (Y) at (\xY,\yY);
+\coordinate (Z) at (\xZ,\yZ);
+\draw[step=0.5cm, lightgray, very thin] (Y) grid (Z);
+\draw[step=1cm, gray,thin] (Y) grid (Z);
+\draw[ ->,thick] (\xY, 0) -- (\xZ, 0) node[below left]{$x$};
+\foreach \x in {0,1}	\draw[very thick](\x,0.2cm)--(\x,-0.2cm) node[below,fill=white]{\footnotesize \x};
+\def\xbornea{7};
+\def\orientationa{1};
+\draw[line width=1.7pt,purple] (\xbornea,1)--(\xbornea,-1);
+\draw(\xbornea+0.5,-1.5)node[fill=white]{\xbornea};
+\end{tikzpicture}
+\end{flushright}
+
+
+ On représente, en bleu, les valeurs comprises \\dans l'intervalle $[7-10;7]$ et, en rouge, les \\valeurs comprises dans l'intervalle $[7;7+10]$.
+
+\vspace{-18mm}
+\begin{flushright}
+\begin{tikzpicture}[scale=0.4]
+\def\xY{-5};
+\def\yY{-2};
+\def\xZ{20};
+\def\yZ{1.5};
+\coordinate (Y) at (\xY,\yY);
+\coordinate (Z) at (\xZ,\yZ);\draw[step=0.5cm, lightgray, very thin] (Y) grid (Z);
+\draw[step=1cm, gray,thin] (Y) grid (Z);
+\draw[ ->,thick] (\xY, 0) -- (\xZ, 0) node[below left]{$x$};
+\foreach \x in {0,1}	\draw[very thick](\x,0.2cm)--(\x,-0.2cm) node[below,fill=white]{\footnotesize \x};
+\def\xbornea{7};
+\def\orientationa{1};
+\draw[line width=2pt,purple] (\xbornea,1)--(\xbornea,-1);
+\draw(\xbornea+0.5,-1.5)node[fill=white]{\xbornea};
+\def\xborneb{17};
+\def\orientationb{1};
+\draw[line width=2pt,red] ({\xborneb-0.5*\orientationb},1)--(\xborneb,1)--(\xborneb,-1)--({\xborneb-0.5*\orientationb},-1);
+\draw(\xborneb-0.5,-1.5)node[fill=white]{\xborneb};
+\draw[line width=2pt,red](\xbornea,0)--(\xborneb,0);
+\def\xbornec{-3};
+\def\orientationc{-1};
+\draw[line width=2pt,blue] ({\xbornec-0.5*\orientationc},1)--(\xbornec,1)--(\xbornec,-1)--({\xbornec-0.5*\orientationc},-1);
+\draw(\xbornec-0.5,-1.5)node[fill=white]{\xbornec};
+\draw[line width=2pt,blue](\xbornea,0)--(\xbornec,0);
+\end{tikzpicture}
+\end{flushright}
+
+\end{ex}
+
+\medskip
+Sur l'exemple précédent, on remarque que la distance entre la borne minimale, ici $-3$, et $7$ est la même que la distance entre la borne maximale de l'intervalle, ici $17$, et $7$.
+
+ Cet intervalle est donc centré en $7$ et la distance entre le centre de l'intervalle et une borne est toujours inférieure ou égale à $10$. On peut donc définir ce genre d'intervalle grâce à la valeur absolue :
+
+\begin{prop}{}{}
+Soient $a$ un nombre réel et $r$ un nombre réel positif.
+
+ L'intervalle \quad $[a-r;a+r]$ \quad peut être caractérisé par la condition :  \begin{center}
+Pour tout $x \in \R$, $|x-a| \leqslant r$
+\end{center}
+\end{prop}
+	
+\end{document}
+
