@@ -1,18 +1,20 @@
 from pathlib import Path
+import re
+import os
 
-content_cours = {
-    "Seconde":{
-        "Ensemble de nombres" : [
-            "./Seconde/C1 Ensembles de nombres/Seconde_Nombres.pdf"
-        ],
-        "Etude des variations d'une fonction" : [
-            "./Seconde/C8 Etude des variations d'une fonction/Seconde_Variations.pdf"
-        ],
-        "Fonctions de référence" : [
-            "./Seconde/C9 Fonctions de référence/Seconde_Fonctions_reference.pdf"
-        ],
-    }
-}
+# content_cours = {
+#     "Seconde":{
+#         "Ensemble de nombres" : [
+#             "./Seconde/C1 Ensembles de nombres/Seconde_Nombres.pdf"
+#         ],
+#         "Etude des variations d'une fonction" : [
+#             "./Seconde/C8 Etude des variations d'une fonction/Seconde_Variations.pdf"
+#         ],
+#         "Fonctions de référence" : [
+#             "./Seconde/C9 Fonctions de référence/Seconde_Fonctions_reference.pdf"
+#         ],
+#     }
+# }
 
 header  = """
 <!DOCTYPE html>
@@ -55,8 +57,28 @@ direct_content= {
     }
 }
 
+grade = "Seconde"
+def discover_courses():
+    content_cours = []
+    path = f"./{grade}"
+    grade_pattern = fr"^{grade}_.+\.pdf"
+    chapter_pattern = r"^C\d+ .+$"
+    strict_chapter_pattern = r"C\d+ "
+
+    for folder in sorted(os.listdir(path)):
+        if re.search(chapter_pattern, folder):
+            chaptername = re.sub(strict_chapter_pattern, '', folder)
+            files = []
+            for filename in os.listdir(f"{path}/{folder}"):
+                if re.search(grade_pattern, filename):
+                    files.append(f"{path}/{folder}/{filename}")
+            chapter = [chaptername, files]
+            content_cours.append(chapter)
+    return content_cours
 
 def build_index():
+    content_cours = discover_courses()
+    
     with open("./index.html", "w", encoding='utf-8') as file:
         file.write(header)
 
@@ -70,21 +92,20 @@ def build_index():
                         f'<a href="{source_str}" download>{source.name}</a><br>\n'
                     )
 
-        for h1, v1 in content_cours.items():
-            file.write(f"<h1>{h1}</h1>\n")
-            for chapnumber, (h2, v2) in enumerate(v1.items()):
-                file.write(f"<h2>Chapitre {chapnumber+1}: {h2}</h2>\n")
-                for source_str in v2:
-                    source = Path(source_str)
-                    file.write(
-                        f'<a href="{source_str}" download>{source.name}</a>\n'
-                    )
-                    tex_source_str = source_str.replace(source.suffix, ".tex")
-                    file.write(
-                        f'<a href="{tex_source_str}" download>source</a><br>\n'
-                    )
-        
+        file.write(f"<h1>{grade}</h1>\n")
+        for chapnumber, (chaptitle, courses) in enumerate(content_cours):
+            file.write(f"<h2>Chapitre {chapnumber+1}: {chaptitle}</h2>\n")
+            for source_str in courses:
+                source = Path(source_str)
+                file.write(
+                    f'<a href="{source_str}" download>{source.name}</a>\n'
+                )
+                tex_source_str = source_str.replace(source.suffix, ".tex")
+                file.write(
+                    f'<a href="{tex_source_str}" download>source</a><br>\n'
+                )
+
         file.write(footer)
-    
+
 if __name__ == "__main__":
     build_index()
