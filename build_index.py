@@ -1,5 +1,34 @@
 from pathlib import Path
 
+content_cours = {
+    "Seconde":{
+        "Ensemble de nombres" : [
+            "./Seconde/C1 Ensembles de nombres/Seconde_Nombres.pdf"
+        ],
+        "Etude des variations d'une fonction" : [
+            "./Seconde/C8 Etude des variations d'une fonction/Seconde_Variations.pdf"
+        ],
+        "Fonctions de référence" : [
+            "./Seconde/C9 Fonctions de référence/Seconde_Fonctions_reference.pdf"
+        ],
+    }
+}
+
+header  = """
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+  </head>
+  <body>
+"""
+
+footer = """
+  </body>
+</html>
+"""
+
 direct_content= {
     "Latex" : {
         "Styles" : [
@@ -21,27 +50,16 @@ direct_content= {
             "./latex_styles/icons/nocalc.png",
             "./latex_styles/icons/quote-mark-left.jpg",
             "./latex_styles/icons/quote-mark-right.jpg",
-            "./latex_styles/remarque.png"
+            "./latex_styles/icons/remarque.png"
         ]
     }
 }
 
-content_cours = {
-    "Seconde":{
-        "Ensemble de nombres" : [
-            "./Seconde/C1 Ensembles de nombres/Seconde_Nombres.pdf"
-        ],
-        "Etude des variations d'une fonction" : [
-            "./Seconde/C8 Etude des variations d'une fonction/Seconde_Variations.pdf"
-        ],
-        "Fonctions de référence" : [
-            "./Seconde/C9 Fonctions de référence/Seconde_Fonctions_reference.pdf"
-        ],
-    }
-}
 
-def produce_content():
-    with open("./content.html", "w", encoding='utf-8') as file:
+def build_index():
+    with open("./index.html", "w", encoding='utf-8') as file:
+        file.write(header)
+
         for h1, v1 in direct_content.items():
             file.write(f"<h1>{h1}</h1>\n")
             for h2, v2 in v1.items():
@@ -65,6 +83,8 @@ def produce_content():
                     file.write(
                         f'<a href="{tex_source_str}" download>source</a><br>\n'
                     )
+        
+        file.write(footer)
     
 if __name__ == "__main__":
-    produce_content()
+    build_index()
