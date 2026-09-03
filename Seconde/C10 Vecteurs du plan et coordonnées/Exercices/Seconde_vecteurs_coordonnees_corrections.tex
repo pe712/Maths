@@ -1,0 +1,124 @@
+\documentclass[10pt,a4paper,openany,twoside, prof]{book}
+
+\usepackage{layout_cours}
+
+\begin{document}
+\chapnumber{10} % numéro du chapitre
+\titre{Vecteurs du plan et coordonnées} % titre du chapitre
+\classe{Seconde} % classe
+\entetegal
+
+
+\section*{Corrections}
+\subsubsection*{69 p.111}
+$\v{AB} \coordvp{3-3}{-2-4} \iff \v{AB} \coordvp{0}{-6} $
+
+$\v{BC} \coordvp{-7-3}{2-(-2)} \iff \v{BC} \coordvp{-10}{4} $
+
+$\v{CA} \coordvp{3-(-7)}{4-2} \iff \v{CA} \coordvp{10}{2} $
+
+On peut également appliquer Chasles, $\v{CA} = \v{CB} +\v{BA} = -\v{BC} - \v{AB}$
+
+\subsubsection*{70 p.111}
+$(\v{a}+\v{b}) \coordvp{3+2}{-4+3} \iff (\v{a}+\v{b}) \coordvp{5}{-1}$
+
+$(\v{a}-\v{b}) \coordvp{3-2}{-4-3} \iff (\v{a}-\v{b}) \coordvp{1}{-7}$
+
+$(2\v{a}) \coordvp{6}{8}$
+
+$(-3\v{b}) \coordvp{-6}{-9}$
+
+\subsubsection*{67 p.111}
+$(\v{i}) \coordvp{1}{0}$
+
+$(\v{j}) \coordvp{0}{1}$
+
+$(\v{a}) \coordvp{1}{-3}$
+
+$(\v{b}) \coordvp{2}{0}$
+
+$(\v{c}) \coordvp{2}{3}$
+
+$(\v{d}) \coordvp{-2}{3}$
+
+$(\v{e}) \coordvp{-4}{1}$
+
+$(\v{AB}) \coordvp{-3}{-1}$
+
+$(\v{OC}) \coordvp{4}{2}$
+
+$(\v{EF}) \coordvp{4}{-1}$
+
+$(\v{KL}) \coordvp{0}{4}$
+
+\subsubsection*{72 p.111}
+\begin{enumerate}[label=(\roman*)]
+\item
+Soit $x,y \in\R$ les coordonnées de $A'$. C'est-à-dire $A'\coordpp{x}{y}$.
+
+Alors $\vec{AA'}\coordvp{x-3}{y+2}$
+
+On résout donc 
+
+\begin{align*}
+    \vec{AA'} =\vec{a} \iff \syst{x-3 &=& 3 \\ y+2 &=& 4} \iff \syst{x &=& 6 \\ y &=& 2}
+\end{align*}
+
+Donc $A'\coordpp{6}{2}$
+
+\item
+De même, soit $u,v \in\R$ les coordonnées de $B'$. C'est-à-dire $B'\coordpp{u}{v}$.
+
+Alors $\vec{BB'}\coordvp{u+2}{v-1}$
+
+On résout donc 
+
+\begin{align*}
+    \vec{BB'} =\vec{b} \iff \syst{u+2 &=& -1 \\ v-1 &=& 2} \iff \syst{u &=& -3 \\ v &=& 3}
+\end{align*}
+
+Donc $B'\coordpp{-3}{3}$
+
+\end{enumerate}
+
+\begin{rem}{}{}
+    La lecture graphique n'est pas une méthode générale. Cela permet en revanche de vérifier son résultat.
+\end{rem}
+
+\subsubsection*{72 p.111}
+\begin{enumerate}[label=(\alph*)]
+    \item $\vec{EF}\coordvp{-5}{5}$
+    \item $\vecu$ et $\vec{EF}$ sont colinéaires si et seulement s'il existe un coefficient de proportionnalité $k\in\R$ tel que $\vecu=k\vec{EF}$.
+    
+    $k=\frac{-3}{5}$ vérifie  $\vecu=k\vec{EF}=$.
+
+    Donc les vecteurs sont colinéaires.
+
+    \item 
+    $\norm{\vec{EF}} = \sqrt{25+25} = 5\sqrt{2}$
+    
+    $\norm{\vecu} = \sqrt{9+9} = 3\sqrt{2}$
+\end{enumerate}
+
+\begin{rem}{}{}
+    On peut aussi calculer la norme du vecteur $\vecu$ à partir de la norme du vecteur $\vec{EF}$.
+
+    $\norm{\vecu} = \norm{k\vec{EF}} = |k|\times\norm{\vec{EF}} = \frac{3}{5} 5\sqrt{2} = 3\sqrt{2}$
+
+    
+\end{rem}
+\subsubsection*{73 p.111}
+Soit $x,y \in\R$ les coordonnées de $D$. C'est-à-dire $D\coordpp{x}{y}$.
+
+Alors $\vec{DC}\coordvp{1-x}{3-y}$. D'autre part, $\vec{AB}\coordvp{4}{2}$
+
+ABCD est un parallélogramme si et seulement si $\vec{AB}=\vec{DC}$
+
+On résout donc :
+\begin{align*}
+    \vec{AB}=\vec{DC} \iff \syst{1-x &=& 4 \\ 3-y &=& 2} \iff \syst{x &=& -3 \\ y &=& 1}
+\end{align*}
+
+Donc $D\coordpp{-3}{1}$
+
+\end{document}

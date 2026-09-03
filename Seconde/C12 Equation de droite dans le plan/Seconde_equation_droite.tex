@@ -1,0 +1,496 @@
+\documentclass[10pt,a4paper,openany,twoside, prof]{book}
+
+\usepackage{layout_cours}
+\setlist{leftmargin=5mm}
+
+\begin{document}
+
+\chapnumber{12} % numéro du chapitre
+\titre{Equation de droite} % titre du chapitre
+\classe{Seconde} % classe
+\entetegal
+% \makeatletter
+% \addcontentsline{toc}{chapter}{Chapitre \@chapnumber - \@titre} % Prepare a table of contents
+% \makeatother
+
+% Debut du texte
+% **************
+% \paragraph*{Objectif du chapitre :}
+% \begin{itemize}
+% \item  Reconnaitre une équation de droite.
+% \item  Tracer une droite d'équation connue et déterminer l'appartenance d'un point à cette droite.
+% \item  Déterminer le coefficient directeur, l'ordonnée à l'origine ainsi que l'équation d'une droite à partir de sa représentation graphique.
+% \end{itemize}
+
+\section{Equation cartésienne d'une droite}
+
+\begin{defi}{Droite}{}
+\begin{minipage}{.5\textwidth}
+	La \textbf{droite} du plan $\R^2$, définie par les points $A$ et $B$, est l'ensemble des points $M$ tel que $A$, $B$ et $M$ sont alignés.
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+   \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.65cm,y=0.65cm]
+      \draw [xstep=0.65cm,ystep=0.65cm] (0,1) grid (10,5);
+      \draw [line width=1.2pt](0,2) -- (10,4);
+      \draw (9,4) node[above] {\large{$\mathcal{D}$}};
+
+      \draw [color=blue] (4, 2.8) node[above] {\large{$A$}};
+      \fill[color=blue] (4, 2.8) circle (2pt);
+
+      \draw [color=blue] (8, 3.6) node[above] {\large{$B$}};
+      \fill[color=blue] (8, 3.6) circle (2pt);
+
+      \draw [color=red] (1, 2.2) node[above] {\large{$M$}};
+      \fill[color=red] (1, 2.2) circle (2pt);
+
+      \draw [color=red] (2, 2.4) node[above] {\large{$M$}};
+      \fill[color=red] (2, 2.4) circle (2pt);
+
+   \end{tikzpicture}
+\end{minipage}
+\end{defi}
+
+\begin{defi}{Equation cartésienne de droite}{}
+   Soit trois coefficients $a,b,c\in\R$ avec $(a;b)\ne (0;0)$ (c'est-à-dire non nuls simultanément). On appelle \textbf{équation cartésienne de droite} l'équation suivante d'inconnue $(x;y)$ :
+
+   $$ax+by+c=0$$
+\end{defi}
+
+\begin{prop}{}{}
+	Soit une droite $\mathcal{D}$ du plan $\R^2$. Il existe trois coefficients $a,b,c\in\R$ avec $(a;b)\ne (0;0)$ (c'est-à-dire non simultanément nuls) tels que :
+
+   $$M\coordpp{x}{y}\in\mathcal{D} \iff ax+by+c=0$$
+
+   Autrement dit, $M$ appartient à $\mathcal{D}$, si et seulement si, ses coordonnées $\coordpp{x}{y}$ sont solutions de l'équation $ax+by+c=0$.
+\end{prop}
+
+\begin{deme}{}{}
+   \begin{reponse}
+   Soit deux points \textbf{distincts} $A\coordpp{x_A}{y_a}$ et $B\coordpp{x_B}{y_B}$ de la droite $\mathcal{D}$.
+
+   \begin{itemize}
+      \item 
+   Procédons par équivalence :
+   \begin{align*}
+      M\in\mathcal{D} 
+      &\iff (AM)\; // \; (AB)  
+      &\iff \v{AM} \text{ et } \v{AB} \text{ sont colinéaire} &\\
+      &\iff \det{\v{AM}}{\v{AB}} = 0 
+      &\iff \Det{x-x_A & x_B-x_A \\ y-y_A & y_B-y_A} = 0 \quad&\\
+      &\iff (x-x_A)(y_B-y_A) - (x_B-x_A)(y-y_A) = 0
+   \end{align*}
+
+   En posant $a=(y_B-y_A)$, $b=-(x_B-x_A)$ et $c=-x_A(y_B-y_A)+y_A(x_B-x_A)$, 
+   
+   la dernière ligne se réécrit:
+
+   $$ax+by+c=0$$
+   
+   \item Vérifions que $(a;b)\ne(0;0)$.
+   
+   Si $(a;b)=(0;0)$ alors $y_B-y_A=0$ et $x_B-x_A=0$. Ce qui est impossible car les points $A$ et $B$ sont distincts.
+\end{itemize}
+   \end{reponse}
+\end{deme}
+
+\begin{ex}{}{}
+   Le point $M\coordpp{5}{-2}$ appartient-il à la droite $\mathcal{D}$ d'équation cartésienne $4x+7y-6=0$ \;?
+
+   \begin{reponse}
+      On calcule :
+
+         $4\times 5 + 7 \times (-2) - 6 = 20-14-6=0$
+
+      Donc $M\in\mathcal{D}$
+   \end{reponse}
+\end{ex}
+
+\begin{rem}{}{}
+   L'équation cartésienne d'une droite n'est pas unique ! Trouver une autre équation cartésienne de la droite $\mathcal{D}$ de l'exemple ci-dessus : 
+   $$\troum{8x+14y-12=0}$$
+   \medskip
+\end{rem}
+
+
+\vspace{-5mm}
+\section{Vecteur directeur}
+
+\begin{defi}{Vecteur directeur}{}
+   \begin{minipage}{.5\textwidth}
+      
+      Soient $A$ et $B$ deux point d'une droite $\mathcal{D}$ du plan $\R^2$. 
+   
+   \noindent Tout vecteur $\vecu$ colinéaire à $\v{AB}$ est appelé \textbf{vecteur directeur} de la droite $\mathcal{D}$.
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+   \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.65cm,y=0.65cm]
+      \draw [xstep=0.65cm,ystep=0.65cm] (0,1) grid (10,5);
+      \draw [line width=1.2pt](0,2) -- (10,4);
+      \draw (9,4) node[above] {\large{$\mathcal{D}$}};
+      \draw [->,line width=1.2pt, red] (2,1.5) -- (5,2.1);
+      \draw[red] (5,2.1) node[right] {\large{$\v{u}$}};
+
+      \draw [color=blue] (4, 2.8) node[above] {\large{$A$}};
+      \fill[color=blue] (4, 2.8) circle (2pt);
+
+      \draw [color=blue] (8, 3.6) node[above] {\large{$B$}};
+      \fill[color=blue] (8, 3.6) circle (2pt);
+
+   \end{tikzpicture}
+\end{minipage}
+\end{defi}
+   
+
+\begin{prop}{Vecteur directeur à partir de l'équation cartésienne}{vecteur_directeur_eq_cartesienne}
+Soit trois coefficients $a$, $b$, $c \in \R$, avec $a$ ou $b$ non nul. Soit la droite $\mathcal{D}$, du plan $\R^2$, d'équation cartésienne $ax+by+c=0$.
+
+Le vecteur $\vecu \coordvp{-b}{a}$ est un vecteur directeur de la droite $\mathcal{D}$.
+\end{prop}
+
+\begin{dem}{}{} 
+\begin{reponse}
+   Il faut montrer que $\vecu$ et $\v{AB}$ sont colinéaires. Il suffit de montrer que $\det{\vecu}{\v{AB}}=0$.
+
+   $$\det{\vecu}{\v{AB}} = \Det{-b & x_B-x_A \\ a & y_B-y_A} = -b(y_B-y_A)- a(x_B-x_A) = - \left[a(x_B-x_A)+b(y_B-y_a)\right]$$
+
+   Puisque $A\in\mathcal{D},\quad ax_A+by_A+c=0$. Et de même, $ax_B+by_B+c=0$.
+
+   Par soustraction des égalités, $a(x_B-x_A)+b(y_B-y_a)=0$
+   
+   \medskip
+   Donc $\det{\vecu}{\v{AB}}=0$ et $\vecu$ est bien un vecteur directeur.
+\end{reponse}
+\end{dem}
+
+
+\begin{ex}{}{}
+   Trouver un vecteur directeur de la droite d'équation cartésienne $-y-3x=7$.
+   
+   \begin{reponse}
+      $\vecu \coordvp{1}{-3}$ convient. Tout comme $\vecv \coordvp{3}{-9}$ et $\vecw \coordvp{-1}{3}$
+   \end{reponse}
+   
+   \end{ex}
+
+   
+\begin{methode}{Trouver l'équation cartésienne...}{}
+   \textbf{A partir du vecteur directeur $\vecu\coordvp{-b}{a}$ et du point $A\coordpp{x_A}{y_A}$}
+
+   \medskip
+   Nous prendrons l'exemple de $\vecu\coordvp{5}{2}$ et $A\coordpp{-1}{2}$
+   \begin{enumerate}[label=(\roman*)]
+      \item On commence par déterminer les coefficients $a$ et $b$ de l'équation cartésienne à partir du vecteur directeur. 
+      
+      Dans notre exemple, $a=\troum{2}$ et $b=\troum{-5}$. Donc l'équation cartésienne est de la forme 
+      
+      $$\troum{2}x+\troum{-5}y+c=0 \quad\text{avec }c\in\R$$
+
+      \item On détermine le coefficient $c$ avec le point $A$. Puisque $A\in\mathcal{D}$, les coordonnées $\coordpp{x_A}{y_A}$ vérifient l'équation.
+      
+      Dans notre exemple, $2\times\troum{-1}-5\times\troum{2}+c=0$. Donc $c=\troum{12}$.
+
+   \end{enumerate}
+\end{methode}
+\begin{methode}{Trouver l'équation cartésienne...}{}
+   \textbf{A partir du vecteur $\v{AB}$}
+
+   \medskip
+   Nous prendrons l'exemple de  $A(2;-1)$ et $B(-1;5)$. Donc $\v{AB}\coordvp{x_B-x_A}{y_B-y_A}=\coordvp{-3}{6}$.
+
+   Soit $M(x;y)$ un point de la droite $\mathcal{D}$, alors les vecteurs $\v{AM}$ et $\v{AB}$ sont colinéaires :
+   
+   \medskip
+   \hspace{5mm}$\v{AM}\coordvp{x_M-x_A}{y_M-y_A}=\coordvp{x-2}{y+1}$
+   
+   \medskip
+   \noindent $\v{AM}$ et $\v{AB}$ colinéaires $\Longleftrightarrow \det{\v{AM}}{\v{AB}}=\troum{0}$
+   
+   \noindent \phantom{$\v{AM}$ et $\v{AB}$ colinéaires} $\troum{\Longleftrightarrow (-3)\times(y+1)-6\times(x-2)=0}$
+
+   \noindent \phantom{$\v{AM}$ et $\v{AB}$ colinéaires} $\troum{\Longleftrightarrow -3y-3-6x+12=0}$
+   
+   \noindent \phantom{$\v{AM}$ et $\v{AB}$ colinéaires} $\troum{\Longleftrightarrow -6x-3y+9=0}$
+   
+   \medskip
+   La droite $\mathcal{D}$ a pour équation cartésienne : $2x+y-3=0$
+   \end{methode}
+\begin{prop}{Droite horizontale, droite verticale}{droite_verticale}
+   \begin{itemize}
+      \item 
+      La droite $\mathcal{D}$ est parallèle à l'axe des abscisses (horizontale), si et seulement s'il existe $d\in\R$, tel que la droite $\mathcal{D}$ admette $y=d$ comme équation cartésienne. Autrement dit, le coefficient $a$ est nul.
+      \item 
+      La droite $\mathcal{D}$ est parallèle à l'axe des ordonnées (verticale), si et seulement s'il existe $d\in\R$, tel que la droite $\mathcal{D}$ admette $x=d$ comme équation cartésienne. Autrement dit, le coefficient $b$ est nul.
+   \end{itemize}
+   \begin{center}
+   \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.65cm,y=0.65cm]
+      \begin{axis}[
+         x=1.0cm,y=1.0cm,
+         axis lines=middle,ymajorgrids=true,
+         xmajorgrids=true,
+         xmin=-0.5,xmax=7.5,
+         ymin=-0.5,ymax=3.5,
+         xtick={-0,1,...,7.0},ytick={-0,1,...,3},
+         ]
+         \draw [line width=1.2pt, blue] (axis cs:1.5,-0.5) -- (axis cs:1.5,3.5);
+         \draw[blue] (axis cs:1.5,3) node[left] {\large{$\mathcal{D}$}};
+         \draw[blue] (axis cs:1.5,3) node[right] {\large{$x=1.5$}};
+         \draw[line width=1.2pt, red] (axis cs:-0.5,2) -- (axis cs:7.5,2);
+         \draw[red] (axis cs:6,2) node[below] {\large{$\mathcal{D'}$}};
+         \draw[red] (axis cs:6,2) node[above] {\large{$y=2$}};
+      \end{axis}
+   \end{tikzpicture}
+   \end{center}
+\end{prop}
+
+\vspace{-5mm}
+\section{Équation réduite de droite}
+
+\begin{defi}{(rappel) Equation réduite de droite}{}
+   Soit deux coefficients $m, p\in\R$. On appelle \textbf{équation reduite de droite}, l'équation suivante d'inconnue $(x;y)$
+   $$y=mx+p$$
+
+   Le coefficient $m$ est appelé \textbf{coefficient directeur}. Le coefficient $p$ est appelé \textbf{ordonnée à l'origine}.
+\end{defi}
+
+\begin{prop}{Equation réduite}{}
+   Soit la droite $\mathcal{D}$ d'équation cartésienne $ax+by+c=0$, avec $a,b,c\in\R$ et $(a;b)\ne(0;0)$.
+   \medskip
+   La droite $\mathcal{D}$ est non parallèle à l'axe des ordonnées (non verticale), si et seulement s'il existe des coefficients $m,p\in\R$ tels que la droite $\mathcal{D}$ admette $y =mx+p$ comme équation réduite.
+   \medskip
+   De plus, $m=\frac{-a}{b}$ et $p=\frac{-c}{b}$.
+\end{prop}
+
+\begin{dem}{}{}
+   \begin{itemize}
+      \item Commençons par le sens direct ($\implies$). On suppose que la droite $\mathcal{D}$ n'est pas verticale. 
+      
+      D'après la propriété $\ref{propo:droite_verticale}$, puisque la droite $\mathcal{D}$ n'est pas verticale, alors $b\troum{\ne 0}$
+      \begin{reponse}
+         Donc on peut réécrire l'équation sous la forme $\frac{a}{b}x+y+\frac{c}{a}=0$.
+
+         On encore, $y=mx+p$ avec $m=\frac{-a}{b}$ et $p=\frac{-c}{b}$
+      \end{reponse}
+      \item Prouvons le sens réciproque ($\impliedby$). On suppose qu'il existe des coefficients $m,p\in\R$ tels que la droite $\mathcal{D}$ admette $y =mx+p$ comme équation réduite.
+      \begin{reponse}
+         
+         On veut prouver que $\mathcal{D}$ n'est pas verticale. Il suffit de trouver deux points de $\mathcal{D}$ d'abscisses différentes.
+         
+         Or $(0;p)\in\mathcal{D}$ et $(1;m+p)\in\mathcal{D}$. Donc la droite n'est pas verticale.
+      \end{reponse}
+   \end{itemize}
+   
+\end{dem}
+
+\begin{prop}{(rappel) Calcul du coefficient directeur}{}
+   Soient $A(x_A;y_A)$ et $B(x_B;y_B)$ deux points d'une droite $\mathcal{D}$, le coefficient directeur se calcule grâce à la formule : $$m=\frac{y_B-y_A}{x_B-x_A}=\frac{\Delta y}{\Delta x}=\frac{\text{variation ordonnée}}{\text{variation abscisse}}$$
+\end{prop}
+
+\begin{methode}{Déterminer l'équation réduite...}{}
+\textbf{A partir des points $A\coordpp{x_A}{y_A}$ et $B\coordpp{x_B}{y_B}$}
+
+\medskip
+Nous prendrons l'exemple de $A(2;-1)$ et $B(-1;5)$.
+La droite $D$ n'est pas parallèle à l'axe des ordonnées, elle a donc pour équation $y=mx+p$.
+
+\medskip
+\hspace{5mm}$m=\troum{\dfrac{y_B-y_A}{x_B-x_A}=\dfrac{5+1}{-1-2}=-2}$
+
+\medskip
+\noindent $\mathcal{D}$ passe par le point $A(2;-1)$ donc les coordonnées du point $A$ vérifie l'équation de la droite $\mathcal{D}$ d'où :
+
+\begin{reponse}
+   \hspace{5mm}\phantom{$\Longleftrightarrow$} $y_A=mx_A+p$
+   
+   \hspace{5mm}$\Longleftrightarrow y_A=-2x_A+p$
+   
+   \hspace{5mm}$\Longleftrightarrow -1=-2\times2+p$
+   
+   \hspace{5mm}$\Longleftrightarrow p=3$
+\end{reponse}
+   
+\medskip
+La droite $\mathcal{D}$ a pour équation réduite : $y=-2x+3$
+\end{methode}
+
+
+\begin{prop}{Vecteur directeur et coefficient directeur}{}
+   Soit deux réel $m,p\in\R$. Soit une droite non verticale $\mathcal{D}$ du plan $\R^2$ d'équation réduite $y = mx+p$.
+   
+   \begin{itemize}
+      \item 
+   Le vecteur $\vecu \coordvp{1}{m}$ est un vecteur directeur de la droite $\mathcal{D}$.
+      \item Réciproquement, si $\vecu\coordvp{x}{y}$ est un vecteur directeur, alors $m=\frac{y}{x}$
+   \end{itemize}
+\end{prop}
+
+% \begin{dem}{}{}
+%    La démonstration est similaire à la propriété \ref{propo:vecteur_directeur_eq_cartesienne}
+% \end{dem}
+%\begin{ex}{}{}
+%Pour chacune des équations suivantes, déterminons, s'il existe, le coefficient directeur et l'ordonnée à l'origine de la droite :
+   
+%\renewcommand{\arraystretch}{1.5}
+%\begin{tabular}{p{0.2cm}p{4cm}p{3cm}p{3cm}p{3cm}}
+%&  & Équation réduite & Coef. directeur & Ordonnée à l'origine \\
+%& $5x+y=-2$ & $y=-5x-2$ & $m=-5$ & $p=-2$ \\
+%& $2x-3y=1$ & $y=\frac{2}{3}x-\frac{1}{3}$ & $m=\frac{2}{3}$ & $p=-\frac{1}{3}$ \\
+%& $2x+3y=7-5x+3y$ & $x=1$ & \multicolumn{2}{l}{Droite parallèle à l'axe des ordonnées}
+%\end{tabular}
+%\end{ex}
+
+
+\vspace{-5mm}
+\section{Droites parallèles}
+
+\begin{prop}{}{}
+   Les trois propositions suivantes sont équivalentes :
+
+   \begin{enumerate}[label=(\roman*)]
+      \item 
+      Les droites $\mathcal{D}$ et $\mathcal{D'}$ sont parallèles.
+      \item 
+      Les droites $\mathcal{D}$ et $\mathcal{D'}$ ont le même coefficient directeur (ou sont toutes deux verticales).
+      \item 
+      Les droites $\mathcal{D}$ et $\mathcal{D'}$ admettent un même vecteur directeur (leurs vecteurs directeurs sont colinéaires).
+   \end{enumerate}
+\end{prop}
+
+\newpage
+
+% \begin{ex}{}{}
+% Déterminer une équation de la droite $\mathcal{D}$ parallèle à la droite $\mathcal{D'}$ d'équation $y=2x-3$ passant par le point $A(1;5)$.
+
+% \medskip
+% \noindent La droite $D$ n'est pas parallèle à l'axe des ordonnées, elle a donc pour équation $y=mx+p$.
+
+% \medskip
+% \noindent $\mathcal{D}$ est parallèle à $\mathcal{D}'$ donc $m_{\mathcal{D}}=m_{\mathcal{D}'}=2$
+
+% \medskip
+% \noindent $\mathcal{D}$ passe par le point $A(1;5)$ d'où :
+
+% \medskip
+% \hspace*{0.2cm} $y_A=mx_A+p$
+              
+% \hspace*{0.2cm} $5=2\times 1+p$
+              
+% \hspace*{0.2cm} $p=3$
+
+% \medskip
+% \noindent La droite $\mathcal{D}$ a pour équation réduite $y=2x+3$ 
+% \end{ex}
+
+\vspace{-5mm}
+\section{Représentation graphique}
+
+Dans cette section, on se place dans le plan $\R^2$ muni d'un repère $\oij$.
+Comment tracer la représentation graphique d'une droite ?
+
+\noindent \begin{minipage}{8cm}
+\begin{methode}{Tracer une droite...}{}
+   \textbf{A partir de l'équation cartésienne ou réduite}
+\medskip
+\begin{itemize}
+\item Choisir deux abscisses $x_{1}$ et $x_{2}$,\medskip
+\item Calculer $y_{1}$ et $y_{2}$ avec l'équation,\medskip
+\item Placer les points $A(x_1;y_1 )$ et $B(x_2;y_2)$ \medskip
+\item Tracer la droite $(AB)$
+\end{itemize}
+\end{methode}
+\end{minipage}
+\hspace{5mm}
+\noindent \begin{minipage}{8cm}
+   \begin{methode}{Tracer une droite...}{}
+      \textbf{A partir d'un point $A$ et du vecteur directeur directeur $\vecu$}
+      \medskip
+      \begin{itemize}
+      \item Placer le point $A$,\medskip
+      \item A partir de ce point, tracer le vecteur directeur $\vecu$ ce qui nous donne un second point $M$\medskip
+      \item Tracer la droite $(MP)$.
+      \end{itemize}
+      \end{methode}
+\end{minipage}
+
+\begin{rem}{}{}
+   Dans le cas, où l'on connait l'équation cartésienne ou réduite, on est bien sûr capable de trouver des vecteurs directeurs (respectivement $\vecu\coordvp{-b}{a}$ et $\vecu\coordvp{1}{m}$), et on peut utiliser la deuxième méthode.
+\end{rem}
+
+\begin{ex}{}{}
+   Représentons graphiquement la droite d'équation $y=\dfrac{2}{3}x-2$ avec les différentes méthodes.
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.65cm,y=0.65cm]
+   \begin{axis}[
+         x=1.0cm,y=1.0cm,
+         axis lines=middle,ymajorgrids=true,
+         xmajorgrids=true,
+         xmin=-5.5,xmax=5.5,
+         ymin=-5.5,ymax=5.5,
+         xtick={-5,-4,...,5},ytick={-5,-4,...,5},
+         ]
+      \end{axis}
+   \end{tikzpicture}
+\end{ex}
+
+% \begin{minipage}{10.5cm}
+% Représentons graphiquement la droite d'équation $y=\dfrac{2}{3}x-2$ avec la méthode des coordonnées de points.
+
+% \begin{itemize}
+% \item Choix de $x_{1}$ et $x_{2}$. Le mieux est de prendre deux valeurs pouvant se placer dans le repère tracé (ici entre $-4$ et $4$) et relativement écartées afin d'avoir une meilleur précision de tracé.
+
+% Je choisis ici $x_1=-3$ et $x_2=3$ afin de simplifier les calcul de $y_{1}$ et $y_{2}$
+% \item $y_{1} = \dfrac{2}{3}x_{1}-2$ et $y_{2} = \dfrac{2}{3}x_{2}-2$
+
+% Donc : $y_{1} = \dfrac{2}{3}\times (-3)-2$ et $y_{2} = \dfrac{2}{3}\times (3)-2$
+
+% Donc : $y_{1} = -4$ et $y_{2} = 0$
+% \item On place les points $A(x_1;y_1 )$ et $B(x_2;y_2)$ (en bleu sur le graphique)
+% \item On la droite $(AB)$ (en rouge sur le graphique)
+% \end{itemize}
+% \end{minipage}
+% \hspace{5mm}
+% \begin{minipage}{5.5cm}
+% \begin{center}
+% \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.7cm,y=0.7cm,scale=0.8]
+% \draw [color=lightgray,, xstep=0.7cm,ystep=0.7cm] (-4.5,-4.5) grid (4.5,4.5);
+% \draw[->,color=black] (-4.5,0.) -- (4.5,0.);
+% \foreach \x in {-4.,-3.,-2.,-1.,1.,2.,3.,4.}
+% \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+% \draw[->,color=black] (0.,-4.5) -- (0.,4.5);
+% \foreach \y in {-4.,-3.,-2.,-1.,1.,2.,3.,4.}
+% \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+% \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+% \clip(-4.5,-4.5) rectangle (4.5,4.5);
+% \draw[line width=1.5pt,color=red,smooth,samples=100,domain=-4.5:4.5] plot(\x,{0-2.0+0.66666666667*(\x)});
+% \draw (-3,-4) node{\color{blue} \Large{$\times$}};
+% \draw (3,0) node{\color{blue} \Large{$\times$}};
+% \end{tikzpicture}
+% \end{center}
+% \end{minipage}
+% \end{ex}
+
+% \vspace{-5mm}
+% \section{Résolution graphique des systèmes d'équation}
+
+
+\newpage
+\section*{Exercices}
+\begin{exercices}
+	\sectionexo{Equation cartésienne}
+	\begin{bookexo}{34 p.136}
+      Déterminer également l'ordonnée du point d'abscisse $x=3$.
+   \end{bookexo}
+	\sectionexo{Vecteur directeur}
+   \begin{bookexo}{37 p.136}\end{bookexo}
+   \begin{bookexo}{44 p.137}\end{bookexo}
+   \begin{bookexo}{61 p.139}\end{bookexo}
+	\sectionexo{Equation réduite}
+   \begin{bookexo}{40 p.136}\end{bookexo}
+	\sectionexo{Représentation graphique}
+   \begin{bookexo}{50 p.138}\end{bookexo}
+   \begin{bookexo}{54 p.138}\end{bookexo}
+   \begin{bookexo}{58 p.138}\end{bookexo}
+	\sectionexo{Systèmes d'équation}
+   \begin{bookexo}{73 p.165}\end{bookexo}
+
+\end{exercices}
+\end{document}
+

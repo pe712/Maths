@@ -1,0 +1,316 @@
+\paragraph*{Objectif du chapitre :}
+\begin{itemize}
+\item  Définir l'opposé d'un vecteur, le produit d'un vecteur par un réel.
+\item  Utiliser les coordonnées de vecteur pour des calculs.
+\item  Reconnaître et exploiter une situation de colinéarité.
+\end{itemize}
+
+\vspace{-3mm}
+\section{Opposé d'un vecteur} 
+
+
+\noindent \begin{minipage}{10cm}
+\begin{defi}{}{}
+Quels que soient les points $A$ et $B$, le vecteur $\v{BA}$ est appelé \textbf{vecteur opposé} au vecteur $\v{AB}$.
+\end{defi}
+
+\begin{rem}{}{}
+\begin{itemize}
+\item  Si  $\v{u} =\v{AB}$, alors $-\v{u} =\v{BA}$.
+\item  Si  une symétrie centrale transforme $A$ en $A'$ et $B$ en $B'$, \\alors on a $\v{A'B'}=-\v{AB}$
+\end{itemize}
+\end{rem}
+\end{minipage}
+\hspace{2mm}
+\begin{minipage}{7cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm,scale=0.9]
+\draw [color=lightgray,, xstep=0.8cm,ystep=0.8cm] (0.5,1.5) grid (9.5,7.5);
+\clip(0.5,1.5) rectangle (9.5,7.5);
+\draw [->,line width=1.2pt] (1.,3.) -- (4.,4.);
+\draw [->,line width=1.2pt] (5.,7.) -- (2.,6.);
+\draw [->,line width=1.2pt,color=red] (6.,3.) -- (8.,6.);
+\draw [->,line width=1.2pt,color=red] (9.,5.) -- (7.,2.);
+\begin{scriptsize}
+\draw[color=black] (2.5,3.9) node {\large{$\v{u}$}};
+\draw[color=black] (3.1,6.8) node {\large{$-\v{u}$}};
+\draw [color=black] (6.,3.)-- ++(-1.0pt,-1.0pt) -- ++(2.0pt,2.0pt) ++(-2.0pt,0) -- ++(2.0pt,-2.0pt);
+\draw[color=red] (5.7,2.7) node {\large{$A$}};
+\draw [color=black] (8.,6.)-- ++(-1.0pt,-1.0pt) -- ++(2.0pt,2.0pt) ++(-2.0pt,0) -- ++(2.0pt,-2.0pt);
+\draw[color=red] (8.2,6.3) node {\large{$B$}};
+\draw[color=red] (6.1,4.7) node {\large{$\v{AB}=\v{v}$}};
+\draw[color=red] (7.5,3.7) node {\large{$-\v{v}$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+
+\vspace{-1mm}
+\section{Multiplication d'un vecteur par un nombre réel $\lambda$} 
+
+\vspace{-1mm}
+\subsection{Définition générale}
+
+\vspace{-3mm}
+\noindent \begin{minipage}{10.5cm}
+\begin{defi}{}{}
+Soit $\v{u} =\v{AB}$ un vecteur non nul et $\lambda$ un réel non nul, on définit le vecteur $\v{v} = \lambda \v{u} =\v{AC}$ par :\\
+$\bullet$ $A$, $B$ et $C$ sont alignés,\\
+$\bullet$ Si $\lambda>0$, $AC =kAB$ et $B$ et $C$ sont du même côté par rapport à $A$,\\
+$\bullet$ Si $\lambda<0$, $AC =-kAB$ et $B$ et $C$ sont de part et d'autre de $A$.
+\end{defi}
+\begin{rem}{}{}
+   Si  $\v{u} = 0$ ou $\lambda=0$ alors $\v{v} = \v{0}$
+\end{rem}
+\end{minipage}
+\hspace{2mm}
+\begin{minipage}{5.5cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm,scale=0.8]
+\draw [color=lightgray,, xstep=0.8cm,ystep=0.8cm] (0.8,-0.2) grid (10.2,7.2);
+\clip(0.8,-0.0) rectangle (10.0,7.0);
+\draw [->,line width=1.2pt,color=red] (1.,3.) -- (4.,4.);
+\draw [->,line width=1.2pt] (2.,5.) -- (8.,7.);
+\draw [->,line width=1.2pt] (10,4) -- (1,1);
+\draw [->,line width=1.2pt] (8.,4.5) -- (9.5,5);
+\draw [->,line width=1.2pt] (10.,1.5) -- (5.98585814129115,-0.15);
+\begin{scriptsize}
+\draw[color=red] (2.3,3.85) node {\large{$\v{u}$}};
+\draw[color=black] (4.64,6.45) node {\large{$2\times \v{u}$}};
+\draw[color=black] (7.692,2.6) node {\large{$-3\times \v{u}$}};
+\draw[color=black] (8.43,5.7) node {\large{$\dfrac{1}{2}\times \v{u}$}};
+\draw[color=black] (6,0.8) node {\large{$-\dfrac{4}{3}\times \v{u}$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\begin{prop}{}{}
+Quels que soient les vecteurs $\v{u}$, $\v{v}$ et les réels $\lambda$ et $\mu$ , on a :
+\begin{itemize}
+\begin{minipage}{7cm}
+\item  $\lambda(\v{u} + \v{v}) =  \lambda\v{u} + \lambda\v{v}$
+\item  $(\lambda+\mu)\v{u}  =  \lambda\v{u} +\mu\v{u}$
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{7cm}
+\item  $\lambda(\mu\v{u})  =  (\lambda\mu)\v{u}$
+\item  $\lambda\v{u}  = \v{0} \Longleftrightarrow \lambda=0$ ou $\v{u} =\v{0}$
+\end{minipage}
+\end{itemize}
+\end{prop}
+
+\begin{rem}{}{}
+   Si une homothétie de rapport $\lambda$ transforme $A$ en $A'$ et $B$ en $B'$, alors on a $\v{A'B'}=\lambda\v{AB}$
+\end{rem}
+
+\subsection{Utilisation des coordonnées vectorielles}
+
+\begin{prop}{}{}[Produit d'un vecteur par un réel]
+    Soient $\v{u}\Coor{x}{y}$ et $k$ un réel. Le vecteur $\v{w}=k\v{u}$ a pour coordonnées $\v{w}\Coor{kx}{ky}$
+\end{prop}
+
+\begin{ex}{}{}
+   Soient les vecteurs $\v{u}\Coor{1}{-3}$, $\v{v}\Coor{5}{3}$ et $\v{w}\Coor{5x}{x+y}$ alors:
+   \begin{multicols}{3}
+   \begin{itemize}
+      \item  $\v{v}=\v{w} \Longleftrightarrow \Syst{5x&&&=&5}{x&+&y&=&3} \\ \hspace*{1cm} \Longleftrightarrow \Syst{x&=&1&&}{y&=&2&&}$
+      \item  $\v{u}+\v{v}\Coor{1+5}{-3+3}=\Coor{6}{0}$
+      \item  $-\v{u}\Coor{-1}{3}$
+      \item  $5\v{v}\Coor{5\times 5}{5\times 3}=\Coor{25}{15}$
+      \item  $-\v{u}+5\v{v}\Coor{-1+25}{3+15}=\Coor{24}{18}$
+   \end{itemize}
+   \end{multicols}
+\end{ex}
+
+\section{Colinéarité de deux vecteurs}
+
+\subsection{Définition générale}
+
+\vspace{-3mm}
+\noindent \begin{minipage}{9cm}
+\begin{defi}{}{}
+Deux vecteurs $\v{u}$ et $\v{v}$ sont \textbf{colinéaires} s'il existe un réel $k$ non nul tel que $$\v{v}=k\v{u}$$
+\end{defi}
+\medskip
+
+Autrement dit, les vecteurs $\v{u}$ et $\v{v}$ ont la même direction.
+\medskip
+
+Sur le dessin ci-dessous, tous les vecteurs dessinés sont colinéaires entre eux.
+\end{minipage}
+\hspace{0.2cm}
+\begin{minipage}{7cm}
+\begin{center}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm,scale=0.8]
+\draw [color=cqcqcq,, xstep=0.8cm,ystep=0.8cm] (0.5,1.5) grid (12.5,7.5);
+\clip(0.5,1.5) rectangle (12.5,7.5);
+\draw [->,line width=1.2pt,color=ffqqqq] (1.,3.) -- (4.,4.);
+\draw [->,line width=1.2pt] (2.,5.) -- (8.,7.);
+\draw [->,line width=1.2pt] (12.,5.) -- (3.,2.);
+\draw [->,line width=1.2pt] (8.,5.) -- (9.5,5.5);
+\draw [->,line width=1.2pt] (12.,3.) -- (7.98585814129115,1.6571160936740865);
+\begin{scriptsize}
+\draw[color=ffqqqq] (2.5224435071448177,3.85) node {\large{$\v{u}$}};
+\draw[color=black] (4.649272775437497,6.457116093674068) node {\large{$2\times \v{u}$}};
+\draw[color=black] (7.693175214461882,3.1) node {\large{$-3\times \v{u}$}};
+\draw[color=black] (8.439516677876516,5.7) node {\large{$\dfrac{1}{2}\times \v{u}$}};
+\draw[color=black] (10.190736190071634,3.6) node {\large{$-\dfrac{4}{3}\times \v{u}$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\begin{prop}{}{}
+   \begin{itemize}
+      \item  Trois points $A$, $B$ et $C$ sont alignés si et seulement si les vecteurs $\v{AB}$ et $\v{AC}$ sont colinéaires,
+      \item  deux droites $(AB)$ et $(CD)$ sont parallèles si et seulement si les vecteurs $\v{AB}$ et $\v{CD}$ sont colinéaires.
+   \end{itemize}
+\end{prop}
+
+\bigbreak
+\begin{minipage}{8cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.9]
+\draw [color=lightgray,, xstep=1.0cm,ystep=1.0cm] (1.5,2.5) grid (9.5,7.5);
+\clip(1.5,2.5) rectangle (9.5,7.5);
+\draw [->,line width=2.pt,color=red] (2.,3.) -- (4.,4.);
+\draw [->,line width=2.pt,color=red] (2.,3.) -- (8.,6.);
+\draw [line width=0.4pt,color=red] (0.,2.)-- (10.,7.);
+\begin{scriptsize}
+\draw [color=black] (2.,3.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (2.13,3.35) node {\large{$A$}};
+\draw [color=black] (4.,4.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (4.14,4.34) node {\large{$B$}};
+\draw[color=red] (2.9,3.9) node {\large{$\v{AB}$}};
+\draw [color=black] (8.,6.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (8.14,6.35) node {\large{$C$}};
+\draw[color=red] (5.,5.1) node {\large{$\v{AC}$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}{8cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.9]
+\draw [color=lightgray,, xstep=1.0cm,ystep=1.0cm] (1.5,1.5) grid (9.5,6.5);
+\clip(1.5,1.5) rectangle (9.5,6.5);
+\draw [->,line width=2.pt,color=blue] (2.,3.) -- (5.,6.);
+\draw [->,line width=2.pt,color=blue] (8.,6.) -- (6.,4.);
+\draw [line width=0.4pt,color=blue,domain=1.5:9.5] plot(\x,{(-3.-3.*\x)/-3.});
+\draw [line width=0.4pt,color=blue,domain=1.5:9.5] plot(\x,{(--4.-2.*\x)/-2.});
+\begin{scriptsize}
+\draw [color=black] (2.,3.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (2.132199604705794,3.3546770692838357) node {\large{$A$}};
+\draw [color=black] (5.,6.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (4.7,6.1) node {\large{$B$}};
+\draw[color=blue] (2.8,4.5) node {\large{$\v{AB}$}};
+\draw [color=black] (8.,6.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (7.7,6.1) node {\large{$C$}};
+\draw [color=black] (6.,4.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (5.7,4.349799020503344) node {\large{$D$}};
+\draw[color=blue] (7.7,5.110774630259439) node {\large{$\v{CD}$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\subsection{Coordonnées vectorielles et déterminant de deux vecteurs}
+
+\begin{defi}{}{}
+Dans un repère orthonormé $\rep$, on considère les vecteurs non nuls $\v{u}\Coor{x}{y}$ et $\v{v}\Coor{x'}{y'}$.
+
+\noindent Le déterminant de $(\v{u};\v{v})$ est le réel tel que : \[\text{det}(\v{u};\v{v}) = xy'-yx'\]
+\end{defi}
+
+\begin{prop}{}{}
+Les vecteurs non nuls $\v{u}\Coor{x}{y}$ et $\v{v}\Coor{x'}{y'}$ sont colinéaires si et seulement si $\text{det}(\v{u};\v{v})=0$.
+\end{prop}
+
+\begin{deme}{}{}
+Proposition à démontrer : \og Les vecteurs non nuls $\v{u}\Coor{x}{y}$ et $\v{v}\Coor{x'}{y'}$ sont colinéaires si et seulement si $\text{det}(\v{u};\v{v})=0$ \fg{} 
+
+\medskip
+\noindent On cherche à démontrer une équivalence.
+
+\medskip
+\noindent \textbf{Commençons par l'implication} ($\Longrightarrow$): 
+\begin{align*}
+\v{u}\Coor{x}{y} \text{ et } \v{v}\Coor{x'}{y'} \text{ colinéaires } \quad &\Longrightarrow \quad \v{u}=k\v{v} \quad \text{ avec } k \in \R \\
+&\Longrightarrow \quad \Coor{x}{y}=k\Coor{x'}{y'} \quad \Longrightarrow \quad \Coor{x}{y}=\Coor{kx'}{ky'} \\
+&\Longrightarrow \quad \text{det}(\v{u};\v{v}) = xy'-x'y = (kx')y'-x'(ky') = kx'y'-kx'y' = 0
+\end{align*}
+
+\noindent \textbf{Ensuite la réciproque} ($\Longleftarrow$): 
+
+Si $\text{det}(\v{u};\v{v})=0 $ alors $ xy'-x'y = 0 $
+
+\medskip
+Pour la suite, procédons par disjonction des cas :
+\begin{itemize}
+\item  Si $\v{u} = 0$, alors $\v{u} = 0.\v{v}$ donc les vecteurs $\v{u}$ et $\v{v}$ sont colinéaires.
+\item  Si $\v{u} \neq 0$, alors l'une au moins des deux coordonnées de $\v{u}$ est non nulle. Par exemple, supposons que $x \neq 0$.
+\begin{align*}
+ xy'-x'y = 0 \quad  &\Longrightarrow  \quad  xy' = x'y \quad \Longrightarrow \quad  y' = \dfrac{x'}{x} y\\
+&\Longrightarrow \quad y' = k y \quad \text{ avec } k = \dfrac{x'}{x} \quad \Longrightarrow \quad  y' = k y \quad \text{ et } \quad x' = kx \\
+&\Longrightarrow \quad  \v{v} = k \v{u} \quad \Longrightarrow \quad  \v{u}\Coor{x}{y} \text{ et } \v{v}\Coor{x'}{y'} \text{ colinéaires }
+\end{align*}
+\end{itemize}
+
+\noindent \textbf{Enfin la conclusion :} Pour démontrer une équivalence, nous avons fait un raisonnement par double implication. Les deux propositions logiques \og $\v{u}\Coor{x}{y}$ et $\v{v}\Coor{x'}{y'}$ sont colinéaires \fg{}  et \og $\text{det}(\v{u};\v{v})=0$ \fg{}  sont équivalentes. \hfill $\blacksquare$
+\end{deme}
+
+%\begin{ex}{}{}
+%Les vecteurs $\v{u}\Coor{2}{4}$ et $\v{v}\Coor{1}{2}$ sont colinéaires car $\v{u}=2\v{v}$.
+%\end{ex}
+
+\begin{ex}{}{}
+   On considère les trois vecteurs du plan suivants : $\v{u}\Coor{2}{-3}$, $\v{v}\Coor{-6}{9}$ et $\v{w}\Coor{5}{-7}$.
+   \begin{itemize}
+      \item  Les vecteurs $\v{u}$ et $\v{v}$ sont colinéaires car $2\times9-(-3)\times(-6)=18-18=0$,
+      \item  Les vecteurs $\v{u}$ et $\v{w}$ ne sont pas colinéaires car $2\times(-7)-(-3)\times5=-14+15=1\neq0$.
+   \end{itemize}
+\end{ex}
+
+\begin{ex}{}{}
+Soient quatre points $A(1;1)$, $B(1;3)$, $C(7;4)$ et $D(5;5)$ du plan.
+      
+\noindent Quelle est la nature du quadrilatère $ABDC$ ? 
+
+\noindent \begin{minipage}{8cm}
+\begin{itemize}
+\item[] $\v{AC}\Coor{7-1}{4-1}=\Coor{6}{3}$,
+\item[] $\v{BD}\Coor{5-1}{5-3}=\Coor{4}{2}$,
+\item[] $xy'-yx'= 6\times 2-3\times 4=0$.\\
+\hspace*{0.1cm} Les vecteurs $\v{AC}$ et $\v{BD}$ sont colinéaires, \\
+\hspace*{0.1cm} les droites $(AC)$ et $(BD)$ sont donc parallèles.
+\item[] De plus, $\v{AC}\neq\v{BD}$;
+\vspace*{0.3cm}
+\item[] donc : \fbox{$ABDC$ est un trapèze}
+\end{itemize}
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}{7cm}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.9]
+\begin{axis}[x=1.0cm,y=1.0cm,axis lines=middle,ymajorgrids=true,xmajorgrids=true,
+xmin=-0.5,xmax=7.5,ymin=-0.5,ymax=5.5,
+xtick={-0.0,1.0,...,7.0},ytick={-0.0,1.0,...,5.0},]
+\clip(-0.5,-0.5) rectangle (7.5,5.9);
+\draw [->,line width=2.4pt,color=ffqqqq] (1.,1.) -- (7.,4.);
+\draw [->,line width=2.4pt,color=ffqqqq] (1.,3.) -- (5.,5.);
+\draw [line width=1.6pt,dash pattern=on 3pt off 3pt] (1.,1.)-- (1.,3.);
+\draw [line width=1.6pt,dash pattern=on 3pt off 3pt] (7.,4.)-- (5.,5.);
+\begin{scriptsize}
+\draw[color=black] (1.14,1.41) node {$A$};
+\draw[color=black] (1.14,3.41) node {$B$};
+\draw[color=black] (7.14,4.41) node {$C$};
+\draw[color=black] (5.14,5.3) node {$D$};
+\draw[color=ffqqqq] (3.7,3.25) node {$\v{AC}$};
+\draw[color=ffqqqq] (2.72,4.81) node {$\v{BD}$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\end{ex}

@@ -1,0 +1,177 @@
+
+\subsection{Divisibilité}
+
+\begin{defi}{Divisibilité}{}
+Un nombre entier $a\in\Z$ est \bf{divisible} par un nombre entier $b\in\Z$ s'il existe un nombre entier $k\in\Z$ tel que: $a=k\times b$.
+
+On dit que:
+\begin{itemize}
+	\item $k$ est le \bf{facteur multiplicatif}
+	\item $a$ est un \bf{multiple} de $b$
+	\item $b$ est un \bf{diviseur} de $a$
+\end{itemize}
+\end{defi}
+
+\begin{ex}{}{}
+$72$ est divisible par $24$ car $72 = 3\times 24$
+
+ On peut donc dire que $72$ est un multiple de $24$ et de $3$ ou que $24$ est un diviseur de $72$.
+\end{ex}
+
+\begin{rem}
+	$72$ est également divisble par $8$, $9$ et même par $-3$.
+\end{rem}
+
+\begin{defi}{Parité}{}
+Un entier multiple de deux est un entier \bf{pair}, les autres sont les entiers \bf{impairs}.
+\end{defi}
+
+\begin{prop}{}{}
+Si $a\in\Z$ est pair, si et seulement s'il existe $k\in\Z$ tel que $a=2k$.
+
+Si $a\in\Z$ est impair, si et seulement s'il existe $k\in\Z$ tel que $a=2k+1$.
+\end{prop}
+
+\begin{ex}{}{}
+$72$ est un multiple de $2$. En effet, $2\times 36 = 72$. Donc 72 est un entier pair.
+\end{ex}
+
+\begin{prop}{}{}
+Soit $a\in\Z$ un entier, la somme de deux multiples de $a$ est multiple de $a$.
+\end{prop}
+
+\begin{deme}{}{}
+Soit $a\in\N$. Soient $b, c\in\N$ des multiples de $a$.
+
+Il existe $k\in\N$ et $k'\in\N$ deux entiers tel que:
+$$ b =k\times a  \quad \text{ et } \quad c = k' \times a$$
+
+Par addition, on a:
+$$ b + c = k\times a  + k' \times a $$
+
+En factorisant par $a$, il vient: 
+$$ b + c = (k  + k') \times a $$
+
+Donc $b+c$ est un multiple de $a$.
+\end{deme}
+
+\begin{prop}{}{}
+Le carré d'un nombre impair est impair.
+\end{prop}
+
+\begin{deme}{}{}
+Soit $a\in\N$ un nombre impair. Il existe $k\in\N$ tel que:
+$$ a =2\times k+1 $$
+
+Par multiplication, on a:
+$$ a^2 = \left(2\times k+1 \right)^2 = (2\times k)^2 + 2 \times 2k \times 1 + 1^2 = 4k^2 + 4k +1 = 2(2k^2+2k)+1$$
+
+Donc $a^2$ est un nombre impair. 
+\end{deme}
+
+\begin{prop}{}{}
+\begin{itemize}
+\item  Un nombre est divisible par $2$ si il se termine par $0$, $2$, $4$, $6$ ou $8$
+\item  Un nombre est divisible par $5$ s'il se termine par $0$ ou $5$.
+
+\item  Un nombre est divisible par $3$ si la somme de ses chiffres est divisible par $3$.
+
+Exemple: $249$ est divisible par $3$ car $2 + 4 + 9 = 15$ qui est divisible par $3$ ($3 \times 5 = 15$).
+
+\item  Un nombre est divisible par $9$ si la somme de ses chiffres est divisible par $9$.
+
+Exemple: $2 538$ est divisible par $9$ car $2 + 5 + 3 + 8 = 18$ qui est divisible par $9$ ($3 \times 9 = 18$).
+\end{itemize}
+\end{prop}
+
+\subsection{Nombres premiers}
+\begin{defi}{Nombre premier}{}
+Un entier naturel $n\in\N$ qui a exactement deux diviseurs distincts (à savoir $1$ et $n$) est appelé un \bf{nombre premier}. 
+\end{defi}
+
+\begin{rems}{}{}
+	\begin{itemize}
+		\item Attention, $1$ n'est pas un nombre premier !
+		\item 
+		Trouver des grands nombres premiers est un problème difficile. Les nombres premiers sont indispensables en cryptographie, par exemple pour assurer la sécurité d'un paiement bancaire.
+	\end{itemize}
+\end{rems}
+
+\begin{theo}{fondamental de l'arithmétique}{}
+	Soit $a\in\N$ un entier naturel. Il existe un entier $n\in\N$ et des diviseurs tous premiers $d_1, d_2, d_3, ... d_n$ tels que:
+	$$a=d1\times d2 \times d_3 \times ...\times d_n$$
+
+	On appelle cette écriture une décomposition en nombres premiers.
+\end{theo}
+
+
+\begin{methode}{Déterminer une décomposition en nombres premiers}{}
+	On cherche à décomposer le nombre entier $a\in\N$.:
+	\begin{enumerate}
+		\item On cherche un diviseur $d$ en testant les petits nombres premiers $2,3,5,7,11,13,15,17,19$.
+		\item On écrit alors $a=k\times d$.
+		\item Si $k$ est premier alors on a fini. Sinon, on retourne à l'étape 1 en décomposant $k$ cette fois.
+	\end{enumerate}
+\end{methode}
+
+\begin{ex}{}{}
+	Prenons par exemple $105$. On remarque que $105$ est divisible par $3$. On a $105 = 35\times3$. Donc on continue avec $35$.
+	
+	On sait que $35$ est divisble par $5$, c'est $5\times7$. Enfin 	$7$ est lui-même premier. Donc on a obtenu la décomposition:
+	$105=35\times3 = (5\times7)\times3 = 3\times5\times7$
+\end{ex}
+
+\begin{methode}{Crible d'Erathosthène}{}
+La méthode du crible d'Ératosthène permet de dresser la liste des nombres premiers inférieurs ou égaux à $n$. 
+
+Nous prendrons l'exemple $n=100$:
+
+\begin{minipage}{.6\textwidth}
+  \begin{tabular}{|*{10}{c|}}
+\hline
+ & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\
+\hline
+11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20\\
+\hline
+21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30\\
+\hline
+31 & 32 & 33 & 34 & 35 & 36 & 37 & 38 & 39 & 40\\
+\hline
+41 & 42 & 43 & 44 & 45 & 46 & 47 & 48 & 49 & 50\\
+\hline
+51 & 52 & 53 & 54 & 55 & 56 & 57 & 58 & 59 & 60\\
+\hline
+61 & 62 & 63 & 64 & 65 & 66 & 67 & 68 & 69 & 70\\
+\hline
+71 & 72 & 73 & 74 & 75 & 76 & 77 & 78 & 79 & 80\\
+\hline
+81 & 82 & 83 & 84 & 85 & 86 & 87 & 88 & 89 & 90\\
+\hline
+91 & 92 & 93 & 94 & 95 & 96 & 97 & 98 & 99 & 100 \\
+\hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}{.4\textwidth}
+\begin{itemize}
+  \item Écrire la liste des entiers de $2$ à $n$.
+  \item Éliminer les multiples de $2$, puis de $3$, etc., jusqu'à $\sqrt{n}$.
+  \item Les entiers non éliminés sont premiers.
+\end{itemize}
+\end{minipage}
+
+\end{methode}
+
+
+\begin{prop}{}{}
+	$\sqrt{2}$ n'est pas rationnel. Autrement dit, $\sqrt{2}\notin\Q$.
+\end{prop}
+
+\begin{deme}{}{}
+	On raisonne par l'absurde, en supposant que $\sqrt{2}\notin\Q$ (c'est-à-dire qu'il est rationnel). On va montrer que cela conduit à une contradiction de logique.
+
+	Il existe $a\in\Z$ et $b\in\N^*$ des entiers tels que $\sqrt{2} = \frac{a}{b}$ et que la fraction est irréductible. Alors on a $2 = \frac{a^2}{b^2}$. Donc $a^2=2\times b^2$. Donc $a^2$ est pair. Alors $a$ aussi est pair.
+
+	On écrit donc $a=2\times k$ avec $k\in\Z$. L'égalité $a^2=2b^2$ devient $4k^2 = 2b^2$. On obtient $2k^2=b^2$. Par le même raisonnement on en déduit que $b$ est pair.
+
+	Alors la fraction $\frac{a}{b}$ se simplifie par $2$ et elle n'est pas irréductible. C'est absurde. L'hypothèse initiale est fausse et $\sqrt{2}$ n'est pas rationnel.
+\end{deme}

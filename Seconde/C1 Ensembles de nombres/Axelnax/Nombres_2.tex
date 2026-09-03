@@ -1,0 +1,277 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\input{0_Préambule_Algèbre}\begin{document}
+
+\newpage
+\setcounter{chapter}{2}
+\hypertarget{Les nombres 2}{}
+\chapter{Les nombres 2}
+
+\paragraph*{Objectif du chapitre :}
+\begin{enumerate}
+\item[•] Vocabulaire et notation: puissance, exposant, ensemble des nombres décimaux, $\mathbb{D}$.fraction, nombre décimal, écriture décimale, nombre rationnel, ensemble des nombres rationnels, $\mathbb{Q}$.
+\item[•] Multiplication, division et puissance de puissance.
+\item[•] Additionner des fractions: mise au même dénominateur, multiplication et division de fractions.
+\end{enumerate}
+
+\vspace{-3mm}
+\section{Puissance d'un nombre}
+
+\vspace{-5mm}
+%L'utilisation des puissances simplifie l'écriture des produits comportant le même facteur.
+\noindent \begin{minipage}{12.5cm}
+\begin{dft}[Puissance à exposant positif]
+Si $x$ est un nombre et $n$ un entier naturel, alors $x^n$, qui se lit \og $x$ puissance $n$ \fg{} ou \og $x$ exposant $n$ \fg{}, est le nombre \[ x^n=\underset{n\ \text{fois} }{\underbrace{x\times \dots \times x}} \]
+Par convention : pour tout $n \in \N$, $0^{n} = 0$; pour tout $n \in \Z$, $a^1 = a$ \quad et \quad $a^0 = 1$;
+\end{dft}
+\end{minipage}
+\hspace{3mm}
+\begin{minipage}{3.8cm}
+\begin{ex}
+\begin{align*}
+2^{4} &= 2 \times 2 \times 2 \times 2 \\
+&= 16\\
+\\
+(-3)^{3} &= (-3) \times (-3) \times (-3)\\
+&=27
+\end{align*}
+\end{ex}
+\end{minipage}
+
+\noindent \begin{minipage}{11cm}
+\begin{dft}[Puissance à exposant négatif]
+Soit $n$ un nombre strictement positif et a un nombre relatif non nul. On appelle « $a$ puissance moins $n$ » le nombre noté $a^{-n}$ tel que :  $$a^{-n} = \dfrac{1}{a^n}$$
+\end{dft}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{5cm}
+\begin{ex}
+$2^{-4} = \dfrac{1}{2^4} = \dfrac{1}{16}$ 
+
+$(-3)^{-3} = \dfrac{1}{(-3)^{-3}} = \dfrac{1}{-27} = -\dfrac{1}{27}$  ;
+\end{ex}  
+\end{minipage}
+
+\noindent \begin{minipage}{11cm}
+\begin{prop}[Produit et quotient de puissances]
+Soit $a$ un nombre relatif non nul; $m$ et $n$ deux entiers.
+\begin{center}
+$a^n \times a^m = a^{n+m}$ \hspace{0.5cm} et \hspace{0.5cm} $\dfrac{a^n}{a^m} = a^{n-m}$
+\end{center}
+\end{prop}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{5cm}
+\begin{ex}
+$3^5 \times 3^8 = 3^{5+8} = 3^{13}$
+
+$\dfrac{5^2}{5^7} = 5^2 \times 5^{-7} = 5^{2-7} = 5^{-5}$
+\end{ex} 
+\end{minipage}
+
+\noindent \begin{minipage}{11cm}
+\begin{prop}[Puissance de produit et de quotient]
+Soit $a$ et $b$ deux nombres relatifs non nuls, soit $n$ un entier.
+\begin{center}
+$a^n \times b^n = (a\times b)^{n}$ \hspace{0.5cm} et \hspace{0.5cm} $\dfrac{a^n}{b^n} = \left( \dfrac{a}{b} \right)^{n}$
+\end{center}
+\end{prop}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{5cm}
+\begin{ex}
+$3^5 \times 2^5 = (3\times 2)^{5} = 6^5$
+
+$\dfrac{5^3}{10^3} = \left( \dfrac{5}{10} \right)^{3} = \left( \dfrac{1}{2} \right)^{3}$
+\end{ex}
+\end{minipage}
+
+\noindent \begin{minipage}{11cm}
+\begin{prop}[Puissance de puissance]
+Soit $a$ un nombre relatif ; soit $m$ et $n$ des entiers
+\begin{center}
+$\left( a^n \right)^{m} = a^{n \times m}$
+\end{center}
+\end{prop}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{5cm}
+\begin{ex}
+$\left( 5^3 \right)^{4} = 5^{3 \times 4} = 5^{12}$
+
+$\left( 2^4 \right)^{-5} = 2^{4 \times (-5)} = 2^{-20} = \dfrac{1}{2^{20}}$
+\end{ex}
+\end{minipage}
+
+\begin{exec}
+\hspace{0.5cm} \hypertarget{Ex_2_1_1}{} Exercice \ref{2_1_1} \hspace{0.5cm};
+\hspace{0.5cm} \ding{79} \hypertarget{Ex_2_1_2}{} Exercice \ref{2_1_2}
+\end{exec}
+
+\section{Les nombres décimaux : $\mathbb{D}$}
+
+\vspace{-2mm}
+\begin{dft}
+Un nombre est décimal si et seulement si il admet un développement décimal limité, c'est-à-dire si et seulement si il possède une écriture avec un nombre fini de chiffres après la virgule.
+
+\noindent L'ensemble des nombres décimaux est noté $\mathbb{D}$. 
+\end{dft}
+
+\begin{rmq}
+\begin{enumerate}
+\item[•] Lorsqu'un nombre, dans son écriture décimale, n'a que des zéros à partir d'un certain nombre de décimales alors on dit que c'est un nombre décimal. 
+
+Ainsi: $\np{2315,895643}= \np{2315,895643000}\dots$ est un nombre décimal.
+	
+Tous les nombres décimaux peuvent s'écrire sous forme de fraction: $\np{2315,895643}=\dfrac{\np{2315895643}}{\np{1000000}}$.
+\item[•] Plus généralement, les nombres décimaux peuvent s'écrire comme quotient d'un entier relatif par une puissance d'exposant positif de 10 :
+
+Un nombre est décimal s'il peut s'écrire $\dfrac{a}{10^n}$, $a$ appartenant à $\Z$ et $n$ à $\N$
+\end{enumerate}
+\end{rmq}
+
+\bigbreak
+Avec les définition ci-dessus, on observe plusieurs manières d'écrire un nombre :
+
+\begin{enumerate}
+\item[•]\textbf{l'écriture décimale} : La partie décimale compte un nombre fini de chiffres non nuls.
+
+Par exemple, $237,698$ qui a pour partie entière $237$ et pour partie décimale $698$
+
+\item[•]\textbf{écriture scientifique} : C'est l'écriture sous forme du produit d'un nombre décimal ayant un seul chiffre non nul avant la virgule et d'une puissance de 10 (d'exposant entier relatif) 
+
+Par exemple, $38 = 3,8 \times 10^1$ \hspace{0.8cm} ou \hspace{0.8cm} $0,0562 = 5,62 \times 10^{-2}$ \hspace{0.8cm}ou  encore \hspace{0.8cm} $-97631 = - 9,7631 \times 10^{4}$
+\end{enumerate}
+
+\begin{exec}
+\hspace{0.5cm} \hypertarget{Ex_2_1_3}{} Exercice \ref{2_1_3} \hspace{0.5cm}
+\end{exec}
+
+\section{Les fractions}
+
+\begin{dft}
+Une fraction est un nombre qui peut s'écrire comme le quotient d'un entier (relatif) par un autre entier (relatif non nul).
+\end{dft}
+\medskip
+
+\noindent Au lycée et ultérieurement on utilise que la notation fractionnaire $\left(\dfrac{1}{3}\right)$ pour la division et plus le $\div$ $(1 \div 3)$.
+\medskip
+
+\begin{rmq}
+\begin{enumerate}
+\item Il existe des nombres qui ne peuvent pas s'écrire sous forme de fractions: $\sqrt{2}$, $\pi$ (admis).
+\item Rappelons une règle de priorité opératoire: dans une fraction la division correspondant à la fraction est la dernière opération effectuée.
+\item La manipulation des fractions nécessite de connaître les règles :
+
+\begin{minipage}{7cm}
+\begin{center}
+ d'addition (réduire au même dénominateur),
+ \end{center} \[  \frac{a}{b}+\frac{x}{y}=\frac{ay+xb}{by} \] \end{minipage}
+\vline
+\begin{minipage}{5cm}
+\begin{center}
+ de multiplication,
+ \end{center} \[  \frac{a}{b}\times \frac{x}{y}=\frac{a \times x}{b \times y} \] 
+\end{minipage}
+\vline
+\begin{minipage}{4cm}
+\begin{center}
+de division 
+\end{center}\[  \frac{ \frac{a}{b} }{ \frac{x}{y}}=\frac{a}{b}\times \frac{y}{x}. \] 
+\end{minipage}
+
+\medskip
+Rappelons encore que pour simplifier une fraction il faut qu'il y ait un facteur \\commun au numérateur et au dénominateur: \[  \frac{a\times {\color{orange}x}}{b\times {\color{orange}x}}=\frac{a}{b} \]
+\item Une astuce d'écriture qui nous sera souvent utile \[ \frac{a}{b}=\frac{1}{b}\times a \]
+\item Rappelons enfin qu'il est impossible de diviser par $0$. 
+
+\textbf{Raisonnons par l'absurde: }
+
+Supposons qu'il existe un nombre $q$ tel que $\frac{3}{0}=q$ (nous supposons que l'on peut diviser $3$ par $0$). 
+
+Donc $3=0\times q$. 
+
+Ce qui est impossible car $0\times q=0$ ($0$ est une valeur absorbante). 
+
+Nous avons donc démontré par l'absurde qu'il est impossible de diviser $3$ par $0$.
+\end{enumerate}
+\end{rmq}
+
+\begin{prop}
+\noindent Les règles de priorités pour l'instant se limitent à:
+\begin{enumerate}
+\item Les calculs entre parenthèses ou crochets. S'il y a des parenthèses emboîtées les plus emboîtées sont prioritaires. La barre de fraction joue le même rôle que des parenthèses autour des numérateurs et dénominateurs.
+\item Les exposants (puissances)
+\item Les multiplications et division ($\div$) en allant de gauche à droite.
+\item Les additions et soustractions en allant de gauche à droite.
+\end{enumerate}
+\end{prop}	
+
+\begin{exec}
+\hspace{0.5cm} \hypertarget{Ex_2_2_1}{} Exercice \ref{2_2_1} \hspace{0.5cm};
+\hspace{0.5cm} \hypertarget{Ex_2_2_2}{} Exercice \ref{2_2_2} \hspace{0.5cm};
+\hspace{0.5cm} \hypertarget{Ex_2_2_3}{} \ding{79} Exercice \ref{2_2_3} \hspace{0.5cm};
+\hspace{0.5cm} \hypertarget{Ex_2_2_4}{} Exercice \ref{2_2_4} \hspace{0.5cm};
+\hspace{0.5cm} \hypertarget{Ex_2_2_5}{} \ding{79} Exercice \ref{2_2_5} \hspace{0.5cm}
+\end{exec}
+
+\vspace{-2mm}
+\section{Les nombres rationnels : $\mathbb{Q}$}
+
+\vspace{-2mm}
+\begin{dft}
+Les nombres rationnels sont les nombres qui peuvent s'écrire sous forme de fraction. 
+
+\noindent L'ensemble de tous les nombres rationnels est noté: $\mathbb{Q}$.
+\end{dft}
+
+\begin{rmq}
+\begin{enumerate}
+%\item[•] Un entier est un nombre rationnel. Par exemple: $-13=\dfrac{-13}{1}$.
+%\item[•] Les nombres décimaux peuvent s'écrire comme des fractions donc ce sont des nombres rationnels. \\ Ainsi: $0,1=\dfrac{1}{10}$.
+\item[•] Il existe des nombres qui ne sont pas décimaux et qui sont rationnels. \\ Ainsi $\dfrac{1}{3}$ est un nombre rationnel mais son écriture décimale est infinie donc ce n'est un nombre décimal.
+\begin{demoe}
+Proposition à démontrer : \og $\dfrac{1}{3}$ n'est pas décimal \fg.
+
+\medskip
+On va démontrer cette proposition par l'absurde :
+
+\noindent Supposons que $\dfrac{1}{3}$ soit décimal. Alors il est de la forme $\dfrac{a}{10^n}$, $a$ appartenant à $\Z$ et $n$ à $\N$.
+
+\noindent On en déduit que : 
+\begin{align*}
+\dfrac{1}{3} = \dfrac{a}{10^n} \quad \Longleftrightarrow \quad
+\dfrac{1}{3} {\color{cocours} \times 3}= \dfrac{a}{10^n}{\color{cocours} \times 3}\quad \Longleftrightarrow \quad
+1 = \dfrac{3a}{10^n}\quad \Longleftrightarrow \quad
+1 {\color{cocours} \times 10^n}= \dfrac{3a}{10^n}{\color{cocours} \times 10^n}\quad \Longleftrightarrow \quad
+10^n = 3 \times a
+\end{align*}
+
+\noindent Alors l'une des puissances de 10 serait un multiple de 3. 
+
+\noindent C'est faux d'après les critères de divisibilité (et sans même avoir à poser la division décimale).
+
+\noindent Donc $\dfrac{1}{3}$ n'est pas décimal.\hfill $\blacksquare$
+\end{demoe}
+\item[•] Tous les nombres ne sont pas rationnels.
+\item[•] Lorsqu'un nombre rationnel a une écriture décimale infinie on préfère son écriture fractionnaire.
+\item[•] Un nombre rationnel admet une écriture fractionnaire canonique appelée la forme irréductible qui est obtenue lorsque le PGCD des numérateur et dénominateur est 1 (ils n'ont pas de facteur commun).
+	
+Certaines calculatrices donnent la forme irréductible.
+\end{enumerate}
+\end{rmq}
+
+\begin{prop}
+Lorsqu'un nombre a une écriture décimale infinie périodique c'est un nombre rationnel.
+\end{prop}
+
+\begin{rmq}
+On dit que l'écriture est périodique lorsqu'une série de chiffre se reproduit indéfiniment.
+\end{rmq}
+
+\begin{ex}
+\begin{enumerate}
+	\item[•] $0,333\dots$ est rationnel, en effet c'est l'écriture décimal de la fraction $\dfrac{1}{3}$
+	\item[•] $45,78242424\dots$ est aussi rationnel, bien que sa forme fractionnaire sois plus dur à déterminer
+\end{enumerate}
+\end{ex}
+
+\end{document}

@@ -1,0 +1,310 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\input{0_Préambule_Algèbre}\begin{document}
+
+\newpage
+\hypertarget{Les nombres 1}{}
+\chapter{Les nombres 1}
+
+\paragraph*{Objectif du chapitre :}
+\begin{enumerate}
+\item[•] Connaitre ce que sont $\mathbb{N}$ et $\mathbb{Z}$ ainsi que leurs noms et notations.
+\item[•] Appliquer les règles de priorités opératoires.
+\item[•] Faire les additions et multiplications de nombres négatifs ou positifs.
+\item[•] Connaitre le nom du résultat d'un calcul.
+\end{enumerate}
+
+\section{Entiers naturels : $\mathbb{N}$}
+
+\begin{dft}
+\noindent Les entiers naturels sont les nombres qui servent à dénombrer, à compter.
+
+\noindent L'ensemble de tous les entiers naturels est: $$\mathbb{N}=\{ 0,\ 1,\ 2,\ 3,\ \dots \}$$
+
+\noindent Ce sont des nombres positifs ou nuls.
+\end{dft}
+
+\begin{rmq}
+\begin{enumerate}
+\item La notation $\mathbb{N}$ représente la première lettre de \og naturel\fg{}.
+\item En fait l'ensemble des nombres entiers naturels se construit logiquement.
+\item Parmi les mathématiciens qui ont marqué l'étude de l'ensemble des entiers naturels : 
+
+Hermann Günther Grassmann (XIX$^e$ siècle), Giuseppe Peano (fin XIX$^e$ siècle).
+
+\medskip
+\href{https://www.axelnax.fr/index.php?p=frise}{Voir la frise chronologique}
+\end{enumerate}
+\end{rmq}
+
+\subsection{Divisibilité}
+
+\begin{dft}
+Un nombre entier $a$ est divisible par un nombre entier $b$ si le reste de la division euclidienne de $a$ par $b$ est nul. 
+
+\noindent Dans ce cas, $a$ est un multiple de $b$ et $b$ est un diviseur de $a$.
+\end{dft}
+
+\smallskip
+\begin{ex}
+$72$ est divisible par $24$. En effet, $72 = 3\times 24 + 0$ donc le reste de la division euclidienne de $72$ par $24$ est nul.
+
+\noindent On peut donc dire que $72$ est un multiple de $24$ et de $3$ ou que $24$ est un diviseur de $72$.
+\end{ex}
+
+\begin{dft}
+Un entier multiple de deux est un entier pair, les autres sont les entiers impairs.
+\end{dft}
+
+\smallskip
+\begin{ex}
+$72$ est un multiple de $2$. En effet, $2\times 36 = 72$. Donc 72 est un entier pair.
+\end{ex}
+
+\begin{prop}
+Soit $a$ un entier naturel, la somme de deux multiples de $a$ est multiple de $a$.
+\end{prop}
+
+\begin{demoe}
+Soient $b$ et $c$ deux nombres entiers.
+
+\noindent On cherche à démonter l'implication suivante : 
+\begin{center}
+Si $b$ est un multiple de $a$ et $c$ un multiple de $a$, alors $b+c$ est un multiple de $a$.
+\end{center}
+
+\medskip
+Si $b$ est un multiple de $a$ et $c$ un multiple de $a$ alors il existe $m$ et $m'$ deux entiers tel que :
+$$ b =m\times a  \quad \text{ et } \quad c = m' \times a$$
+
+Par addition, on a :
+$$ b + c = m\times a  + m' \times a $$
+
+En factorisant par $a$, il vient : 
+$$ b + c = (m  + m') \times a $$
+
+Donc $b+c$ est un multiple de $a$. \hfill $\blacksquare$
+\end{demoe}
+
+\begin{prop}
+Le carré d'un nombre impair est impair.
+\end{prop}
+
+\begin{demoe}
+Soit $a$ un nombre entier.
+
+\noindent On cherche à démonter l'implication suivante : 
+\begin{center}
+Si $a$ est un nombre impair, alors $a^2$ est un nombre impair.
+\end{center}
+
+\medskip
+Si $a$ est un nombre impair alors il existe $k$ entiers tel que :
+$$ a =2\times k+1 $$
+
+Par multiplication, on a :
+$$ a^2 = \left(2\times k+1 \right)^2 = (2\times k)^2 + 2 \times 2k \times 1 + 1^2 = 4k^2 + 4k +1$$
+
+$4k^2$ est un multiple de $2$ ($2 \times 2k^2$)
+
+$4k$ est multiple de $2$ ($2 \times 2k$)
+
+D'après la propriété précédente, $4k^2+4k$ est donc un multiple de deux, donc un nombre pair.
+
+Donc $a^2 = (4k^2 + 4k) +1$ est un nombre qui est après un nombre pair donc un nombre impair. \hfill $\blacksquare$
+\end{demoe}
+
+\subsection{Critère de divisibilité}
+
+\begin{meth}
+\begin{enumerate}
+\item[•] Un nombre est divisible par $2$ si il se termine par $0$, $2$, $4$, $6$ ou $8$
+\item[•] Un nombre est divisible par $5$ s'il se termine par $0$ ou $5$.
+
+\item[•] Un nombre est divisible par $3$ si la somme de ses chiffres est divisible par $3$.
+
+Exemple : $249$ est divisible par $3$ car $2 + 4 + 9 = 15$ qui est divisible par $3$ ($3 \times 5 = 15$).
+
+\item[•] Un nombre est divisible par $9$ si la somme de ses chiffres est divisible par $9$.
+
+Exemple : $2 538$ est divisible par $9$ car $2 + 5 + 3 + 8 = 18$ qui est divisible par $9$ ($3 \times 9 = 18$).
+\end{enumerate}
+\end{meth}
+
+\begin{dft}
+Un nombre qui n'est divisible que par $1$ est lui-même est appelé un nombre premier.
+\end{dft}
+
+\begin{rmq}
+Il n'existe pas à ce jour de formule pour trouver des nombres premiers. Afin d'être certains qu'un nombre soit premier, il faut faire de nombreux calculs, souvent a l'aide d'ordinateur.
+\end{rmq}
+
+\newpage
+\section{Entiers relatifs : $\mathbb{Z}$}
+
+\begin{dft}
+\noindent Les entiers relatifs sont les entiers naturels et leurs opposés.
+
+\noindent L'ensemble de tous les entiers relatifs est:
+$$\mathbb{Z}=\{ \dots ,\ -3,\ -2,\ -1,\ 0,\ 1,\ 2,\ 3,\ \dots \}$$
+\end{dft}
+
+\begin{prop}
+Les nombres entiers relatifs ont une partie décimale nulle.
+\end{prop}
+
+\begin{rmq}
+\begin{enumerate}
+\item Autrement dit l'écriture décimale infinie d'un entier ne comporte que des zéros dans la partie décimale. 
+
+Ainsi: $3=3,000\dots$
+\item Il existe des nombres qui ne sont pas des entiers. Par exemple $\dfrac{1}{2}$ n'est pas un entier.
+\item La notation $\mathbb{Z}$ (de l'allemand \og zahlen\fg{} signifiant nombres) fut popularisée par Nicolas Bourbaki.
+\end{enumerate}
+\end{rmq}
+
+%\subsection{Additionner des entiers relatifs.}
+
+%\begin{ex}
+%Évaluons les quantités suivantes:
+
+%\begin{tabularx}{\linewidth}{*{2}{X}}
+%\begin{minipage}{\linewidth}
+%\begin{enumerate}
+%\item $A=-3+2$
+%\item $B=-8-7$
+%\end{enumerate}	
+%\end{minipage}	
+%&
+%\begin{minipage}{\linewidth}			
+%\begin{enumerate}
+%\setcounter{enumi}{2}
+%\item $C=-(-3)+4$
+%\item $D=-13+(-11)$
+%\end{enumerate}
+%\end{minipage}
+%\end{tabularx}
+%\end{ex}
+
+%\subsection{Multiplier des entiers relatifs.}
+
+\begin{prop}
+\noindent Le produit de deux nombres de même signe est positif.
+
+\noindent Le produit de deux nombres de signes contraires est négatif.
+\end{prop}
+
+%\medskip
+%\noindent Il est également possible de se représenter les choses comme suit.
+
+%\bigskip
+%\begin{minipage}{7cm}
+%\begin{center}
+%\begin{tikzpicture}
+%\coordinate (A) at (0,0);
+%\coordinate (B) at (4,0);
+%\coordinate (C) at (2,1);	
+%\node[draw,rectangle] (A) at (A) {$x$};
+%\node[draw,rectangle] (B) at (B) {$ {\color{G1}-2 \times} x$};
+%\draw[>=latex,->] (A)--(B)node[midway, above]{$\color{G1}-2 \times$};
+%\draw node (C) at (C) {\footnotesize Multiplier par un nombre négatif change le signe};	
+%\end{tikzpicture}
+%\end{center}
+%\end{minipage}
+%\hspace{5mm}
+%\begin{minipage}{7cm}
+%\begin{center}
+%\begin{tikzpicture}	
+%\coordinate (A1) at (0,-2);
+%\coordinate (B1) at (4,-2);
+%\coordinate (C1) at (2,-1);	
+%\node[draw,rectangle] (A1) at (A1) {$x$};
+%\node[draw,rectangle] (B1) at (B1) {$ {\color{G1} 3 \times }x$};
+%\draw[>=latex,->] (A1)--(B1)node[midway, above]{${\color{G1} 3 \times} $};
+%\draw node (C1) at (C1) {\footnotesize Multiplier par un nombre positif ne change pas le signe};	
+%\end{tikzpicture}
+%\end{center}
+%\end{minipage}
+
+\begin{rmq}
+\noindent $0$ est dit \textbf{absorbant} pour la multiplication : \quad quelque soit le nombre $a$, $0\times a=0$.
+
+\noindent $1$ est dit \textbf{neutre} pour la multiplication : \quad quelque soit le nombre $a$, $1\times a= a$.
+\end{rmq}
+
+%\begin{ex}
+%Évaluons les quantités suivantes:
+
+%\begin{tabularx}{\linewidth}{*{2}{X}}
+%\begin{minipage}{\linewidth}
+%\begin{enumerate}
+%\item $A=-3\times 2$
+%\item $B=-8\times (-7)$
+%\end{enumerate}	
+%\end{minipage}	
+%&
+%\begin{minipage}{\linewidth}			
+%\begin{enumerate}
+%\setcounter{enumi}{2}
+%\item $C=-(-3)\times 4$
+%\item $D=-13\times (-11)$
+%\end{enumerate}
+%\end{minipage}
+%\end{tabularx}
+%\end{ex}
+
+%\subsection{Priorités opératoires.}
+
+\begin{prop}
+Les règles de priorités pour l'instant se limitent à : (Dans l'ordre des priorités)
+\begin{enumerate}
+	\item Les calculs entre parenthèses ou crochets. S'il y a des parenthèses emboîtées les plus emboîtées sont prioritaires.
+	\item Les multiplications en allant de gauche à droite.
+	\item Les additions et soustractions en allant de gauche à droite.
+\end{enumerate}
+\end{prop}
+
+%\begin{ex}
+
+%Évaluons les quantités suivantes:
+	
+%\noindent 
+%\begin{tabularx}{\linewidth}{*{2}{X}}
+%\begin{minipage}{\linewidth}
+%\begin{enumerate}
+%\item $A=4\times (-1)$
+%\item $B=-1\times (-1)$
+%\end{enumerate}
+%\end{minipage}
+%&
+%\begin{minipage}{\linewidth}
+%\begin{enumerate}
+%\setcounter{enumi}{2}
+%\item $C=3\times [-2(3-5)]$
+%\item $D=(3-5\times (-2))(-1+(-4)\times 2)$
+%\end{enumerate}
+%\end{minipage}
+%\end{tabularx}
+%\end{ex}
+
+\begin{exec}
+\hspace{0.5cm} \hypertarget{Ex_1_1_1}{} Exercice \ref{1_1_1} \hspace{0.5cm}
+\end{exec}
+
+\section{Nommer le résultat d'un calcul.}
+
+\begin{dft}
+Nous dirons qu'un calcul est une \textbf{somme} (respectivement une \textbf{différence}, respectivement un \textbf{produit}) si la dernière opération effectuée en respectant les priorités opératoires est une addition (respectivement une soustraction, respectivement une multiplication).
+\end{dft}
+\medskip
+
+À moins de devoir distinguer somme et différence, les résultats d'une addition et d'une soustraction seront très souvent indifféremment appelés des sommes.
+
+\begin{ex}
+Ainsi \quad $2\times(-2) +4\times (3-1)$ \quad et \quad $3-(4-2)\times (5-2)$ \quad sont des sommes tandis que \quad $(3-1)\times (-6-1)$ \quad est un produit.
+\end{ex}
+
+\begin{exec}
+\hspace{0.5cm} \hypertarget{Ex_1_1_3}{} Exercice \ref{1_1_3} \hspace{0.5cm};
+\hspace{0.5cm} \hypertarget{Ex_1_1_4}{} Exercice \ref{1_1_4} \hspace{0.5cm}
+\end{exec}
+
+\end{document}

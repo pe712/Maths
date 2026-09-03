@@ -1,0 +1,61 @@
+\documentclass[10pt,a4paper,openany,twoside, prof]{book}
+
+\usepackage{layout_cours}
+\begin{document}
+
+\chapnumber{12} % numéro du chapitre
+\titre{Equation de droite} % titre du chapitre
+\classe{Seconde} % classe
+% \entetegal
+
+\subsection*{37 p.136}
+\begin{enumerate}[label=\alph*)]
+   \item $\vecu \coordvp{1}{\sqrt{2}}$
+   \item $\vecu \coordvp 1 1$
+   \item $\vecu \coordvp 2 4$
+   \item $\vecu \coordvp {-6} {2}$
+\end{enumerate}
+
+\subsection*{44 p.136}
+$\v{GH}\coordvp{-2.25}{-0.1}$
+
+$\v{GM}\coordvp{x-3}{y-0.2}$
+
+On résout :
+\begin{align*}
+   \v{GH} \text{ et } \v{GM} \text{ sont colinéaires}
+   & \iff \det{\v{GH}}{\v{GM}} = 0 \\
+   &\iff -2.25(y-0.2)+0.1(x-3) = 0 \\
+   &\iff 0.1x-2.25y+0.15 = 0 \\
+   &\iff 2x-45y+3 = 0 \\
+\end{align*}
+
+Donc la droite $\mathcal{D}$ admet les équation cartésiennes $0.1x-2.25y+0.15 = 0$ ou $2x-45y+3 = 0$.
+
+\bigskip
+\textbf{2ème méthode}
+On sait que $\v{GH}$ est un vecteur directeur. On en déduit les coefficients $a=-0.1$ et $b=2.25$ de l'équation cartésienne $ax+by+c=0$.
+
+De plus, puisque $G\in \mathcal{D}$, on peut déterminer le coefficient $c$.
+
+On résout :
+
+\begin{align*}
+   -0.1\times 3 +2.25 \times 0.2 +c=0 \iff c=-0.15
+\end{align*}
+
+On en déduit l'équation cartésienne de $\mathcal{D}$, $-0.1x+2.25y-0.15=0$.
+
+\subsection*{73 p.136}
+On résout le système : 
+\begin{align*}
+   (S) 
+   &\iff \syst{2x+1.5y &=& 4.25 \\ 2.5x+5y &=& 8.75 }
+   &\iff \syst{20x+15y &=& 42.5 \\ 20x+40y &=& 70 }
+   &\iff \syst{20x+15y &=& 42.5 \\ 25y &=& 27.5 } \\
+   &\iff \syst{x+0.75y &=& 2.125 \\ y &=& 1.1 }
+   &\iff \syst{x &=& 2.125-0.75\times 1.1 \\ y &=& 1.1 }
+   &\iff \syst{x &=& 1.3 \\ y &=& 1.1 }
+\end{align*}
+\end{document}
+

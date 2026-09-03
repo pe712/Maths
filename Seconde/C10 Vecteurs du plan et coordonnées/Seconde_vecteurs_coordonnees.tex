@@ -1,0 +1,322 @@
+\documentclass[10pt,a4paper,openany,twoside, prof]{book}
+
+\usepackage{layout_cours}
+\setlist{leftmargin=5mm}
+
+\begin{document}
+\chapnumber{10} % numéro du chapitre
+\titre{Vecteurs du plan et coordonnées} % titre du chapitre
+\classe{Seconde} % classe
+\entetegal
+\makeatletter
+\addcontentsline{toc}{chapter}{Chapitre \@chapnumber - \@titre} % Prepare a table of contents
+\makeatother
+
+% Debut du texte
+% **************
+\paragraph*{Objectif du chapitre :}
+\vspace{-3mm}
+\begin{itemize}
+	\item Utiliser les coordonnées de vecteur pour des calculs.
+\end{itemize}
+\vspace{-3mm}
+
+\section{Coordonnées d'un vecteur du plan}
+\subsection{Définition}
+\begin{defi}{Coordonnées d'un vecteur}{}
+	Soit $\oij$ un repère du plan. Pour tout point $M\coordpp{x_M}{y_M}$. Les coordonnées du vecteur \v{OM} sont celles du point M.
+
+	On note $\vecu=\v{OM}=\coordvp{x_M}{y_M}$.
+\end{defi}
+
+\begin{prop}{Norme d'un vecteur}{}
+	La norme du vecteur $\vecu \coordvp{x}{y}$ notée $||\vecu||$ est $\sqrt{x^2+y^2}$. Il s'agit de la "longueur" du vecteur.
+\end{prop}
+
+\begin{ex}{}{}
+	Calculer la norme du vecteur $\vecu \coordvp{-3}{4}$.
+	\begin{reponse}
+	$||\vecu||=\sqrt{(-3)^2+4^2}=\sqrt{9+16}=\sqrt{25}=5$
+	\end{reponse} 
+\end{ex}
+\subsection{Opérations sur les vecteurs}
+
+\begin{prop}{Opérations sur les vecteurs}{}
+	Soient les vecteurs $\vecu \coordvp{x_u}{y_u}$ et $\vecv \coordvp{x_v}{y_v}$. Soit $k\in\R$.
+
+	\begin{itemize}
+		\item $(\vecu+\vecv) \coordvp{x_u+x_v}{y_u+y_v}$
+		\item $(k\vecu) \coordvp{k\, x_u}{k\, y_u}$
+		\item $\vecu=\vecv\iff\syst{x_u&=&x_v\\y_u&=&y_v}$\quad (égalité de vecteurs $\iff$ égalité de coordonnées )
+	\end{itemize}
+\end{prop}
+
+\begin{ex}{}{}
+	Soient $\vecu \coordvp{2}{-7}$ et $\vecv \coordvp{-3}{4}$. Déterminer les coordonnées du vecteur $\vecw = 3\vecu-2\vecv$.
+	Les coordonnées de $\vecw$ sont:
+
+	$\troum{3\times\coordvp{2}{-7} -2\times\coordvp{-3}{4}} = \troum{\coordvp{6-(-6)}{-14-8}}$
+
+	Donc $\vecw\coordvp{\troum{12}}{\troum{22}}$.
+\end{ex}
+
+\begin{prop}{Coordonnées du vecteur $\v{AB}$}{}
+	Soient deux points $A$ et $B$ dans le repère $\oij$ avec pour coordonnées $A\coordpp{x_A}{y_A}$ et $B\coordpp{x_B}{y_B}$.
+
+	Alors, le vecteur $\v{AB}$ a pour coordonnées $\coordvp{x_B-x_A}{y_B-y_A}$.
+\end{prop}
+
+\begin{dem}{}{}
+	$\v{OA} \coordvp{\troum{x_A}}{\troum{y_A}}$ par définition.
+
+	$\v{OB} \coordvp{\troum{x_B}}{\troum{y_B}}$ par définition.
+
+	D'après la relation de Chasles,
+
+	$\v{AB} = \troum{\v{AO}+\v{OB}} =\troum{\v{OB}-\v{OA}}$
+
+	$\v{AB}
+		= \coordvp{\troum{x_B}}{\troum{y_B}}
+		- \coordvp{\troum{x_A}}{\troum{y_A}}$.
+\end{dem}
+
+\begin{methode}{Déterminer graphiqument les coordonnées d'un vecteur \v{AB}}{}
+	\begin{minipage}{.7\textwidth}
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.9]
+			% grid
+			\draw [color=lightgray,, xstep=1.0cm,ystep=1.0cm] (-6,-3) grid (6,6);
+			\clip(-6,-3) rectangle (6,6);
+			\draw [->,line width=2.pt,color=black] (0,-6) -- (0,6) node[anchor=north west] {y};
+
+			\draw [->,line width=2.pt,color=black] (-6,0) -- (6,0) node[anchor=south east] {x};
+
+			\foreach \y in {-2,-1,1,2,3,4,5}
+				\draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
+			\foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
+				\draw (\x cm, 1pt) -- (\x cm, -1pt) node[anchor=north] {$\x$};
+			
+			\draw [->,line width=2.pt,color=red] (-5, 4) node[above] {$A$} -- (3,-2) node[below] {$B$};
+			\draw [->,color=blue] (-5, 4) -- (3,4);
+			\draw [->,color=blue] (3, 4) -- (3,-2);
+			
+			\draw [color=red] (-3, -1) node[above] {$C$};
+			\fill[color=red] (-3,-1) circle (2pt);
+
+
+			\draw[color=red] (-2,3) node {$\Large\v{AB}$};
+		\end{tikzpicture}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{.3\textwidth}
+		Pour aller de $A$ à $B$ on fait :
+		\begin{itemize}
+			\item une translation de \textbf{\trou{8} carreaux vers la \trou{droite}}. Donc $x=\troum{8}$.
+			\item une translation de \textbf{\trou{6} carreaux vers le \trou{bas}}. Donc $y=\troum{-6}$.
+		\end{itemize}
+
+		On a donc $\v{AB}\coordvp{\troum{8}}{\troum{-6}}$
+
+		\bigskip
+		Placer le point $C$ tel que $\v{CD} \coordvp{-2}{-2}$. 
+		
+		Dessiner le vecteur $\v{CD}$.
+	\end{minipage}
+\end{methode}
+
+
+
+\section{Colinéarité de deux vecteurs}
+
+\subsection{Rappels}
+
+\vspace{-3mm}
+\noindent \begin{minipage}{9cm}
+	\begin{defi}{Colinéarité de deux vecteurs}{}
+		Deux vecteurs $\v{u}$ et $\v{v}$ sont \textbf{colinéaires} s'il existe un réel $k$ non nul tel que $$\v{v}=k\v{u}$$
+	\end{defi}
+	Autrement dit, les vecteurs $\v{u}$ et $\v{v}$ ont la même direction.
+	Sur le dessin ci-dessous, tous les vecteurs dessinés sont colinéaires entre eux.
+\end{minipage}
+\hspace{0.2cm}
+\begin{minipage}{7cm}
+	\begin{center}
+		\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+		\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm,scale=0.8]
+			\draw [color=cqcqcq,, xstep=0.8cm,ystep=0.8cm] (0.5,1.5) grid (12.5,7.5);
+			\clip(0.5,1.5) rectangle (12.5,7.5);
+			\draw [->,line width=1.2pt,color=ffqqqq] (1.,3.) -- (4.,4.);
+			\draw [->,line width=1.2pt] (2.,5.) -- (8.,7.);
+			\draw [->,line width=1.2pt] (12.,5.) -- (3.,2.);
+			\draw [->,line width=1.2pt] (8.,5.) -- (9.5,5.5);
+			\begin{scriptsize}
+				\draw[color=ffqqqq] (2.5224435071448177,3.85) node {\large{$\v{u}$}};
+				\draw[color=black] (4.649272775437497,6.457116093674068) node {\large{$2\times \v{u}$}};
+				\draw[color=black] (7.693175214461882,3.1) node {\large{$-3\times \v{u}$}};
+				\draw[color=black] (8.439516677876516,5.7) node {\large{$\dfrac{1}{2}\times \v{u}$}};
+			\end{scriptsize}
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+
+\subsection{Déterminant}
+
+\begin{defi}{Déterminant de deux vecteurs}{}
+	Dans un repère orthonormé $\oij$, on considère les vecteurs $\v{u}\coordvp{x}{y}$ et $\v{v}\coordvp{x'}{y'}$.
+
+	\noindent Le déterminant de $(\v{u};\v{v})$ est le réel tel que : 
+	\[
+	\det{\vecu}{\vecv} = \Det{\textcolor{red}{x} & \textcolor{blue}{x'}F \textcolor{blue}{y} & \textcolor{red}{y'} }= \textcolor{red}{x}\textcolor{red}{y'}-\textcolor{blue}{y}\textcolor{blue}{x'}
+	\]
+\end{defi}
+
+\begin{ex}{}{}
+	Soit deux vecteurs $\vecu\coordvp{4}{-3}$ et $\vecv\coordvp{2}{6}$.
+
+	%\Det{ 4 & 2 \\ -3 & 6}
+	$\det{\vecu}{\vecv} = \troum{\quad\quad\quad\quad} = \troum{4\times 6-2\times(-3)} = \troum{24+6} = \troum{30}$
+\end{ex}
+
+\begin{propadmise}{Aire du parallélogramme}{}
+	Soit ABCD un parallélogramme défini par les vecteurs $\v{AB}\coordvp{x}{y}$ et $\v{AD}\coordvp{x'}{y'}$. On note $\delta$ le déterminant $\delta = \det{\v{AB}}{\v{AD}} = \Det{x & x' \\ y & y'} = xy'-x'y$. 
+
+	\begin{minipage}{.6\textwidth}
+		\begin{tikzpicture}
+			\fill [opacity=0.5,blue] (0,0) -- (5,1) -- (8,3) -- (3,2) -- cycle;
+		\draw (0,0) -- (5,1) -- (8,3) -- (3,2) -- cycle;
+
+		\draw [->,line width=2.pt,color=red] (0,0) node[above] {$A$} -- (5,1) node[below right] {$B$};
+		\draw [->,line width=2.pt,color=red] (0,0) -- (3,2) node[above left] {$D$};
+		\draw (8,3) node[above right] {$C$};
+		
+
+		\draw[color=red] (2.5,0.2) node {$\v{AB}$};
+		\draw[color=red] (1.6,1.8) node {$\v{AD}$};
+		
+		\draw[] (4,1.5) node {\large$\mathcal{A}$};
+	\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{.4\textwidth}Alors l'aire du parallélogramme est la valeur absolue de $\delta$ :
+	
+	\medskip
+			$$\mathcal{A} = |\delta| = \pm\det{\v{AB}}{\v{AD}} \text{ selon le signe}$$
+\end{minipage}
+	
+\end{propadmise}
+
+\begin{prop}{Colinéarité et déterminant}{}
+	Les vecteurs non nuls $\v{u}\coordvp{x}{y}$ et $\v{v}\coordvp{x'}{y'}$ sont colinéaires si et seulement si $\text{det}(\v{u};\v{v})=0$.
+\end{prop}
+
+\begin{deme}{}{}
+	\begin{reponse}		
+	\noindent On cherche à démontrer une équivalence.
+
+	\medskip
+	\noindent \textbf{Commençons par l'implication} ($\implies$):
+	\begin{align*}
+		\v{u}\coordvp{x}{y} \text{ et } \v{v}\coordvp{x'}{y'} \text{ colinéaires } \quad & \implies \quad \v{u}=k\v{v} \quad \text{ avec } k \in \R                                                      \\
+		                                                                                 & \implies \quad \coordvp{x}{y}=k\coordvp{x'}{y'} \quad \implies \quad \coordvp{x}{y}=\coordvp{kx'}{ky'} \\
+		                                                                                 & \implies \quad \text{det}(\v{u};\v{v}) = xy'-x'y = (kx')y'-x'(ky') = kx'y'-kx'y' = 0
+	\end{align*}
+
+	\noindent \textbf{Ensuite la réciproque} ($\Longleftarrow$):
+
+	Si $\text{det}(\v{u};\v{v})=0 $ alors $ xy'-x'y = 0 $
+
+	\medskip
+	Pour la suite, procédons par disjonction des cas :
+	\begin{itemize}
+		\item  Si $\v{u} = 0$, alors $\v{u} = 0.\v{v}$ donc les vecteurs $\v{u}$ et $\v{v}$ sont colinéaires.
+		\item  Si $\v{u} \neq 0$, alors l'une au moins des deux coordonnées de $\v{u}$ est non nulle. Par exemple, supposons que $x \neq 0$.
+		      \begin{align*}
+			      xy'-x'y = 0 \quad & \implies  \quad  xy' = x'y \quad \implies \quad  y' = \dfrac{x'}{x} y                                                            \\
+			                        & \implies \quad y' = k y \quad \text{ avec } k = \dfrac{x'}{x} \quad \implies \quad  y' = k y \quad \text{ et } \quad x' = kx     \\
+			                        & \implies \quad  \v{v} = k \v{u} \quad \implies \quad  \v{u}\coordvp{x}{y} \text{ et } \v{v}\coordvp{x'}{y'} \text{ colinéaires }
+		      \end{align*}
+	\end{itemize}
+
+	\noindent \textbf{Enfin la conclusion :} Pour démontrer une équivalence, nous avons fait un raisonnement par double implication. Les deux propositions logiques \og $\v{u}\coordvp{x}{y}$ et $\v{v}\coordvp{x'}{y'}$ sont colinéaires \fg{}  et \og $\text{det}(\v{u};\v{v})=0$ \fg{}  sont équivalentes.
+	\vspace{1.5cm}
+\end{reponse}
+\end{deme}
+
+%\begin{ex}{}{}
+%Les vecteurs $\v{u}\coordvp{2}{4}$ et $\v{v}\coordvp{1}{2}$ sont colinéaires car $\v{u}=2\v{v}$.
+%\end{ex}
+
+\begin{ex}{}{}
+	On considère les trois vecteurs du plan suivants : $\v{u}\coordvp{2}{-3}$, $\v{v}\coordvp{-6}{9}$ et $\v{w}\coordvp{5}{-7}$.
+	\begin{itemize}
+		\item  Les vecteurs $\v{u}$ et $\v{v}$ \trou{sont colinéaires} 
+		
+		car $\det{\vecu}{\vecv} = \troum{2\times9-(-3)\times(-6)=18-18=0}$
+		\item  Les vecteurs $\v{u}$ et $\v{w}$ \trou{ne sont pas colinéaires} 
+		
+		car $\det{\vecu}{\vecw} = \troum{2\times(-7)-(-3)\times5=-14+15=1\neq0}$
+	\end{itemize}
+\end{ex}
+
+\begin{ex}{}{}
+	Soient quatre points $A(1;1)$, $B(1;3)$, $C(7;4)$ et $D(5;5)$ du plan.
+
+	\noindent Quelle est la nature du quadrilatère $ABDC$ ?
+
+	\noindent \begin{minipage}{8cm}
+		\begin{itemize}
+			\item[] $\v{AC}\coordvp{\troum{7-1}}{\troum{4-1}}=\coordvp{\troum{6}}{\troum{3}}$,
+			\item[] $\v{BD}\coordvp{\troum{5-1}}{\troum{5-3}}=\coordvp{\troum{4}}{\troum{2}}$,
+			\item[] $\det{\v{AC}}{\v{BD}} = \troum{xy'-yx'= 6\times 2-3\times 4=0}$
+
+			Les vecteurs $\v{AC}$ et $\v{BD}$ sont \trou{colinéaires.}
+			
+			Les droites $(AC)$ et $(BD)$ sont donc \trou{parallèles.}
+			
+			\item[] De plus, $\v{AC}\neq\v{BD}$;
+			      \vspace*{0.3cm}
+			\item[] donc : \fbox{$ABDC$ est \trou{un trapèze}}
+		\end{itemize}
+	\end{minipage}
+	\hspace{1.5cm}
+	\begin{minipage}{7cm}
+		\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.9]
+			\begin{axis}[x=1.0cm,y=1.0cm,axis lines=middle,ymajorgrids=true,xmajorgrids=true,
+					xmin=-0.5,xmax=7.5,ymin=-0.5,ymax=5.5,
+					xtick={-0.0,1.0,...,7.0},ytick={-0.0,1.0,...,5.0},]
+				% \clip(-0.5,-0.5) rectangle (7.5,5.9);
+				% \draw [->,line width=2.4pt,color=ffqqqq] (1.,1.) -- (7.,4.);
+				% \draw [->,line width=2.4pt,color=ffqqqq] (1.,3.) -- (5.,5.);
+				% \draw [line width=1.6pt,dash pattern=on 3pt off 3pt] (1.,1.)-- (1.,3.);
+				% \draw [line width=1.6pt,dash pattern=on 3pt off 3pt] (7.,4.)-- (5.,5.);
+				% \begin{scriptsize}
+				% 	\draw[color=black] (1.14,1.41) node {$A$};
+				% 	\draw[color=black] (1.14,3.41) node {$B$};
+				% 	\draw[color=black] (7.14,4.41) node {$C$};
+				% 	\draw[color=black] (5.14,5.3) node {$D$};
+				% 	\draw[color=ffqqqq] (3.7,3.25) node {$\v{AC}$};
+				% 	\draw[color=ffqqqq] (2.72,4.81) node {$\v{BD}$};
+				% \end{scriptsize}
+			\end{axis}
+		\end{tikzpicture}
+	\end{minipage}
+\end{ex}
+
+\newpage
+\section*{Exercices}
+\begin{exercices}
+	\sectionexo{Coordonnées des vecteurs}
+	\begin{bookexo}{67 p.111}\end{bookexo}
+	\begin{bookexo}{69 p.111}\end{bookexo}
+	\begin{bookexo}{70 p.111}\end{bookexo}
+	\begin{bookexos}{72, 73 p.111}\end{bookexos}
+	\begin{bookexos}{74 p.111}\end{bookexos}
+	\sectionexo{Déterminant}
+	\begin{bookexo}{71 p.111}\end{bookexo}
+	\begin{bookexo}{75 p.111}\end{bookexo}
+	\begin{bookexo}[\diff]{86 p.111}\end{bookexo}
+	\begin{bookexo}[\diff\diff]{103 p.111}\end{bookexo}
+
+\end{exercices}
+\end{document}
+

@@ -17,6 +17,8 @@
 **/*.latexmkrc
 **/*.synctex.gz
 **/*.key
+**/*.xlsx
+**/*.ipynb
 
 **/*.docx
 
@@ -24,6 +26,8 @@
 !.gitignore
 !_config.yml
 !index.html
+!content.html
+!build_index.py
 
 !latex_styles
 latex_styles/compilation_tests
@@ -33,6 +37,11 @@ latex_styles/Modèles
 
 
 !Seconde
-Seconde/*
-!Seconde/C1 Ensembles de nombres
-Seconde/C1 Ensembles de nombres/Axelnax
+!Seconde/*
+Seconde/.vscode
+Seconde/Automatismes
+Seconde/Evaluations
+Seconde/Ressources Perrine
+Seconde/*.pdf
+
+
