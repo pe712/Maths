@@ -24,7 +24,8 @@
 **/*.docx
 
 # evaluations 
-**/*_ev*.pdf 
+**/*_ev*.pdf
+**/*_ev*.tex
 
 # ressources auxiliaires
 **/Axelnax
