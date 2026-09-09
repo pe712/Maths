@@ -31,6 +31,7 @@
 **/axelnax
 **/Ressources
 **/XYMaths
+Bordas*.pdf
 
 # But not these files...
 !.gitignore
@@ -51,6 +52,7 @@ latex_styles/Modèles
 !Seconde
 !Seconde/*
 Seconde/.vscode
-Seconde/Evaluations
+Seconde/Evaluations/*
+!Seconde/Evaluations/DM
 Seconde/Ressources Perrine
 Seconde/*.pdf
