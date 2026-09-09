@@ -1,0 +1,144 @@
+
+
+\section{Racine carrée d'un nombre}
+
+\begin{defi}{}{}
+$\sqrt{a}$ est le nombre positif qui a pour carré $a$.
+\end{defi}
+
+\medskip
+ $a$ est un carré, donc un nombre positif ; 
+
+ ainsi $\sqrt{-5}$ n'existe pas.
+\medskip
+
+ Quelques valeurs exactes à connaître:
+
+\vspace{-15mm}
+\begin{flushright}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}\hline
+$a$&0&1&4&9&16&25&36&49&64&81&100\\\hline
+$\sqrt{a}$&0&1&2&3&4&5&6&7&8&9&10\\\hline
+\end{tabular}
+\end{flushright}
+
+\vspace{-6mm}
+\begin{rem}{}{}
+Tous les nombres $a$ figurant dans ce tableau sont des carrés parfaits. Plus généralement, on appellera carré parfait les nombres dont la racine carrée est un entier.
+
+\medskip
+ Mais une racine carrée ne peut pas toujours s'écrire sous forme d'un entier, d'un décimal ou d'une fraction.
+
+ Par exemple, la seule écriture exacte de la racine carrée de 2 est $\sqrt{2}$. On dit que $\sqrt{2}$ est irrationnel.
+\end{rem}
+
+\begin{deme}{}{}
+Proposition à démontrer:  $\sqrt{2}$ est irrationnel .
+
+\medskip
+On va démontrer cette proposition par l'absurde.
+
+\smallskip
+ Supposons que $\sqrt{2}$ soit rationnel. Alors $\sqrt{2}$ est de la forme $\frac{a}{b}$, $a$ et $b$ deux entiers positifs et premiers entre eux. (la fraction $\frac{a}{b}$ ne peut plus être simplifiée)
+
+ On en déduit que: 
+$$\sqrt{2} = \dfrac{a}{b}\quad \Longleftrightarrow \quad
+\sqrt{2} { \times b}= \dfrac{a}{b}{ \times b}\quad \Longleftrightarrow \quad
+\sqrt{2} \times b = a\quad \Longleftrightarrow \quad
+\left( \sqrt{2}\times b \right) {^2} =  a {^2}\quad \Longleftrightarrow \quad
+\sqrt{2}^2 \times \left( b \right)^2 = a^2\quad \Longleftrightarrow \quad
+2 \times b^{2} = a^2 $$
+Puisque $a^2$ est pair, $a$ est pair donc $a=2p$ avec $p$ un entier positif
+$$2 \times b^{2} = (2p)^2\quad \Longleftrightarrow \quad
+2 \times b^{2} = 4p^2\quad \Longleftrightarrow \quad
+b^{2} = 2p^2$$
+
+ On en déduit que $b^2$ est pair donc que $b$ est pair.
+
+\medskip
+ Par conséquent, il est possible de simplifier la fraction $\frac{a}{b}$ par $2$, ce qui contredit l'hypothèse que $a$, $b$ sont premiers entre eux. 
+
+\medskip
+ Puisque l'hypothèse  $\sqrt{2}$ est rationnel  ~~ conduit à une contradiction, c'est le contraire qui est vrai, à savoir: 
+
+ $\sqrt{2}$ est irrationnel .
+\end{deme}
+
+\begin{prop}{}{}
+Si $a$ et $b$ sont deux entiers naturels, alors $\sqrt{a} \times \sqrt{b} = \sqrt{a\times b}$
+\end{prop}
+
+\medskip
+\begin{deme}{}{}
+Proposition à démontrer: $\sqrt{a} \times \sqrt{b} = \sqrt{a\times b}$
+
+\begin{center}
+$\sqrt{a\times b} ^2 \quad = \quad a\times b \quad = \quad \sqrt{a}^2 \times \sqrt{b}^2 \quad = \quad \left( \sqrt{a} \times \sqrt{b} \right) ^2 $
+\end{center}
+
+$\sqrt{a\times b}$ \quad et \quad $\sqrt{a} \times \sqrt{b}$ \quad étant positif, on peut en conclure que:
+\[\sqrt{a} \times \sqrt{b} = \sqrt{a\times b}\]
+
+\vspace{-8mm}
+
+\end{deme}
+
+\begin{methode}{}{}
+Regroupements et simplifications d'écritures:
+
+\begin{itemize}
+\item  on cherche à décomposer le nombre qui est sous le radical en un produit dont l'un des facteurs est un carré.
+\begin{itemize}
+\item[-]$\sqrt{20} = \sqrt{4\times 5} = \sqrt{4} \times \sqrt{5} = 2\sqrt{5}$
+\item[-]$\sqrt{32} = \sqrt{16\times 2} = \sqrt{16} \times \sqrt{2} = 4\sqrt{2}$
+\item[-]$\sqrt{108} = \sqrt{36\times 3} = \sqrt{36} \times \sqrt{3} = 6\sqrt{3}$
+\end{itemize}
+\item dans un produit on cherche à associer les racines carrées d'un même nombre:
+\begin{itemize}
+\item[-]$\sqrt{2}\times \sqrt{14} = \sqrt{2}\times \sqrt{2\times 7} = \sqrt{2}\times \sqrt{2}\times \sqrt{7} = \left(\sqrt{2}\right)^2 \times \sqrt{7} = 2 \sqrt{7}$
+\item[-]$\sqrt{3}\times \sqrt{30} \times \sqrt{5}= \sqrt{3}\times \sqrt{3\times 5\times 2} \times \sqrt{5}= \sqrt{3}\times \sqrt{3}\times \sqrt{5} \times \sqrt{5}\times \sqrt{2}= \left(\sqrt{3}\right)^2 \times \left(\sqrt{5}\right)^2 \times \sqrt{2} = 3 \times 5 \times \sqrt{2} = 15\sqrt{2}$
+\end{itemize}
+\item on cherche à réduire les sommes en mettant les racines identiques en facteur:
+\begin{itemize}
+\item[-]$3\sqrt{2}+5\sqrt{2} = (3+5)\times \sqrt{2} = 8\sqrt{2}$
+\item[-]$3\sqrt{7}-2\sqrt{7} +\sqrt{7}= (3-2+1)\times \sqrt{7} = 2\sqrt{7}$
+\end{itemize}
+\end{itemize}
+Ces calculs ont pour but d'obtenir un résultat dont l'écriture est la plus simple possible.
+\end{methode}
+
+%\begin{ex}{}{}
+%$\sqrt{3} \times \sqrt{2} = \sqrt{3\times 2} = \sqrt{6} $
+%\end{ex}
+
+
+\begin{rem}{}{}
+\begin{itemize}
+\item Ce résultat se généralise à tous les nombres positifs et pas uniquement aux entiers.
+\item Si de plus $b \ne 0$, alors de même: 
+
+\vspace{-7mm}
+\[ \frac{\sqrt{a}}{\sqrt{b}}=\sqrt{\frac{a}{b}}. \]
+\item Attention: en général $\sqrt{a} + \sqrt{b}$ N'EST PAS ÉGAL à $\sqrt{a + b}$
+\quad($\sqrt{9} + \sqrt{16}= 3 + 4 = 7$ ; mais $\sqrt{9 + 16} = \sqrt{25} = 5$ )
+\end{itemize}
+\end{rem}
+
+
+\begin{prop}{}{}[Inégalité triangulaire]
+Pour tout nombre strictement positif $a$ et $b$,  $\sqrt{a + b} < \sqrt{a} + \sqrt{b}$
+\end{prop}
+
+\begin{deme}{}{}
+Proposition à démontrer: $\sqrt{a + b} < \sqrt{a} + \sqrt{b}$
+\begin{align*}
+\left( \sqrt{a} + \sqrt{b} \right) ^2 \quad = \quad \left( \sqrt{a} + \sqrt{b} \right) \times \left( \sqrt{a} + \sqrt{b} \right) \quad &= \quad \sqrt{a}^2 + \sqrt{a}\sqrt{b} + \sqrt{b}\sqrt{a} + \sqrt{b}^2 \\
+&> \sqrt{a}^2 + \sqrt{b}^2 \quad = \quad \quad a+b \quad = \quad \sqrt{a+b} ^2 
+\end{align*}
+$\sqrt{a+b}$ et $\sqrt{a} + \sqrt{b}$ étant positif, on peut en conclure que:
+$\sqrt{a + b} < \sqrt{a} + \sqrt{b}$
+\end{deme}
+
+\vspace{-3mm}
+	

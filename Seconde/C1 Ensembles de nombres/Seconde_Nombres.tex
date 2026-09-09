@@ -31,7 +31,11 @@
 \end{defi}
 
 \begin{rems}{}{}
-La notation $\mathbb{N}$ représente la première lettre de \guillemotleft naturel\guillemotright.
+	\begin{itemize}
+		\item 
+		La notation $\mathbb{N}$ représente la première lettre de \guillemotleft naturel\guillemotright.
+		\item Ce sont des nombres positifs. On dit que zéro est l'élément neutre.
+	\end{itemize}
 \end{rems}
 
 \section{Les entiers relatifs: $\Z$}
@@ -45,7 +49,6 @@ La notation $\mathbb{N}$ représente la première lettre de \guillemotleft natur
 	\begin{itemize}
 		\item 
 		La notation $\Z$ provient de la première lettre de \guillemotleft \textit{Zahlen}\guillemotright \ qui signifie nombres en allemand.
-		\item Ce sont des nombres positifs. On dit que zéro est l'élément neutre.
 	\end{itemize}
 \end{rem}
 
@@ -80,6 +83,18 @@ La notation $\mathbb{N}$ représente la première lettre de \guillemotleft natur
 	C'est le plus grand ensemble de nombres que nous manipulerons cette année.
 \end{rem}
 
+\begin{notation}{}{}
+	Pour dire qu'un élément $x$ appartient à un ensemble on utilise le symbole $\in$.
+
+	Pour désigner un ensemble privé de zéro on utilise une astérisque $*$.
+\end{notation}
+
+\begin{ex}{}{}
+	$n\in\N$ signifie \guillemotleft n appartient à $\N$ \guillemotright\ ou encore \guillemotleft n est un entier\guillemotright.
+
+	$x\in\R^*$ signifie \guillemotleft x appartient à $\R$ privé de zéro \guillemotright\ ou encore \guillemotleft x est un réel non nul\guillemotright.
+\end{ex}
+
 \section{Les nombres rationnels: $\mathbb{Q}$}
 
 \begin{defi}{Nombre rationnel}{}
@@ -96,53 +111,9 @@ Un nombre rationnel est un nombre qui peut s'écrire sous forme de fraction $\fr
 \end{itemize}
 \end{ex}
 
-\begin{props}{}{}
-	\begin{minipage}{0.4 \linewidth}
-	\begin{center}
-		\begin{itemize}
-			\item $\sqrt{2}$ n'est pas rationnel. 
-			
-			Autrement dit, $\sqrt{2}\notin\Q$.
-
-			\item $\pi\notin\Q$
-		\end{itemize}
-	\end{center}
-	\end{minipage}
-	\begin{minipage}{0.4 \linewidth}
-	\begin{center}
-		\begin{tikzpicture}[scale=1.2]
-            \draw (-1,1) grid (1,3);
-			\draw [fill, red, fill opacity = 0.3] (0,1)-- node[below, opacity =1] {1} (1,1) --(1,2) --  (0,2) -- (0,1);
-			\draw [fill, blue, fill opacity = 0.3] (1,2)-- node[above, opacity =1] {$\sqrt{2}$} (0,3)  -- (-1,2) --  (0,1) --  (1,2);
-		\end{tikzpicture}
-	\end{center}
-	\end{minipage}
-\end{props}
-
-
-% \begin{deme}{}{}
-% 	On raisonne par l'absurde, en supposant que $\sqrt{2}\notin\Q$ (c'est-à-dire qu'il est rationnel). On va montrer que cela conduit à une contradiction de logique.
-
-% 	Il existe $a\in\Z$ et $b\in\N^*$ des entiers tels que $\sqrt{2} = \frac{a}{b}$ et que la fraction est irréductible. Alors on a $2 = \frac{a^2}{b^2}$. Donc $a^2=2\times b^2$. Donc $a^2$ est pair. Alors $a$ aussi est pair.
-
-% 	On écrit donc $a=2\times k$ avec $k\in\Z$. L'égalité $a^2=2b^2$ devient $4k^2 = 2b^2$. On obtient $2k^2=b^2$. Par le même raisonnement on en déduit que $b$ est pair.
-
-% 	Alors la fraction $\frac{a}{b}$ se simplifie par $2$ et elle n'est pas irréductible. C'est absurde. L'hypothèse initiale est fausse et $\sqrt{2}$ n'est pas rationnel.
-% \end{deme}
-
-
-\begin{rems}{}{}
-	\begin{itemize}
-		\item 
-		On ne peut donc pas écrire $\pi$ comme une fraction. En revanche, on peut trouver des fractions proches (et même aussi proche que l'on veut). Par exemple $\frac{22}{7} \approx 3.143$.
-		\item Attention, toutes les racines ne sont pas irrationnelles. Par exemple, $\sqrt{36}=6\in\Q$. On a même $\sqrt{36}\in\N$.
-	\end{itemize}
-\end{rems}
-
-
 \begin{rem}{}{}
 	
-On fera attention aux règles de calcul :
+On fera attention aux règles de calcul concernant les fractions:
 
 
 \begin{minipage}{7cm}
@@ -169,7 +140,7 @@ Rappelons encore que pour simplifier une fraction il faut qu'il y ait un facteur
 Une astuce d'écriture qui nous sera souvent utile \[ \frac{a}{b}=\frac{1}{b}\times a \]
 \end{rem}
 
-\begin{prop}{Priorité de calcul}{}
+\begin{prop}{(Rappel) Priorité de calcul}{}
  Pour effectuer un calcul on respectera l'ordre de priorité :
 \begin{enumerate}
 \item Les calculs entre parenthèses ou crochets. S'il y a des parenthèses emboîtées les plus emboîtées sont prioritaires. La barre de fraction joue le même rôle que des parenthèses autour des numérateurs et dénominateurs.
@@ -178,6 +149,67 @@ Une astuce d'écriture qui nous sera souvent utile \[ \frac{a}{b}=\frac{1}{b}\ti
 \item Les additions et soustractions.
 \end{enumerate}
 \end{prop}
+
+% \begin{deme}{}{}
+% 	On raisonne par l'absurde, en supposant que $\sqrt{2}\notin\Q$ (c'est-à-dire qu'il est rationnel). On va montrer que cela conduit à une contradiction de logique.
+
+% 	Il existe $a\in\Z$ et $b\in\N^*$ des entiers tels que $\sqrt{2} = \frac{a}{b}$ et que la fraction est irréductible. Alors on a $2 = \frac{a^2}{b^2}$. Donc $a^2=2\times b^2$. Donc $a^2$ est pair. Alors $a$ aussi est pair.
+
+% 	On écrit donc $a=2\times k$ avec $k\in\Z$. L'égalité $a^2=2b^2$ devient $4k^2 = 2b^2$. On obtient $2k^2=b^2$. Par le même raisonnement on en déduit que $b$ est pair.
+
+% 	Alors la fraction $\frac{a}{b}$ se simplifie par $2$ et elle n'est pas irréductible. C'est absurde. L'hypothèse initiale est fausse et $\sqrt{2}$ n'est pas rationnel.
+% \end{deme}
+
+\begin{props}{}{}
+	\begin{itemize}
+		\item 
+		L'inverse d'un rationnel non nul est un rationnel.
+		\item La somme de deux rationnels et un rationnel.
+	\end{itemize}
+\end{props}
+
+\begin{dem}{}{}
+	Démontrons la première proposition :
+
+	Soit $x\in\Q$, c'est-à-dire \guillemotleft $x$ est un rationnel\guillemotright.
+
+	Par définition, il existe une fraction $\frac{a}{b}$ avec $a\in\Z$ et $b\in\N$ telle que $x=\frac{a}{b}$.
+	
+	On veut montrer que $\frac{1}{x}\in\Q$. Or $\frac{1}{x} = \frac{b}{a}$. Donc $\frac{1}{x}$ s'écrit comme une fraction.
+
+	Donc $\frac{1}{x}\in\Q$.	
+\end{dem}
+
+\begin{props}{}{}
+	\begin{minipage}{0.4 \linewidth}
+	\begin{center}
+		\begin{itemize}
+			\item $\sqrt{2}$ n'est pas rationnel. On dit qu'il est irrationnel.
+			
+			Autrement dit, $\sqrt{2}\notin\Q$.
+
+			\item $\pi\notin\Q$
+		\end{itemize}
+	\end{center}
+	\end{minipage}
+	\begin{minipage}{0.4 \linewidth}
+	\begin{center}
+		\begin{tikzpicture}[scale=1.2]
+            \draw (-1,1) grid (1,3);
+			\draw [fill, red, fill opacity = 0.3] (0,1)-- node[below, opacity =1] {1} (1,1) --(1,2) --  (0,2) -- (0,1);
+			\draw [fill, blue, fill opacity = 0.3] (1,2)-- node[above, opacity =1] {$\sqrt{2}$} (0,3)  -- (-1,2) --  (0,1) --  (1,2);
+		\end{tikzpicture}
+	\end{center}
+	\end{minipage}
+\end{props}
+
+\begin{rems}{}{}
+	\begin{itemize}
+		\item 
+		On ne peut donc pas écrire $\pi$ comme une fraction. En revanche, on peut trouver des fractions proches (et même aussi proche que l'on veut). Par exemple $\frac{22}{7} \approx 3.143$.
+		\item Attention, toutes les racines ne sont pas irrationnelles. Par exemple, $\sqrt{36}=6\in\Q$. On a même $\sqrt{36}\in\N$.
+	\end{itemize}
+\end{rems}
 
 \begin{histoire}{}{}
 	Nous sommes au IIIe siècle av J.C. dans la fameuse école de géométrie créée par Pythagore lui-même. Ses disciples tentent d'approcher la diagonale d'un carré de côté 1 avec par un rapport, c'est-à-dire une fraction. Or cette diagonale mesure $\sqrt{2}$. Les élèves se rendent compte qu'une valeur approchée ne convient pas à la formule du théorème de Pythagore.
@@ -225,13 +257,17 @@ Euclide d'Alexandrie (-320 ; -260) présente une des premières démonstrations 
 \end{prop}
 
 \begin{dem}{}{}
-	On se donne un nombre décimal $x\in\D$. Il existe des chiffres $a_1, a_2, \cdots , a_n$ et $b_1, b_2, \cdots, b_m$ entre 0 et 9 tels que $x=\overline{a_1 a_2 \cdots a_n , b_1 b_2 \cdots b_m}$
+	% On se donne un nombre décimal $x\in\D$. Il existe des chiffres $a_1, a_2, \cdots , a_n$ et $b_1, b_2, \cdots, b_m$ entre 0 et 9 tels que $x=\overline{a_1 a_2 \cdots a_n , b_1 b_2 \cdots b_m}$
 
-	On multiplie alors par 10 autant de fois qu'il est nécessaire, ici m fois, pour obtenir un entier au numérateur.
+	% On multiplie alors par 10 autant de fois qu'il est nécessaire, ici m fois, pour obtenir un entier au numérateur.
 
-	$x = \frac{\overline{a_1 a_2 \cdots a_n b_1 b_2 \cdots b_m}}{10^m}$
+	% $x = \frac{\overline{a_1 a_2 \cdots a_n b_1 b_2 \cdots b_m}}{10^m}$
 
-	Donc $x$ s'écrit comme une fraction et $x\in\Q$
+	% Donc $x$ s'écrit comme une fraction et $x\in\Q$
+
+	Nous allons le montrer sur un exemple. Soit $x\in\D$. Par exemple, $x = 454.5648$. Alors $x=\frac{4545648}{10000}$. Donc $x\in\Q$.
+
+	On ferait tous les cas de façon similaire en multipliant par 10 au numérateur et au dénominateur autant de fois qu'il est nécessaire.
 \end{dem}
 
 \begin{ex}{}{}
@@ -345,18 +381,18 @@ Tandis qu'à droite on a un multiple de 3.
 	\end{minipage}
 
 \newpage
-\section{Exercices}
+\section{Exercices (Bordas 2019)}
 \sectionexo{Calcul avec les fractions}
-37,38,39 p.100
+\begin{bookexos}37,38,39 p.100\end{bookexos}
+
 
 \sectionexo{Nombres rationnels, décimaux}
-35, 36, 38 p.65
-120 p.69
-
+\begin{bookexos}{35, 36, 38 p.65}\end{bookexos}
+\begin{bookexo}{120 p.69}\end{bookexo}
 
 \sectionexo{Approximation décimale}
-114 p.69
-115, 116 p.69
+\begin{bookexo}{114 p.69}\end{bookexo}
+\begin{bookexos}{115, 116 p.69}\end{bookexos}
 
 \end{document}
 

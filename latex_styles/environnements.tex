@@ -3,57 +3,57 @@
 %\newcommand{\trou}[1]{\if@prof {\bf{ #1}} \else \vide{#1} \fi}
 
 %% Théorèmes
-\newtcbtheorem[number within=section]{theo}{Théorème}{breakable,sharp corners=downhill,enhanced,colback=myred!5,colframe=white!35!myred,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myred,borderline={0.5mm}{0mm}{myred!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{th}
-\newtcbtheorem[number within=section]{theoadmis}{Théorème (Admis)}{breakable,sharp corners=downhill,enhanced,colback=myred!5,colframe=white!35!myred,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myred,borderline={0.5mm}{0mm}{myred!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{th}
-\newtcbtheorem{theon}{Théorème}{breakable,sharp corners=downhill,enhanced,colback=myred!5,colframe=white!35!myred,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myred,borderline={0.5mm}{0mm}{myred!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{thn} % sans numero section
+\newtcbtheorem[number within=section]{theo}{Théorème}{breakable,sharp corners=downhill,enhanced,colback=myred!5,colframe=white!35!myred,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!myred,borderline={0.5mm}{0mm}{myred!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{th}
+\newtcbtheorem[number within=section]{theoadmis}{Théorème (Admis)}{breakable,sharp corners=downhill,enhanced,colback=myred!5,colframe=white!35!myred,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!myred,borderline={0.5mm}{0mm}{myred!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{th}
+\newtcbtheorem{theon}{Théorème}{breakable,sharp corners=downhill,enhanced,colback=myred!5,colframe=white!35!myred,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!myred,borderline={0.5mm}{0mm}{myred!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{thn} % sans numero section
 %% Corollaire
-\newtcbtheorem[use counter from=theo]{cor}{Corollaire}{breakable,sharp corners=downhill,enhanced,colback=myred!5,colframe=white!35!myred,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myred,borderline={0.5mm}{0mm}{myred!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{coro}
+\newtcbtheorem[use counter from=theo]{cor}{Corollaire}{breakable,sharp corners=downhill,enhanced,colback=myred!5,colframe=white!35!myred,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!myred,borderline={0.5mm}{0mm}{myred!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{coro}
 %% Lemme
-\newtcbtheorem[use counter from=theo]{lemme}{Lemme}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{lem}
-\newtcbtheorem[use counter from=theo]{lemmeadmis}{Lemme (Admis)}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{lem}
+\newtcbtheorem[use counter from=theo]{lemme}{Lemme}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{lem}
+\newtcbtheorem[use counter from=theo]{lemmeadmis}{Lemme (Admis)}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{lem}
 %% Définition
-\newtcbtheorem[use counter from=theo]{defi}{Définition}{breakable,sharp corners=downhill,enhanced,colback=myblue!5,colframe=white!35!myblue,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myblue,borderline={0.5mm}{0mm}{myblue!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{df}
-\newtcbtheorem[use counter from=theo]{defis}{Définitions}{breakable,sharp corners=downhill,enhanced,colback=myblue!5,colframe=white!35!myblue,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myblue,borderline={0.5mm}{0mm}{myblue!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{dfs}
+\newtcbtheorem[use counter from=theo]{defi}{Définition}{breakable,sharp corners=downhill,enhanced,colback=myblue!5,colframe=white!35!myblue,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!myblue,borderline={0.5mm}{0mm}{myblue!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{df}
+\newtcbtheorem[use counter from=theo]{defis}{Définitions}{breakable,sharp corners=downhill,enhanced,colback=myblue!5,colframe=white!35!myblue,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!myblue,borderline={0.5mm}{0mm}{myblue!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{dfs}
 %%Proposition
-\newtcbtheorem[use counter from=theo]{prop}{Proposition}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{propo}
-\newtcbtheorem[use counter from=theon]{propn}{Proposition}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{propon} % sans numero de section
-\newtcbtheorem[use counter from=theo]{props}{Propositions}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{propos}
-\newtcbtheorem[use counter from=theon]{propsn}{Propositions}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{proposn}  % sans numero de section
-\newtcbtheorem[use counter from=theo]{propadmise}{Proposition (admise)}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{propo}
-\newtcbtheorem[use counter from=theo]{propsadmise}{Propositions (admises)}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{propo}
+\newtcbtheorem[use counter from=theo]{prop}{Proposition}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{propo}
+\newtcbtheorem[use counter from=theon]{propn}{Proposition}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{propon} % sans numero de section
+\newtcbtheorem[use counter from=theo]{props}{Propositions}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{propos}
+\newtcbtheorem[use counter from=theon]{propsn}{Propositions}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{proposn}  % sans numero de section
+\newtcbtheorem[use counter from=theo]{propadmise}{Proposition (admise)}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{propo}
+\newtcbtheorem[use counter from=theo]{propsadmise}{Propositions (admises)}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=white!35!myorange,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!myorange,borderline={0.5mm}{0mm}{myorange!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{propo}
 
 %% Modélisation
-\newtcbtheorem[use counter from=theo]{model}{Modélisation}{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=white!35!mypurple,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!mypurple,borderline={0.5mm}{0mm}{mypurple!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{modeli}
-\newtcbtheorem[use counter from=theo]{modelss}{Modélisations}{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=white!35!mypurple,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!mypurple,borderline={0.5mm}{0mm}{mypurple!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{modelis}
+\newtcbtheorem[use counter from=theo]{model}{Modélisation}{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=white!35!mypurple,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!mypurple,borderline={0.5mm}{0mm}{mypurple!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{modeli}
+\newtcbtheorem[use counter from=theo]{modelss}{Modélisations}{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=white!35!mypurple,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!mypurple,borderline={0.5mm}{0mm}{mypurple!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{modelis}
 %% Exemple
-\newtcbtheorem[use counter from=theo]{ex}{Exemple}{breakable,sharp corners=downhill,enhanced,titlerule=-3mm,colback=white,colbacktitle=white,coltitle=mygreen,colframe=mygreen,borderline={0.5mm}{0mm}{green!5!white},borderline={0.5mm}{0mm}{mygreen!50!white,dashed},fonttitle=\bfseries,attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{exe}
-\newtcbtheorem[use counter from=theo]{exs}{Exemples}{breakable,sharp corners=downhill,enhanced,titlerule=-3mm,colback=white,colbacktitle=white,coltitle=mygreen,colframe=mygreen,borderline={0.5mm}{0mm}{green!5!white},borderline={0.5mm}{0mm}{mygreen!50!white,dashed},fonttitle=\bfseries,attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{exes}
+\newtcbtheorem[use counter from=theo]{ex}{Exemple}{breakable,sharp corners=downhill,enhanced,titlerule=-3mm,colback=white,colbacktitle=white,coltitle=mygreen,colframe=mygreen,borderline={0.5mm}{0mm}{green!5!white},borderline={0.5mm}{0mm}{mygreen!50!white,dashed},fonttitle=\sffamily\bfseries, fontupper=\sffamily,attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{exe}
+\newtcbtheorem[use counter from=theo]{exs}{Exemples}{breakable,sharp corners=downhill,enhanced,titlerule=-3mm,colback=white,colbacktitle=white,coltitle=mygreen,colframe=mygreen,borderline={0.5mm}{0mm}{green!5!white},borderline={0.5mm}{0mm}{mygreen!50!white,dashed},fonttitle=\sffamily\bfseries, fontupper=\sffamily,attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{exes}
 %% Conséquence
-\newtcbtheorem{conseq}{Conséquence}{breakable,sharp corners=downhill,enhanced,titlerule=-3mm,colback=white,colbacktitle=white,coltitle=mypurple,colframe=mypurple,borderline={0.5mm}{0mm}{mypurple!5!white},borderline={0.5mm}{0mm}{mypurple!50!white,dashed},fonttitle=\bfseries}{consequence}
-\newtcbtheorem[use counter from=conseq]{conseqs}{Conséquences}{breakable,sharp corners=downhill,enhanced,titlerule=-3mm,colback=white,colbacktitle=white,coltitle=mypurple,colframe=mypurple,borderline={0.5mm}{0mm}{mypurple!5!white},borderline={0.5mm}{0mm}{mypurple!50!white,dashed},fonttitle=\bfseries}{consequences}
+\newtcbtheorem{conseq}{Conséquence}{breakable,sharp corners=downhill,enhanced,titlerule=-3mm,colback=white,colbacktitle=white,coltitle=mypurple,colframe=mypurple,borderline={0.5mm}{0mm}{mypurple!5!white},borderline={0.5mm}{0mm}{mypurple!50!white,dashed},fonttitle=\sffamily\bfseries, fontupper=\sffamily}{consequence}
+\newtcbtheorem[use counter from=conseq]{conseqs}{Conséquences}{breakable,sharp corners=downhill,enhanced,titlerule=-3mm,colback=white,colbacktitle=white,coltitle=mypurple,colframe=mypurple,borderline={0.5mm}{0mm}{mypurple!5!white},borderline={0.5mm}{0mm}{mypurple!50!white,dashed},fonttitle=\sffamily\bfseries, fontupper=\sffamily}{consequences}
 %% Méthode
-\newtcbtheorem[no counter]{methode}{Méthode}{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=mypurple!50!white,coltitle=mypurple!50!black,fonttitle=\bfseries,colbacktitle=mypurple!15!white,borderline={0.5mm}{0mm}{mypurple!15!white},borderline={0.5mm}{0mm}{mypurple!50!white,dashed},attach boxed title to top center={yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{methode}
+\newtcbtheorem[no counter]{methode}{Méthode}{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=mypurple!50!white,coltitle=mypurple!50!black,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=mypurple!15!white,borderline={0.5mm}{0mm}{mypurple!15!white},borderline={0.5mm}{0mm}{mypurple!50!white,dashed},attach boxed title to top center={yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{methode}
 %% Algorithme
-\newtcbtheorem[no counter]{algo}{Algorithme}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=myorange!50!white,coltitle=myorange!50!black,fonttitle=\bfseries,colbacktitle=myorange!15!white,borderline={0.5mm}{0mm}{myorange!15!white},borderline={0.5mm}{0mm}{myorange!50!white,dashed},attach boxed title to top center={yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{algorihtme}
+\newtcbtheorem[no counter]{algo}{Algorithme}{breakable,sharp corners=downhill,enhanced,colback=myorange!5,colframe=myorange!50!white,coltitle=myorange!50!black,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=myorange!15!white,borderline={0.5mm}{0mm}{myorange!15!white},borderline={0.5mm}{0mm}{myorange!50!white,dashed},attach boxed title to top center={yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{algorihtme}
 %% Remarque
 \newtcolorbox{rem}[1][]{breakable,sharp corners=downhill,colback=white,
-	colframe=white,fonttitle=\bfseries,
+	colframe=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,
 	colbacktitle=white,coltitle=black,enhanced,borderline west={0.5mm}{0mm}{black!50!white,dashed},borderline south={0.5mm}{0mm}{black!50!white,dashed},
 	attach boxed title to top left={xshift=-5mm,yshift=-3mm},
 	title={\includegraphics[width=11pt]{icons/remarque.png} Remarque :},#1}
 \newtcolorbox{rems}[1][]{breakable,sharp corners=downhill,colback=white,
-	colframe=white,fonttitle=\bfseries,
+	colframe=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,
 	colbacktitle=white,coltitle=black,enhanced,borderline west={0.5mm}{0mm}{black!50!white,dashed},borderline south={0.5mm}{0mm}{black!50!white,dashed},
 	attach boxed title to top left={xshift=-5mm,yshift=-3mm},
 	title={\includegraphics[width=11pt]{icons/remarque.png} Remarques :},#1}
 %% Notation
 \newenvironment{notation}{\begin{flushleft} \textbf{Notation :} }{\end{flushleft}}
 %% Rappel
-\newtcbtheorem[no counter]{rappel}{Rappel}{breakable,enhanced,colback=mypurple!5,colframe=mypurple!50!white,coltitle=mypurple!50!black,fonttitle=\bfseries,colbacktitle=mypurple!15!white,borderline={0.5mm}{0mm}{mypurple!15!white},borderline={0.5mm}{0mm}{mypurple!50!white,dashed},attach boxed title to top center={yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{rappel}
+\newtcbtheorem[no counter]{rappel}{Rappel}{breakable,enhanced,colback=mypurple!5,colframe=mypurple!50!white,coltitle=mypurple!50!black,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=mypurple!15!white,borderline={0.5mm}{0mm}{mypurple!15!white},borderline={0.5mm}{0mm}{mypurple!50!white,dashed},attach boxed title to top center={yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{rappel}
 %%Activité
 %\newenvironment{ac}[1][]{\begin{leftbar}\hspace{-0.7cm}\textbf{\Large Activité : #1}\\[5pt]}{\end{leftbar}}
 \newtcolorbox{ac}[2][]{breakable,sharp corners=downhill,colback=white,
-	colframe=white,fonttitle=\bfseries,
+	colframe=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,
 	colbacktitle=myred!50!white,coltitle=white,enhanced,borderline west={0.5mm}{0mm}{myred!50!white,dashed},borderline south={0.5mm}{0mm}{myred!50!white,dashed},
 	attach boxed title to top left={xshift=-5mm,yshift=-3mm},
 	title={Activité : #2},#1}
@@ -65,7 +65,7 @@
 %% Exercices
 \newenvironment{exn}{\noindent{\bfseries Exercice : }}{\par} % exercice non numéroté
 \newtcolorbox{exbox}[1][]{breakable,sharp corners=downhill,colback=white,
-	colframe=white,fonttitle=\bfseries,
+	colframe=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,
 	colbacktitle=white,coltitle=black,enhanced,borderline west={0.5mm}{0mm}{black!50!white,dashed},borderline south={0.5mm}{0mm}{black!50!white,dashed},
 	attach boxed title to top left={xshift=-5mm,yshift=-3mm},
 	title={\Large Exercices :},#1}
@@ -195,13 +195,13 @@
 }
 %% Problèmes
 \newtcolorbox{problemes}[1][]{breakable,sharp corners=downhill,colback=white,
-	colframe=white,fonttitle=\bfseries,
+	colframe=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,
 	colbacktitle=white,coltitle=black,enhanced,borderline west={0.5mm}{0mm}{black!50!white,dashed},borderline south={0.5mm}{0mm}{black!50!white,dashed},
 	attach boxed title to top left={xshift=-5mm,yshift=-3mm},
 	title={\Large Problèmes :},#1}
 %% Histoire
 \newtcolorbox{histoire}[1][]{breakable,sharp corners=downhill,colback=white,
-	colframe=white,fonttitle=\bfseries,
+	colframe=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,
 	colbacktitle=white,coltitle=black,enhanced,borderline={0.5mm}{0.5mm}{black!50!white,dashed},
 	attach boxed title to top left={xshift=-5mm,yshift=-3mm},
 	title={\includegraphics[width=20pt]{icons/livre.png} Un peu d'histoire...},#1}
@@ -228,9 +228,9 @@
 		\end{flushright}\end{tcolorbox}} % exigible
 
 %% Résumé de preuve
-\newtcolorbox{resume}[1][]{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=mypurple!50!white,coltitle=mypurple!50!black,fonttitle=\bfseries,colbacktitle=mypurple!15!white,borderline={0.5mm}{0mm}{mypurple!15!white},borderline={0.5mm}{0mm}{mypurple!50!white,dashed},attach boxed title to top center={yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title,
+\newtcolorbox{resume}[1][]{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=mypurple!50!white,coltitle=mypurple!50!black,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=mypurple!15!white,borderline={0.5mm}{0mm}{mypurple!15!white},borderline={0.5mm}{0mm}{mypurple!50!white,dashed},attach boxed title to top center={yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title,
 	title={\includegraphics[width=10pt]{icons/ic_ampoule.png} En résumé},#1}
 %% Femme de science
-\newtcbtheorem[no counter]{fsci}{Femme de science}{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=white!35!mypurple,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!mypurple,borderline={0.5mm}{0mm}{mypurple!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{fscience}
+\newtcbtheorem[no counter]{fsci}{Femme de science}{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=white!35!mypurple,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!mypurple,borderline={0.5mm}{0mm}{mypurple!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{fscience}
 %% Homme de science
-\newtcbtheorem[no counter]{hsci}{Homme de science}{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=white!35!mypurple,coltitle=white,fonttitle=\bfseries,colbacktitle=white!35!mypurple,borderline={0.5mm}{0mm}{mypurple!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{hscience}
+\newtcbtheorem[no counter]{hsci}{Homme de science}{breakable,sharp corners=downhill,enhanced,colback=mypurple!5,colframe=white!35!mypurple,coltitle=white,fonttitle=\sffamily\bfseries, fontupper=\sffamily,colbacktitle=white!35!mypurple,borderline={0.5mm}{0mm}{mypurple!50!white},attach boxed title to top left={xshift=-2mm,yshift=-2mm},boxed title style={boxrule=0.4pt},varwidth boxed title}{hscience}

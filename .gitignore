@@ -19,8 +19,18 @@
 **/*.key
 **/*.xlsx
 **/*.ipynb
+**/*.dvi
 
 **/*.docx
+
+# evaluations 
+**/*_ev*.pdf 
+
+# ressources auxiliaires
+**/Axelnax
+**/axelnax
+**/Ressources
+**/XYMaths
 
 # But not these files...
 !.gitignore
@@ -29,6 +39,7 @@
 !content.html
 !build_index.py
 
+# styles
 !latex_styles
 latex_styles/compilation_tests
 latex_styles/Modèles
@@ -36,12 +47,10 @@ latex_styles/Modèles
 # !Terminale
 
 
+# Seconde
 !Seconde
 !Seconde/*
 Seconde/.vscode
-Seconde/Automatismes
 Seconde/Evaluations
 Seconde/Ressources Perrine
 Seconde/*.pdf
-
-

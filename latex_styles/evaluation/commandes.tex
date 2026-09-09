@@ -100,7 +100,7 @@
 \newcommand{\km}{\text{ km}}
 \newcommand{\m}{\text{ m}}
 \newcommand{\droiteparam}[4][, t\in\R]{\left\{\begin{array}{ll}#2&\\#3&#1\\#4&\end{array}\right.}
-\renewcommand{\det}[2]{\text{det}(#1\,,\,#2)}
+\renewcommand{\det}[2]{\text{det}(#1\,;\,#2)}
 \newcommand{\detm}{\text{det}} % determinant matrice
 \newcommand{\Det}[1]{\begin{vmatrix}#1\end{vmatrix}}
 \newcommand{\fleche}{\ding{220}}
@@ -160,3 +160,15 @@
 \newcommand{\ofi}[2]{\intervalle{[\![}{#1}{#2}{]\!]}}
 \newcommand{\foi}[2]{\intervalle{[\![}{#1}{#2}{]\!]}}
 \newcommand{\ooi}[2]{\intervalle{[\![}{#1}{#2}{]\!]}}
+
+% Exercises footnotes
+% ***********
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\addfootnotes}{
+	\footnotetext[1]{Exercice pour aller plus loin, corrigé au verso}
+	\footnotetext[2]{Exercice d'entraînement, corrigé dans le livre}
+	\footnotetext[3]{Exercice avec partie algorithmique}
+}
+\newcommand{\diff}{($\ast$)}
+\newcommand{\train}{($\dag$)}
+\newcommand{\alg}{($\ddag$)}
