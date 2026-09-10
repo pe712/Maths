@@ -103,6 +103,10 @@ Un nombre rationnel est un nombre qui peut s'écrire sous forme de fraction $\fr
  L'ensemble de tous les nombres rationnels est noté: $\mathbb{Q}$.
 \end{defi}
 
+\begin{rem}{}{}
+	La lettre $\Q$ provient de l'italien \guillemotleft quoziente \guillemotright.	
+\end{rem}
+
 \begin{ex}{}{}
 \begin{itemize}
 	\item $5/7$ est rationnel. Il est déjà sous forme d'une fraction
@@ -277,7 +281,7 @@ Euclide d'Alexandrie (-320 ; -260) présente une des premières démonstrations 
 \end{ex}
 
 \begin{notation}{}{}
-	Lorsque l'écriture décimale a une infinité de chiffres qui se répète, on utilise une barre au dessus de la séquence qui se répète.
+	Lorsque l'écriture décimale a une infinité de chiffres qui se répète, on dit que le développement décimal est \textbf{périodique}. On utilise une barre au dessus de la séquence qui se répète pour le noter.
 \end{notation}
 
 \begin{ex}{}{}
@@ -290,7 +294,11 @@ Euclide d'Alexandrie (-320 ; -260) présente une des premières démonstrations 
 \end{ex}
 
 \begin{rem}{}{}
-	On remarque que le développement décimal d'une fraction est périodique (il y a un motif qui se répète). On peut le voir en effectuant la division euclidienne. A chaque étape, il y a un nombre fini de reste possibles. Dès que l'on trouve un reste déjà obtenu, alors on entame un motif identique au précédente.
+	Pour un nombre rationnel $x=\frac{a}{b}\in\Q$, il y a deux possibilités:
+	\begin{itemize}
+		\item Soit $x\in\D$, et son développement décimal est fini. 
+		\item Soit $x\notin\D$. Alors son développement décimal est infini et périodique ! En effet, lorsqu'on effectue la division de $a$ par $b$, il y a un nombre fini de restes possibles. Dès que l'on tombe sur un reste qu'on a déjà vu, alors les divisions suivantes seront identiques au motif déjà vu. 
+	\end{itemize}
 \end{rem}
 
 \begin{prop}{}{}
