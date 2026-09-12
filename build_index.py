@@ -34,25 +34,7 @@ footer = """
 direct_content= {
     "Latex" : {
         "Styles" : [
-            "./latex_styles/commandes.tex",
-            "./latex_styles/environnements.tex",
-            "./latex_styles/layout_cours.sty",
-            "./latex_styles/packages.tex",
-            "./latex_styles/layout_algo.sty"
-        ],
-        "Icones" : [
-            "./latex_styles/icons/ampoule.png",
-            "./latex_styles/icons/calc.png",
-            "./latex_styles/icons/demo.png",
-            "./latex_styles/icons/fond_ecran_original.jpg",
-            "./latex_styles/icons/ic_ampoule.png",
-            "./latex_styles/icons/image_page_de_garde.jpg",
-            "./latex_styles/icons/lever_la_main.png",
-            "./latex_styles/icons/livre.png",
-            "./latex_styles/icons/nocalc.png",
-            "./latex_styles/icons/quote-mark-left.jpg",
-            "./latex_styles/icons/quote-mark-right.jpg",
-            "./latex_styles/icons/remarque.png"
+            "./Latex/latex_styles_12_09_2026.zip",
         ]
     }
 }
