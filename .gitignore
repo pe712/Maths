@@ -42,9 +42,9 @@ Bordas*.pdf
 !build_index.py
 
 # styles
-!latex_styles
-latex_styles/compilation_tests
-latex_styles/Modèles
+!latex
+latex/compilation_tests
+latex/Modèles
 
 # !Terminale
 
