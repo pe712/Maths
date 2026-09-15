@@ -2,20 +2,6 @@ from pathlib import Path
 import re
 import os
 
-# content_cours = {
-#     "Seconde":{
-#         "Ensemble de nombres" : [
-#             "./Seconde/C1 Ensembles de nombres/Seconde_Nombres.pdf"
-#         ],
-#         "Etude des variations d'une fonction" : [
-#             "./Seconde/C8 Etude des variations d'une fonction/Seconde_Variations.pdf"
-#         ],
-#         "Fonctions de référence" : [
-#             "./Seconde/C9 Fonctions de référence/Seconde_Fonctions_reference.pdf"
-#         ],
-#     }
-# }
-
 header  = """
 <!DOCTYPE html>
 <html lang="en">
@@ -39,45 +25,59 @@ direct_content= {
     }
 }
 
-grade = "Seconde"
+GRADE = "Seconde"
+path = f"./{GRADE}"
+
+class Chapter:
+    GRADE_PATTERN = fr"^{GRADE}_.+\.pdf"
+    CHAPTER_FOLDER_PATTERN = r"^C(\d+) (.+)$"
+
+    def __init__(self, path, folder_name):
+        match = re.search(self.CHAPTER_FOLDER_PATTERN, folder_name)
+        if match:
+            self.chapnumber = int(match.group(1))
+            self.chaptername = match.group(2)
+            self.files =[]
+            for filename in os.listdir(f"{path}/{folder_name}"):
+                if re.search(self.GRADE_PATTERN, filename):
+                    self.files.append(f"{path}/{folder_name}/{filename}")
+        else:
+            raise Exception(f"folder_name={folder_name} does not match the pattern={self.CHAPTER_FOLDER_PATTERN}")
+
+    @classmethod
+    def match(self, folder_name):
+        return re.search(self.CHAPTER_FOLDER_PATTERN, folder_name)
+
 def discover_courses():
     content_cours = []
-    path = f"./{grade}"
-    grade_pattern = fr"^{grade}_.+\.pdf"
-    chapter_pattern = r"^C\d+ .+$"
-    strict_chapter_pattern = r"C\d+ "
-
-    for folder in sorted(os.listdir(path)):
-        if re.search(chapter_pattern, folder):
-            chaptername = re.sub(strict_chapter_pattern, '', folder)
-            files = []
-            for filename in os.listdir(f"{path}/{folder}"):
-                if re.search(grade_pattern, filename):
-                    files.append(f"{path}/{folder}/{filename}")
-            chapter = [chaptername, files]
+    for folder_name in sorted(os.listdir(path)):
+        if Chapter.match(folder_name):
+            chapter = Chapter(path, folder_name)
             content_cours.append(chapter)
+
+    content_cours.sort(key=lambda chapter: chapter.chapnumber)
     return content_cours
 
 def build_index():
-    content_cours = discover_courses()
-    
+
     with open("./index.html", "w", encoding='utf-8') as file:
         file.write(header)
 
-        for h1, v1 in direct_content.items():
-            file.write(f"<h1>{h1}</h1>\n")
-            for h2, v2 in v1.items():
-                file.write(f"<h2>{h2}</h2>\n")
-                for source_str in v2:
+        for chaptername, chaptercontent in direct_content.items():
+            file.write(f"<h1>{chaptername}</h1>\n")
+            for subchaptername, files in chaptercontent.items():
+                file.write(f"<h2>{subchaptername}</h2>\n")
+                for source_str in files:
                     source = Path(source_str)
                     file.write(
                         f'<a href="{source_str}" download>{source.name}</a><br>\n'
                     )
 
-        file.write(f"<h1>{grade}</h1>\n")
-        for chapnumber, (chaptitle, courses) in enumerate(content_cours):
-            file.write(f"<h2>Chapitre {chapnumber+1}: {chaptitle}</h2>\n")
-            for source_str in courses:
+        content_cours = discover_courses()
+        file.write(f"<h1>{GRADE}</h1>\n")
+        for chapter in content_cours:
+            file.write(f"<h2>Chapitre {chapter.chapnumber}: {chapter.chaptername}</h2>\n")
+            for source_str in chapter.files:
                 source = Path(source_str)
                 file.write(
                     f'<a href="{source_str}" download>{source.name}</a>\n'
