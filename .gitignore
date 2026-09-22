@@ -1,7 +1,7 @@
 # Ignore everything
 /*
 
-# Ignore
+# Ignore aux files
 **/*.pytxcode
 **/*.sol
 **/*.aux
@@ -20,10 +20,10 @@
 **/*.xlsx
 **/*.ipynb
 **/*.dvi
-
+**/figures
 **/*.docx
 
-# evaluations 
+# evaluations
 **/*_ev*.pdf
 **/*_ev*.tex
 
@@ -32,7 +32,8 @@
 **/axelnax
 **/Ressources
 **/XYMaths
-Bordas*.pdf
+**/Bordas*.pdf
+**/Bordas*.jpg
 
 # But not these files...
 !.gitignore
@@ -55,5 +56,5 @@ latex/Modèles
 Seconde/.vscode
 Seconde/Evaluations/*
 !Seconde/Evaluations/DM
-Seconde/Ressources Perrine
+Seconde/Ressources
 Seconde/*.pdf

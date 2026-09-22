@@ -7,7 +7,7 @@ header  = """
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>My test page</title>
+    <title>Maths lycée - PE BAVIERE </title>
   </head>
   <body>
 """
@@ -50,7 +50,7 @@ class Chapter:
 
 def discover_courses():
     content_cours = []
-    for folder_name in sorted(os.listdir(path)):
+    for folder_name in os.listdir(path):
         if Chapter.match(folder_name):
             chapter = Chapter(path, folder_name)
             content_cours.append(chapter)
