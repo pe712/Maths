@@ -1,5 +1,30 @@
+\documentclass[10pt,a4paper,openany,twoside,prof]{book}
 
-\subsection{Divisibilité}
+\usepackage{layout_cours}
+\usepackage{hyperref}
+
+\setlist{leftmargin=5mm}
+
+\begin{document}
+
+	\chapnumber{3} % numéro du chapitre
+	\titre{Arithmétique} % titre du chapitre
+	\classe{Seconde} % classe
+	\entetegal
+
+	% Debut du texte
+	% **************
+	\vspace{-7mm}
+	\paragraph*{Objectif du chapitre:}
+	% \begin{itemize}
+	% 	\vspace{-2mm}
+	% 	\setlength\itemsep{-1mm}
+	% 	\item Utiliser les vecteurs pour résoudre des problèmes de géométrie
+	% 	\item Comprendre le vocabulaire associé au vecteurs : colinéarité, représentant, translation
+	% \end{itemize}
+	% \vspace{-7mm}
+
+\section{Divisibilité}
 
 \begin{defi}{Divisibilité}{}
 Un nombre entier $a\in\Z$ est \bf{divisible} par un nombre entier $b\in\Z$ s'il existe un nombre entier $k\in\Z$ tel que: $a=k\times b$.
@@ -49,7 +74,7 @@ $$ b =k\times a  \quad \text{ et } \quad c = k' \times a$$
 Par addition, on a:
 $$ b + c = k\times a  + k' \times a $$
 
-En factorisant par $a$, il vient: 
+En factorisant par $a$, il vient:
 $$ b + c = (k  + k') \times a $$
 
 Donc $b+c$ est un multiple de $a$.
@@ -66,7 +91,7 @@ $$ a =2\times k+1 $$
 Par multiplication, on a:
 $$ a^2 = \left(2\times k+1 \right)^2 = (2\times k)^2 + 2 \times 2k \times 1 + 1^2 = 4k^2 + 4k +1 = 2(2k^2+2k)+1$$
 
-Donc $a^2$ est un nombre impair. 
+Donc $a^2$ est un nombre impair.
 \end{deme}
 
 \begin{prop}{}{}
@@ -86,13 +111,13 @@ Exemple: $2 538$ est divisible par $9$ car $2 + 5 + 3 + 8 = 18$ qui est divisibl
 
 \subsection{Nombres premiers}
 \begin{defi}{Nombre premier}{}
-Un entier naturel $n\in\N$ qui a exactement deux diviseurs distincts (à savoir $1$ et $n$) est appelé un \bf{nombre premier}. 
+Un entier naturel $n\in\N$ qui a exactement deux diviseurs distincts (à savoir $1$ et $n$) est appelé un \bf{nombre premier}.
 \end{defi}
 
 \begin{rems}{}{}
 	\begin{itemize}
 		\item Attention, $1$ n'est pas un nombre premier !
-		\item 
+		\item
 		Trouver des grands nombres premiers est un problème difficile. Les nombres premiers sont indispensables en cryptographie, par exemple pour assurer la sécurité d'un paiement bancaire.
 	\end{itemize}
 \end{rems}
@@ -116,13 +141,13 @@ Un entier naturel $n\in\N$ qui a exactement deux diviseurs distincts (à savoir 
 
 \begin{ex}{}{}
 	Prenons par exemple $105$. On remarque que $105$ est divisible par $3$. On a $105 = 35\times3$. Donc on continue avec $35$.
-	
+
 	On sait que $35$ est divisble par $5$, c'est $5\times7$. Enfin 	$7$ est lui-même premier. Donc on a obtenu la décomposition:
 	$105=35\times3 = (5\times7)\times3 = 3\times5\times7$
 \end{ex}
 
 \begin{methode}{Crible d'Erathosthène}{}
-La méthode du crible d'Ératosthène permet de dresser la liste des nombres premiers inférieurs ou égaux à $n$. 
+La méthode du crible d'Ératosthène permet de dresser la liste des nombres premiers inférieurs ou égaux à $n$.
 
 Nous prendrons l'exemple $n=100$:
 
@@ -175,3 +200,11 @@ Nous prendrons l'exemple $n=100$:
 
 	Alors la fraction $\frac{a}{b}$ se simplifie par $2$ et elle n'est pas irréductible. C'est absurde. L'hypothèse initiale est fausse et $\sqrt{2}$ n'est pas rationnel.
 \end{deme}
+
+\newpage
+\section*{Exercices}
+\sectionexo{Parcours d'approfondissement}
+Preuve des règles de divisibilité par 2, 3, 5, 9...
+
+
+\end{document}

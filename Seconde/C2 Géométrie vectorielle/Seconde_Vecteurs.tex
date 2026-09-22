@@ -15,7 +15,7 @@
 	% **************
 	\vspace{-7mm}
 	\paragraph*{Objectif du chapitre:}
-	\begin{itemize}  
+	\begin{itemize}
 		\vspace{-2mm}
 		\setlength\itemsep{-1mm}
 		\item Utiliser les vecteurs pour résoudre des problèmes de géométrie
@@ -41,10 +41,10 @@ Une \bf{translation} déplace tous les points d'un objet géométrique de la mê
 \end{defi}
 
 \begin{defi}{Vecteur}{}
-	A chaque translation, on associe un vecteur noté $\vecu$. Un vecteur se définit donc avec 
-	
+	A chaque translation, on associe un vecteur noté $\vecu$. Un vecteur se définit donc avec
+
 	\begin{itemize}
-		\item 
+		\item
 		une norme (distance de la translation) noté $\norm{\vecu}$
 		\item une direction (axe de la translation)
 		\item un sens
@@ -59,13 +59,13 @@ Une \bf{translation} déplace tous les points d'un objet géométrique de la mê
 
 
 \begin{prop}{Egalité de vecteurs}{}
-	On dispose de trois manières de tester que deux vecteurs sont égaux : 
+	On dispose de trois manières de tester que deux vecteurs sont égaux :
 	\begin{itemize}
 		\item Par définition, deux vecteurs $\vec{AB}$ et $\vec{CD}$ sont égaux s'ils décrivent la même translation.
 		\item De façon équivalente, deux vecteurs sont égaux s'ils sont tous les deux nuls; ou s'ils ont même norme, même direction et même sens.
 		\item Deux vecteurs $\vec{AB}$ et $\vec{CD}$  sont égaux si et seulement si le quadrilatère ABDC est un parallélogramme (éventuellement aplati).
 	\end{itemize}
-	
+
 	On dit alors qu'ils sont des \bf{représentants} du même vecteur que l'on peut nommer avec une seule lettre, par exemple $\vecu$. On note $\vec{AB} = \vec{CD}$. Il y a une infinité de \bf{représentants} du même vecteur $\vecu$.
 
 	\begin{minipage}{0.4 \linewidth}
@@ -84,7 +84,7 @@ Une \bf{translation} déplace tous les points d'un objet géométrique de la mê
 		\begin{tikzpicture}
 			\draw (-1,-1) grid (3,1);
 			\draw[very thick] (-1, 0) node[left] {A} -- (1, 1) node[above] {B} -- (2,0) node[right] {D} -- (0,-1) node[below] {C} -- (-1, 0);
-			
+
 			\draw[->,very thick, red] (-1, 0) -- node[above] {$\vec{AB}$} (1, 1);
 			\draw[->,very thick, blue] (0,-1) -- node[above] {$\vec{CD}$} (2,0);
 		\end{tikzpicture}
@@ -94,7 +94,7 @@ Une \bf{translation} déplace tous les points d'un objet géométrique de la mê
 
 \begin{defi}{Opposé d'un vecteur}{}
 		Le vecteur $\vec{BA}$ est l'opposé du vecteur $\vec{AB}$. Il a même norme, même direction et un sens opposé. Il réalise la translation inverse.
-		
+
 		\begin{center}
 			\begin{tikzpicture}
 				\draw (-1,0) grid (6,2);
@@ -102,13 +102,13 @@ Une \bf{translation} déplace tous les points d'un objet géométrique de la mê
 				\draw[->,very thick] (6, 3/2) -- node[above] {$\vec{BA}$} (4, 1/2);
 			\end{tikzpicture}
 		\end{center}
-	
+
 \end{defi}
 
 \section{Opérations sur les vecteurs}
 
 \begin{defi}{Somme de vecteurs}{}
-	Si on applique la translation associée à  $\vecu$, puis la translation associée à $\vecv$, on obtient une nouvelle translation. Le vecteur de cette nouvelle translation est la \bf{somme des vecteurs} $\vecu+\vecv$. 
+	Si on applique la translation associée à  $\vecu$, puis la translation associée à $\vecv$, on obtient une nouvelle translation. Le vecteur de cette nouvelle translation est la \bf{somme des vecteurs} $\vecu+\vecv$.
 
 	\begin{center}
 		\begin{tikzpicture}
@@ -122,7 +122,7 @@ Une \bf{translation} déplace tous les points d'un objet géométrique de la mê
 \end{defi}
 
 \begin{prop}{}{}
-	Il n'y a pas d'ordre dans la somme : $\vecu+\vecv = \vecv+\vecu$. On dit que la somme est commutative
+	Il n'y a pas d'ordre dans la somme : $\vecu+\vecv = \vecv+\vecu$. On dit que la somme est commutative.
 \end{prop}
 
 \begin{theo}{Relation de Chasles}{}
@@ -170,7 +170,7 @@ Une \bf{translation} déplace tous les points d'un objet géométrique de la mê
 	\begin{itemize}
 		\item Si $k=0$, alors $0\times \vecu = \vec{0}$
 		\item Si $k>0$, alors $k\times \vecu$ est un vecteur de même direction, de même sens et de norme $k\times\norm{\vecu}$
-		\item Si $k<0$, alors $k\times \vecu$ est un vecteur de même direction, de sens opposé et de norme $|k|\times\norm{\vecu}$. 
+		\item Si $k<0$, alors $k\times \vecu$ est un vecteur de même direction, de sens opposé et de norme $|k|\times\norm{\vecu}$.
 	\end{itemize}
 \end{defi}
 
@@ -178,6 +178,15 @@ Une \bf{translation} déplace tous les points d'un objet géométrique de la mê
 	Dans le cas particulier, $k=-1$, on trouve le vecteur $-\vecu$ qui est l'opposé du vecteur $\vecu$. Autrement dit $-\vec{AB}=\vec{BA}$.
 \end{rem}
 
+\begin{histoire}{}{}
+	Dès l'Antiquité égyptienne ou babylonienne, les scribes disposaient de procédures pour trouver une quantité inconnue soumise à certaines conditions. Ainsi, les anciens Babyloniens et Égyptiens savaient déjà résoudre des problèmes qui peuvent être traduits en équations du premier ou second degré. Par exemple, ils savaient faire des règle de trois, c'est-à-dire des produits en croix.
+
+	La civilisation grecque développe la géométrie à un niveau inégalé. Au IIIe siècle av. J.-C, Euclide produit un traité, très rigoureux pour l'époque, nommé \textit{les Éléments}.
+
+	A priori ce sont deux domaines disctincts. D'une part, la géométrie s'intéresse à des figures, des points, des droites\dots D'autre part, l'algèbre s'intresse à des nombres, à des fractions, à des inconnues $x$\dots
+
+  La physique est le moteur de l'unification de la géométrie et de l'algèbre. En 1604, Galileo Galilei établit la loi de la chute des corps. Les illustrations de ses notes montrent l'utilisation d'un repère. L'optique est la branche qui aboutit au progrès le plus marquant. Pierre de Fermat et René Descartes arrivent à la conclusion qu'un repère est une méthode systématique permettant d'appréhender tous les problèmes de géométrie euclidienne.
+\end{histoire}
 
 \section{Colinéarité}
 \begin{defi}{Vecteurs colinéaires}{}
@@ -195,12 +204,17 @@ Une \bf{translation} déplace tous les points d'un objet géométrique de la mê
 \end{rem}
 
 \begin{cor}{}{}
+	Soient A, B deux points distincts.
+
 	I est le milieu du segment $[AB]$ si et seulement si $\vec{AI} = \vec{IB}$, si et seulement si $\vec{AI} = \frac{1}{2}\vec{AB}$.
 \end{cor}
 
 \begin{dem}{}{}
-	Si $\vec{AI} = \vec{IB}$, alors leurs normes sont égales $\norm{\vec{AI} }= \norm{\vec{IB}}$. Donc $AI=IB$ et I se situe sur la médiatrice du segment $[AB]$.
-	
+	Si I est le milieu du segment $[AB]$, alors $AI=IB$. Donc on a une égalité de normes $\norm{\vec{AI} }= \norm{\vec{IB}}$. De plus les points A, B et I sont alignés. Donc on a une égalité de direction entre $\vec{AI}$ et $\vec{IB}$. On a donc $\vec{AI}=\pm\vec{IB}$. Si on suppose par l'absurde que $\vec{AI}=-\vec{IB}$, alors $\vec{AI}=\vec{BI}$ et les points A et B sont confondus. Ce qui est une contradiction. Donc $\vec{AI}=\vec{IB}$.
+
+	\smallskip
+	\textbf{Réciproquement}, si $\vec{AI} = \vec{IB}$, alors leurs normes sont égales $\norm{\vec{AI} }= \norm{\vec{IB}}$. Donc $AI=IB$ et I se situe sur la médiatrice du segment $[AB]$.
+
 	De plus, puisque $\vec{AI} = \vec{IB}$, ils sont colinéaires. Donc les points A, I et B sont alignés. Donc $I$ est le milieu du segment $[AB]$.
 \end{dem}
 
@@ -226,18 +240,69 @@ Une \bf{translation} déplace tous les points d'un objet géométrique de la mê
 
 \begin{dem}{}{}
 	Soit un triangle ABC, les trois bases des médianes I, J, K.
-	
-	Pour montrer la proposition, il suffit de montrer l'égalité suivante: 
+
+	Pour montrer la proposition, il suffit de montrer l'égalité suivante:
 
 	$$\frac{2}{3}\vec{AJ} = \vec{AB}+\frac{2}{3}\vec{BK} = \vec{AC}+\frac{2}{3}\vec{CI}$$
 
-	Montrons la première égalité. D'après Chasles, on a $\vec{AJ} = \vec{AB} + \vec{BJ}$.
+	Montrons la première égalité. On veut décomposer tous les vecteurs en fonction de deux vecteurs choisis au préalable, qu'on appellera une \textbf{base}. Choisissons par exemple $\vec{AB}$ et $\vec{BC}$.
 
-	TODO
+	\smallskip
+	D'une part, en utilisant Chasles, $\vec{AJ} = \vec{AB}+\vec{BJ}$.
+
+	Puisque $J$ est le milieu de $[BC]$, $\vec{BJ} = \frac{1}{2}\vec{BC}$.
+
+	Donc, \begin{align*}
+		\frac{2}{3}\vec{AJ}= \frac{2}{3}(\vec{AB}+\frac{1}{2}\vec{BC})= \frac{2}{3}\vec{AB}+\frac{1}{3}\vec{BC}
+	\end{align*}
+
+	\smallskip
+	D'autre part, en utilisant Chasles, $\vec{BK} = \vec{BA}+\vec{AK}$.
+
+	Puisque $K$ est le milieu de $[AC]$, $\vec{AK} = \frac{1}{2}\vec{AC}$.
+
+	Avec Chasles de nouveau, $\vec{AC} = \vec{AB}+\vec{BC}$.
+
+	Donc, \begin{align*}
+		\vec{AB}+\frac{2}{3}\vec{BK}
+		&= \vec{AB}+\frac{2}{3}(\vec{BA}+\frac{1}{2}(\vec{AB}+\vec{BC}))\\
+		&= \vec{AB}+\frac{2}{3}(-\vec{AB}+\frac{1}{2}\vec{AB}+\frac{1}{2}\vec{BC})\\
+		&= \vec{AB}+\frac{2}{3}(-\frac{1}{2}\vec{AB}+\frac{1}{2}\vec{BC})\\
+		&= \vec{AB}-\frac{1}{3}\vec{AB}+\frac{1}{3}\vec{BC}\\
+		&= \frac{2}{3}\vec{AB}+\frac{1}{3}\vec{BC}
+	\end{align*}
+
+	\smallskip
+	On a bien montré l'égalité voulue.
 \end{dem}
 
-\section{Exercices}
-\sectionexo{}
+\newpage
+
+\section*{Exercices (Bordas 2019)}
+\addfootnotes
+
+\sectionexo{Translation}
+\begin{bookexo}{48 p.137}\end{bookexo}
+\begin{bookexo}{52 p.137}\end{bookexo}
+\begin{bookexo}{54 p.137}\end{bookexo}
+\begin{bookexo}{59 p.138}\end{bookexo}
+
+\sectionexo{Opérations sur les vecteurs}
+\begin{bookexo}{63 p.138}\end{bookexo}
+\begin{bookexos}{72,73,76 p.139}\end{bookexos}
+\begin{bookexo}{75 p.139 \train}\end{bookexo}
+
+
+\sectionexo{Chasles}
+\begin{bookexos}{67,68 p.138-139}\end{bookexos}
+\begin{bookexo}{79 p.139}\end{bookexo}
+
+\sectionexo{Milieu}
+\begin{bookexo}{56 p.137}\end{bookexo}
+\begin{bookexo}{78 p.139}\end{bookexo}
+
+\sectionexo{Parcours d'approfondissement}
+\begin{exo}{Démontrer que les médianes sont concourantes}\end{exo}
 
 \end{document}
 
