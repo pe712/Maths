@@ -16,13 +16,14 @@
 	% **************
 	\vspace{-7mm}
 	\paragraph*{Objectif du chapitre:}
-	% \begin{itemize}
-	% 	\vspace{-2mm}
-	% 	\setlength\itemsep{-1mm}
-	% 	\item Utiliser les vecteurs pour résoudre des problèmes de géométrie
-	% 	\item Comprendre le vocabulaire associé au vecteurs : colinéarité, représentant, translation
-	% \end{itemize}
-	% \vspace{-7mm}
+	\begin{itemize}
+		\vspace{-2mm}
+		\setlength\itemsep{-1mm}
+		\item Connaître le vocabulaire de l'arithmétique: diviseur, multiple, nombre premier
+		\item Savoir passer d'une notion intuitive (comme celle de nombre pair) à sa formalisation mathématique (il s'ecrit $2k$ avec $k\in\Z$)
+		\item Utiliser l'arithmétique pour résoudre des problèmes
+	\end{itemize}
+	\vspace{-4mm}
 
 \section{Divisibilité}
 
@@ -32,7 +33,7 @@ Un nombre entier $a\in\Z$ est \bf{divisible} par un nombre entier $b\in\Z$ s'il 
 On dit que:
 \begin{itemize}
 	\item $k$ est le \bf{facteur multiplicatif}
-	\item $a$ est un \bf{multiple} de $b$
+	\item $a$ est un \bf{multiple} de $b$ ou encore il est \bf{divisible} par $b$
 	\item $b$ est un \bf{diviseur} de $a$
 \end{itemize}
 \end{defi}
@@ -44,54 +45,97 @@ $72$ est divisible par $24$ car $72 = 3\times 24$
 \end{ex}
 
 \begin{rem}
-	$72$ est également divisble par $8$, $9$ et même par $-3$.
+	$72$ est également divisible par $8$, $9$ et même par $-3$.
 \end{rem}
+
+\begin{methode}{Déterminer si un grand nombre $a$ est un multiple de $b$}{}
+  On réalise la division euclidienne de $a$ par $b$. On trouve un quotient $q$ et un reste $r$.
+  \begin{itemize}
+	\item
+	Si le reste est $r=0$, alors on peut écrire $a=b\times q$ et $b$ divise $a$.
+	\item
+	Si le reste est $r\ne 0$, alors on a $a=b\times q+r$ et $b$ ne divise pas $a$.
+  \end{itemize}
+\end{methode}
+
+\begin{ex}{}{}
+  On veut savoir si $a=45687$ est divisible par $b=7$. On trouve un reste non nul. Donc $a$ n'est pas divisible par $b$.
+\end{ex}
 
 \begin{defi}{Parité}{}
 Un entier multiple de deux est un entier \bf{pair}, les autres sont les entiers \bf{impairs}.
 \end{defi}
 
 \begin{prop}{}{}
-Si $a\in\Z$ est pair, si et seulement s'il existe $k\in\Z$ tel que $a=2k$.
+	Soit $a\in\Z$.
 
-Si $a\in\Z$ est impair, si et seulement s'il existe $k\in\Z$ tel que $a=2k+1$.
+	a est pair, si et seulement s'il existe $k\in\Z$ tel que $a=2k$.
+
+	a est impair, si et seulement s'il existe $k\in\Z$ tel que $a=2k+1$.
 \end{prop}
 
 \begin{ex}{}{}
 $72$ est un multiple de $2$. En effet, $2\times 36 = 72$. Donc 72 est un entier pair.
+
+$27$ est impair. On peut effectivement écrire $27 = 26+1 = 2\times13+1$
+\end{ex}
+
+\begin{ex}{}{}
+	Soit $n=56 = 8\times7$ et $m=21=3\times7$. Ce sont deux multiples de $a= 7$.
+
+	On observe que $n+m=77$ est aussi un multiple de $a=7$. D'ailleurs on peut expliciter le coefficient multiplicatif.
+	$$n+m= 8\times7+3\times7 = (8+3)\times7=11\times7$$
 \end{ex}
 
 \begin{prop}{}{}
-Soit $a\in\Z$ un entier, la somme de deux multiples de $a$ est multiple de $a$.
+Soit $a\in\Z$ un entier, la somme de deux multiples de $a$ est un multiple de $a$.
 \end{prop}
 
 \begin{deme}{}{}
-Soit $a\in\N$. Soient $b, c\in\N$ des multiples de $a$.
+Soit $a\in\N$. Soient $n, m\in\N$ des multiples de $a$.
 
 Il existe $k\in\N$ et $k'\in\N$ deux entiers tel que:
-$$ b =k\times a  \quad \text{ et } \quad c = k' \times a$$
+$$ n =k\times a  \quad \text{ et } \quad m = k' \times a$$
 
 Par addition, on a:
-$$ b + c = k\times a  + k' \times a $$
+$$ n + m = k\times a  + k' \times a $$
 
 En factorisant par $a$, il vient:
-$$ b + c = (k  + k') \times a $$
+$$ n + m = (k  + k') \times a $$
 
-Donc $b+c$ est un multiple de $a$.
+Donc $n+m$ est un multiple de $a$.
 \end{deme}
 
+\begin{ex}{}{}
+	On se donne un nombre pair $a=13$. Alors son carré est :
+
+	$a^2=13^2=(10+3)^2 = 10^2+2\times10\times3+3^2 = 169$
+
+	Il est encore impair.
+\end{ex}
+
+
 \begin{prop}{}{}
-Le carré d'un nombre impair est impair.
+Le carré d'un nombre pair est pair. Le carré d'un nombre impair est impair.
 \end{prop}
 
 \begin{deme}{}{}
-Soit $a\in\N$ un nombre impair. Il existe $k\in\N$ tel que:
-$$ a =2\times k+1 $$
+	Montrons le cas d'un nombre impair $a\in\N$. Il existe $k\in\N$ tel que:
+$$ a =2k+1 $$
 
 Par multiplication, on a:
-$$ a^2 = \left(2\times k+1 \right)^2 = (2\times k)^2 + 2 \times 2k \times 1 + 1^2 = 4k^2 + 4k +1 = 2(2k^2+2k)+1$$
+$$ a^2 = \left(2k+1 \right)^2 = (2k)^2 + 2 \times (2k) \times 1 + 1^2 = 4k^2 + 4k +1 = 2(2k^2+2k)+1$$
 
 Donc $a^2$ est un nombre impair.
+
+\medskip
+Montrons le cas d'un nombre pair $b\in\N$. Il existe $k\in\N$ tel que:
+$$ b =2k $$
+
+On a:
+$$ b^2 = \left(2k \right)^2 = 4k^2= 2\times(2k)$$
+
+Donc $b^2$ est un nombre pair.
 \end{deme}
 
 \begin{prop}{}{}
@@ -101,50 +145,57 @@ Donc $a^2$ est un nombre impair.
 
 \item  Un nombre est divisible par $3$ si la somme de ses chiffres est divisible par $3$.
 
-Exemple: $249$ est divisible par $3$ car $2 + 4 + 9 = 15$ qui est divisible par $3$ ($3 \times 5 = 15$).
 
 \item  Un nombre est divisible par $9$ si la somme de ses chiffres est divisible par $9$.
 
-Exemple: $2 538$ est divisible par $9$ car $2 + 5 + 3 + 8 = 18$ qui est divisible par $9$ ($3 \times 9 = 18$).
 \end{itemize}
 \end{prop}
 
-\subsection{Nombres premiers}
+\begin{ex}{}{}
+  $2 538$ est divisible par $9$ car $2 + 5 + 3 + 8 = 18$ qui est divisible par $9$ ($3 \times 9 = 18$).
+
+   $249$ est divisible par $3$ car $2 + 4 + 9 = 15$ qui est divisible par $3$ ($3 \times 5 = 15$).
+\end{ex}
+
+
+\begin{defi}{Fraction irréductible}{}
+  Soit $a\in\Z$ et $b\in\N^*$. On dit que la fraction $\frac{a}{b}$ est irréductible lorsque le seul diviseur commun à $a$ et $b$ est $1$. On ne peut pas la simplifier.
+\end{defi}
+
+\begin{ex}{}{}
+  $\frac{15}{6}$ n'est pas irréductible car $3$ est un diviseur commun de $15$ et de $6$.
+
+\smallskip
+  $\frac{15}{7}$ est irréductible car l'ensemble des diviseurs (positifs) de $15$ est $\{1,3,5,15\}$ et l'ensemble des diviseurs de $7$ est $\{1,7\}$.
+\end{ex}
+
+\begin{prop}{}{}
+	$\sqrt{2}$ est irrationnel. Autrement dit, $\sqrt{2}\notin\Q$.
+\end{prop}
+
+\begin{deme}{}{}
+	On raisonne par l'absurde, en supposant que $\sqrt{2}\in\Q$ (c'est-à-dire qu'il est rationnel). On va montrer que cela conduit à une contradiction de logique.
+
+	Il existe $a\in\Z$ et $b\in\N^*$ des entiers tels que $\sqrt{2} = \frac{a}{b}$ et que la fraction est irréductible. Alors en élevant au carré $2 = \frac{a^2}{b^2}$. Donc $a^2=2\times b^2$. Donc $a^2$ est pair. Alors $a$ aussi est pair.
+
+	On écrit donc $a=2k$ avec $k\in\Z$. L'égalité $a^2=2b^2$ devient $4k^2 = 2b^2$. On simplifie pour obtenir $2k^2=b^2$. Par le même raisonnement on en déduit que $b$ est pair.
+
+	Alors la fraction $\frac{a}{b}$ se simplifie par $2$ et elle n'est pas irréductible. C'est absurde. L'hypothèse initiale est fausse et $\sqrt{2}$ n'est pas rationnel.
+\end{deme}
+
+\section{Nombres premiers}
 \begin{defi}{Nombre premier}{}
 Un entier naturel $n\in\N$ qui a exactement deux diviseurs distincts (à savoir $1$ et $n$) est appelé un \bf{nombre premier}.
 \end{defi}
 
-\begin{rems}{}{}
-	\begin{itemize}
-		\item Attention, $1$ n'est pas un nombre premier !
-		\item
-		Trouver des grands nombres premiers est un problème difficile. Les nombres premiers sont indispensables en cryptographie, par exemple pour assurer la sécurité d'un paiement bancaire.
-	\end{itemize}
-\end{rems}
-
-\begin{theo}{fondamental de l'arithmétique}{}
-	Soit $a\in\N$ un entier naturel. Il existe un entier $n\in\N$ et des diviseurs tous premiers $d_1, d_2, d_3, ... d_n$ tels que:
-	$$a=d1\times d2 \times d_3 \times ...\times d_n$$
-
-	On appelle cette écriture une décomposition en nombres premiers.
-\end{theo}
-
-
-\begin{methode}{Déterminer une décomposition en nombres premiers}{}
-	On cherche à décomposer le nombre entier $a\in\N$.:
-	\begin{enumerate}
-		\item On cherche un diviseur $d$ en testant les petits nombres premiers $2,3,5,7,11,13,15,17,19$.
-		\item On écrit alors $a=k\times d$.
-		\item Si $k$ est premier alors on a fini. Sinon, on retourne à l'étape 1 en décomposant $k$ cette fois.
-	\end{enumerate}
-\end{methode}
-
 \begin{ex}{}{}
-	Prenons par exemple $105$. On remarque que $105$ est divisible par $3$. On a $105 = 35\times3$. Donc on continue avec $35$.
-
-	On sait que $35$ est divisble par $5$, c'est $5\times7$. Enfin 	$7$ est lui-même premier. Donc on a obtenu la décomposition:
-	$105=35\times3 = (5\times7)\times3 = 3\times5\times7$
+  2,3,5,7,9,11,13,17 et 19 sont les premiers nombres premiers. Ils apparaissent uniquement dans leur propre table de multiplication.
 \end{ex}
+
+\begin{rem}{}{}
+	Attention, $1$ n'est pas un nombre premier !
+\end{rem}
+
 
 \begin{methode}{Crible d'Erathosthène}{}
 La méthode du crible d'Ératosthène permet de dresser la liste des nombres premiers inférieurs ou égaux à $n$.
@@ -186,23 +237,96 @@ Nous prendrons l'exemple $n=100$:
 
 \end{methode}
 
+\begin{methode}{}{}
+  Pour savoir si un nombre $a$ est premier, il suffit de tester s'il est divisible par un nombre premier inférieur à $\sqrt{a}$. En effet, comme les diviseurs peuvent être mis par paire. La \og moitié\fg{}se situe à $\sqrt{a}$.
+\end{methode}
 
-\begin{prop}{}{}
-	$\sqrt{2}$ n'est pas rationnel. Autrement dit, $\sqrt{2}\notin\Q$.
-\end{prop}
+\begin{ex}{}{}
+  Testons si $\np{7387}$ est premier. Il \og suffit\fg{} de tester les premiers jusqu'à $\sqrt{7387}\approx 85,9$. Donc on teste $2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83$.
 
-\begin{deme}{}{}
-	On raisonne par l'absurde, en supposant que $\sqrt{2}\notin\Q$ (c'est-à-dire qu'il est rationnel). On va montrer que cela conduit à une contradiction de logique.
+  On trouve qu'il est divisible par 83. Donc il n'est pas premier.
+\end{ex}
 
-	Il existe $a\in\Z$ et $b\in\N^*$ des entiers tels que $\sqrt{2} = \frac{a}{b}$ et que la fraction est irréductible. Alors on a $2 = \frac{a^2}{b^2}$. Donc $a^2=2\times b^2$. Donc $a^2$ est pair. Alors $a$ aussi est pair.
+\begin{histoire}{}{}
+	De façon moderne, les nombres premiers sont indispensables en cryptographie pour faire passer des messages codés. Par exemple, ils sont utilisés pour assurer la sécurité d'un paiement bancaire ou la confidentialité d'un appel téléphonique.
 
-	On écrit donc $a=2\times k$ avec $k\in\Z$. L'égalité $a^2=2b^2$ devient $4k^2 = 2b^2$. On obtient $2k^2=b^2$. Par le même raisonnement on en déduit que $b$ est pair.
+	Trouver des grands nombres premiers est un problème difficile et d'actualité. L'Electronic Frontier Foundation offre des prix de calcul coopératif pour encourager les internautes à contribuer à la résolution de problèmes scientifiques par le calcul distribué. Le GIMPS a ainsi reçu 100 000 dollars pour la découverte en 2008 d'un nombre premier avec dix millions de chiffres. C'est même 250 000 dollars qui sont offerts à ceux qui parviendront à trouver un nombre premier avec un milliard de chiffres.
+\end{histoire}
 
-	Alors la fraction $\frac{a}{b}$ se simplifie par $2$ et elle n'est pas irréductible. C'est absurde. L'hypothèse initiale est fausse et $\sqrt{2}$ n'est pas rationnel.
-\end{deme}
+
+\begin{methode}{Déterminer une décomposition en nombres premiers}{}
+	On cherche à décomposer le nombre entier $a\in\N$.:
+	\begin{enumerate}
+		\item On cherche un diviseur $d$ en testant les petits nombres premiers $2,3,5,7,11,13,17,19$.
+		\item On écrit alors $a=k\times d$.
+		\item Si $k$ est premier alors on a fini. Sinon, on retourne à l'étape 1 en décomposant $k$ cette fois.
+	\end{enumerate}
+\end{methode}
+
+\begin{ex}{}{}
+	Prenons par exemple $84$. On remarque que $84$ est divisible par $2$. On a $84 = 2\times42$. Donc on continue avec $42$.
+
+	On sait que $42$ est divisible par $2$. On a $42=2\times21$. Donc on continue avec $21$.
+
+	On sait que $21=3\times7$. Puisque $3$ et $7$ sont premiers, on a fini.
+
+	On a obtenu la décomposition:
+	$84 = 2\times42 = 2\times(2\times21)=2\times2\times(3\times7) = 2^2\times3\times7$
+\end{ex}
+
+\begin{theo}{fondamental de l'arithmétique}{}
+	Soit $a\in\N$ un entier naturel. Il existe un entier $n\in\N$ des nombres premiers distincts $d_1, d_2, d_3, ..., d_n$ et des exposants $\alpha_1, \alpha_2, \alpha_3, ..., \alpha_n$ tels que:
+	$$a=d_1^{\alpha_1}\times d_2^{\alpha_2} \times d_3^{\alpha_3} \times ...\times d_n^{\alpha_n}$$
+
+	On appelle cette écriture une décomposition en nombres premiers.
+\end{theo}
+
+\begin{methode}{Utiliser les nombres premiers pour simplifier une fraction $\frac{a}{b}$}{}
+   Soient $a\in\Z$ et $b\in\N^*$.
+
+   On décompose $a$ et $b$ en produits de nombres premiers.
+
+   $a = a_1\times a_2\times a_3\times ... \times a_n$ et
+   $b = b_1\times b_2\times b_3\times ... \times b_m$
+
+   Après simplification des facteurs, le résultat est une fraction irréductible.
+\end{methode}
+
+\begin{ex}{}{}
+  $\frac{105}{84} = \frac{3\times 5 \times 7}{2\times 2 \times 3 \times 7} = \frac{5 }{2\times 2} = \frac{5}{4} = \np{1.25}$
+\end{ex}
+
+\begin{ex}{Trouver le nombre et l'ensemble des diviseurs de 360}{}
+  On décompose $360$ en nombres premiers:
+  $$360=2\times180=2\times(2\times90)=2^2\times(2\times45)=2^3\times(3\times15)=2^3\times3\times(3\times5) = 2^3\times3^2\times5$$
+
+Les diviseurs sont alors des sous produits. On peut choisir si on prend le facteur 2 et à quelle puissance entre 1 et 3. On peut choisir si on prend le facteur 3 et à quelle puissance entre 1 et 2. On peut choisir si on prend le facteur 5.
+
+\medskip
+Cela donne donc 4 choix pour la puissance de 2. 3 choix pour la puissance de 3 et 2 choix pour la puissance de 5.
+
+Soit un total de $4\times3\times2 = 24$ diviseurs.
+
+L'ensemble des diviseurs est :
+
+$$D = \{2^0\times3^0\times5^0;\quad 2^0\times3^0\times5^1;\quad 2^0\times3^1\times5^0;\quad 2^0\times3^1\times5^1;\quad 2^0\times3^2\times5^0;\quad 2^0\times3^2\times5^1;\quad 2^1\times3^0\times5^0;\quad \dots;\quad 2^3\times3^2\times5^1\}$$
+\end{ex}
 
 \newpage
 \section*{Exercices}
+\sectionexo{Divisibilité}
+\begin{bookexos}{47-53 p.66}\end{bookexos}
+
+\sectionexo{Parité}
+\begin{bookexo}{73  p.67}\end{bookexo}
+\begin{bookexo}{76 p.67}\end{bookexo}
+\begin{bookexo}{80 p.67}\end{bookexo}
+
+\sectionexo{Nombres premiers}
+\begin{bookexo}{84 p.67}\end{bookexo}
+\begin{bookexo}{85 p.67}\end{bookexo}
+
+
 \sectionexo{Parcours d'approfondissement}
 Preuve des règles de divisibilité par 2, 3, 5, 9...
 
