@@ -1,0 +1,94 @@
+\documentclass[a4paper,12pt, french, noSujetB]{article}
+
+\usepackage{layout_evaluation}
+
+\classe{Seconde}
+\titre{Développement décimal d'un nombre réel}
+\evalnumber{1}
+\evaltype{Exercice autonome}
+\date{septembre 2026}
+
+\begin{document}
+
+
+\emph{La calculatrice n'est pas nécessaire. On posera les calculs utilisés.}
+
+\vspace{-3mm}
+
+\subsection*{Exercice 1 $\ast$}
+\begin{enumerate}
+    \item Justifier que les nombres suivants sont des décimaux : $\frac{7}{4}, \frac{2}{5}, \frac{9}{125}, \frac{7741}{500}$.
+    \item Justifier que les nombres suivants ne sont pas décimaux : $\frac{1}{3}, \frac{3}{11},  \frac{8}{37}$.
+    \item Dans quel ensemble de nombre (le plus petit possible) sont ces nombres ? On donnera le nom de l'ensemble et son symbole mathématique.
+    \item Que remarque-t-on ? Formule une conjecture sur le développement décimal de ces nombres.
+\end{enumerate}
+
+\subsection*{Exercice 2 $\ast\ast$}
+On s'intéresse à la proposition suivante : \guillemotleft Les nombres rationnels qui ne sont pas décimaux ont un développement décimal périodique \guillemotright.
+
+Prenons l'exemple $x = 0.1111\dots$, que l'on note $x = 0.\overline{1}$.
+\begin{enumerate}
+    \item Calculer $10x$ et $10x-x$.
+    \item En déduire un écriture de $x$ sous forme de fraction. Vérifier à l'aide de la calculatrice.
+    \item Appliquer une méthode similaire à $y=0.121212\dots=0.\overline{12}$.
+    \item Décrire une méthode générale pour trouver le rationnel égal à une écriture décimale périodique.
+\end{enumerate}
+
+\newpage
+\vspace{-1.2cm}
+\subsection*{Exercice 1}
+\begin{enumerate}
+    \item
+    On a $\frac{7}{4} = 1.75$. Donc $\frac{7}{4}\in\D$.
+
+    On a $\frac{2}{5} = 0.4$. Donc $\frac{2}{5}\in\D$.
+
+    On a $\frac{9}{125} = \frac{9\times8}{125\times8} = \frac{72}{1000} = 0.072$. Donc $\frac{9}{125}\in\D$.
+
+    On a $\frac{7741}{500} = \frac{7741\times2}{500\times2}=\frac{\np{15482}}{1000} = 15.482$. Donc $\frac{7741}{500} \in\D$.
+    \item D'après une proposition du cours, $\frac{1}{3}\notin\D$.
+
+    Pour les deux suivants, proposons d'abord une idée non rigoureuse. En posant la division de $3$ par $11$ on observe que $\frac{3}{11}\approx0.272727$ et que la séquence se répète. On peut donc penser que le développement décimal est infini et donc que $\frac{3}{11}$ n'est pas décimal. De même, on observe que $\frac{8}{37}\approx0.216216$.
+
+    Pour prouver cela rigoureusement, on s'inspire de la démonstration du cours pour le cas de $\frac{1}{3}$.
+
+    On suppose par l'absurde que $\frac{3}{11}\in\D$. Alors il existe $a\in\Z$ et $n\in\Z$ tels que $\frac{3}{11}=\frac{a}{10^n}$. Donc $3\times10^n=11\times a$.
+
+    A droite de l'égalité on a un entier multiple de 11. Donc à gauche, $3\times10^n$ est un entier multiple de $11$. Donc $n\in\N$, c'est-à-dire qu'il est positif. De plus, 11 divise $3\times10^n$. Or ce n'est pas le cas, dans la décomposition en nombres premiers de $3\times10^n$, il n'y a que $2$, $3$ ou $5$. C'est une contradiction. Finalement, l'hypothèse de départ est fausse et $\frac{3}{11}\notin\D$.
+
+    On procède de même pour $\frac{8}{37}$.
+
+    \item On a donc $\frac{1}{3}\in\Q$, $\frac{3}{11}\in\Q$ et $\frac{8}{37}\in\Q$. Il s'agit de l'ensemble des nombres rationnels. Il contient les fractions. Il ne sont pas décimaux donc ils n'appartiennent pas à $\D$.
+    \item Le développement décimal des nombres rationnels qui ne sont pas décimaux est infini (par définition) et \textbf{périodique}. Il y a un motif qui se répète.
+
+    Par exemple, dans $\frac{3}{11}$, on a le motif $27$. On note $\frac{3}{11} = 0.\overline{27}$. On peut observer la périodicité lors de la division. Puisqu'il y a un nombre fini de restes possibles dans la division (à savoir $0, 1, \dots, 26$), alors si le développement est infini, on retrouve toujours un reste déjà connu. Dans ce cas, on entame un nouveau motif.
+\end{enumerate}
+
+\vspace{-7mm}
+\subsection*{Exercice 2}
+Prenons l'exemple $x = 0.1111\dots$, que l'on note $x = 0.\overline{1}$.
+\begin{enumerate}
+    \item $10x = 1.111\dots$ et $10x-x = 1.111\dots-0.111\dots=1$.
+    \item Donc $9x=1$ et finalement, $x=\frac{1}{9}$. On vérifie que $\frac{1}{9}=1.\overline{1}$ à l'aide de la calculatrice.
+    \item $100y = 12.12\dots$ et $100y-y = 12.12\dots-0.12=12$. Donc $99y=12$. Donc $y=\frac{12}{99}$.
+    \item On se donne un nombre rationnel non décimal. Soit $z\in\Q$ tel que $z\notin\D$. Il admet donc un développement décimal infini et périodique. Notons $n\in\N$ la longueur de la période. Soit $a_1, a_2, \dots, a_n$ les chiffres qui composent le motif. On note $\textcolor{blue}{b_1, b_2, \dots, b_m}$ les chiffres avant la virgule et $\textcolor{red}{c_1, c_2, \dots, c_p}$ les chiffres après la virgules et avant la première période. On a donc écrit $z$ sous la forme $z=\textcolor{blue}{b_1b_2\dots b_m}
+,\textcolor{red}{c_1c_2\dots c_p}
+\overline{a_1a_2\dots a_n}$. Il suffit alors de multiplier par la bonne puissance de 10.
+    \begin{align*}
+10^{n+p} z-10^p z
+&= \textcolor{blue}{b_1b_2\dots b_m}
+\textcolor{red}{c_1c_2\dots c_p}
+ a_1a_2\dots a_n,\overline{a_1a_2\dots a_n} - \textcolor{blue}{b_1b_2\dots b_m}
+\textcolor{red}{c_1c_2\dots c_p}
+,\overline{a_1a_2\dots a_n}\\
+&= \textcolor{blue}{b_1b_2\dots b_m}
+\textcolor{red}{c_1c_2\dots c_p}
+ a_1a_2\dots a_n-\textcolor{blue}{b_1b_2\dots b_m}
+\textcolor{red}{c_1c_2\dots c_p}\\
+&= t
+    \end{align*}
+
+    Le nombre $t$ est un entier $t\in\N$. On a donc $(10^{n+p} -10^p)z=t$. Finalement $z=\frac{t}{10^{n+p}-10^n}$. On a trouvé l'écriture fractionnaire demandée. On a donc prouvé la réciproque de la proposition de l'énoncé.
+\end{enumerate}
+
+\end{document}
