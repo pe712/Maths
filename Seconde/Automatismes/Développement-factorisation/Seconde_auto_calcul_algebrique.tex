@@ -1,19 +1,40 @@
 \documentclass[10pt,a4paper,openany,twoside]{book}
 
 \usepackage{layout_cours}
+\usepackage{lscape}
+
 
 \begin{document}
-	\titre{Calcul algébrique} % titre du chapitre
-	\classe{Seconde} % classe
-	\enteteperso
 
-    \begin{exercicesnofoot}
-        \includegraphics{Bordas/Bordas_Indice_2nde_2023_p_105_Z6.jpg}
-        \includegraphics{Bordas/Bordas_Indice_2nde_2023_p_106_Z2.jpg}
-        \includegraphics{Bordas/Bordas_Indice_2nde_2023_p_106_Z7.jpg}
-    \end{exercicesnofoot}
+    \titre{Calcul algébrique} % titre du chapitre
+	\classe{Seconde} % classe
+
+    \pagenumbering{Alph}
+    \enteteperso
+    \section*{Bordas 2023}
+    \includegraphics[width=.6\textwidth]{Bordas/Bordas_Indice_2nde_2023_p_105_Z6.jpg}
+
+    \includegraphics[width=.6\textwidth]{Bordas/Bordas_Indice_2nde_2023_p_106_Z2.jpg}
+
+    \includegraphics[width=.6\textwidth]{Bordas/Bordas_Indice_2nde_2023_p_106_Z7.jpg}
 
 \newpage
+
+    \thispagestyle{premierepage}
+    \pagenumbering{arabic} %need to reset the pagenumbering to call it as a new sheme
+    \pagenumbering{Alph}
+    \enteteperso
+    \section*{Bordas 2023}
+
+    \includegraphics[width=.6\textwidth]{Bordas/Bordas_Indice_2nde_2023_p_105_Z6.jpg}
+
+    \includegraphics[width=.6\textwidth]{Bordas/Bordas_Indice_2nde_2023_p_106_Z2.jpg}
+
+    \includegraphics[width=.6\textwidth]{Bordas/Bordas_Indice_2nde_2023_p_106_Z7.jpg}
+
+\newpage
+\pagenumbering{arabic}
+\enteteperso
 \section*{Bordas 2023}
 \sectionexo{Développer avec la simple et la double distributivité}
 \begin{bookexos}{125-128 p.105}\end{bookexos}

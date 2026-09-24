@@ -58,22 +58,27 @@ class Exo:
     def __str__(self):
         return "\\includegraphics[width=0.5\\textwidth]{"+self._file_fullpath+"}\n\n"
 
-def build_exercises_sheet(filename, filetitle, classname, section_title, exos:list):
+def build_exercises_sheet(filename, filetitle, classname, section_title, exos:list, twice=False):
+    if twice: n=2
+    else: n=1
     filename+=".tex"
     with open(filename, "w", encoding='utf-8') as file:
         file.write(texfile_preamble)
         file.write("\\titre{"+filetitle+"}\n")
         file.write("\\classe{"+classname+"}\n")
-        file.write("\\enteteperso\n\n")
-        file.write("\\pagenumbering{Alph}\n")
+        for _ in range(n):
+            file.write("\\thispagestyle{premierepage}\n")
+            file.write("\\enteteperso\n\n")
+            file.write("\\pagenumbering{Alph}\n")
+            file.write("\\section*{"+section_title+"}\n")
+            file.write("\\begin{exercicesnofoot}\n")
+            for exo in exos:
+                file.write("\\hspace{-1.5cm}\n")
+                file.write(str(exo))
+            file.write("\\end{exercicesnofoot}\n\n")
+            file.write("\\newpage\n")
+            file.write("\\pagenumbering{arabic}\n")
         file.write("\\section*{"+section_title+"}\n")
-        file.write("\\begin{exercicesnofoot}\n")
-        for exo in exos:
-            file.write("\\hspace{-1.5cm}\n")
-            file.write(str(exo))
-        file.write("\\end{exercicesnofoot}\n\n")
-        file.write("\\newpage\n")
-        file.write("\\pagenumbering{arabic}\n")
         file.write(texfile_endamble)
 
 def filter(exos:list[Exo]):
@@ -92,4 +97,5 @@ if __name__ == "__main__":
     section_title = "Bordas 2019"
     exos = [Exo(104, 115), Exo(104, 119), Exo(104, 120), Exo(104, 121), Exo(104, 124), Exo(113, 197)]
     exos = filter(exos)
-    build_exercises_sheet(filename, filetitle, classname, section_title, exos)
+    twice=True
+    build_exercises_sheet(filename, filetitle, classname, section_title, exos, twice=twice)
