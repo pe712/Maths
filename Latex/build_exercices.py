@@ -12,15 +12,15 @@ texfile_preamble = """
 """
 
 texfile_endamble = """
-\end{document}
+\\end{document}
 """
 
 # To modify if the script is moved
 root = Path(__file__).parent.parent
 
 class Exo:
-    BOOK_PREFIX = "Bordas_Indice_2nde_2019"
-    BOOK_PATH = "Seconde/Bordas_Indice_2nde_2019"
+    BOOK_PREFIX = "Bordas_Indice_2nde_2023"
+    BOOK_PATH = "Seconde/Bordas_Indice_2nde_2023"
 
     def __init__(self, pagenumber, required_exonumber, book_prefix=BOOK_PREFIX):
         self.required_exonumber = required_exonumber
@@ -29,7 +29,7 @@ class Exo:
         self.__book_path =  root / Exo.BOOK_PATH
 
 
-        pattern = "^" + book_prefix+"_p_"+str(self.pagenumber)+"_exo_" + ".*" + str(required_exonumber) + ".*\.jpg$"
+        pattern = "^" + book_prefix+"_p_"+str(self.pagenumber)+"_exo_" + ".*" + str(required_exonumber) + ".*\\.jpg$"
         self._file_path = None
         for filename in os.listdir(self.__book_path):
             if re.search(pattern, filename):
@@ -37,8 +37,8 @@ class Exo:
         if self._file_path is None:
             self._file_fullpath = "Exo not found : "+book_prefix+"_p_"+str(self.pagenumber)+"_exo_" + str(required_exonumber) + ".jpg"
         else:
-            self.__extract_exonumbers()
             self.__resolve_file_fullpath()
+        self.__extract_exonumbers()
 
     def __resolve_file_fullpath(self):
         self._file_fullpath = self.__book_path/self._file_path
@@ -50,10 +50,12 @@ class Exo:
         self._file_fullpath = "".join("../" for _ in range(nb_parents)) + self._file_fullpath
 
     def __extract_exonumbers(self):
-        pattern_exonumber ="^" + self.__book_prefix+"_p_"+str(self.pagenumber)+r"_exo(.*)\.jpg"
-        match = re.match(pattern_exonumber, self._file_path).group(1)
-        self.exonumbers = re.findall(r"_(\d+)", match)
-        self.exonumbers =  {int(exonum) for exonum in self.exonumbers}
+        self.exonumbers = set()
+        if self._file_path:
+            pattern_exonumber ="^" + self.__book_prefix+"_p_"+str(self.pagenumber)+"_exo(.*)\\.jpg"
+            match = re.match(pattern_exonumber, self._file_path).group(1)
+            self.exonumbers = re.findall(r"_(\d+)", match)
+            self.exonumbers =  {int(exonum) for exonum in self.exonumbers}
 
     def __str__(self):
         return "\\includegraphics[width=0.5\\textwidth]{"+self._file_fullpath+"}\n\n"
@@ -78,7 +80,6 @@ def build_exercises_sheet(filename, filetitle, classname, section_title, exos:li
             file.write("\\end{exercicesnofoot}\n\n")
             file.write("\\newpage\n")
             file.write("\\pagenumbering{arabic}\n")
-        file.write("\\section*{"+section_title+"}\n")
         file.write(texfile_endamble)
 
 def filter(exos:list[Exo]):
@@ -91,11 +92,20 @@ def filter(exos:list[Exo]):
     return filtered_exos
 
 if __name__ == "__main__":
-    filename = "Seconde_test"
-    filetitle = "Equation de degré un et équation produit nul"
+    filename = "Seconde_exos"
+    filetitle = ""
     classname = "Seconde"
-    section_title = "Bordas 2019"
-    exos = [Exo(104, 115), Exo(104, 119), Exo(104, 120), Exo(104, 121), Exo(104, 124), Exo(113, 197)]
+    section_title = "Bordas 2023"
+    exos = [
+        Exo(77, 199),
+        Exo(77, 201),
+        Exo(146, 153),
+        Exo(147, 154),
+        Exo(147, 147),
+        Exo(76, 193),
+        Exo(77, 196),
+        Exo(77, 197),
+    ]
     exos = filter(exos)
     twice=True
     build_exercises_sheet(filename, filetitle, classname, section_title, exos, twice=twice)

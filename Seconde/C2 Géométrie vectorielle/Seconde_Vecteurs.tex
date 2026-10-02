@@ -9,7 +9,7 @@
 	\chapnumber{2} % numéro du chapitre
 	\titre{Géométrie vectorielle} % titre du chapitre
 	\classe{Seconde} % classe
-	\entetegal
+	\entetegal{}
 
 	% Debut du texte
 	% **************
@@ -47,29 +47,31 @@ Une \bf{translation} déplace tous les points d'un objet géométrique de la mê
 		\item
 		une norme (distance de la translation) noté $\norm{\vecu}$
 		\item une direction (axe de la translation)
-		\item un sens
+		\item un sens (choix d'orientation le long de la direction)
 	\end{itemize}
 
 	On distingue le vecteur nul $\vec{0}$ qui a une norme nulle et n'a pas de direction ni de sens. Il correspond à un déplacement nul.
 \end{defi}
 
-\begin{notation}{Vecteur $\vec{AB}$}{}
-	Le vecteur associé à la translation qui transforme le point A en le point B est noté $\vec{AB}$. On représente le vecteur par une flèche.
+\begin{notation}{}{}
+	Le vecteur associé à la translation qui transforme le point A en le point B est noté $\vec{AB}$. Sur les schémas, on représente les vecteurs par des flèches.
 \end{notation}
 
-
-\begin{prop}{Egalité de vecteurs}{}
-	On dispose de trois manières de tester que deux vecteurs sont égaux :
+\begin{rem}{}{}
+	Par définition, deux vecteurs sont égaux si l'une des conditions équivalentes suivantes est vérifiée :
 	\begin{itemize}
-		\item Par définition, deux vecteurs $\vec{AB}$ et $\vec{CD}$ sont égaux s'ils décrivent la même translation.
-		\item De façon équivalente, deux vecteurs sont égaux s'ils sont tous les deux nuls; ou s'ils ont même norme, même direction et même sens.
-		\item Deux vecteurs $\vec{AB}$ et $\vec{CD}$  sont égaux si et seulement si le quadrilatère ABDC est un parallélogramme (éventuellement aplati).
+  		\item les deux vecteurs décrivent la même translation.
+		\item les deux vecteurs sont nuls; ou ils ont la même norme, la même direction et le même sens.
 	\end{itemize}
 
-	On dit alors qu'ils sont des \bf{représentants} du même vecteur que l'on peut nommer avec une seule lettre, par exemple $\vecu$. On note $\vec{AB} = \vec{CD}$. Il y a une infinité de \bf{représentants} du même vecteur $\vecu$.
+	On dit alors qu'ils sont des \bf{représentants} du même vecteur que l'on peut nommer avec une seule lettre, par exemple $\vecu$. Il y a une infinité de \bf{représentants} du même vecteur $\vecu$.
 
-	\begin{minipage}{0.4 \linewidth}
-		\begin{center}
+\end{rem}
+
+
+\begin{ex}{}{}
+	\begin{minipage}{0.45\linewidth}
+	\begin{center}
 			\begin{tikzpicture}
 				\draw (-1,-1) grid (3,1);
 				\draw[->,very thick, red] (-1, 0) node[below left] {A} -- node[above] {$\vec{AB}$} (1, 1) node[above right] {B};
@@ -79,7 +81,13 @@ Une \bf{translation} déplace tous les points d'un objet géométrique de la mê
 			\end{tikzpicture}
 		\end{center}
 	\end{minipage}
-	\begin{minipage}{0.4 \linewidth}
+	\begin{minipage}{0.45\linewidth}
+		On a $\vec{AB}=\vec{CD}$ et on a tracé trois représentants de ce même vecteur.
+	\end{minipage}
+\end{ex}
+
+\begin{theo}{Egalité de vecteurs}{}
+	Deux vecteurs $\vec{AB}$ et $\vec{CD}$  sont égaux si et seulement si le quadrilatère ABDC est un parallélogramme (éventuellement aplati).
 	\begin{center}
 		\begin{tikzpicture}
 			\draw (-1,-1) grid (3,1);
@@ -89,8 +97,11 @@ Une \bf{translation} déplace tous les points d'un objet géométrique de la mê
 			\draw[->,very thick, blue] (0,-1) -- node[above] {$\vec{CD}$} (2,0);
 		\end{tikzpicture}
 	\end{center}
-	\end{minipage}
-\end{prop}
+\end{theo}
+
+\begin{rem}{}{}
+  \og si et seulement si \fg{} signifie que la réciproque est aussi vraie et peut être utilisée.
+\end{rem}
 
 \begin{defi}{Opposé d'un vecteur}{}
 		Le vecteur $\vec{BA}$ est l'opposé du vecteur $\vec{AB}$. Il a même norme, même direction et un sens opposé. Il réalise la translation inverse.

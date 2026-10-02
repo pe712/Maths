@@ -8,7 +8,7 @@
 \chapnumber{12} % numéro du chapitre
 \titre{Equation de droite} % titre du chapitre
 \classe{Seconde} % classe
-\entetegal
+\entetegal{}
 % \makeatletter
 % \addcontentsline{toc}{chapter}{Chapitre \@chapnumber - \@titre} % Prepare a table of contents
 % \makeatother
@@ -69,25 +69,25 @@
    Soit deux points \textbf{distincts} $A\coordpp{x_A}{y_a}$ et $B\coordpp{x_B}{y_B}$ de la droite $\mathcal{D}$.
 
    \begin{itemize}
-      \item 
+      \item
    Procédons par équivalence :
    \begin{align*}
-      M\in\mathcal{D} 
-      &\iff (AM)\; // \; (AB)  
+      M\in\mathcal{D}
+      &\iff (AM)\; // \; (AB)
       &\iff \v{AM} \text{ et } \v{AB} \text{ sont colinéaire} &\\
-      &\iff \det{\v{AM}}{\v{AB}} = 0 
+      &\iff \det{\v{AM}}{\v{AB}} = 0
       &\iff \Det{x-x_A & x_B-x_A \\ y-y_A & y_B-y_A} = 0 \quad&\\
       &\iff (x-x_A)(y_B-y_A) - (x_B-x_A)(y-y_A) = 0
    \end{align*}
 
-   En posant $a=(y_B-y_A)$, $b=-(x_B-x_A)$ et $c=-x_A(y_B-y_A)+y_A(x_B-x_A)$, 
-   
+   En posant $a=(y_B-y_A)$, $b=-(x_B-x_A)$ et $c=-x_A(y_B-y_A)+y_A(x_B-x_A)$,
+
    la dernière ligne se réécrit:
 
    $$ax+by+c=0$$
-   
+
    \item Vérifions que $(a;b)\ne(0;0)$.
-   
+
    Si $(a;b)=(0;0)$ alors $y_B-y_A=0$ et $x_B-x_A=0$. Ce qui est impossible car les points $A$ et $B$ sont distincts.
 \end{itemize}
    \end{reponse}
@@ -106,7 +106,7 @@
 \end{ex}
 
 \begin{rem}{}{}
-   L'équation cartésienne d'une droite n'est pas unique ! Trouver une autre équation cartésienne de la droite $\mathcal{D}$ de l'exemple ci-dessus : 
+   L'équation cartésienne d'une droite n'est pas unique ! Trouver une autre équation cartésienne de la droite $\mathcal{D}$ de l'exemple ci-dessus :
    $$\troum{8x+14y-12=0}$$
    \medskip
 \end{rem}
@@ -117,9 +117,9 @@
 
 \begin{defi}{Vecteur directeur}{}
    \begin{minipage}{.5\textwidth}
-      
-      Soient $A$ et $B$ deux point d'une droite $\mathcal{D}$ du plan $\R^2$. 
-   
+
+      Soient $A$ et $B$ deux point d'une droite $\mathcal{D}$ du plan $\R^2$.
+
    \noindent Tout vecteur $\vecu$ colinéaire à $\v{AB}$ est appelé \textbf{vecteur directeur} de la droite $\mathcal{D}$.
 \end{minipage}
 \begin{minipage}{.5\textwidth}
@@ -139,7 +139,7 @@
    \end{tikzpicture}
 \end{minipage}
 \end{defi}
-   
+
 
 \begin{prop}{Vecteur directeur à partir de l'équation cartésienne}{vecteur_directeur_eq_cartesienne}
 Soit trois coefficients $a$, $b$, $c \in \R$, avec $a$ ou $b$ non nul. Soit la droite $\mathcal{D}$, du plan $\R^2$, d'équation cartésienne $ax+by+c=0$.
@@ -147,7 +147,7 @@ Soit trois coefficients $a$, $b$, $c \in \R$, avec $a$ ou $b$ non nul. Soit la d
 Le vecteur $\vecu \coordvp{-b}{a}$ est un vecteur directeur de la droite $\mathcal{D}$.
 \end{prop}
 
-\begin{dem}{}{} 
+\begin{dem}{}{}
 \begin{reponse}
    Il faut montrer que $\vecu$ et $\v{AB}$ sont colinéaires. Il suffit de montrer que $\det{\vecu}{\v{AB}}=0$.
 
@@ -156,7 +156,7 @@ Le vecteur $\vecu \coordvp{-b}{a}$ est un vecteur directeur de la droite $\mathc
    Puisque $A\in\mathcal{D},\quad ax_A+by_A+c=0$. Et de même, $ax_B+by_B+c=0$.
 
    Par soustraction des égalités, $a(x_B-x_A)+b(y_B-y_a)=0$
-   
+
    \medskip
    Donc $\det{\vecu}{\v{AB}}=0$ et $\vecu$ est bien un vecteur directeur.
 \end{reponse}
@@ -165,28 +165,28 @@ Le vecteur $\vecu \coordvp{-b}{a}$ est un vecteur directeur de la droite $\mathc
 
 \begin{ex}{}{}
    Trouver un vecteur directeur de la droite d'équation cartésienne $-y-3x=7$.
-   
+
    \begin{reponse}
       $\vecu \coordvp{1}{-3}$ convient. Tout comme $\vecv \coordvp{3}{-9}$ et $\vecw \coordvp{-1}{3}$
    \end{reponse}
-   
+
    \end{ex}
 
-   
+
 \begin{methode}{Trouver l'équation cartésienne...}{}
    \textbf{A partir du vecteur directeur $\vecu\coordvp{-b}{a}$ et du point $A\coordpp{x_A}{y_A}$}
 
    \medskip
    Nous prendrons l'exemple de $\vecu\coordvp{5}{2}$ et $A\coordpp{-1}{2}$
    \begin{enumerate}[label=(\roman*)]
-      \item On commence par déterminer les coefficients $a$ et $b$ de l'équation cartésienne à partir du vecteur directeur. 
-      
-      Dans notre exemple, $a=\troum{2}$ et $b=\troum{-5}$. Donc l'équation cartésienne est de la forme 
-      
+      \item On commence par déterminer les coefficients $a$ et $b$ de l'équation cartésienne à partir du vecteur directeur.
+
+      Dans notre exemple, $a=\troum{2}$ et $b=\troum{-5}$. Donc l'équation cartésienne est de la forme
+
       $$\troum{2}x+\troum{-5}y+c=0 \quad\text{avec }c\in\R$$
 
       \item On détermine le coefficient $c$ avec le point $A$. Puisque $A\in\mathcal{D}$, les coordonnées $\coordpp{x_A}{y_A}$ vérifient l'équation.
-      
+
       Dans notre exemple, $2\times\troum{-1}-5\times\troum{2}+c=0$. Donc $c=\troum{12}$.
 
    \end{enumerate}
@@ -198,27 +198,27 @@ Le vecteur $\vecu \coordvp{-b}{a}$ est un vecteur directeur de la droite $\mathc
    Nous prendrons l'exemple de  $A(2;-1)$ et $B(-1;5)$. Donc $\v{AB}\coordvp{x_B-x_A}{y_B-y_A}=\coordvp{-3}{6}$.
 
    Soit $M(x;y)$ un point de la droite $\mathcal{D}$, alors les vecteurs $\v{AM}$ et $\v{AB}$ sont colinéaires :
-   
+
    \medskip
    \hspace{5mm}$\v{AM}\coordvp{x_M-x_A}{y_M-y_A}=\coordvp{x-2}{y+1}$
-   
+
    \medskip
    \noindent $\v{AM}$ et $\v{AB}$ colinéaires $\Longleftrightarrow \det{\v{AM}}{\v{AB}}=\troum{0}$
-   
+
    \noindent \phantom{$\v{AM}$ et $\v{AB}$ colinéaires} $\troum{\Longleftrightarrow (-3)\times(y+1)-6\times(x-2)=0}$
 
    \noindent \phantom{$\v{AM}$ et $\v{AB}$ colinéaires} $\troum{\Longleftrightarrow -3y-3-6x+12=0}$
-   
+
    \noindent \phantom{$\v{AM}$ et $\v{AB}$ colinéaires} $\troum{\Longleftrightarrow -6x-3y+9=0}$
-   
+
    \medskip
    La droite $\mathcal{D}$ a pour équation cartésienne : $2x+y-3=0$
    \end{methode}
 \begin{prop}{Droite horizontale, droite verticale}{droite_verticale}
    \begin{itemize}
-      \item 
+      \item
       La droite $\mathcal{D}$ est parallèle à l'axe des abscisses (horizontale), si et seulement s'il existe $d\in\R$, tel que la droite $\mathcal{D}$ admette $y=d$ comme équation cartésienne. Autrement dit, le coefficient $a$ est nul.
-      \item 
+      \item
       La droite $\mathcal{D}$ est parallèle à l'axe des ordonnées (verticale), si et seulement s'il existe $d\in\R$, tel que la droite $\mathcal{D}$ admette $x=d$ comme équation cartésienne. Autrement dit, le coefficient $b$ est nul.
    \end{itemize}
    \begin{center}
@@ -262,8 +262,8 @@ Le vecteur $\vecu \coordvp{-b}{a}$ est un vecteur directeur de la droite $\mathc
 
 \begin{dem}{}{}
    \begin{itemize}
-      \item Commençons par le sens direct ($\implies$). On suppose que la droite $\mathcal{D}$ n'est pas verticale. 
-      
+      \item Commençons par le sens direct ($\implies$). On suppose que la droite $\mathcal{D}$ n'est pas verticale.
+
       D'après la propriété $\ref{propo:droite_verticale}$, puisque la droite $\mathcal{D}$ n'est pas verticale, alors $b\troum{\ne 0}$
       \begin{reponse}
          Donc on peut réécrire l'équation sous la forme $\frac{a}{b}x+y+\frac{c}{a}=0$.
@@ -272,13 +272,13 @@ Le vecteur $\vecu \coordvp{-b}{a}$ est un vecteur directeur de la droite $\mathc
       \end{reponse}
       \item Prouvons le sens réciproque ($\impliedby$). On suppose qu'il existe des coefficients $m,p\in\R$ tels que la droite $\mathcal{D}$ admette $y =mx+p$ comme équation réduite.
       \begin{reponse}
-         
+
          On veut prouver que $\mathcal{D}$ n'est pas verticale. Il suffit de trouver deux points de $\mathcal{D}$ d'abscisses différentes.
-         
+
          Or $(0;p)\in\mathcal{D}$ et $(1;m+p)\in\mathcal{D}$. Donc la droite n'est pas verticale.
       \end{reponse}
    \end{itemize}
-   
+
 \end{dem}
 
 \begin{prop}{(rappel) Calcul du coefficient directeur}{}
@@ -300,14 +300,14 @@ La droite $D$ n'est pas parallèle à l'axe des ordonnées, elle a donc pour éq
 
 \begin{reponse}
    \hspace{5mm}\phantom{$\Longleftrightarrow$} $y_A=mx_A+p$
-   
+
    \hspace{5mm}$\Longleftrightarrow y_A=-2x_A+p$
-   
+
    \hspace{5mm}$\Longleftrightarrow -1=-2\times2+p$
-   
+
    \hspace{5mm}$\Longleftrightarrow p=3$
 \end{reponse}
-   
+
 \medskip
 La droite $\mathcal{D}$ a pour équation réduite : $y=-2x+3$
 \end{methode}
@@ -315,9 +315,9 @@ La droite $\mathcal{D}$ a pour équation réduite : $y=-2x+3$
 
 \begin{prop}{Vecteur directeur et coefficient directeur}{}
    Soit deux réel $m,p\in\R$. Soit une droite non verticale $\mathcal{D}$ du plan $\R^2$ d'équation réduite $y = mx+p$.
-   
+
    \begin{itemize}
-      \item 
+      \item
    Le vecteur $\vecu \coordvp{1}{m}$ est un vecteur directeur de la droite $\mathcal{D}$.
       \item Réciproquement, si $\vecu\coordvp{x}{y}$ est un vecteur directeur, alors $m=\frac{y}{x}$
    \end{itemize}
@@ -328,7 +328,7 @@ La droite $\mathcal{D}$ a pour équation réduite : $y=-2x+3$
 % \end{dem}
 %\begin{ex}{}{}
 %Pour chacune des équations suivantes, déterminons, s'il existe, le coefficient directeur et l'ordonnée à l'origine de la droite :
-   
+
 %\renewcommand{\arraystretch}{1.5}
 %\begin{tabular}{p{0.2cm}p{4cm}p{3cm}p{3cm}p{3cm}}
 %&  & Équation réduite & Coef. directeur & Ordonnée à l'origine \\
@@ -346,11 +346,11 @@ La droite $\mathcal{D}$ a pour équation réduite : $y=-2x+3$
    Les trois propositions suivantes sont équivalentes :
 
    \begin{enumerate}[label=(\roman*)]
-      \item 
+      \item
       Les droites $\mathcal{D}$ et $\mathcal{D'}$ sont parallèles.
-      \item 
+      \item
       Les droites $\mathcal{D}$ et $\mathcal{D'}$ ont le même coefficient directeur (ou sont toutes deux verticales).
-      \item 
+      \item
       Les droites $\mathcal{D}$ et $\mathcal{D'}$ admettent un même vecteur directeur (leurs vecteurs directeurs sont colinéaires).
    \end{enumerate}
 \end{prop}
@@ -371,13 +371,13 @@ La droite $\mathcal{D}$ a pour équation réduite : $y=-2x+3$
 
 % \medskip
 % \hspace*{0.2cm} $y_A=mx_A+p$
-              
+
 % \hspace*{0.2cm} $5=2\times 1+p$
-              
+
 % \hspace*{0.2cm} $p=3$
 
 % \medskip
-% \noindent La droite $\mathcal{D}$ a pour équation réduite $y=2x+3$ 
+% \noindent La droite $\mathcal{D}$ a pour équation réduite $y=2x+3$
 % \end{ex}
 
 \vspace{-5mm}

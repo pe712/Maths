@@ -9,7 +9,7 @@
 \chapnumber{11} % numéro du chapitre
 \titre{Taux d'évolutions} % titre du chapitre
 \classe{Seconde} % classe
-\entetegal
+\entetegal{}
 % \makeatletter
 % \addcontentsline{toc}{chapter}{Chapitre \@chapnumber - \@titre} % Prepare a table of contents
 % \makeatother
@@ -35,8 +35,8 @@ Quel prix a subi la plus forte augmentation en valeur absolue, en valeur relativ
 \bigbreak
 
 \begin{itemize}
-	\item Variation absolue : 
-	
+	\item Variation absolue :
+
 	Pour le paquet de cigarette : $\troum{V_1-V_0 = 7 - 1.5 = 5.5\text{€}}$
 
 	Pour le baril de pétrole :\quad$\troum{V_1-V_0 = 135 - 40 = 95\text{€}}$
@@ -61,12 +61,12 @@ La variation relative $\dfrac{V_1-V_0}{V_0}$ est aussi appelée \textbf{taux d'�
 
 \begin{defi}{Pourcentage d'évolution}{}
 	Le \textbf{pourcentage d'évolution} $p$ est l'expression du taux d'évolution sous la forme d'un pourcentage.
-	
+
 	\[p = 100\times t = 100 \times \frac{V_1-V_0}{V_0} \qquad \text{(en \%)}\]
 \end{defi}
-	
+
 \begin{ex}{}{}
-Le prix du diesel est passé en 25 ans de $0.79$€/l à $1.12$€/l. 
+Le prix du diesel est passé en 25 ans de $0.79$€/l à $1.12$€/l.
 
 \noindent Quel est le pourcentage d'évolution du prix du diesel sur cette période ?
 
@@ -79,9 +79,9 @@ Le prix du diesel est passé en 25 ans de $0.79$€/l à $1.12$€/l.
 
 \begin{prop}{Sens de variation}{}
 \begin{itemize}
-\item Si le taux d'évolution $t$ (ou le pourcentage d'évolution $p$) est strictement positif $t > 0$, alors on a \textbf{une augmentation} de $p\%$ de $V_0$ à $V_1$. 
+\item Si le taux d'évolution $t$ (ou le pourcentage d'évolution $p$) est strictement positif $t > 0$, alors on a \textbf{une augmentation} de $p\%$ de $V_0$ à $V_1$.
 \item Si le taux d'évolution $t$ (ou le pourcentage d'évolution $p$) est nul, alors la grandeur ne varie pas, $V_0=V_1$.
-\item Si le taux d'évolution $t$ (ou le pourcentage d'évolution $p$) est strictement négatif $t < 0$, alors on a \textbf{une diminution} de $|p|\%$ de $V_0$ à $V_1$. 
+\item Si le taux d'évolution $t$ (ou le pourcentage d'évolution $p$) est strictement négatif $t < 0$, alors on a \textbf{une diminution} de $|p|\%$ de $V_0$ à $V_1$.
 \end{itemize}
 \end{prop}
 
@@ -108,10 +108,10 @@ On considère une quantité passant d'une valeur $V_0$ à une valeur $V_1$. Le \
 	% Define nodes
 	\node[value] (V1) {V1};
 	\node[value] (V0) [left of=V1] {V0};
-	
+
 	% Draw edges with labels
 	\draw[->, bend left=20] (V0) to node[midway, above] {$\times CM$} (V1);
-		
+
 	\end{tikzpicture}
 \end{center}
 
@@ -131,9 +131,9 @@ Le prix d'un jeu vidéo, égal à $12$€, augmente de $3\%$. Calculer le coeffi
 	Le coefficient multiplicateur est $CM=1+t=1+0.03=1.03$.
 
 	\begin{itemize}
-		\item 
+		\item
 		\textbf{Première méthode :} Le prix final est donc $V_1 = CM\times V_0 =1.03\times 12 =12.36\text{€}$.
-		\item 
+		\item
 		\textbf{Deuxième méthode :} L'augmentation de prix est $t\times V_0 = 0.03\times 12 =0.36\text{€}$.
 
 		Le prix final est donc $V_1 = V_0 + t\times V_0 =12 +0.36 = 12.36\text{€}$.
@@ -148,8 +148,8 @@ Le prix d'un jeu vidéo, égal à $12$€, augmente de $3\%$. Calculer le coeffi
 \begin{prop}{Sens de variation}{}
 Grâce au relation entre le coefficient multiplicateur $CM$ et le taux d'évolution $t$, on a :
 \begin{itemize}
-\item Si $CM > 1$, alors  on a \textbf{une augmentation}, $V_1>V_0$. 
-\item Si $CM = 1$, alors il n'y a pas d'évolution, $V_0=V_1$. 
+\item Si $CM > 1$, alors  on a \textbf{une augmentation}, $V_1>V_0$.
+\item Si $CM = 1$, alors il n'y a pas d'évolution, $V_0=V_1$.
 \item Si $CM < 1$, alors  on a \textbf{une diminution}, $V_1<V_0$.
 \end{itemize}
 \end{prop}
@@ -172,14 +172,14 @@ Représentation de la situation au bout de deux ans :
 		\node[value] (V1) {V1};
 		\node[value] (V0) [left of=V1] {V0};
 		\node[value] (V2) [right of=V1] {V2};
-		
+
 		% Draw edges with plain text labels
 		\draw[->] (V0) -- (V1) node[midway, below] {\normalsize$\times 1.02$};
 		\draw[->] (V0) -- (V1) node[midway, above] {\normalsize$+2\%$};
 		\draw[->] (V1) -- (V2) node[midway, below] {\normalsize$\times 1.02$};
 		\draw[->] (V1) -- (V2) node[midway, above] {\normalsize$+2\%$};
 		\draw[->, bend left=20] (V0) to node[midway, above] {\normalsize$\times CM_{g}$} (V2);
-		
+
 		\end{tikzpicture}
 \end{center}
 
@@ -205,7 +205,7 @@ Représentation de la situation au bout de 5 ans :
 \begin{center}
 	\begin{tikzpicture}[node distance=3cm]
 	\tikzstyle{value} = [circle, draw]
-	
+
 	% Define nodes with circular style
 	\node[value] (V1) {V1};
 	\node[value] (V0) [left of=V1] {V0};
@@ -213,20 +213,20 @@ Représentation de la situation au bout de 5 ans :
 	\node[value] (V3) [right of=V2] {V3};
 	\node[value] (V4) [right of=V3] {V4};
 	\node[value] (V5) [right of=V4] {V5};
-	
+
 	% Draw straight edges with labels
 	\draw[->] (V0) -- (V1) node[midway, below] {$\times 1.02$};
 	\draw[->] (V1) -- (V2) node[midway, below] {$\times 1.02$};
 	\draw[->] (V2) -- (V3) node[midway, below] {$\times 1.02$};
 	\draw[->] (V3) -- (V4) node[midway, below] {$\times 1.02$};
 	\draw[->] (V4) -- (V5) node[midway, below] {$\times 1.02$};
-	
+
 	% Curved edge from V0 to V5
 	\draw[->, bend left=20] (V0) to node[midway, above] {$\times CM_{g}$} (V5);
-	
+
 	\end{tikzpicture}
 \end{center}
-	
+
 
 En suivant le même raisonnement que pour deux ans, on obtient :
 
@@ -251,7 +251,7 @@ Finalement, Pierre aura sur son PEL $1104.1$€ au bout de 5 ans.
 	$$CM_g = CM_1\times CM_2\times \dots\times CM_n$$
 
 En particulier, si les coefficients multiplacteurs successifs sont égaux :
-	
+
 	$$CM_g = CM \times CM \times \dots\times CM = CM^n$$
 
 \end{prop}
@@ -276,15 +276,15 @@ $$CM = \troum{1+t=1+\frac{-20}{100}=1-0.2=0.8}$$
 	% Define nodes
 	\node[value] (V1) {V1};
 	\node[value] (V0) [left of=V1] {V0};
-	
+
 	% Draw edges with labels
 	\draw[->, bend left=43] (V0) to node[midway, above] {$-20\%$} (V1);
 	\draw[->, bend left=43] (V0) to node[midway, below] {$\times 0.8$} (V1);
 	\draw[->, bend left=43] (V1) to node[midway, below] {$\times CM_{R}$} (V0);
-		
+
 	\end{tikzpicture}
 \end{center}
-	
+
 D'après les formules vu précédemment, on a :
 \[V_{1} = V_{0}\times 0.8 \text{ et }V_{0} = V_{1}\times CM_{R}\]
 Donc :

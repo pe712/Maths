@@ -7,7 +7,7 @@
 \chapnumber{10} % numéro du chapitre
 \titre{Vecteurs du plan et coordonnées} % titre du chapitre
 \classe{Seconde} % classe
-\entetegal
+\entetegal{}
 \makeatletter
 \addcontentsline{toc}{chapter}{Chapitre \@chapnumber - \@titre} % Prepare a table of contents
 \makeatother
@@ -37,7 +37,7 @@
 	Calculer la norme du vecteur $\vecu \coordvp{-3}{4}$.
 	\begin{reponse}
 	$||\vecu||=\sqrt{(-3)^2+4^2}=\sqrt{9+16}=\sqrt{25}=5$
-	\end{reponse} 
+	\end{reponse}
 \end{ex}
 \subsection{Opérations sur les vecteurs}
 
@@ -94,11 +94,11 @@
 				\draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
 			\foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
 				\draw (\x cm, 1pt) -- (\x cm, -1pt) node[anchor=north] {$\x$};
-			
+
 			\draw [->,line width=2.pt,color=red] (-5, 4) node[above] {$A$} -- (3,-2) node[below] {$B$};
 			\draw [->,color=blue] (-5, 4) -- (3,4);
 			\draw [->,color=blue] (3, 4) -- (3,-2);
-			
+
 			\draw [color=red] (-3, -1) node[above] {$C$};
 			\fill[color=red] (-3,-1) circle (2pt);
 
@@ -117,8 +117,8 @@
 		On a donc $\v{AB}\coordvp{\troum{8}}{\troum{-6}}$
 
 		\bigskip
-		Placer le point $C$ tel que $\v{CD} \coordvp{-2}{-2}$. 
-		
+		Placer le point $C$ tel que $\v{CD} \coordvp{-2}{-2}$.
+
 		Dessiner le vecteur $\v{CD}$.
 	\end{minipage}
 \end{methode}
@@ -164,7 +164,7 @@
 \begin{defi}{Déterminant de deux vecteurs}{}
 	Dans un repère orthonormé $\oij$, on considère les vecteurs $\v{u}\coordvp{x}{y}$ et $\v{v}\coordvp{x'}{y'}$.
 
-	\noindent Le déterminant de $(\v{u};\v{v})$ est le réel tel que : 
+	\noindent Le déterminant de $(\v{u};\v{v})$ est le réel tel que :
 	\[
 	\det{\vecu}{\vecv} = \Det{\textcolor{red}{x} & \textcolor{blue}{x'}F \textcolor{blue}{y} & \textcolor{red}{y'} }= \textcolor{red}{x}\textcolor{red}{y'}-\textcolor{blue}{y}\textcolor{blue}{x'}
 	\]
@@ -178,7 +178,7 @@
 \end{ex}
 
 \begin{propadmise}{Aire du parallélogramme}{}
-	Soit ABCD un parallélogramme défini par les vecteurs $\v{AB}\coordvp{x}{y}$ et $\v{AD}\coordvp{x'}{y'}$. On note $\delta$ le déterminant $\delta = \det{\v{AB}}{\v{AD}} = \Det{x & x' \\ y & y'} = xy'-x'y$. 
+	Soit ABCD un parallélogramme défini par les vecteurs $\v{AB}\coordvp{x}{y}$ et $\v{AD}\coordvp{x'}{y'}$. On note $\delta$ le déterminant $\delta = \det{\v{AB}}{\v{AD}} = \Det{x & x' \\ y & y'} = xy'-x'y$.
 
 	\begin{minipage}{.6\textwidth}
 		\begin{tikzpicture}
@@ -188,20 +188,20 @@
 		\draw [->,line width=2.pt,color=red] (0,0) node[above] {$A$} -- (5,1) node[below right] {$B$};
 		\draw [->,line width=2.pt,color=red] (0,0) -- (3,2) node[above left] {$D$};
 		\draw (8,3) node[above right] {$C$};
-		
+
 
 		\draw[color=red] (2.5,0.2) node {$\v{AB}$};
 		\draw[color=red] (1.6,1.8) node {$\v{AD}$};
-		
+
 		\draw[] (4,1.5) node {\large$\mathcal{A}$};
 	\end{tikzpicture}
 \end{minipage}
 \begin{minipage}{.4\textwidth}Alors l'aire du parallélogramme est la valeur absolue de $\delta$ :
-	
+
 	\medskip
 			$$\mathcal{A} = |\delta| = \pm\det{\v{AB}}{\v{AD}} \text{ selon le signe}$$
 \end{minipage}
-	
+
 \end{propadmise}
 
 \begin{prop}{Colinéarité et déterminant}{}
@@ -209,7 +209,7 @@
 \end{prop}
 
 \begin{deme}{}{}
-	\begin{reponse}		
+	\begin{reponse}
 	\noindent On cherche à démontrer une équivalence.
 
 	\medskip
@@ -248,11 +248,11 @@
 \begin{ex}{}{}
 	On considère les trois vecteurs du plan suivants : $\v{u}\coordvp{2}{-3}$, $\v{v}\coordvp{-6}{9}$ et $\v{w}\coordvp{5}{-7}$.
 	\begin{itemize}
-		\item  Les vecteurs $\v{u}$ et $\v{v}$ \trou{sont colinéaires} 
-		
+		\item  Les vecteurs $\v{u}$ et $\v{v}$ \trou{sont colinéaires}
+
 		car $\det{\vecu}{\vecv} = \troum{2\times9-(-3)\times(-6)=18-18=0}$
-		\item  Les vecteurs $\v{u}$ et $\v{w}$ \trou{ne sont pas colinéaires} 
-		
+		\item  Les vecteurs $\v{u}$ et $\v{w}$ \trou{ne sont pas colinéaires}
+
 		car $\det{\vecu}{\vecw} = \troum{2\times(-7)-(-3)\times5=-14+15=1\neq0}$
 	\end{itemize}
 \end{ex}
@@ -269,9 +269,9 @@
 			\item[] $\det{\v{AC}}{\v{BD}} = \troum{xy'-yx'= 6\times 2-3\times 4=0}$
 
 			Les vecteurs $\v{AC}$ et $\v{BD}$ sont \trou{colinéaires.}
-			
+
 			Les droites $(AC)$ et $(BD)$ sont donc \trou{parallèles.}
-			
+
 			\item[] De plus, $\v{AC}\neq\v{BD}$;
 			      \vspace*{0.3cm}
 			\item[] donc : \fbox{$ABDC$ est \trou{un trapèze}}

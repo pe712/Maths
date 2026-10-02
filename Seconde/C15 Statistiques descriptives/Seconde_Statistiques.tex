@@ -8,7 +8,7 @@
 \titre{Statistiques} % titre du chapitre
 \classe{Seconde} % classe
 
-\entetegal
+\entetegal{}
 
 \vspace{-3mm}
 Faire des \textbf{statistiques}, c'est recueillir, organiser, synthétiser, représenter et exploiter des données, numériques ou non, dans un but de comparaison, de prévision, de constat...
@@ -21,7 +21,7 @@ Les plus gros "consommateurs" de statistiques sont les \textbf{assureurs} (risqu
 
 \begin{defi}{Population, individu, caractère}{}
    La \textbf{population} est l'ensemble des individus sur lesquels portent l'étude statistique. \textsf{(Par exemple classe de seconde, hommes, habitants de la France \dots)}
-   
+
    \medskip
    Le \textbf{caractère} d'une série statistique est une propriété étudiée sur chaque individu :
    \begin{itemize}
@@ -36,10 +36,10 @@ Les plus gros "consommateurs" de statistiques sont les \textbf{assureurs} (risqu
 
 \begin{defi}{Série statistique à caractère quantitatif, regroupement en classes}{}
    Une \textbf{série statistique à caractère quantitatif}, est une liste de $N$ valeurs $x_1$,\; $x_2$,\; \dots,\; $x_N$.
-   
+
    \begin{itemize}
-      \item 
-      Parmi cette série, on peut identifier les $p$ valeurs différentes $y_1$,\; $y_2$,\; \dots,\; $y_p$ et les \textbf{effectifs} associés $n_1$,\; $n_2$,\; \dots,\; $n_p$ avec $n_1+n_2+...+n_p=N$. 
+      \item
+      Parmi cette série, on peut identifier les $p$ valeurs différentes $y_1$,\; $y_2$,\; \dots,\; $y_p$ et les \textbf{effectifs} associés $n_1$,\; $n_2$,\; \dots,\; $n_p$ avec $n_1+n_2+...+n_p=N$.
       \item On peut également définir $q$ \textbf{classes} différentes $\fo{y_1}{y_2},\; \fo{y_2}{y_3},\; \dots\;, \fo{y_{p-1}}{y_p}$ et les \textbf{effectifs} associés $n_1$,\; $n_2$,\; \dots,\; $n_q$ avec $n_1+n_2+...+n_q=N$.
    \end{itemize}
 
@@ -66,36 +66,36 @@ Les plus gros "consommateurs" de statistiques sont les \textbf{assureurs} (risqu
    On a :
       \begin{itemize}
          \item Pour $1\le i\le p$,\quad $0\le f_i \le 1$
-         \item 
+         \item
          $f_1+f_2+\dots+f_p=1$
       \end{itemize}
 \end{prop}
 
 \begin{ex}{}{}
    Nous prenons comme \trou{population} les élèves de seconde. Le \trou{caractère} étudié est la note obtenue. C'est un caractère \trou{quantitatif} et \trou{discret}.
-   
+
    \smallskip
    La série statistique est $2, 3, 3, 4, 5, 6, 6, 7, 7, 7, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 10, 10, 11, 11, 11, 13, 13, 15, 16$.
 
    \begin{itemize}
-      \item 
+      \item
       On peut choisir d'utiliser les valeurs de 2 à 16 pour calculer les effectifs et les fréquences en pourcentage :
-      \renewcommand{\arraystretch}{1.5}   
+      \renewcommand{\arraystretch}{1.5}
    \begin{tabular}{|c|*{15}{p{0.4cm}|}|c|}
-      \hline       
+      \hline
       Notes & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$ & $11$ & $12$ & $13$ & $14$ & $15$ & $16$ & Total \\
       \hline
-      Eff.  & $\troum{1}$ & $\troum{2}$ & $\troum{1}$ & $\troum{1}$ & $\troum{2}$ & $\troum{3}$ & $\troum{5}$ & $\troum{6}$ & $\troum{2}$ & $\troum{3}$ & $\troum{0}$ & $\troum{2}$ & $\troum{0}$ & $\troum{1}$ & $\troum{1}$ & $\troum{30}$ \\ 
+      Eff.  & $\troum{1}$ & $\troum{2}$ & $\troum{1}$ & $\troum{1}$ & $\troum{2}$ & $\troum{3}$ & $\troum{5}$ & $\troum{6}$ & $\troum{2}$ & $\troum{3}$ & $\troum{0}$ & $\troum{2}$ & $\troum{0}$ & $\troum{1}$ & $\troum{1}$ & $\troum{30}$ \\
       \hline
       E.C.C. & $1$ & $3$ & $4$ & $5$ & $7$ & $10$ & $15$ & $21$ & $23$ & $26$ & $26$ & $28$ & $28$ & $29$ & $30$ & $30$\\
       \hline
-      Fréq. en \% & $\troum{3}$ & $\troum{7}$ & $\troum{3}$ & $\troum{3}$ & $\troum{7}$ & $\troum{10}$ & $\troum{17}$ & $\troum{20}$ & $\troum{7}$ & $\troum{10}$ & $\troum{0}$ & $\troum{7}$ & $\troum{0}$ & $\troum{3}$ & $\troum{3}$ & $\troum{100}$ \\ 
+      Fréq. en \% & $\troum{3}$ & $\troum{7}$ & $\troum{3}$ & $\troum{3}$ & $\troum{7}$ & $\troum{10}$ & $\troum{17}$ & $\troum{20}$ & $\troum{7}$ & $\troum{10}$ & $\troum{0}$ & $\troum{7}$ & $\troum{0}$ & $\troum{3}$ & $\troum{3}$ & $\troum{100}$ \\
       \hline
    \end{tabular}
 
-A partir des E.C.C (ou des F.C.C), on peut trouver facilement la médiane. 
+A partir des E.C.C (ou des F.C.C), on peut trouver facilement la médiane.
 
-Pour cela on calcule $\frac{1}{2}N = \troum{15}$. 
+Pour cela on calcule $\frac{1}{2}N = \troum{15}$.
 
 Alors, $\text{Me}=\troum{\frac{y_{15}+y_{16}}{2} = \frac{8+9}{2} = 8.5}$
 
@@ -104,26 +104,26 @@ Alors, $\text{Me}=\troum{\frac{y_{15}+y_{16}}{2} = \frac{8+9}{2} = 8.5}$
 On peut calculer l'étendue de la série :
    $e(X) = \troum{16-2 = 14}$.
 
-   
-      \item 
+
+      \item
       On peut choisir de définir les classes $\fo{0}{2},\; \fo{2}{4},\; \dots\;, \fo{18}{20}$ pour calculer les effectifs et les fréquences :
-   
+
    \hspace{-1cm}\begin{tabular}{|c|*{10}{p{1cm}|}|c|}
       \hline
       Notes & $\fo{0}{2}$ & $\fo{2}{4}$ & $\fo{4}{6}$ & $\fo{6}{8}$ & $\fo{8}{10}$ & $\fo{10}{12}$ & $\fo{12}{14}$ & $\fo{14}{16}$ & $\fo{16}{18}$ & $\fo{18}{20}$ & Total \\
       \hline
-      Eff.  & $\troum{0}$ & $\troum{3}$ & $\troum{2}$ & $\troum{5}$ & $\troum{11}$ & $\troum{5}$ & $\troum{2}$ & $\troum{1}$ & $\troum{1}$ & $\troum{0}$ & $\troum{30}$ \\ 
+      Eff.  & $\troum{0}$ & $\troum{3}$ & $\troum{2}$ & $\troum{5}$ & $\troum{11}$ & $\troum{5}$ & $\troum{2}$ & $\troum{1}$ & $\troum{1}$ & $\troum{0}$ & $\troum{30}$ \\
       \hline
-      Fréq. & $\troum{0}$ & $\troum{0.1}$ & $\troum{0.066}$ & $\troum{0.166}$ & $\troum{0.366}$ & $\troum{0.166}$ & $\troum{0.666}$ & $\troum{0.333}$ & $\troum{0.333}$ & $\troum{0}$ & $\troum{1}$ \\ 
+      Fréq. & $\troum{0}$ & $\troum{0.1}$ & $\troum{0.066}$ & $\troum{0.166}$ & $\troum{0.366}$ & $\troum{0.166}$ & $\troum{0.666}$ & $\troum{0.333}$ & $\troum{0.333}$ & $\troum{0}$ & $\troum{1}$ \\
       \hline
-       F.C.C & $\troum{0}$ & $\troum{0.1}$ & $\troum{0.166}$ & $\troum{0.333}$ & $\troum{0.7}$ & $\troum{0.866}$ & $\troum{0.933}$ & $\troum{0.966}$ & $\troum{1}$ & $\troum{1}$ & $\troum{1}$ \\ 
+       F.C.C & $\troum{0}$ & $\troum{0.1}$ & $\troum{0.166}$ & $\troum{0.333}$ & $\troum{0.7}$ & $\troum{0.866}$ & $\troum{0.933}$ & $\troum{0.966}$ & $\troum{1}$ & $\troum{1}$ & $\troum{1}$ \\
       \hline
    \end{tabular}
    \end{itemize}
 
 A partir des F.C.C (ou des E.C.C), on peut trouver facilement les quartiles. Pour cela on cherche le passage des $25\%$ et des $75\%$.
 
-On trouve $Q_1\in\troum{\fo{6}{8}}$. Donc $Q_1=\troum{7}$. De même, $Q_3=\troum{11}$ 
+On trouve $Q_1\in\troum{\fo{6}{8}}$. Donc $Q_1=\troum{7}$. De même, $Q_3=\troum{11}$
 
 \medskip
 Alors l'intervalle inter-quartile est l'intervalle $\troum{\ff{7}{11}}$ dont l'écart vaut $\troum{11-7=4}$.
@@ -156,7 +156,7 @@ Plus on joue de parties, plus la fréquence observée $f$ est proche de la proba
 %    \begin{center}
 %    \renewcommand{\arraystretch}{1.5}
 %    \begin{tabular}{|*{6}{p{2cm}|}}
-%       \hline       
+%       \hline
 %       Notes & $[~0~;~5~[$ & $[~5~;~10~[$ & $[~10~;~15~[$ & $[~15~;~20~[$ & total \\
 %       \hline
 %       Effectif & $4$ & $17$ & $7$ & $2$ & $30$ \\
@@ -193,9 +193,9 @@ Plus on joue de parties, plus la fréquence observée $f$ est proche de la proba
 
 \begin{defi}{Quartile}{}
    Soit une série statistique, on appelle \textbf{quartiles} de la série un triplet de réels $(~Q_1~;~Q_2~;~Q_3~)$ qui sépare la série en quatre groupes de même effectif.
-   
+
    Par définition, le deuxième quartile $Q_2$ est égal à la médiane $\text{Me}(X)$.
-   
+
    \smallskip
    On peut obtenir les valeurs de $Q_1$, $Me$ et $Q_3$ avec un tableur ou la calculatrice.
 \end{defi}
@@ -208,12 +208,12 @@ Plus on joue de parties, plus la fréquence observée $f$ est proche de la proba
 
 \begin{defi}{Moyenne}{}
    La \textbf{moyenne} est le centre d'une série statistique, en prenant en compte les valeurs elle-même (et pas uniquement l'ordre comme la médiane).
-   
+
    Soit une série statistique de $N$ valeurs $x_1$, $x_2$, \dots, $x_N$. La moyenne $m$ (parfois notée $\overline{x}$) est le nombre :
 
    $$m = \overline{x} = \dfrac{x_1+x_2+...+x_N}{N} = \dfrac{1}{N}\sum_{i=1}^{N}{x_i}$$
-   
-   Lorsque l'on a $p$ valeurs différentes $y_1$, $xy_2$, \dots, $y_p$ d'effectifs associés $n_1$, $n_2$, \dots, $n_p$ avec $n_1+n_2+...+n_p=N$, alors le calcul devient : 
+
+   Lorsque l'on a $p$ valeurs différentes $y_1$, $xy_2$, \dots, $y_p$ d'effectifs associés $n_1$, $n_2$, \dots, $n_p$ avec $n_1+n_2+...+n_p=N$, alors le calcul devient :
 
    $$m = \overline{x}= \dfrac{x_1+x_2+...+x_N}{N} = \dfrac{n_1y_1+n_2y_2+...+n_py_p}{N}=\dfrac{1}{N}\sum_{i=1}^{p}{n_iy_i}$$
 \end{defi}
@@ -221,7 +221,7 @@ Plus on joue de parties, plus la fréquence observée $f$ est proche de la proba
 \begin{rems}{}{}
    \begin{itemize}
       \item On appelle cette moyenne une \textbf{moyenne pondérée} car on affecte à chaque valeur $y_i$ un \og poids \fg $n_i$ correspondant à la fréquence, c'est-à-dire l'importance de la valeur$y_i$ dans le calcul.
-      \item 
+      \item
       Lorsque la série est regroupée en classes, on calcule la moyenne en prenant le \textbf{centre de chaque classe}. Le centre de la classe $\fo{y_i}{y_{i+1}}$ est $c=\frac{y_i+y_{i+1}}{2}$.
    \end{itemize}
 \end{rems}
@@ -254,8 +254,8 @@ Il s'agit de la première mesure de la dispersion d'une série statistique. Son 
 \subsection{L'écart interquartile}
 
 \begin{defi}{Ecart inter-quartiles}{}
-On appelle \textbf{intervalle inter-quartiles} l'intervalle $[~Q_1~;~Q_3~]$. 
-   
+On appelle \textbf{intervalle inter-quartiles} l'intervalle $[~Q_1~;~Q_3~]$.
+
 \noindent L'amplitude de cet intervalle $Q_3-Q_1$ est appelée \textbf{écart inter-quartiles}. Cette valeur est l'indicateur de dispersion associé à la médiane.
 \end{defi}
 
@@ -304,13 +304,13 @@ La variance est aussi appelée la moyenne quadratique de la série centrée.
 %  E.C.D. & $30$ & $30$ & $29$ & $27$ & $26$ & $25$ & $23$ & $20$ & $15$ & $9$ & $7$ & $4$ & $4$ & $2$ & $2$ & $1$ & $0$ & $0$ & $0$ \\\hline
 % \end{tabular}
 % \smallskip
-   
-% \noindent Ce tableau peut par exemple nous permettre de calculer une médiane de la série : 
+
+% \noindent Ce tableau peut par exemple nous permettre de calculer une médiane de la série :
 % \smallskip
-  
+
 % \noindent l'effectif étant de $30$, on choisit la moyenne entre la $15^{ième}$ et la $16^{ième}$ note, lues dans la ligne des E.C.C.
 % \smallskip
-   
+
 % \noindent On obtient $Me=\dfrac{8+9}{2}=8,5$.
 % \end{ex}
 
@@ -319,7 +319,7 @@ La variance est aussi appelée la moyenne quadratique de la série centrée.
 
 % \begin{center}
 % \renewcommand{\arraystretch}{1.6}
-% \begin{tabular}{|c|*{4}{p{2cm}|}}\hline       
+% \begin{tabular}{|c|*{4}{p{2cm}|}}\hline
 % Notes & $[~0~;~5~[$ & $[~5~;~10~[$ & $[~10~;~15~[$ & $[~15~;~20~[$ \\\hline
 % Effectif & $4$ & $17$ & $7$ & $2$ \\\hline
 % Fréquence en \% & $13$ & $57$ & $23$ & $7$ \\\hline
@@ -448,7 +448,7 @@ Lorsque les classes ont la même \textbf{amplitude}, c'est la hauteur qui est pr
 \end{scriptsize}
 \end{tikzpicture}
 \end{center}
-	
+
 On obtient le tableau suivant :
 \begin{center}
 \begin{tabular}{|*{7}{c|}}
@@ -465,8 +465,8 @@ Effectif & $30$ & $30$ & $60$ & $40$ & $20$ & $10$ \\\hline
    Lorsque le caractère étudié est \textbf{quantitatif et discret}, on peut représenter la série par un \textbf{nuage de points} : chaque couple de valeurs est représenté par un point dans un repère orthogonal.
 
 \begin{ex}{}{}
-   Nuage de points de la \textbf{série A} : 
-   
+   Nuage de points de la \textbf{série A} :
+
 \definecolor{ffqqqq}{rgb}{1.,0.,0.}
 \definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.9cm,y=1.0cm]
@@ -503,7 +503,7 @@ Enfin, Lorsque le caractère étudié est \textbf{quantitatif} et lorsque les mo
 
 \begin{ex}{}{}
    Polygone des fréquences cumulées croissantes et décroissantes de la \textbf{série A} :
-   \begin{center} 
+   \begin{center}
 \definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
 \definecolor{qqqqff}{rgb}{0.,0.,1.}
 \definecolor{ffqqqq}{rgb}{1.,0.,0.}
@@ -562,12 +562,12 @@ Les résultats d'une enquête sur le prix d'une baguette de pain dans 30 boulang
 \begin{center}
 \renewcommand{\arraystretch}{1.9}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-\hline 
-Prix \textit{(en centimes d'euros)} & 70 & 75 & 80 & 85 & 90 & 95 & 100 & 105 & 110 & 115 & 120 & Total \\ 
-\hline 
-Nombres de boulangerie & 1 & 1 & 2 & 4 & 7 & 3 & 3 & 4 & 2 & 2 & 1 & 30 \\ 
-\hline 
-\end{tabular} 
+\hline
+Prix \textit{(en centimes d'euros)} & 70 & 75 & 80 & 85 & 90 & 95 & 100 & 105 & 110 & 115 & 120 & Total \\
+\hline
+Nombres de boulangerie & 1 & 1 & 2 & 4 & 7 & 3 & 3 & 4 & 2 & 2 & 1 & 30 \\
+\hline
+\end{tabular}
 \end{center}
 
 \begin{methode}{}{}[Calcul de la médiane (avec $N$ pair)]\label{meth_med_pair}
@@ -584,21 +584,21 @@ L'effectif total de la série statistiques est de $30$ donc $N$ est pair.
 \begin{center}
 \renewcommand{\arraystretch}{1.8}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-\hline 
-Prix \textit{(en centimes d'euros)} & 70 & 75 & 80 & 85 & \textcolor{blue}{90} & \textcolor{blue}{95} & 100 & 105 & 110 & 115 & 120 & Total \\ 
-\hline 
-Nombres de boulangerie & 1 & 1 & 2 & 4 & 7 & 3 & 3 & 4 & 2 & 2 & 1 & 30 \\ 
-\hline 
-E.c.c. & 1 & 2 & 4 & 8 & \textcolor{red}{15} & \textcolor{red}{18} & 21 & 25 & 27 & 29 & 30 & X \\ 
-\hline 
-\end{tabular} 
+\hline
+Prix \textit{(en centimes d'euros)} & 70 & 75 & 80 & 85 & \textcolor{blue}{90} & \textcolor{blue}{95} & 100 & 105 & 110 & 115 & 120 & Total \\
+\hline
+Nombres de boulangerie & 1 & 1 & 2 & 4 & 7 & 3 & 3 & 4 & 2 & 2 & 1 & 30 \\
+\hline
+E.c.c. & 1 & 2 & 4 & 8 & \textcolor{red}{15} & \textcolor{red}{18} & 21 & 25 & 27 & 29 & 30 & X \\
+\hline
+\end{tabular}
 \end{center}
 
 \noindent La $\textcolor{red}{15^{e}}$ valeur de la série vaut donc $\textcolor{blue}{90}$ et la $\textcolor{red}{16^{e}}$ valeur vaut $\textcolor{blue}{95}$.
 
 \noindent On fait la moyenne de la $15^{e}$ valeur et la $16^{e}$ valeur pour obtenir la médiane:
 \begin{eqnarray*}
-Me &=& \frac{\textcolor{blue}{90}+\textcolor{blue}{95}}{2}\\ 
+Me &=& \frac{\textcolor{blue}{90}+\textcolor{blue}{95}}{2}\\
 &=& \textcolor{blue}{92.5}
 \end{eqnarray*}
 \noindent La médiane de cette série statistique est de $\textcolor{blue}{92.5}$ centimes.
@@ -619,23 +619,23 @@ Pour pouvoir trouver facilement quelles valeurs se situent en position \textcolo
 \begin{center}
 \renewcommand{\arraystretch}{1.8}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-\hline 
-Prix \textit{(en centimes d'euros)} & 70 & 75 & 80 & \textcolor{blue}{85} & 90 & 95 & 100 & \textcolor{blue}{105} & 110 & 115 & 120 & Total \\ 
-\hline 
-Nombres de boulangerie & 1 & 1 & 2 & 4 & 7 & 3 & 3 & 4 & 2 & 2 & 1 & 30 \\ 
-\hline 
-E.c.c. & 1 & 2 & 4 & \textcolor{red}{8} & 15 & 18 & 21 & \textcolor{red}{25} & 27 & 29 & 30 & X \\ 
-\hline 
-\end{tabular} 
+\hline
+Prix \textit{(en centimes d'euros)} & 70 & 75 & 80 & \textcolor{blue}{85} & 90 & 95 & 100 & \textcolor{blue}{105} & 110 & 115 & 120 & Total \\
+\hline
+Nombres de boulangerie & 1 & 1 & 2 & 4 & 7 & 3 & 3 & 4 & 2 & 2 & 1 & 30 \\
+\hline
+E.c.c. & 1 & 2 & 4 & \textcolor{red}{8} & 15 & 18 & 21 & \textcolor{red}{25} & 27 & 29 & 30 & X \\
+\hline
+\end{tabular}
 \end{center}
 
-\noindent Donc le premier quartile $Q_{1}$ vaut $\textcolor{blue}{85}$ et $Q_{3}$ vaut $\textcolor{blue}{105}$. 
+\noindent Donc le premier quartile $Q_{1}$ vaut $\textcolor{blue}{85}$ et $Q_{3}$ vaut $\textcolor{blue}{105}$.
 
 \noindent On peut en conclure qu'au moins un quart des baguettes de pain ont un prix inférieur à $85$ centimes d'euros et au moins $75\%$ des baguettes ont un prix inférieur à un euros et cinq centimes
 \medskip
 
 \noindent On peut aussi calculer la valeur de l'écart interquartile :
-\[Q_{3} - Q_{1} = 105 - 85 = 20\] 
+\[Q_{3} - Q_{1} = 105 - 85 = 20\]
 
 \noindent On peut en conclure que la moitié des baguettes de pain sont dans une fourchette de prix de $20$ centimes d'euros
 
@@ -672,8 +672,8 @@ Les valeurs extrêmes (minimum et maximum), la médiane et les deux quartiles pe
     \node[below] at (3.5,-2.1) {Etendue};
     % Axis
     \draw[thick,->] (-4,1.5) -- (12.1,1.5);
-	\foreach \x in {-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12} 
-		\draw(\x,1.6)--(\x,1.4) node [below]{$...$};  
+	\foreach \x in {-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12}
+		\draw(\x,1.6)--(\x,1.4) node [below]{$...$};
 \end{tikzpicture}
 \end{methode}
 
@@ -701,8 +701,8 @@ Le diagramme en boîte de cette série statistique est donc :
     \node[below] at (5,0) {$Q_{3}$};% label the hinge
     % Axis
     \draw[thick,->] (-4,1.5) -- (10.1,1.5);
-%	\foreach \x in {-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12} 
-%		\draw(\x,-0.9)--(\x,-1.1) node [below]{..};  
+%	\foreach \x in {-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12}
+%		\draw(\x,-0.9)--(\x,-1.1) node [below]{..};
 	\draw(-4,1.6)--(-4,1.4) node [below]{60};
 	\draw(-3,1.6)--(-3,1.4) node [below]{65};
 	\draw(-2,1.6)--(-2,1.4) node [below]{70};
