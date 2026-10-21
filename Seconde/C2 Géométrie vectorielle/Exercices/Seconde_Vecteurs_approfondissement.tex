@@ -27,4 +27,43 @@
 			\item Prouver l'égalité de la question 2.
 		\end{enumerate}
 	\end{enumerate}
+
+\newpage
+
+\section*{Correction}
+	Soit un triangle ABC, les trois bases des médianes I, J, K.
+
+	Pour montrer la proposition, il suffit de montrer l'égalité suivante:
+
+	$$\frac{2}{3}\vec{AJ} = \vec{AB}+\frac{2}{3}\vec{BK} = \vec{AC}+\frac{2}{3}\vec{CI}$$
+
+	Montrons la première égalité. On veut décomposer tous les vecteurs en fonction de deux vecteurs choisis au préalable, qu'on appellera une \textbf{base}. Choisissons par exemple $\vec{AB}$ et $\vec{BC}$.
+
+	\smallskip
+	D'une part, en utilisant Chasles, $\vec{AJ} = \vec{AB}+\vec{BJ}$.
+
+	Puisque $J$ est le milieu de $[BC]$, $\vec{BJ} = \frac{1}{2}\vec{BC}$.
+
+	Donc, \begin{align*}
+		\frac{2}{3}\vec{AJ}= \frac{2}{3}(\vec{AB}+\frac{1}{2}\vec{BC})= \frac{2}{3}\vec{AB}+\frac{1}{3}\vec{BC}
+	\end{align*}
+
+	\smallskip
+	D'autre part, en utilisant Chasles, $\vec{BK} = \vec{BA}+\vec{AK}$.
+
+	Puisque $K$ est le milieu de $[AC]$, $\vec{AK} = \frac{1}{2}\vec{AC}$.
+
+	Avec Chasles de nouveau, $\vec{AC} = \vec{AB}+\vec{BC}$.
+
+	Donc, \begin{align*}
+		\vec{AB}+\frac{2}{3}\vec{BK}
+		&= \vec{AB}+\frac{2}{3}(\vec{BA}+\frac{1}{2}(\vec{AB}+\vec{BC}))\\
+		&= \vec{AB}+\frac{2}{3}(-\vec{AB}+\frac{1}{2}\vec{AB}+\frac{1}{2}\vec{BC})\\
+		&= \vec{AB}+\frac{2}{3}(-\frac{1}{2}\vec{AB}+\frac{1}{2}\vec{BC})\\
+		&= \vec{AB}-\frac{1}{3}\vec{AB}+\frac{1}{3}\vec{BC}\\
+		&= \frac{2}{3}\vec{AB}+\frac{1}{3}\vec{BC}
+	\end{align*}
+
+	\smallskip
+	On a bien montré l'égalité voulue.
 \end{document}

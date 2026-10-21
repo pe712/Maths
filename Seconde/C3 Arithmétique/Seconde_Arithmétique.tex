@@ -191,7 +191,7 @@ Un entier naturel $n\in\N$ qui a exactement deux diviseurs distincts (à savoir 
 \end{defi}
 
 \begin{ex}{}{}
-  2,3,5,7,9,11,13,17,19,23 et 29 sont les premiers nombres premiers. Ils apparaissent uniquement dans leur propre table de multiplication. Ils sont à connaître.
+  2,3,5,7,11,13,17,19,23 et 29 sont les premiers nombres premiers. Ils apparaissent uniquement dans leur propre table de multiplication. Ils sont à connaître.
 \end{ex}
 
 \begin{rem}{}{}
@@ -239,10 +239,27 @@ Nous prendrons l'exemple $n=100$:
 
 \end{methode}
 
-\begin{methode}{Tester si un nombre est premier}{}
-  Pour savoir si un nombre $a$ est premier, il suffit de tester s'il est divisible par un nombre premier inférieur à $\sqrt{a}$. En effet, comme les diviseurs peuvent être mis par paire. La \og moitié\fg{}se situe à $\sqrt{a}$.
 
-  Cette méthode est beaucoup plus efficace que de le crible d'Erathosthène si on connait les petits nombres premiers.
+\begin{prop}{Infinité des nombres premiers}{}
+	Il existe une infinité de nombres premiers.
+\end{prop}
+
+\begin{dem}{}{}
+	On suppose par l'absurde qu'il existe un nombre fini $N$ de nombres premiers. On peut alors énumérer ces nombres premiers $a_1, a_2, \dots, a_N$. On pose $b = a_1\times a_2 \times \dots \times a_N+1$. 
+	
+	$b$ n'est pas un nombre premier car il est strictement plus grand que tous les nombres premiers $a_1, a_2, \dots, a_N$.
+
+	Donc il admet un diviseur premier $a_k$. 
+
+	Or, d'après l'écriture $b = a_1\times a_2 \times \dots \times a_k \times \dots  \times a_N+1 = a_k\times q +1$, le reste de la division euclidienne de $b$ par $a_k$ est 1. Ainsi, $b$ n'est pas divisible par $a_k$. Nous avons obtenu une contradiction.
+
+	On peut alors conclure qu'il existe une infinité de nombres premiers.
+\end{dem}
+
+\begin{methode}{Tester si un nombre est premier}{}
+  Pour savoir si un nombre $a$ est premier, il suffit de tester s'il est divisible par un nombre premier inférieur à $\sqrt{a}$. En effet, comme les diviseurs peuvent être mis par paire, la \og moitié\fg{} se situe à $\sqrt{a}$.
+
+  Cette méthode est beaucoup plus efficace que le crible d'Erathosthène si on connait les petits nombres premiers.
 \end{methode}
 
 \begin{ex}{}{}
@@ -268,21 +285,38 @@ Nous prendrons l'exemple $n=100$:
 \end{methode}
 
 \begin{ex}{}{}
-	Prenons par exemple $84$. On remarque que $84$ est divisible par $2$. On a $84 = 2\times42$. Donc on continue avec $42$.
 
-	On sait que $42$ est divisible par $2$. On a $42=2\times21$. Donc on continue avec $21$.
-
-	On sait que $21=3\times7$. Puisque $3$ et $7$ sont premiers, on a fini.
-
-	On a obtenu la décomposition:
-	$84 = 2\times42 = 2\times(2\times21)=2\times2\times(3\times7) = 2^2\times3\times7$
+	\begin{minipage}{.7\linewidth}
+		Prenons par exemple $84$. On remarque que $84$ est divisible par $2$. On a $84 = 2\times42$. Donc on continue avec $42$.
+	
+		On sait que $42$ est divisible par $2$. On a $42=2\times21$. Donc on continue avec $21$.
+	
+		On sait que $21=3\times7$. Puisque $3$ et $7$ sont premiers, on a fini.
+	
+		On a obtenu la décomposition:
+		$84 = 2\times42 = 2\times(2\times21)=2\times2\times(3\times7) = 2^2\times3\times7$
+	\end{minipage}
+	\begin{minipage}{.3\linewidth}
+		\hspace{1cm}
+		\begin{tabular}{c|c}
+			84 & 2\\
+			42 & 2 \\
+			21 & 3 \\
+			7 & 7 \\
+			1&
+		\end{tabular}
+	\end{minipage}
 \end{ex}
 
 \begin{theo}{fondamental de l'arithmétique}{}
-	Soit $a\in\N$ un entier naturel. Il existe un entier $n\in\N$ des nombres premiers distincts $d_1, d_2, d_3, ..., d_n$ et des exposants $\alpha_1, \alpha_2, \alpha_3, ..., \alpha_n$ tels que:
-	$$a=d_1^{\alpha_1}\times d_2^{\alpha_2} \times d_3^{\alpha_3} \times ...\times d_n^{\alpha_n}$$
+	Tout entier naturel $a\in\N$ peut s'écrire comme un produit de nombres premiers. On appelle cette écriture une décomposition en nombres premiers.
 
-	On appelle cette écriture une décomposition en nombres premiers.
+	Cette décomposition est unique à l'ordre des facteurs près.
+
+	% Soit $a\in\N$ un entier naturel. Il existe un entier $n\in\N$ des nombres premiers distincts $d_1, d_2, d_3, ..., d_n$ et des exposants $\alpha_1, \alpha_2, \alpha_3, ..., \alpha_n$ tels que:
+	% $$a=d_1^{\alpha_1}\times d_2^{\alpha_2} \times d_3^{\alpha_3} \times ...\times d_n^{\alpha_n}$$
+
+	
 \end{theo}
 
 \begin{methode}{Utiliser les nombres premiers pour simplifier une fraction $\frac{a}{b}$}{}
@@ -297,7 +331,7 @@ Nous prendrons l'exemple $n=100$:
 \end{methode}
 
 \begin{ex}{}{}
-  $\frac{105}{84} = \frac{3\times 5 \times 7}{2\times 2 \times 3 \times 7} = \frac{5 }{2\times 2} = \frac{5}{4} = \np{1.25}$
+  $\frac{105}{84} = \frac{3\times 5 \times 7}{2\times 2 \times 3 \times 7} = \frac{5 }{2\times 2} = \frac{5}{4}$
 \end{ex}
 
 \begin{ex}{Trouver le nombre et l'ensemble des diviseurs de 360}{}
@@ -306,7 +340,7 @@ Nous prendrons l'exemple $n=100$:
 
   On obtient la décomposition $360=2^3\times3^2\times5$.
 
-Les diviseurs sont alors des sous produits. On peut choisir si on prend le facteur 2 et à quelle puissance entre 1 et 3. On peut choisir si on prend le facteur 3 et à quelle puissance entre 1 et 2. On peut choisir si on prend le facteur 5.
+Les diviseurs sont alors des sous-produits de $2^3\times3^2\times5$. On peut choisir si on prend le facteur 2 et à quelle puissance entre 1 et 3. On peut choisir si on prend le facteur 3 et à quelle puissance entre 1 et 2. On peut choisir si on prend le facteur 5.
 
 \medskip
 Cela donne donc 4 choix pour la puissance de 2, puis 3 choix pour la puissance de 3 et enfin 2 choix pour la puissance de 5.

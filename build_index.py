@@ -10,6 +10,7 @@ header  = """
     <title>Maths lycée - PE BAVIERE </title>
   </head>
   <body>
+  Publié sous <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">licence CC BY-NC-SA</a>.
 """
 
 footer = """
@@ -20,7 +21,7 @@ footer = """
 direct_content= {
     "Latex" : {
         "Styles" : [
-            "./Latex/latex_styles_12_09_2026.zip",
+            "./Latex/latex_styles_10_2026.zip",
         ]
     }
 }

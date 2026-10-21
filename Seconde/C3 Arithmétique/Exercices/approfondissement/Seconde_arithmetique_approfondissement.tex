@@ -1,0 +1,154 @@
+\documentclass[a4paper,12pt, french, noSujetB]{article}
+
+\usepackage{layout_evaluation}
+
+\classe{Seconde}
+\titre{Règles de divisibilité}
+\evalnumber{3}
+\evaltype{Exercice autonome}
+\date{Octobre 2026}
+
+\setlist{leftmargin=5mm}
+\setlist{itemsep=0mm}
+
+\begin{document}
+\subsection*{Règle de divisibilité par 2 et 5}
+Soit $n\in\N$, on veut prouver les critères de divisibilité suivants:
+
+$D_2$ \og n est divisible par 2 si et seulement si il termine par un chiffre $b\in\{0;2;4;6;8\}$\fg{}
+
+$D_5$ \og n est divisible par 5 si et seulement si il termine par un chiffre $b\in\{0;5\}$\fg{}
+
+\begin{enumerate}
+	\item Montrer qu'il existe $a\in\N$ et $b\in\N$ avec $0\le b \le 9$ tels que $n=10a+b$. On pourra commencer par faire des exemples.
+	\item Il y a-t-il unicité du couple de nombres $(a,b)$? Justifier.
+	\item A l'aide de la définition de diviseur, montrer le sens direct de $D_5$, en procédant par disjonction de cas.
+	\item On s'intéresse désormais au sens réciproque de $D_5$. On suppose donc désormais que $n$ est divisible par $5$. En revenant à la définition, prouver que $n-10a$ est aussi divisible par $5$. Conclure.
+	\item Prouver de même le sens direct puis réciproque de $D_2$.
+\end{enumerate}
+
+\vspace{-3mm}
+\subsection*{Règle de divisibilité par 3 et 9}
+Soit $n\in\N$, on veut prouver les critères de divisibilité suivants:
+
+$D_3$ \og n est divisible par 3 si et seulement si la somme de ses chiffres est divisible par 3.
+
+$D_9$ \og n est divisible par 9 si et seulement si la somme de ses chiffres est divisible par 9.
+
+\medskip
+Soit $p\in\N$ le nombre de chiffres de $n$ et soient $a_{p-1}, a_{p-2}, \dots, a_0$ les chiffres. On note alors $n=\overline{a_{p-1},  a_{p-2} \dots a_0}$.
+
+Par exemple pour $n=78845$, on aurait $p=5$, $a_4=7, a_3=8, a_2=8, a_1=4, a_0=5$ . Le chiffre des unités est $a_0$, celui des milliers est $a_3$.
+
+\begin{enumerate}
+	\item Montrer que $n=a_0 + 10\times a_1  +10^2\times a_2+\dots+10^{p-1}\times a_{p-1}$. On pourra commencer par traiter l'exemple $n=78845$ puis on fera le cas général.
+	\item Soit $k\in\N$. Quel est le reste de la division euclidienne de 10 par 3? Plus généralement, quel est le reste de la division euclidienne de $10^k$ par 3? On rappelle que le reste est inchangé lorsqu'on soustrait un multiple de 3.
+	\item Soit $a\in\N$. Montrer que le reste de la division euclidienne de $10a$ par 3 est le même que le reste de la division euclidienne de $a$ par 3.
+	\item Soit $k\in\N$ et $a\in\N$. Montrer plus généralement que le reste de la division euclidienne de $10^k\times a$ par 3 est le même que le reste de la division euclidienne de $a$ par 3.
+	\item Montrer que le reste de la division euclidienne de $n=\overline{a_{p-1},  a_{p-2} \dots a_0}$ par 3 est le même que le reste de la division euclidienne de $a_{p-1} +  a_{p-2} + a_0$ par 3.
+	\item En déduire le critère $D_3$.
+	\item Le nombre $n=546784567$ est-il divisible par 3?
+	\item Peut-on modifier la preuve pour montrer le critère $D_9$?
+\end{enumerate}
+
+\vspace{-3mm}
+\subsection*{Règle de divisibilité par 11 }
+Soit $n\in\N$, on amet le critères de divisibilité suivant:
+
+$D_{11}$ \og n est divisible par 11 si et seulement si la somme alternée de ses chiffres est divisible par 11.
+
+Pour un nombre $n=\overline{a_{p-1},  a_{p-2} \dots a_0}$ la somme alternée en question est $S=a_0-a_1+a_2-a_3+\dots+(-1)^{p-1}a_{p-1}$.
+
+\begin{enumerate}
+	\item En utilisant le critère, justifier si les nombres suivants sont divisibles par 11: $\{33; 507; 609; 87566\}$. Vérifier à l'aide des méthodes vues en cours.
+	\item Soit $k\in\N$. En étudiant les restes de la division euclidienne de $1, 10, 100, \dots, 10^k$, expliquer pourquoi la somme étudiée $S$ est alternée.
+\end{enumerate}
+
+\newpage
+\section*{Correction}
+\subsection*{Règle de divisibilité par 2 et 5}
+\begin{enumerate} 
+	\item Par exemple avec $n=486$ on peut écrire $n=10\times 48 +6$. On peut alors prendre $a=48$ et $b=6$. On a bien $0\le b \le 9$. 
+
+	Plus généralement, soit $a$ le quotient et $b$ le reste de la division euclidienne de $n$ par 10. On a alors $0\le b\le9$ et $n=10a+b$ par définition de la division euclidienne.
+	\item On suppose qu'il existe deux couples de nombres $(a_1, b_1)$ et $(a_2, b_2)$ qui conviennent. On va montrer qu'ils sont égaux. 
+	
+	On a $n=10a_1+b_1=10a_2+b_2$. Donc on a $10(a_1-a_2)=b_1-b_2$. Donc 10 est un diviseur de $b_1-b_2$. 
+	
+	Or $0\le b_1\le9$ et  $0\le b_2\le9$. Donc $-9\le b_1-b_2 \le 9$. Le seul multiple de 10 de cet intervalle est donc 0.
+	
+	Donc $b_1-b_2=0$ et $b_1=b_2$. On en déduit l'égalité des couples $(a_1, b_1)$ et $(a_2, b_2)$. Il y a bien unicité.
+	\item Dans l'écriture $n=10a+b$ ci-dessus, $b$ est le chiffre des unités. On suppose donc qu'il est divisible par 5, c'est-à-dire $b=0$ ou $b=5$. On procède alors par disjonction de cas. 
+	
+	\begin{enumerate}[label=(\roman*)]
+		\item Si $b=0$, alors $n=10\times a=5\times (2a) = 5k$, en posant $k=2a$. 
+		\item Si $b=5$, alors $n=10\times a +5 = 5k$, en posant $k=2a+1$.
+	\end{enumerate}
+	Dans les deux cas possibles, on a bien prouvé que $n$ était divisible par 5.
+
+	\item On suppose que $n$ est divisible par $5$. On sait que $-10a=5\times(-2a)$ est un multiple de 5. Or d'après le cours, la somme de deux multiples de 5 est encore un multiple de 5. Donc $n-10a$ est un multiple de 5. Or $n-10a = b$. Ainsi, $b$ (le chiffre des unités) est divisible par 5. Ce qui prouve le sens réciproque.
+	\item Idem.
+\end{enumerate}
+
+\vspace{-3mm}
+\subsection*{Règle de divisibilité par 3 et 9}
+\begin{enumerate}
+	\item Pour $n=\np{78845}$, on a $p=5$ chiffres. On pose $a_0=5$ , $a_1=4$, $a_2=8$ , $a_3=8$, $a_4=7$. On a bien $n=\np{78845} = \np{70000} + \np{8000} +800+40+5 = a_4\times 10^4+a_3\times 10^3+a_2\times 10^2+a_1\times 10^1+a_0\times 10^0$.
+
+	Plus généralement, si on appelle $a_k$ le $k$-ième chiffre de $n$, on a l'écriture voulue $n=a_0 + 10\times a_1  +10^2\times a_2+\dots+10^{p-1}\times a_{p-1}$.
+	\item $10=3\times3+1$. Donc le reste de la division euclidienne de 10 par 3 est 1.
+	
+	Plus généralement, $\underbrace{999\dots 9}_{\text{k fois}}$ est divisible par 3. On peut alors soustraire ce multiple de 3 à $10^k$ sans changer le reste. Le reste de la division euclidienne de $10^k$ par 3 est donc 1.
+	
+	\item Puisque $9a$ est un multiple de 3, $10a$ et $10a-9a$ ont le même reste dans la division euclidienne par 3. Autrement dit, $10a$ et $a$ ont le même reste dans la division euclidienne par 3.
+	\item De même $10^ka$ et $10^ka-\underbrace{999\dots 9}_{\text{k fois}}a$ ont le même reste dans la division euclidienne par 3. Donc $10^ka$ et $a$ ont le même reste dans la division euclidienne par 3. 
+
+	\item D'après la question procédente, $n=a_0 + 10\times a_1  +10^2\times a_2+\dots+10^{p-1}\times a_{p-1}$ a le même reste dans la division euclidienne par 3 que $a_0 +  a_1  +a_2+\dots+ a_{p-1}$. Les deux nombres diffèrent d'un multiple de 3.
+	\item On sait qu'un nombre est divisible par 3 si et seulement si son reste dans la division euclidienne par 3 est zéro. Donc $n$ est divisible par 3 si et seulement le reste de la division euclidienne par 3 de $a_0 + 10\times a_1  +10^2\times a_2+\dots+10^{p-1}\times a_{p-1}$ est zéro. Autrement dit $n$ est divisible par $3$ si et seulement si la somme de ses chiffres est elle-même divisible par 3. On vient de prouver le critère $D_3$.
+	\item La somme des chiffres est $S=5+4+6+7+8+4+5+6+7=52$. Puisque $S$ n'est pas divisible par 3 (car $S=3*17+1$), alors $n$ n'est pas divisible par 3.
+	\item Oui, la prevue fonctionne.
+\end{enumerate}
+
+\vspace{-3mm}
+\subsection*{Règle de divisibilité par 11 }
+\begin{enumerate}
+	\item 
+	\begin{enumerate}[label=(\roman*)]
+		\item Pour $n=33$, $S=3-3=0$ donc $n$ est divisible par 11.
+		\item Pour $n=507$, $S=7-0+5=12$ donc $n$ n'est pas divisible par 11.
+		\item Pour $n=609$, $S=9-0+6=15$ donc $n$ n'est pas divisible par 11.
+		\item Pour $n=87566$, $S=6-6+5-7+8=6$ donc $n$ n'est pas divisible par 11.
+	\end{enumerate}
+	
+	On peut vérifier en faisant les divisions euclidiennes:
+	\begin{enumerate}[label=(\roman*)]
+		\item $33=11\times3$
+		\item $507=11\times46+1$
+		\item $609=11\times55+4$
+		\item $87566=11\times7960+6$
+	\end{enumerate}
+
+	\item Commençons par établir une conjecture.
+	\begin{enumerate}[label=(\roman*)]
+		\item Le reste de la division euclidienne de 1 par 11 est 1
+		\item Le reste de la division euclidienne de 10 par 11 est 10
+		\item Le reste de la division euclidienne de 100 par 11 est 1
+		\item Le reste de la division euclidienne de 1000 par 11 est 10
+	\end{enumerate}
+
+	On peut donc faire la conjecture que le reste de la division euclidienne de $10^k$ par 11 est :
+
+	\begin{itemize}[label=*]
+		\item 1 si $k$ est pair
+		\item 10 si $k$ est impair
+	\end{itemize}
+	
+	En remarquant que $10=11-1$, on comprend qu'il y aura une alternance de signe. Le reste de la division euclidienne de $n=a_0 + 10\times a_1  +10^2\times a_2+\dots+10^{p-1}\times a_{p-1}$ est conservé si l'on soustrait des multiples de 11. C'est donc le même reste que la division euclidienne de $S=a_0+10a_1+a_2+10a_3+a_4+\dots$ par 11. Si l'on soustrait encore 11 fois les chiffres impairs on obtient $r=a_0-a_1+a_2-a_3+a_4+\dots+(-1)^{p-1}a_{p-1}$ c'est-à-dire la somme alternée en question.
+
+	Pour terminer cette question, prouvons la conjecture par disjonction de cas.
+	\begin{enumerate}[label=(\roman*)]
+		\item Si $k=2j$ est pair. On peut écrire $10^k-1 =\underbrace{999\dots 9}_{\text{k fois}}=\underbrace{999\dots 9}_{\text{2j fois}} = 11\times \underbrace{0909\dots 09}_{\text{j fois}} $. Donc le reste de la division euclidienne de $10^k$ par 9 est 1.
+		\item Si $k=2j+1$ est impair. On peut écrire $10^k-10=\underbrace{999\dots 9}_{\text{k-1 fois}}0=\underbrace{999\dots 9}_{\text{2j fois}}0 = 11\times \underbrace{9090\dots 90}_{\text{j fois}}$. Donc le reste de la division euclidienne de $10^k$ par 9 est 10.
+	\end{enumerate}
+\end{enumerate}
+\end{document}

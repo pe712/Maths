@@ -11,37 +11,206 @@
 \begin{document}
     \section*{Consignes:}
 
-    Avec votre groupe, choisissez un des exercices. Ce sont des exercices volontairement difficiles et il n'est pas attendu que vous répondiez à toutes les questions. Il est possible d'avoir une très bonne note en traitant seulement 3 questions sur 10.
+    Avec votre groupe, choisissez un des exercices. Ce sont des exercices volontairement difficiles et il n'est pas attendu que vous répondiez à toutes les questions. Par exemple, il est possible d'avoir une très bonne note en traitant seulement 3 questions sur 10.
 
     \medskip
-    A la rentrée, certains groupes présenteront à l'oral leur travail. C'est votre capacité à présenter un exercice devant la classe qui est noté et non pas la quantité de questions auxquelles vous avez répondu. 
-    
-    \medskip
-    Il est demandé de préparer un support visuel pour vous aider dans votre présentation. Vous pouvez par exemple scanner votre copie, ou préparer des slides. Vous pouvez utiliser le tableau lors de votre présentation. 
+    A la rentrée, certains groupes présenteront à l'oral une partie de leur travail. C'est votre capacité à présenter un exercice devant la classe qui est noté et non pas la quantité de questions auxquelles vous avez répondu.
 
     \medskip
-    Tous les groupes rendront une copie, qui sera corrigé et non noté.
-   
+    Il est demandé de préparer un support visuel pour vous aider dans votre présentation. Vous pouvez par exemple scanner votre copie, préparer des slides, un feuille A3, etc... Vous pourrez utiliser le tableau lors de votre présentation.
+
     \medskip
-    Utiliser une intelligence artificielle pour se travail vous desservira pour les raisons suivantes: 
+    Tous les groupes rendront une copie, qui sera corrigée et non noté.
+
+    \medskip
+    Utiliser une intelligence artificielle pour se travail vous desservira pour les raisons suivantes:
         \begin{itemize}
-            \item Ce n'est pas la quantité de questions traitée qui est prise en compte mais votre présentation orale.
+            \item Ce n'est pas la quantité de questions traitées qui est prise en compte mais votre présentation orale.
             \item Cet exercice doit faire travailler vos neurones, pas celles d'un serveur en Californie.
-            \item La notation (cf. ci-dessous) est adaptée pour prendre en compte la démarche personnelle dans la résolution des problèmes. Il est probable qu'un modèle propose une approche générique et que vous ne la compreniez pas suffisament pour répondre aux questions.
+            \item La notation (cf. ci-dessous) est adaptée pour prendre en compte la démarche personnelle dans la résolution des problèmes. Il est probable qu'un LLM propose une approche générique et que vous ne la compreniez pas suffisament pour répondre aux questions.
         \end{itemize}
 
 
         \section*{Grille de notation}
-        \begin{itemize}
-            \item La durée est respectée ($\sim$ 10 min).
-            \item Tous les membres du groupe ont eu la paroles.
-            \item Les explications orales sont claires.
-            \item Le vocabulaire mathématique est correctement prononcé.
-            \item Le contenu est mathématiquement correct.
-            \item La démarche de résolution est originale et bien comprise.
-            \item Le support visuel est lisible et soigné.
-            \item Le support visuel aide à la compréhension, le tableau est utilisé (si besoin).
-            \item Le groupe sait répondre aux questions et justifier sa démarche.
-        \end{itemize}
+\begin{center}
+\begin{tabular}{ | l | c | }
+\hline
+La durée est respectée ($\sim$ 10 min) & 2 pts\\
+\hline
+La parole est correctement répartie entre les membres du groupe & 2 pts\\
+\hline
+Les explications orales sont claires & 4 pts\\
+\hline
+Le vocabulaire mathématique est correctement prononcé & 2 pts\\
+\hline
+Le contenu est mathématiquement correct & 3 pts\\
+\hline
+La démarche de résolution est originale, justifiée et bien comprise & 2 pts\\
+\hline
+Le support visuel est lisible et soigné & 1 pt\\
+\hline
+Le support visuel aide à la compréhension, le tableau est utilisé si besoin & 2 pts\\
+\hline
+Le groupe sait répondre aux questions & 2 pts\\
+\hline
+\end{tabular}
+\end{center}
 
+\newpage
+\section*{Indications}
+\subsection*{Exercice 1}
+\subsubsection*{Partie A}
+\begin{enumerate}
+    \item Que vaut l'aire d'un demi-carré? Comment peut-on découper le sapin?
+    \item Ecrire la formule pour l'aire d'un triangle. Identifier la base et la hauteur. Est-ce que l'aire change si je déplace le sommet parallèlement à la base (comparer l'aire des triangles $\mathcal{P}_1$ et $\mathcal{P}_2$)? On peut aussi procéder par soustraction : on part d'un rectangle qui englobe la figure et on lui enlève des triangles dont l'aire est facile à calculer.
+    \item Appliquer la formule.
+    \item Le nombre $b$ doit il être pair ou impair pour obtenir une aire de 7.5? Quelle est la plus petite valeur possible de $b$? La plus grande? Choisir $b$ et déterminer la valeur de $i$ pour avoir $A=7.5$. Faire des essais sur feuille quadrillée.
+    \item Même méthode.
+    \item Chercher le nombre de points intérieurs $i$ correspondants à une aire $A=n+\frac{1}{2}$. Essayer de trouver un triangle qui a exactement ce nombre de points intérieurs et $b=3$. On peut penser à aligner les points intérieurs.
+\end{enumerate}
+
+\subsection*{Exercice 2}
+\subsubsection*{Partie A}
+\begin{enumerate}
+    \item Rappeler la proposition du cours qui caractérise les nombres pairs ou impairs. On peut  étudier tous les cas possibles. On peut aussi regarder la \og distance\fg{} qui sépare les entiers $a-b$ et $a+b$. Faire des exemples.
+    \item Quelle identité remarquable peut on utiliser? Quelle est la parité d'un produit de deux nombres pairs? De deux nombres impairs? On justifiera soigneusement.
+    \item
+    \begin{enumerate}[label=\alph*.]
+        \item Trouver un diviseur $p$ de $40$. Ecrire alors $40=k\times p$.
+
+        A l'aide de la factorisation donnée par l'identité remarquable, identifier $p$ et $q$. En déduire $a$ et $b$. Si ce n'est pas possible, essayer un diviseur $p$ différent.
+        \item En s'appuyant sur l'exemple de 40, essayer de trouver une factorisation de $4k$ et identifier $a$ et $b$.
+        \item En s'appuyant sur l'exemple de 21, identifier $a$ et $b$ dans la factorisation $1\times (2k+1)$ où $m=2k+1$ est l'entier impair.
+    \end{enumerate}
+    \item Relire les questions en faisant une disjonction de cas (étude des différents cas).
+\end{enumerate}
+
+\newpage
+\pagenumbering{Alph}
+\section*{Exercice 1: le théorème de Pick}
+\begin{minipage}{0.7\linewidth}
+
+Un réseau pointé à maille carrée est formé de points d'intersection de droites
+verticales et de droites horizontales, comme sur la figure ci-contre, la distance
+entre deux parallèles voisines étant prise pour unité.
+
+On appelle polygone de Pick, un polygone non aplati, non croisé et sans trou
+construit sur un tel réseau et dont chacun des sommets est un point du réseau.
+
+Dans tout l'exercice, l'unité de longueur est la distance entre deux points
+voisins sur une ligne du quadrillage. L'unité d'aire est donc l'aire d'un carré de
+côté 1.
+
+\end{minipage}
+\begin{minipage}{0.3\linewidth}
+    \includegraphics[width=\textwidth]{"./figures/sujet_ope_2025_vf-6.png"}
+\end{minipage}
+
+\subsection*{Partie A}
+\begin{enumerate}
+    \item
+    \begin{minipage}{0.45\linewidth}
+        Calculer l'aire du polygone ABCDEFGHIJK ci-contre.
+    \end{minipage}
+    \begin{minipage}{0.45\linewidth}
+    \includegraphics[width=.8\textwidth]{"./figures/sujet_ope_2025_vf-7.png"}
+    \end{minipage}
+    \item
+    Déterminer l'aire des polygones $\mathcal{P}_1$, $\mathcal{P}_2$, $\mathcal{P}_3$, $\mathcal{P}_4$, $\mathcal{P}_5$ représentés ci-dessous.
+
+    \includegraphics[width=.8\textwidth]{"./figures/sujet_ope_2025_vf-8.png"}
+
+\end{enumerate}
+Étant donné un polygone de Pick, on note $i$ le nombre de points du réseau à l'intérieur du polygone et $b$ le nombre de points du réseau sur le bord du polygone. On admet, pour le moment, que l'aire d'un polygone de Pick est donnée par la formule suivante :
+
+$$A = i + \frac{b}{2}-1$$
+
+\begin{enumerate}[resume]
+    \item
+    À l'aide de la formule de Pick, donner l'aire des polygones $\mathcal{P}_6$ et $\mathcal{P}_7$ représentés ci-dessous.
+
+        \includegraphics[width=.5\textwidth]{"./figures/sujet_ope_2025_vf-9.png"}
+
+    \item
+    Construire un polygone de Pick d'aire 7,5.
+    \item
+    Tracer des triangles de Pick, vérifiant $b$ = 3, dont l'aire vaut :
+    \begin{enumerate}[label=\alph*., ]
+        \item 1,5
+        \item
+        2,5
+        \item
+        3,5
+    \end{enumerate}
+    \item
+    Peut-on généraliser à toute aire de la forme $n+\frac{1}{2}$ avec $n$ entier ?
+\end{enumerate}
+
+
+\subsection*{Partie B}
+On appelle triangle mince, un triangle dont les sommets sont des points du réseau et qui n'a aucun point du réseau dans son intérieur ni sur ses côtés (par exemple, les polygones $\mathcal{P}_1$, $\mathcal{P}_2$, $\mathcal{P}_3$ de la partie A sont des triangles minces).
+
+On admet que tous les triangles minces ont la même aire.
+
+L'objectif de cette partie est alors de démontrer certaines étapes de la démonstration de la formule de Pick.
+
+\begin{enumerate}
+    \item
+    Démontrer que tout triangle de Pick se décompose en un nombre fini de triangles minces.
+\end{enumerate}
+On admet que tous les polygones de Pick se décomposent en un nombre fini de triangles de Pick.
+\begin{enumerate}[resume]
+    \item
+    Dans cette question, on décide d'ajouter un triangle mince à un polygone de Pick $\mathcal{P}$.
+    \begin{enumerate}[label=\alph*.]
+        \item
+        Que deviennent $i$ et $b$ lorsque le triangle mince ajouté est collé à $\mathcal{P}$ par un unique côté ?
+        Le nouveau polygone construit vérifie-t-il toujours la formule de Pick ?
+        \item
+        Que deviennent $i$ et $b$ lorsque le triangle mince ajouté est collé à $\mathcal{P}$ par deux côtés ?
+        Le nouveau polygone construit vérifie-t-il toujours la formule de Pick ?
+    \end{enumerate}
+    \item
+    Conclure.
+\end{enumerate}
+
+
+\section*{Exercice 2: Un peu d'arithmétique}
+
+Les deux parties de cet exercice sont indépendantes.
+
+On rappelle qu'un entier $m$ est multiple d'un entier $n$ lorsqu'il existe un entier $k$ tel que $m$ = $kn$.
+
+\subsection*{Partie A}
+On veut déterminer le nombre d'entiers $m$ compris entre 1 et 1 000 vérifiant la propriété $\mathcal{P}$ : \og il existe deux entiers naturels $a$ et $b$ tels que $m$ = $a^2-b^2$ \fg{}.
+
+\begin{enumerate}
+    \item
+    Montrer que si $a$ et $b$ sont deux entiers naturels alors les entiers $a - b$ et $a+b$ sont tous les deux pairs ou tous les deux impairs.
+    \item
+    En déduire que si $m$ vérifie la propriété $\mathcal{P}$ alors $m$ est soit multiple de 4 soit un nombre impair.
+    \item
+    \begin{enumerate}[label=\alph*.]
+        \item
+        Montrer que 40 et 21 vérifient la propriété $\mathcal{P}$.
+        \item
+        Montrer que si $m$ est un multiple de 4 alors $m$ vérifie la propriété $\mathcal{P}$.
+        \item
+        Montrer que si $m$ est un nombre impair alors $m$ vérifie la propriété $\mathcal{P}$.
+    \end{enumerate}
+    \item
+    Conclure.
+\end{enumerate}
+
+
+\subsection*{Partie B}
+On définit la factorielle d'un entier naturel non nul $n$ par $n ! = 1 \times 2 \times 3 \times \dots \times (n - 1) \times n$.
+
+Le nombre entier $n$ ! se lit « factorielle $n$ ».
+
+Par exemple $8 ! = 1 \times 2 \times 3 \times … \times 7 \times 8 = 40 320$.
+
+\medskip
+Déterminer les entiers naturels $a$, $b$, $c$, $d$ tels que :
+$a \times b \times c \times d = 8 !$ et $(a + 1)(b + 1) = 525$, $(b + 1)(c + 1) = 147$.
 \end{document}

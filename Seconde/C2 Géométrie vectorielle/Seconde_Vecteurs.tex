@@ -214,6 +214,21 @@ Une \bf{translation} déplace tous les points d'un objet géométrique de la mê
 	On aurait également pu tester la colinéarité de $\vec{AC}$ et $\vec{BC}$, de $\vec{CA}$ et $\vec{BC}$, etc\dots
 \end{rem}
 
+\begin{prop}{}{}
+  Deux vecteurs $\vecu$ et $\vecv$ sont colinéaires si et seulement s'il existe $k\in\R$ tel que $\vecu = k\vecv$.
+\end{prop}
+
+\begin{ex}{}{}
+	\begin{center}
+		\begin{tikzpicture}
+			\draw (-1,-1) grid (3,1);
+			\draw[->,very thick, red] (-1, 0) -- node[above] {$\vec{u}$} (1, 1);
+			\draw[->,very thick, blue] (3, 1/2) -- node[above] {$\vecv$} (2, 0);
+		\end{tikzpicture}
+	\end{center}
+	Ces deux vecteurs sont colinéaires. D'après la propriété, il existe un facteur multiplicateur $k$ tel que $\vecu=\vecv$. A l'aide des carreaux, on détermine que $\vecv = -\frac{1}{2}\vecu$ ou encore $\vecu = -2\vecv$.
+\end{ex}
+
 \begin{cor}{}{}
 	Soient A, B deux points distincts.
 
@@ -229,63 +244,63 @@ Une \bf{translation} déplace tous les points d'un objet géométrique de la mê
 	De plus, puisque $\vec{AI} = \vec{IB}$, ils sont colinéaires. Donc les points A, I et B sont alignés. Donc $I$ est le milieu du segment $[AB]$.
 \end{dem}
 
-\begin{prop}{Courcours des médianes d'un triangle \diff}{}
-	Les trois médianes d'un triangles sont concourantes. Le point de concours est situé aux $\frac{2}{3}$	en partant du sommet.
+% \begin{prop}{Courcours des médianes d'un triangle \diff}{}
+% 	Les trois médianes d'un triangles sont concourantes. Le point de concours est situé aux $\frac{2}{3}$	en partant du sommet.
 
-		\begin{center}
-		\begin{tikzpicture}
-			\draw (0,0) node[left] {A} -- (3,0) node[right] {B} -- (2,1) node[above] {C} -- (0,0);
-			\draw (1.5,0) node[ circle, fill, inner sep=1pt] {};
-			\draw (1.5,0) node[below] {I};
-			\draw (2.5,0.5) node[ circle, fill, inner sep=1pt] {};
-			\draw (2.5,0.5) node[above right] {J};
-			\draw (1,0.5) node[ circle, fill, inner sep=1pt] {};
-			\draw (1,0.5) node[above left] {K};
-			\draw (1.5,0) --  (2,1);
-			\draw (2.5,0.5) --  (0,0);
-			\draw (1,0.5) --  (3,0);
-		\end{tikzpicture}
-	\end{center}
+% 		\begin{center}
+% 		\begin{tikzpicture}
+% 			\draw (0,0) node[left] {A} -- (3,0) node[right] {B} -- (2,1) node[above] {C} -- (0,0);
+% 			\draw (1.5,0) node[ circle, fill, inner sep=1pt] {};
+% 			\draw (1.5,0) node[below] {I};
+% 			\draw (2.5,0.5) node[ circle, fill, inner sep=1pt] {};
+% 			\draw (2.5,0.5) node[above right] {J};
+% 			\draw (1,0.5) node[ circle, fill, inner sep=1pt] {};
+% 			\draw (1,0.5) node[above left] {K};
+% 			\draw (1.5,0) --  (2,1);
+% 			\draw (2.5,0.5) --  (0,0);
+% 			\draw (1,0.5) --  (3,0);
+% 		\end{tikzpicture}
+% 	\end{center}
 
-\end{prop}
+% \end{prop}
 
-\begin{dem}{}{}
-	Soit un triangle ABC, les trois bases des médianes I, J, K.
+% \begin{dem}{}{}
+% 	Soit un triangle ABC, les trois bases des médianes I, J, K.
 
-	Pour montrer la proposition, il suffit de montrer l'égalité suivante:
+% 	Pour montrer la proposition, il suffit de montrer l'égalité suivante:
 
-	$$\frac{2}{3}\vec{AJ} = \vec{AB}+\frac{2}{3}\vec{BK} = \vec{AC}+\frac{2}{3}\vec{CI}$$
+% 	$$\frac{2}{3}\vec{AJ} = \vec{AB}+\frac{2}{3}\vec{BK} = \vec{AC}+\frac{2}{3}\vec{CI}$$
 
-	Montrons la première égalité. On veut décomposer tous les vecteurs en fonction de deux vecteurs choisis au préalable, qu'on appellera une \textbf{base}. Choisissons par exemple $\vec{AB}$ et $\vec{BC}$.
+% 	Montrons la première égalité. On veut décomposer tous les vecteurs en fonction de deux vecteurs choisis au préalable, qu'on appellera une \textbf{base}. Choisissons par exemple $\vec{AB}$ et $\vec{BC}$.
 
-	\smallskip
-	D'une part, en utilisant Chasles, $\vec{AJ} = \vec{AB}+\vec{BJ}$.
+% 	\smallskip
+% 	D'une part, en utilisant Chasles, $\vec{AJ} = \vec{AB}+\vec{BJ}$.
 
-	Puisque $J$ est le milieu de $[BC]$, $\vec{BJ} = \frac{1}{2}\vec{BC}$.
+% 	Puisque $J$ est le milieu de $[BC]$, $\vec{BJ} = \frac{1}{2}\vec{BC}$.
 
-	Donc, \begin{align*}
-		\frac{2}{3}\vec{AJ}= \frac{2}{3}(\vec{AB}+\frac{1}{2}\vec{BC})= \frac{2}{3}\vec{AB}+\frac{1}{3}\vec{BC}
-	\end{align*}
+% 	Donc, \begin{align*}
+% 		\frac{2}{3}\vec{AJ}= \frac{2}{3}(\vec{AB}+\frac{1}{2}\vec{BC})= \frac{2}{3}\vec{AB}+\frac{1}{3}\vec{BC}
+% 	\end{align*}
 
-	\smallskip
-	D'autre part, en utilisant Chasles, $\vec{BK} = \vec{BA}+\vec{AK}$.
+% 	\smallskip
+% 	D'autre part, en utilisant Chasles, $\vec{BK} = \vec{BA}+\vec{AK}$.
 
-	Puisque $K$ est le milieu de $[AC]$, $\vec{AK} = \frac{1}{2}\vec{AC}$.
+% 	Puisque $K$ est le milieu de $[AC]$, $\vec{AK} = \frac{1}{2}\vec{AC}$.
 
-	Avec Chasles de nouveau, $\vec{AC} = \vec{AB}+\vec{BC}$.
+% 	Avec Chasles de nouveau, $\vec{AC} = \vec{AB}+\vec{BC}$.
 
-	Donc, \begin{align*}
-		\vec{AB}+\frac{2}{3}\vec{BK}
-		&= \vec{AB}+\frac{2}{3}(\vec{BA}+\frac{1}{2}(\vec{AB}+\vec{BC}))\\
-		&= \vec{AB}+\frac{2}{3}(-\vec{AB}+\frac{1}{2}\vec{AB}+\frac{1}{2}\vec{BC})\\
-		&= \vec{AB}+\frac{2}{3}(-\frac{1}{2}\vec{AB}+\frac{1}{2}\vec{BC})\\
-		&= \vec{AB}-\frac{1}{3}\vec{AB}+\frac{1}{3}\vec{BC}\\
-		&= \frac{2}{3}\vec{AB}+\frac{1}{3}\vec{BC}
-	\end{align*}
+% 	Donc, \begin{align*}
+% 		\vec{AB}+\frac{2}{3}\vec{BK}
+% 		&= \vec{AB}+\frac{2}{3}(\vec{BA}+\frac{1}{2}(\vec{AB}+\vec{BC}))\\
+% 		&= \vec{AB}+\frac{2}{3}(-\vec{AB}+\frac{1}{2}\vec{AB}+\frac{1}{2}\vec{BC})\\
+% 		&= \vec{AB}+\frac{2}{3}(-\frac{1}{2}\vec{AB}+\frac{1}{2}\vec{BC})\\
+% 		&= \vec{AB}-\frac{1}{3}\vec{AB}+\frac{1}{3}\vec{BC}\\
+% 		&= \frac{2}{3}\vec{AB}+\frac{1}{3}\vec{BC}
+% 	\end{align*}
 
-	\smallskip
-	On a bien montré l'égalité voulue.
-\end{dem}
+% 	\smallskip
+% 	On a bien montré l'égalité voulue.
+% \end{dem}
 
 \newpage
 
