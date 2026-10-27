@@ -22,6 +22,8 @@
 **/*.dvi
 **/figures
 **/*.docx
+**/*.url
+**/*.ggb
 
 # evaluations
 **/*_ev_*.pdf
@@ -48,7 +50,13 @@ latex/compilation_tests
 latex/Modèles
 
 # !Terminale
-
+!Terminale
+T Spé Maths
+T Option Maths expertes
+Terminale/T STMG/.vscode
+Terminale/T STMG/Evaluations
+Terminale/T STMG/Ressources Perrine
+Terminale/T STMG/*.pdf
 
 # Seconde
 !Seconde
