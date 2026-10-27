@@ -12,11 +12,14 @@
 	% **************
 	\vspace{-7mm}
 	\paragraph*{Objectif du chapitre:}
-	% \begin{itemize}
-	% 	\vspace{-2mm}
-	% 	\setlength\itemsep{-1mm}
-	% 	\item
-	% \end{itemize}
+	\begin{itemize}
+		\vspace{-2mm}
+		\setlength\itemsep{-1mm}
+		\item Utiliser l'intersection et l'union d'ensembles
+		\item Définir et réprésenter des intervalles
+		\item Introduire la valeur absolue pour mesurer la distance entre deux réels
+		\item Calculer des puissances de réels et des racines carrées
+	\end{itemize}
 	\vspace{-7mm}
 
 \section{Théorie des ensemble}
@@ -122,8 +125,8 @@ Il y a donc quatre types d'intervalles bornés:
 \begin{defi}{Union et intersection}{}
   Soient A et B deux ensembles.
 \begin{itemize}
-	\item L'ensemble $A\cap B$ (se lit \og $A$ inter $B$) est l'ensemble des éléments qui sont dans $A$ et dans $B$.
-	\item L'ensemble $A\cup B$ (se lit \og $A$ union $B$) est l'ensemble des éléments qui sont dans $A$ ou dans $B$.
+	\item L'ensemble $A\cap B$ (se lit \og $A$ inter $B$) est l'ensemble des éléments qui sont dans $A$ et dans $B$. On l'appelle \textbf{intersection} entre $A$ et $B$.
+	\item L'ensemble $A\cup B$ (se lit \og $A$ union $B$) est l'ensemble des éléments qui sont dans $A$ ou dans $B$. On l'appelle \textbf{union} de $A$ et $B$.
 \end{itemize}
 
 \begin{minipage}{.45\linewidth}
@@ -182,7 +185,7 @@ Il y a donc quatre types d'intervalles bornés:
 \begin{defi}{Valeur absolue}{}
 Soit $a$ un nombre réel.
 
- On appelle valeur absolue de $a$, la distance entre $a$ et $0$. On note cette distance $|a|$. C'est donc un nombre positif.
+ On appelle \textbf{valeur absolue} de $a$, la distance entre $a$ et $0$. On note cette distance $|a|$. C'est donc un nombre positif.
 \end{defi}
 
 \smallskip
@@ -309,7 +312,7 @@ Soient $a$ et $b$ deux nombres réels. $|a-b|$ ou $|b-a|$ est la distance entre 
 \end{dem}
 
 \begin{defi}{Intervalle centré}{}
-	Un intervalle de la forme $\ff{a-r}{a+r}$ est appelé un intervalle centré en $a$ et d'amplitude (ou de précision) $r$.
+	Un intervalle de la forme $\ff{a-r}{a+r}$ est appelé un \textbf{intervalle centré} en $a$ et d'amplitude (ou de précision) $r$.
 \end{defi}
 
 \begin{ex}{}{}
@@ -395,7 +398,7 @@ Soient $a$ et $b$ deux nombres réels. $|a-b|$ ou $|b-a|$ est la distance entre 
 	\begin{itemize}
 		\item le produit et quotient d'un même nombre: $a^n\times a^m = a^{n+m}$ et $\frac{a^n}{a^m} = a^{n-m}$.
 		\item le produit et le quotient à un même exposant: $(a\times b)^n = a^n \times b^n$ et $(\frac{a}{b})^n=\frac{a^n}{b^n}$.
-		\item la puissance de puissance: $(a^n)^m = a^{nm}$
+		\item la puissance de puissance: $(a^n)^m = a^{nm} = (a^m)^n$
 	\end{itemize}
 \end{prop}
 
@@ -421,7 +424,7 @@ Soient $a$ et $b$ deux nombres réels. $|a-b|$ ou $|b-a|$ est la distance entre 
 
 \section{Racine carrée d'un nombre}
 \begin{defi}{Racine carrée}{}
-	Soit $x\in\R$ avec $x\ge 0$. La racine carrée de $x$ est l'unique nombre positif qui mis au carré donne $x$. On le note $\sqrt{x}$.
+	Soit $x\in\R$ avec $x\ge 0$. La \textbf{racine carrée }de $x$ est l'unique nombre positif qui mis au carré donne $x$. On le note $\sqrt{x}$. La racine carrée est parfois appelée un \textbf{radical}.
 \end{defi}
 
 \begin{ex}{}{}
@@ -455,13 +458,134 @@ On peut vérifier que $\sqrt{2.25} = 1.5$. En effet, $1.5^2 = 2.25$. Donc 1.5 es
 
 \end{dem}
 
+\begin{prop}{Règles de calcul avec les racines carrées}{}
+	Soient $a\in\R$ et $b\in\R$ deux réels positifs. Soit $n\in\N$. On a :
+
+	\begin{itemize}
+		\item le produit et le quotient de racines: $\sqrt{a}\times\sqrt{b} = \sqrt{ab}$ et $\sqrt{\frac{a}{b}}=\frac{\sqrt{a}}{\sqrt{b}}$.
+		\item la racine à une certaine puissance: $\sqrt{a}^n=\sqrt{a^n}$
+	\end{itemize}
+\end{prop}
+
+\begin{rem}{}{}
+  Ces règles de calcul sont très similaires à celles avec les puissances (et ce n'est pas un hasard).
+\end{rem}
+
 \newpage
 \section*{Exercices: Bordas 2023}
 \sectionexo{Intervalle}
-\sectionexo{Valeur absolue}
-\sectionexo{Distance entre les réels}
-\sectionexo{Puissances}
-\sectionexo{Racines carrées}
+\begin{bookexos}{152, 153 p.73}\end{bookexos}
+\begin{bookexo}{155 p.73}\end{bookexo}
+\begin{bookexo}{160 p.73}\end{bookexo}
+\begin{bookexos}{182-184 p.74}\end{bookexos}
+\begin{bookexos}{186, 188 p.74}\end{bookexos}
 
+\sectionexo{Valeur absolue, distance entre les réels}
+\begin{bookexo}{168 p.74}\end{bookexo}
+\begin{bookexos}{172, 174 p.74}\end{bookexos}
+\begin{bookexos}{177, 179 p.74}\end{bookexos}
+
+\sectionexo{Puissances}
+\begin{bookexo}{95 p.103}\end{bookexo}
+\begin{bookexo}{94 p.103}\end{bookexo}
+\begin{bookexos}{84, 86 p.102}\end{bookexos}
+\begin{bookexo}{89 p.102}\end{bookexo}
+\begin{bookexo}{92 p.103}\end{bookexo}
+
+\sectionexo{Racines carrées}
+\begin{bookexos}{98, 99 p.103}\end{bookexos}
+\begin{bookexo}{108 p.104}\end{bookexo}
+\begin{bookexo}{112 p.104}\end{bookexo}
+\begin{bookexo}{105 p.104}\end{bookexo}
+\begin{bookexo}{106 p.104}\end{bookexo}
+
+\newpage
+
+\chapnumber{}
+\setcounter{sectionexo}{0}
+\thispagestyle{premierepage}
+\entetecategory{Exercices}
+\enteteperso
+
+\pagenumbering{Alph}
+\section*{Bordas 2023}
+\begin{exercicesnofoot}
+\sectionexo{Intervalle [pages 73, 74]}
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_73_exo_152_152_153_154_154.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_73_exo_152_152_153_154_154.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_73_exo_155_155_156_156.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_73_exo_160.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_74_exo_182_182_183_184_185_185.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_74_exo_186_186_187_188_188.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_74_exo_186_186_187_188_188.jpg}
+
+\sectionexo{Valeur absolue, distance entre les réels [page 74]}
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_74_exo_167_167_168_169_170_170.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_74_exo_172_172_173_174_175_175.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_74_exo_172_172_173_174_175_175.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_74_exo_177_177_178_178.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_74_exo_179.jpg}
+
+\sectionexo{Puissances [pages 102, 103]}
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_103_exo_95.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_103_exo_94.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_102_exo_84.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_102_exo_86_87.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_102_exo_89.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_103_exo_92.jpg}
+
+\sectionexo{Racines carrées [pages 103, 104]}
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_103_exo_98.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_103_exo_99_99_100_104.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_104_exo_108.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_104_exo_112_112_113_113.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_104_exo_105.jpg}
+
+\hspace{-1.1cm}
+\includegraphics[width=0.5\textwidth]{../../Seconde/Bordas_Indice_2nde_2023/Bordas_Indice_2nde_2023_p_104_exo_106.jpg}
+
+\end{exercicesnofoot}
 
 \end{document}

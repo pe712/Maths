@@ -1,0 +1,6 @@
+% Source - https://tex.stackexchange.com/a/286077
+% Posted by Robert Seifert, modified by community. See post 'Timeline' for change history
+% Retrieved 2026-10-27, License - CC BY-SA 3.0
+
+\pgfkeys{/pgf/number format/.cd,1000 sep={\,}}
+

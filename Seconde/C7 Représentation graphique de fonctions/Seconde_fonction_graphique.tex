@@ -7,8 +7,8 @@
 \setlist{leftmargin=5mm}
 
 \begin{document}
-\chapnumber{TBD} % numéro du chapitre
-\titre{Graphe de fonctions} % titre du chapitre
+\chapnumber{7} % numéro du chapitre
+\titre{Représentation graphique de fonctions} % titre du chapitre
 \classe{Seconde} % classe
 \entetegal{}
 
@@ -19,23 +19,31 @@
 \begin{itemize}
     \vspace{-2mm}
     \setlength\itemsep{-1mm}
-    \item
+    \item Rappeler le vocabulaire propre aux fonctions (ensemble de définition, antécédent, image).
+    \item Introduire quelques fonctions de référence (valeur absolue, inverse et carrée).
+    \item Définir et tracer la représentation graphique de fonctions
+    \item Dresser un tableau de signe.
+    \item Etudier la parité d'une fonction.
 \end{itemize}
 \vspace{-7mm}
 
-\section{Représentation graphique des fonctions}
 
-\subsection{Définir une fonction}
+\section{Définir une fonction}
+% Fonction à valeurs réelles définie sur un intervalle ou une réunion finie d’intervalles de ℝ.
+% Recherche de domaine d’étude (ensemble de définition).
+% Modéliser par des fonctions des situations issues des mathématiques, des autres disciplines ou de la vie courante ou citoyenne.
+% Fonctions valeur absolue, carré, inverse : définitions et courbes représentatives.
+
 \begin{defi}{Fonction réelle}{}
-    On se donne un ensemble $D_f$ appelé \textbf{ensemble de définition} (ou ensemble de départ).
+    On se donne un ensemble $D$ appelé \textbf{ensemble de définition} (ou ensemble de départ).
 
-    Définir une \textbf{fonction} réelle sur $D_f$, c'est associer à tout élément $x\in D_f$ un unique réel que l'on note $f(x)$.
+    Définir une \textbf{fonction} réelle sur $D$, c'est associer à tout élément $x\in D$ un unique réel que l'on note $f(x)$.
 
-    Une fonction $f$ définie sur $D_f$ est généralement donnée:
+    Une fonction $f$ définie sur $D$ est généralement donnée:
     \begin{itemize}
         \item soit par une \textbf{expression algébrique}
+        \item soit par un \textbf{tableau de valeurs}.
         \item soit par une \textbf{courbe représentative}
-        \item soit par un \textbf{tableau ou une liste de valeurs}.
     \end{itemize}
 \end{defi}
 
@@ -44,9 +52,33 @@
 \end{rem}
 
 \begin{ex}{}{}
-    On peut définir la fonction $f$ sur l'ensemble $D_f$ des mots de la langue française qui à chaque mot associe le nombre de lettres.
+    Sur l'ensemble $D_f$ des mots de la langue française, on peut définir la fonction $f$  qui à chaque mot associe le nombre de lettres.
 
-    Alors pour $x=\text{banane}$, on a $f(x) = 6$. On a aussi $f(\text{pomme}) = 5$
+    Alors pour $x=\text{banane}$, on a $f(x) = 6$. On a aussi $f(\text{pomme}) = 5$ ou encore $f(\text{cerise})=6$.
+\end{ex}
+
+\begin{defi}{Fonction valeur absolue}{}
+    On définit $g(x) = |x|$ sur l'ensemble de départ $D_g=\R$.
+\end{defi}
+
+\begin{ex}{}{}
+    On peut calculer $g(2)=4$, $g(-5)=25$.
+
+    $g$ est alors définie par l'expression algébrique $|x|$ en fonction d'un \textbf{paramètre} $x\in D_g$.
+\end{ex}
+
+\begin{ex}{}{}
+    On définit la fonction $h$ sur l'ensemble $D_h = \fo{1}{6} \cap \Z$. On a $D_h = \{1;\quad 2;\quad 3;\quad 4;\quad 5\}$.
+
+    \begin{tabular}{*{6}{|c}|}
+        \hline
+        $x\in\D_h$ & 1 & 2 & 3 & 4 & 5 \\
+        \hline
+        $f(x)$ & -1 & -2 & 6 & 8 & 10 \\
+        \hline
+    \end{tabular}
+
+    $h$ est alors définie par le tableau de valeurs.
 \end{ex}
 
 \begin{defi}{Image, antécédent}{}
@@ -58,30 +90,38 @@
     \end{itemize}
 \end{defi}
 
-\begin{rem}{}{}
-    Pour toute fonction $f$, un nombre $x$ a une et une seule image par $f$.
-
-    Par contre, chaque nombre $y$ peut avoir plusieurs antécédents, ou ne pas avoir d'antécédents.
-\end{rem}
-
 \begin{ex}{}{}
     Soit $g$ la fonction définie sur $D_g=\R$ par $g(x)=x^2$.
     \begin{itemize}
         \item  L'image de $5$ est $g(5)=5^2=25$.
-        \item  Pour trouver les antécédents de $16$, on résout l'\textbf{équation} $f(x)=16$, d'inconnue $x\in D_g$. C'est-à-dire qu'on cherche les éléments $x\in D_g$ tels que $x^2=16$. On trouve alors deux antécédents, $4$ et $-4$. Car $g(-4)=(-4)^2=16$.
+        \item  Pour trouver les antécédents de $16$, on résout l'\textbf{équation} $g(x)=16$, d'inconnue $x\in D_g$. C'est-à-dire qu'on cherche les éléments $x\in D_g$ tels que $x^2=16$. On trouve alors deux antécédents, $4$ et $-4$. Car $g(-4)=(-4)^2=16$.
         \item  Il n'y a pas d'antécédent de $-1$ car l'équation $g(x)=-1$ n'a pas de solution. Un carré est toujours positif.
     \end{itemize}
 \end{ex}
+
+\begin{rems}{}{}
+    \begin{itemize}
+        \item
+        Le mot \og antécédent \fg{} signifie \og qui se produit avant dans le temps. Ce nombre est antérieur au calcul par la fonction.
+        \item
+        Pour toute fonction $f$, un nombre $x$ a une et une seule image par $f$.
+
+        Par contre, chaque nombre $y$ peut avoir un antécédent, plusieurs antécédents ou aucun antécédent.
+    \end{itemize}
+
+\end{rems}
 
 \begin{notation}{}{}
     Une fonction (réelle) $f$ définie sur $D_f$ se note $f:D_f\rightarrow\R$.
 
     Si la fonction est donnée par une expression algébrique, alors on note $\fonction{f}{D_f}{\R}{x}{f(x)}$.
+
+    On fera attention à la différence entre la flèche $\rightarrow$ pour l'ensemble de définition et la flèche $\mapsto$ pour l'expression algébrique.
 \end{notation}
 
-\begin{ex}{}{}
+\begin{defi}{Fonction carrée}{}
     La fonction $g$ définie ci-dessus s'appelle la \textbf{fonction carrée} et se note $\fonction{g}{\R}{\R}{x}{x^2}$.
-\end{ex}
+\end{defi}
 
 
 \begin{methode}{Trouver l'ensemble de définition maximal à partir d'une expression algébrique}{}
@@ -104,14 +144,86 @@
     \end{itemize}
 \end{ex}
 
-\subsection{Représentation graphique}
+
+\section{Représentation graphique}
+% Courbe représentative : la courbe d’équation 𝑦 = ƒ (𝑥) est l’ensemble des points du plan dont les coordonnées (𝑥, 𝑦) vérifient 𝑦 = ƒ (𝑥).
+% Exploiter l’équation 𝑦 = ƒ (𝑥) d’une courbe : appartenance, calcul de coordonnées.
+
 \begin{defi}{Courbe}{}
-  Soit $f:D\rightarrow\R$ une fonction. La \textbf{courbe} ou le \textbf{graphe} de la fonction $f$ est l'ensemble des points du plan d'abscisse $x\in D$ et d'ordonnée $f(x)$.
+  Soit $f:D\rightarrow\R$ une fonction. La \textbf{courbe représentative} ou le \textbf{graphe} de la fonction $f$ est l'ensemble des points du plan d'abscisse $x\in D$ et d'ordonnée $f(x)$. Ce sont donc les points de coordonnées $(x; f(x))$ pour $x\in D$.
 \end{defi}
 
+\begin{methode}{Tracer \textbf{l'allure} de la courbe d'une fonction}{}
+    Soit $f$ une fonction définie sur un ensemble $D$ infini (par exemple $D=\ff{0}{1}$ ou $D=\R$).
+    \begin{enumerate}
+        \item
+        On commence par créer un tableau de valeurs. Généralement, on prend des abscisses $x$ régulièrement espacées dans $D$.
+        \item
+        On place les points aux coordonnées $(x; f(x))$.
+        \item
+        A main levée, on essaie de passer par les points placés avec une courbe \og lisse\fg{}.
+    \end{enumerate}
+\end{methode}
+
 \begin{ex}{Fonction carrée}{}
-		La courbe représentative de la fonction carré est une \textbf{parabole} de \textbf{sommet} l'origine $O$ du repère.
-        \begin{minipage}{0.45\linewidth}
+    \begin{tabular}{*{12}{|c}|}
+    \hline
+    $x\in\ff{-1}{1}$ & -1 & -0.8 & -0.6 & -0.4 & -0.2 & 0 & 0.2 & 0.4 & 0.6 & 0.8 & 1 \\
+    \hline
+    $f(x)$ & 1 & 0.64 & 0.36 & 0.16 & 0.04 & 0 & 0.04 & 0.16 & 0.36 & 0.64 & 1 \\
+    \hline
+    \end{tabular}
+
+    La courbe représentative de la fonction carré est une \textbf{parabole} de \textbf{sommet} l'origine $O$ du repère.
+
+    \def\xmin{-1}
+    \def\xmax{1}
+    \def\ymin{0}
+    \def\ymax{1}
+
+   \begin{tikzpicture}
+        \begin{axis}[
+            x=5cm,y=5cm,
+            axis lines=middle,ymajorgrids=true,xmajorgrids=true,
+            xmin=\xmin*1.2,xmax=\xmax*1.2,ymin=\ymin*1.2,ymax=\ymax*1.2,
+            xtick={-1,-0.8,...,\xmax},ytick={0, 0.2,...,\ymax}
+        ]
+        \addplot[thick,blue,domain=\xmin:\xmax, samples=100] {x^2};
+        \node[color=blue] at (axis cs:0.7,0.2) {\large{$\mathcal{C}_f$}};
+        \addplot [
+          only marks,
+          mark=ball,
+          mark size=2pt,
+        ] coordinates {
+            (-1, 1)
+            (-.8, 0.64)
+            (-.6, 0.36)
+            (-.4, 0.16)
+            (-.2, 0.04)
+            (0, 1)
+            (1, 1)
+            (.8, 0.64)
+            (.6, 0.36)
+            (.4, 0.16)
+            (.2, 0.04)
+        };
+        \end{axis}
+    \end{tikzpicture}
+
+
+\end{ex}
+
+
+\begin{prop}{}{}
+  Soit $f$ une fonction, $\mathcal{C}_f$ sa courbe et $A(x,y)$ un point.
+
+  $A\in\mathcal{C}_f$ si et seulement si $f(x)=y$
+\end{prop}
+
+\begin{ex}{Fonction carrée}{}
+    Lors d'une lecture graphique, on laisse systématiquement les \textbf{traits de construction} apparents.
+
+    \begin{minipage}{0.45\linewidth}
 
     \begin{center}
     \begin{tikzpicture}[line cap=round,line join=round, x=1.0cm,y=1.0cm,scale=.6]
@@ -138,6 +250,7 @@
     \addplot [red, only marks] (-3,9);
     \addplot [blue, only marks] (2,4);
     \addplot [blue, only marks] (-2,4);
+    \addplot [black, only marks] (-1,1.5);
 
     \end{axis}
     \end{tikzpicture}
@@ -154,12 +267,132 @@
                 On lit graphiquement que $-1$ n'a pas d'antécédents.
                 \item
                 On lit graphiquement que $y=4$ nadmet deux antécédents à savoir $x_1=2$ et $x_2=-2$.
+                \item Le point $A(-1, 1.5)\notin\mathcal{C}_f$ car $(-1)^2=1$.
             \end{itemize}
 
         \end{minipage}
 
 \end{ex}
 
-\section{Résolutions graphique d'équations et d'inéquations}
+\begin{ex}{}{}
+Pour étudier l'évolution de la température au cours de la journée, on peut faire un relevé toutes les deux heures et définir la fonction $f$ qui à chaque heure associe la température. On peut alors tracer l'allure de la courbe correspondante.
+
+    \includegraphics[width=.5\linewidth]{tmp/figures/temperature_graph.jpg}
+\end{ex}
+
+\section{Tableau de signe}
+% Tableau de signes pour une fonction produit ou quotient.
+
+\begin{defi}{Tableau de signe}{}
+  Soit $f:D\rightarrow\R$ une fonction. Dans un tableau de signe, pour chaque valeur $x\in D$, on indique si $f(x)$ est strictement négative, nulle ou strictement positive. La double barre correspond à une valeur interdite, le hachurage correspond à un intervalle interdit.
+\end{defi}
+
+\begin{ex}{Fonction valeur absolue}{}
+    Prenons la fonction valeur absolue. On sait que pour $x\in\R$, $|x|\ge0$. De plus, l'équation $|x|=0$ admet une unique solution, $S=\{0\}$. D'où le tableau de signes suivant:
+
+    \begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $|x|$ / 1}{$-\infty$, $0$, $+\infty$}
+   \tkzTabLine{,+, z, +,}
+    \end{tikzpicture}
+\end{ex}
+
+\begin{defi}{Fonction inverse}{}
+  On définit la fonction inverse par \fonction{f}{\R^*}{\R}{x}{\frac{1}{x}}. Elle n'est pas définie en $0$ car on ne peut pas diviser par $0$.
+\end{defi}
+
+\begin{ex}{Fonction inverse}{}
+    On résout $\frac{1}{x}>0$ et on trouve $x>0$.
+
+    \begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $\frac{1}{x}$ / 1}{$-\infty$, $0$, $+\infty$}
+   \tkzTabLine{,-, d, +,}
+    \end{tikzpicture}
+\end{ex}
+
+\begin{methode}{Dresser le tableau de signes d'un produit ou d'un quotient}{}
+    On s'interesse à une fonction $f$ définie comme un produit $f=g\times h$ ou comme un quotient $f=\frac{g}{h}$ de deux fonctions $g$ et $h$.
+
+    \begin{enumerate}
+        \item On dresse dans la première ligne, le tableau de signes de $g$.
+        \item On dresse ensuite le tableau de signes de $h$.
+        \item On déduit alors le signe du produit ou du quotient. Si le dénominateur $h$ s'annule alors il y a une valeur interdite.
+    \end{enumerate}
+\end{methode}
+
+\begin{ex}{}{}
+  Soit $f$ définie pour $x\in\R$ par $f(x) = \frac{2x+3}{x^2}$.
+
+    \begin{tikzpicture}
+    \tkzTabInit{$x$ / 1 , $2x+3$ / 1, $x^2$ / 1, $f(x)$ / 1}{$-\infty$, $-\frac{2}{3}$, $0$, $+\infty$}
+    \tkzTabLine{,-, z, +, , +,}
+    \tkzTabLine{,+, ,+, z, +,}
+    \tkzTabLine{,-, z, +, d, +,}
+    \end{tikzpicture}
+\end{ex}
+
+\begin{ex}{}{}
+  Soit $f$ définie pour $x\in\R$ par $f(x) = \frac{\sqrt{2x}}{x-7}$.
+
+      \begin{tikzpicture}
+    \tkzTabInit{$x$ / 1, $2x$ / 1, $\sqrt{2x}$ / 1, $x-7$ / 1, $\frac{\sqrt{2x}}{x-7}$ / 1 }{$-\infty$, $0$, $7$, $+\infty$}
+    \tkzTabLine{,-, z, +, , +,}
+    \tkzTabLine{,h, z, +, , +,}
+    \tkzTabLine{,-, , -, z, +,}
+    \tkzTabLine{,h, z, -, d, +,}
+    \end{tikzpicture}
+
+\end{ex}
+
+\section{Parité d'une fonction}
+	\subsection{Fonction paire}
+
+	\begin{defi}{Fonction paire}{}
+	Une fonction $f$ définie sur un ensemble $I$ symétrique par rapport à $0$ est \bf{paire} si et seulement si pour tout $x \in I$ : $$f(-x)=f(x)$$
+	\end{defi}
+
+    \begin{ex}{}{}
+    La fonction carrée est paire. Pour $x\in\R$, on a $f(-x)=(-x)^2=x^2=f(x)$.
+    \end{ex}
+
+	\begin{prop}{}{}
+	Dans un repère orthogonal, la courbe représentative d'une fonction paire est symétrique par rapport à l'axe des ordonnées.
+	\end{prop}
+
+    \begin{dem}{}{}
+        Soit $f$ une fonction paire. Soit un point $A(x,y)$ de la courbe représentative $\mathcal{C}_f$ avec $y=f(x)$. Le symétrique par rapport à l'axe des ordonnées est le point $B(-x,y)$. Il suffit de vérifier que B appartient bien à $\mathcal{C}_f$.
+
+    Or $f(-x)=f(x)=y$. Donc $B\in\mathcal{C}_f$. La courbe est bien symétrique par rapport à l'axe des ordonnées.
+    \end{dem}
+
+	\subsection{Fonction impaire}
+
+	\begin{defi}{Fonction impaire}{}
+		Une fonction $f$ définie sur $I$, symétrique par rapport à $0$, est \bf{impaire} si et seulement si pour tout $x \in I$ : $$f(-x)=-f(x)$$
+	\end{defi}
+
+    \begin{ex}{}{}
+      La fonction inverse est impaire. Pour $x\in\R^*$, on a $f(-x)=\frac{1}{-x}=-\frac{1}{x}=-f(x)$.
+    \end{ex}
+
+	\begin{prop}{}{}
+	La courbe représentative d'une fonction impaire est symétrique par rapport à l'origine $O$ du repère. Il s'agit d'une symétrie centrale.
+	\end{prop}
+
+	\begin{methode}{Montrer qu'une fonction est paire ou impaire}{}
+		\begin{itemize}
+		\item On vérifie que l'ensemble de définition de la fonction est symétrique par rapport à 0. Si l'ensemble de définition n'est pas symétrique par rapport à 0, la fonction n'est ni paire ni impaire.
+
+		\item Il peut s'avérer utile de tracer la courbe représentative de $f$ à la calculatrice.
+		Si la courbe semble symétrique par rapport à l'axe des ordonnées, on pourra supposer que la fonction est paire.
+		Si la courbe semble symétrique par rapport à l'origine, on pourra supposer que la fonction est impaire.
+
+		\item On démontre que $f$ est paire ou impaire par le calcul:
+		\begin{enumerate}
+		\item On calcule $f\left(-x\right)$ en remplaçant $x$ par $\left(-x\right)$ dans l'expression de $f\left(x\right)$.
+		\item Si on trouve que $f\left(-x\right)=f\left(x\right)$, alors $f$ est paire.
+		\item Si on trouve que $f\left(-x\right)=-f\left(x\right)$, alors $f$ est impaire.
+		\end{enumerate}
+		\end{itemize}
+		\end{methode}
 
 \end{document}

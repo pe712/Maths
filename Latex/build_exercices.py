@@ -16,7 +16,7 @@ texfile_endamble = """
 \\end{document}
 """
 
-# To modify if the script is moved
+# To modify if the file of this script is moved
 root = Path(__file__).parent.parent.resolve()
 
 class Exo:
@@ -48,8 +48,9 @@ class Exo:
         self._file_fullpath = self._file_fullpath.relative_to(root)
         self._file_fullpath = str(self._file_fullpath)
         self._file_fullpath = self._file_fullpath.replace("\\", "/")
+
         curdir = str(Path(os.curdir).absolute().relative_to(root))
-        curdir.replace("\\", "/")
+        curdir = curdir.replace("\\", "/") # windows to linux replacement
         nb_parents = len(curdir.split("/"))
         self._file_fullpath = "".join("../" for _ in range(nb_parents)) + self._file_fullpath
 
@@ -91,7 +92,7 @@ class ExoSection:
         elif len(_page_numbers)==1:
             print_pagenumbers = f" [page {_page_numbers[0]}]"
         else:
-            print_pagenumbers = f" [pages: {_page_numbers.pop(0)}"
+            print_pagenumbers = f" [pages {_page_numbers.pop(0)}"
             for pagenumber in _page_numbers:
                 print_pagenumbers+=f", {pagenumber}"
             print_pagenumbers+="]"
@@ -102,100 +103,116 @@ class ExoSection:
 class ExoPattern:
     pass
 
-def build_exercises_sheet(filename, filetitle, classname, section_title, sections:list[ExoSection], twice=False):
-    if twice: n=2
-    else: n=1
-    with open(filename, "w", encoding='utf-8') as file:
-        file.write(texfile_preamble)
-        file.write("\\titre{"+filetitle+"}\n")
-        file.write("\\classe{"+classname+"}\n")
-        for _ in range(n):
-            file.write("\\setcounter{sectionexo}{0}\n")
-            file.write("\\thispagestyle{premierepage}\n")
-            file.write("\\entetecategory{Exercices}\n")
-            file.write("\\enteteperso\n\n")
-            file.write("\\pagenumbering{Alph}\n")
-            file.write("\\section*{"+section_title+"}\n")
-            file.write("\\begin{exercicesnofoot}\n")
-            for section in sections:
-                if section.exo_section_title is not None:
-                    file.write(str(section))
-                for exo in section.exos:
-                    file.write("\\hspace{-1.1cm}\n")
-                    file.write(str(exo))
-            file.write("\\end{exercicesnofoot}\n\n")
-            file.write("\\newpage\n")
-            file.write("\\pagenumbering{arabic}\n")
-
-        file.write(texfile_endamble)
-
-def read_tex_exercises(filename):
-    sections = []
-    pattern_exo = r" *\\begin{bookexo}{(\d+) p\.(\d+)}\\end{bookexo}"
-    pattern_double_exos = r" *\\begin{bookexos}{(\d+), *(\d+) p\.(\d+)*}\\end{bookexos}"
-    pattern_multi_exos = r" *\\begin{bookexos}{(\d+)-(\d+) p\.(\d+)*}\\end{bookexos}"
-    pattern_multi_exos2 = r" *\\begin{bookexos}{(\d+) à (\d+) p\.(\d+)*}\\end{bookexos}"
-    pattern_section_exo = r" *\\sectionexo{(.+)}"
-    with open(filename, 'r', encoding='utf-8') as f:
-        for line in f:
-            section_match = re.match(pattern_section_exo, line)
-            if section_match:
-                exo_section_title = section_match.group(1)
-                sections.append(ExoSection(exo_section_title))
-            if len(sections)==0:
-                sections.append(ExoSection())
-            current_section = sections[-1]
-            exo_match = re.match(pattern_exo, line)
-            double_exos_match =  re.match(pattern_double_exos, line)
-            multi_exos_match =  re.match(pattern_multi_exos, line)
-            multi_exos2_match =  re.match(pattern_multi_exos2, line)
-            if exo_match:
-                exonumber, pagenumber = exo_match.groups()
-                current_section.append(Exo(pagenumber, exonumber))
-            elif double_exos_match:
-                exonumber1, exonumber2, pagenumber = double_exos_match.groups()
-                for exonumber in [exonumber1, exonumber2]:
-                    current_section.append(Exo(pagenumber, exonumber))
-            elif multi_exos_match:
-                first, last, pagenumber = multi_exos_match.groups()
-                for exonumber in range(int(first), int(last)+1):
-                    current_section.append(Exo(pagenumber, exonumber))
-            elif multi_exos2_match:
-                first, last, pagenumber = multi_exos2_match.groups()
-                for exonumber in range(int(first), int(last)+1):
-                    current_section.append(Exo(pagenumber, exonumber))
-    return sections
-
-def read_json_exercices(filename):
-    sections = []
-    with open(filename, "r", encoding="utf-8") as file:
-        data = json.load(file)
-        for exo_section_title, exos in data.items():
-            section = ExoSection(exo_section_title)
-            for exo in exos:
-                section.append(Exo(exo[0], exo[1]))
-            sections.append(section)
-    return sections
-
-def read_exercises(filename):
-    extension = str(Path(filename).suffix)
-    if extension == ".tex":
-        return read_tex_exercises(filename)
-    elif extension == ".json":
-        return read_json_exercices(filename)
-    else:
-        raise Exception(f"Unrecognized extension : {extension}")
-
-if __name__ == "__main__":
-    output_filename = "Seconde_revisions.tex"
-    filetitle = ""
-    classname = "Seconde"
+class ExerciseSheet:
+    output_filename = "exos.tex"
+    sheet_title = ""
+    class_name = "Seconde"
     # classname = "Terminale STMG"
     section_title = "Bordas 2023"
     # section_title = "Bordas 2020"
     twice=False
-    input_filename = "exos.json"
-    sections = read_exercises(input_filename)
-    for section in sections:
-        section.filter()
-    build_exercises_sheet(output_filename, filetitle, classname, section_title, sections, twice=twice)
+    sections = []
+
+    def __init__(self, filename):
+        extension = str(Path(filename).suffix)
+        if extension == ".tex":
+            self._read_tex_exercises(filename)
+        elif extension == ".json":
+            self._read_json_input(filename)
+        else:
+            raise Exception(f"Unrecognized extension : {extension}")
+
+    def _read_json_input(self, filename):
+        with open(filename, "r", encoding="utf-8") as file:
+            data = json.load(file)
+        if data.get("output_filename"):
+            self.output_filename = data["output_filename"]
+        if data.get("sheet_title"):
+            self.sheet_title = data["sheet_title"]
+        if data.get("class_name"):
+            self.class_name = data["class_name"]
+        if data.get("section_title"):
+            self.section_title = data["section_title"]
+        if data.get("twice"):
+            self.twice = data["twice"]
+
+        for exo_section_title, exos in data["exercises"].items():
+            section = ExoSection(exo_section_title)
+            for exo in exos:
+                section.append(Exo(exo[0], exo[1]))
+            self.sections.append(section)
+
+    def _read_tex_exercises(self, filename):
+        """
+        Defines global variable sections
+        """
+        pattern_exo = r" *\\begin{bookexo}{(\d+) p\.(\d+)}\\end{bookexo}"
+        pattern_double_exos = r" *\\begin{bookexos}{(\d+), *(\d+) p\.(\d+)*}\\end{bookexos}"
+        pattern_multi_exos = r" *\\begin{bookexos}{(\d+)-(\d+) p\.(\d+)*}\\end{bookexos}"
+        pattern_multi_exos2 = r" *\\begin{bookexos}{(\d+) à (\d+) p\.(\d+)*}\\end{bookexos}"
+        pattern_section_exo = r" *\\sectionexo{(.+)}"
+        with open(filename, 'r', encoding='utf-8') as f:
+            for line in f:
+                section_match = re.match(pattern_section_exo, line)
+                if section_match:
+                    exo_section_title = section_match.group(1)
+                    self.sections.append(ExoSection(exo_section_title))
+                if len(self.sections)==0:
+                    self.sections.append(ExoSection())
+                current_section = self.sections[-1]
+                exo_match = re.match(pattern_exo, line)
+                double_exos_match =  re.match(pattern_double_exos, line)
+                multi_exos_match =  re.match(pattern_multi_exos, line)
+                multi_exos2_match =  re.match(pattern_multi_exos2, line)
+                if exo_match:
+                    exonumber, pagenumber = exo_match.groups()
+                    current_section.append(Exo(pagenumber, exonumber))
+                elif double_exos_match:
+                    exonumber1, exonumber2, pagenumber = double_exos_match.groups()
+                    for exonumber in [exonumber1, exonumber2]:
+                        current_section.append(Exo(pagenumber, exonumber))
+                elif multi_exos_match:
+                    first, last, pagenumber = multi_exos_match.groups()
+                    for exonumber in range(int(first), int(last)+1):
+                        current_section.append(Exo(pagenumber, exonumber))
+                elif multi_exos2_match:
+                    first, last, pagenumber = multi_exos2_match.groups()
+                    for exonumber in range(int(first), int(last)+1):
+                        current_section.append(Exo(pagenumber, exonumber))
+
+    def _filter(self):
+        for section in self.sections:
+            section.filter()
+
+    def write(self):
+        self._filter()
+        if self.twice: n=2
+        else: n=1
+        with open(self.output_filename, "w", encoding='utf-8') as file:
+            file.write(texfile_preamble)
+            file.write("\\titre{"+self.sheet_title+"}\n")
+            file.write("\\classe{"+self.class_name+"}\n")
+            for _ in range(n):
+                file.write("\\setcounter{sectionexo}{0}\n")
+                file.write("\\thispagestyle{premierepage}\n")
+                file.write("\\entetecategory{Exercices}\n")
+                file.write("\\enteteperso\n\n")
+                file.write("\\pagenumbering{Alph}\n")
+                file.write("\\section*{"+self.section_title+"}\n")
+                file.write("\\begin{exercicesnofoot}\n")
+                for section in self.sections:
+                    if section.exo_section_title is not None:
+                        file.write(str(section))
+                    for exo in section.exos:
+                        file.write("\\hspace{-1.1cm}\n")
+                        file.write(str(exo))
+                file.write("\\end{exercicesnofoot}\n\n")
+                file.write("\\newpage\n")
+                file.write("\\pagenumbering{arabic}\n")
+
+            file.write(texfile_endamble)
+
+if __name__ == "__main__":
+    input_filename = "Seconde_reels.tex"
+    exercise_sheet = ExerciseSheet(input_filename)
+    exercise_sheet.write()
